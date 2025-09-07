@@ -17,6 +17,10 @@
         "UIDropDownMenu_AddButton",
         "UIDropDownMenu_CreateInfo",
         "UIDropDownMenu_SetText",
-        "GameTooltip_SetTitle"
+        "GameTooltip_SetTitle",
+        "PanelTemplates_TabResize",
+        "CollectionsJournal",
+        "PanelTemplates_GetSelectedTab",
+        "ID"
     ]
 }

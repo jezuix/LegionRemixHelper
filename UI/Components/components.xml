@@ -8,4 +8,5 @@
     <script file="Label.lua"/>
     <script file="TextBox.lua"/>
     <script file="CheckBox.lua"/>
+    <script file="RoundedIcon.lua"/>
 </Ui>

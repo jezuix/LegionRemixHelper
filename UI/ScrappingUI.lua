@@ -150,7 +150,6 @@ function scrappingUI:Init()
 
     addon:RegisterEvent("BAG_UPDATE_DELAYED", "scrappingUI_BagUpdateDelayed", function()
         if self.scrappingMachine:IsShown() then
-            DevTools_Dump(UnitCastingInfo("player"))
             self:Refresh()
         end
     end)
@@ -175,27 +174,28 @@ function scrappingUI:RefreshPending()
     end
 end
 
+---@return fun(elementFrame:table|Frame, data:ScrappableItem)
 function scrappingUI:GetScrollframeInitializer()
-    ---@param newF table|Frame
+    ---@param elementFrame table|Frame
     ---@param data ScrappableItem
-    return function(newF, data)
-        if not newF.initialized then
-            newF.initialized = true
-            local f = components.ItemIcon:CreateFrame(newF, {
+    return function(elementFrame, data)
+        if not elementFrame.initialized then
+            elementFrame.initialized = true
+            local f = components.ItemIcon:CreateFrame(elementFrame, {
                 anchors = {
                     { "TOPLEFT" },
                     { "BOTTOMRIGHT" }
                 },
                 onClick = function()
-                    self.utils:ScrapItemFromBag(newF.data.bagID, newF.data.slotID)
+                    self.utils:ScrapItemFromBag(elementFrame.data.bagID, elementFrame.data.slotID)
                 end,
             })
-            newF.Icon = f
+            elementFrame.Icon = f
 
-            tinsert(self.iconFrames, newF)
+            tinsert(self.iconFrames, elementFrame)
         end
-        newF.data = data
-        newF.Icon:SetItem(data.link)
-        newF.Icon.icon:SetDesaturated(self.utils:IsItemLocationPendingScrap(data.location))
+        elementFrame.data = data
+        elementFrame.Icon:SetItem(data.link)
+        elementFrame.Icon.icon:SetDesaturated(self.utils:IsItemLocationPendingScrap(data.location))
     end
 end

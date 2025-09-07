@@ -8,6 +8,9 @@ local defaultDatabase = {
         minLevelDiff = 0,
         autoScrap = false,
     },
+    collectionsTab = {
+        selected = 1,
+    }
 }
 
 ---@class LegionRH : RasuAddonBase
