@@ -1,0 +1,22 @@
+{
+    "Lua.diagnostics.globals": [
+        "SecondsFormatterMixin",
+        "SlashCmdList",
+        "hash_SlashCmdList",
+        "ScrappingMachineFrame",
+        "BACKPACK_CONTAINER",
+        "NUM_TOTAL_EQUIPPED_BAG_SLOTS",
+        "ButtonFrameTemplate_HidePortrait",
+        "ScrollUtil",
+        "CreateScrollBoxListLinearView",
+        "CreateScrollBoxListGridView",
+        "CreateDataProvider",
+        "HandleModifiedItemClick",
+        "RunNextFrame",
+        "UIDropDownMenu_Initialize",
+        "UIDropDownMenu_AddButton",
+        "UIDropDownMenu_CreateInfo",
+        "UIDropDownMenu_SetText",
+        "GameTooltip_SetTitle"
+    ]
+}

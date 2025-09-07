@@ -1,0 +1,9 @@
+## Interface: 110205
+## Version: 1.0.0
+## Title: Legion Remix Helper
+## Author: Rasu | Larsj_02
+## DefaultState: enabled
+## IconTexture: Interface\Addons\LegionRemixHelper\Media\Textures\logo.tga
+## SavedVariables: LegionRemixHelperDB
+
+embed.xml
