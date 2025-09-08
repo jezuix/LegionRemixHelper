@@ -91,4 +91,15 @@ function artifactTraitUtils:GetRowRootNodes()
     return rowRootNodes
 end
 
+---@return table<number, number[]> rowTraits
+function artifactTraitUtils:GetRowTraits()
+    return self.rowTraits
+end
+
+---@param treeID number|nil
+---@return number configID
+function artifactTraitUtils:GetConfigID(treeID)
+    return C_Traits.GetConfigIDByTreeID(treeID or const.REMIX_ARTIFACT_TRAITS.TREE_ID)
+end
+
 rasuF = artifactTraitUtils
