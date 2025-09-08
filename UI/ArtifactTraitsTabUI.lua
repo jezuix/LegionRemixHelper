@@ -16,13 +16,14 @@ function artifactTraitsTabUI:Init(contentFrame) -- Only Placeholder for now
     self.contentFrame = contentFrame
     print("Nature, Fel, Arcane, Storm, Holy")
 
-    for index, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do
+    local index = 1
+    for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do
         for traitIndex, trait in pairs(row) do
             local nature = components.RoundedIcon:CreateFrame(self.contentFrame, {
                 width = 40,
                 height = 40,
                 anchors = {
-                    { "TOPLEFT", self.contentFrame, "TOPLEFT", 10 + (40 * (traitIndex - 1)), -10 + (50 * (index - 1)) },
+                    { "TOPLEFT", self.contentFrame, "TOPLEFT", 10 + (40 * (traitIndex - 1)), -10 + (50 * (index - 1)) * -1 },
                 },
                 show_tooltip = true
             })
@@ -33,5 +34,6 @@ function artifactTraitsTabUI:Init(contentFrame) -- Only Placeholder for now
                 nature:SetTexture(C_Spell.GetSpellTexture(trait.SPELL_ID))
             end)
         end
+        index = index + 1
     end
 end
