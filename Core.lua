@@ -6,6 +6,8 @@ local addon = Private.Addon
 
 function addon:OnInitialize(...)
     Private.ScrappingUtils:Init()
+    Private.ArtifactTraitUtils:Init()
+
     Private.CollectionsTabUI:Init()
 end
 
