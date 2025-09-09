@@ -2,7 +2,7 @@
 ---@field RegisteredAddons table<string, RasuAddonBase>
 ---@field CreateAddon fun(self:RasuAddon, name:string, db:string|table|?, defaultDB:table|?, loc:table|?, defaultLoc:string|?, ignoreError:boolean|?) : RasuAddonBase
 ---@field GetAddon fun(self:RasuAddon, name:string) : RasuAddonBase|?
-local lib = GetLib:RegisterLibrary("RasuAddon", "5.0.1")
+local lib = GetLib:RegisterLibrary("RasuAddon", "5.0.2")
 
 if not lib then
     return
@@ -285,7 +285,9 @@ function AddonBase:OnEvent(event, ...)
                 end
             end
             local callbackArgs = self:MergeTables(callbackEntry.args, { ... }, cleuArgs)
-            callbackEntry.func(self, event, unpack(callbackArgs))
+            if callbackEntry.func then
+                callbackEntry.func(self, event, unpack(callbackArgs))
+            end
         end
     end
 end
