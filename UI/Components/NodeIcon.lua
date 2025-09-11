@@ -34,14 +34,14 @@ end
 ---@field onClick fun(self, mouseButton:string, isDown:boolean)?
 local defaultOptions = {
     frame_strata = "HIGH",
-    width = 150,
-    height = 20,
+    width = 58,
+    height = 52,
     anchors = {
         { "CENTER" }
     },
     disabled = false,
     onClick = nil,
-    state = nil,
+    state = "EMPTY",
 }
 
 ---@class NodeIconComponent
@@ -124,8 +124,13 @@ function nodeIconComponent:CreateFrame(parent, options)
     frame:SetSize(options.width, options.height)
 
     local bg = frame:CreateTexture(nil, "BACKGROUND")
-    bg:SetPoint("TOPLEFT", 12, -12)
-    bg:SetPoint("BOTTOMRIGHT", -12, 12)
+    bg:SetPoint("CENTER")
+    local function updateBgSize(w, h)
+        local wScale = 36/58
+        local hScale = 36/52
+        bg:SetSize(w * wScale, h * hScale)
+    end
+    updateBgSize(options.width, options.height)
     bg:SetAtlas("talents-node-pvp-inspect-empty")
 
     local mask = frame:CreateMaskTexture()
@@ -143,6 +148,9 @@ function nodeIconComponent:CreateFrame(parent, options)
 
     frame:SetMouseClickEnabled(true)
     frame:SetScript("OnMouseDown", onClick)
+    frame:SetScript("OnSizeChanged", function(_, w, h)
+        updateBgSize(w, h)
+    end)
 
     return self:CreateObject(frame, bg, border, options)
 end

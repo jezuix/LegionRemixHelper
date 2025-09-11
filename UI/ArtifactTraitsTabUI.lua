@@ -48,4 +48,15 @@ function artifactTraitsTabUI:Init(contentFrame) -- Only Placeholder for now
         end
         index = index + 1
     end
+
+    for i = 1, 5 do
+        local jewelery = components.NodeIcon:CreateFrame(self.contentFrame, {
+            anchors = {
+                { "TOPLEFT", self.contentFrame, "TOPLEFT", 10 + (40 * 5) + 20, -10 + (50 * (i - 1)) * -1 + 5 },
+            },
+            show_tooltip = true
+        })
+    end
 end
+
+Comps = components

@@ -64,5 +64,8 @@ constants.REMIX_ARTIFACT_TRAITS = {
     },
     FINAL_TRAIT = {
         NODE_ID = 108700,
+    },
+    JEWELRY_ITEMS = { -- Map Items to Entry ID's for Jewelry Slots + Slotnums to later identify them (Uncommon + 1, Rare + 2, Epic + 3, Legendary + 4)
+
     }
 }
