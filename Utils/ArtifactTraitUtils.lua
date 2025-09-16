@@ -51,6 +51,9 @@ function artifactTraitUtils:Init()
         end
         self:UpdateSpecs()
     end)
+    addon:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", "artifactTraitUtils_PLAYER_EQUIPMENT_CHANGED", function()
+        self:OnEquipmentUpdate()
+    end)
 end
 
 ---@param configID number
@@ -148,25 +151,123 @@ function artifactTraitUtils:GetConfigID(treeID)
     return C_Traits.GetConfigIDByTreeID(treeID or const.REMIX_ARTIFACT_TRAITS.TREE_ID)
 end
 
----@return number[] entryIDs
-function artifactTraitUtils:GetJewelryTraits()
-    local jewelryTraits = {}
-    for _, item in pairs(const.REMIX_ARTIFACT_TRAITS.JEWELRY_ITEMS) do
-        tinsert(jewelryTraits, item.ENTRY_ID)
-    end
-    return jewelryTraits
+---@param itemID number
+---@return boolean
+function artifactTraitUtils:IsJewelryItem(itemID)
+    return const.REMIX_ARTIFACT_TRAITS.JEWELRY_ITEMS[itemID] and true or false
 end
 
----@param slot Enum.ArtifactTraitJewelrySlot
----@return number[] entryIDs
-function artifactTraitUtils:GetJewelryTraitsBySlot(slot)
-    local jewelryTraits = {}
-    for _, item in pairs(const.REMIX_ARTIFACT_TRAITS.JEWELRY_ITEMS) do
-        if item.SLOT == slot then
-            tinsert(jewelryTraits, item.ENTRY_ID)
+---@class JewelryItemInfo
+---@field quality number
+---@field level number
+---@field location ItemLocation
+---@field invType Enum.InventoryType
+
+---@return table<number, JewelryItemInfo> highestItems
+function artifactTraitUtils:GetHighestJewelryItems()
+    local highestItems = {}
+    for bagID = BACKPACK_CONTAINER, NUM_TOTAL_EQUIPPED_BAG_SLOTS do
+        for slotID = 1, C_Container.GetContainerNumSlots(bagID) do
+            local itemLoc = ItemLocation:CreateFromBagAndSlot(bagID, slotID)
+            if itemLoc:IsValid() then
+                local itemID = C_Item.GetItemID(itemLoc)
+                if itemID and self:IsJewelryItem(itemID) then
+                    local quality = C_Item.GetItemQuality(itemLoc)
+                    local ilevel = C_Item.GetCurrentItemLevel(itemLoc)
+                    if
+                        not highestItems[itemID] or
+                        (highestItems[itemID].quality < quality) or
+                        (highestItems[itemID].quality == quality and highestItems[itemID].level < ilevel)
+                    then
+                        highestItems[itemID] = {
+                            quality = quality,
+                            level = ilevel,
+                            location = itemLoc,
+                            invType = C_Item.GetItemInventoryType(itemLoc),
+                        }
+                    end
+                end
+            end
         end
     end
-    return jewelryTraits
+    return highestItems
+end
+
+---@param entryID number
+---@param configID number?
+---@return number? spellID
+function artifactTraitUtils:GetSpellIDFromEntryID(entryID, configID)
+    if not configID then configID = self:GetConfigID() end
+    local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+    if not entryInfo or not entryInfo.definitionID then return end
+    local definitionInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
+    return definitionInfo.overriddenSpellID or definitionInfo.spellID
+end
+
+---@param itemLocation ItemLocation
+---@return string tooltip
+function artifactTraitUtils:GetJewelryTooltip(itemLocation)
+    if not itemLocation or not itemLocation:IsValid() then return "No Item Equipped" end
+    local itemID = C_Item.GetItemID(itemLocation)
+    local entryID = self:GetEntryIDFromItemID(itemID)
+    local spellName, spellIcon, traitUpgrade = "Unknown Trait", 134400, 0
+    if entryID then
+        local spellID = self:GetSpellIDFromEntryID(entryID)
+        if spellID then
+            spellName = C_Spell.GetSpellName(spellID)
+            spellIcon = C_Spell.GetSpellTexture(spellID)
+
+            local itemQuality = C_Item.GetItemQuality(itemLocation)
+            traitUpgrade = const.REMIX_ARTIFACT_TRAITS.JEWELRY_QUALITY_UPGRADES[itemQuality] or 0
+        end
+    end
+    return string.format("|T%s:16|t %s (+%d)", spellIcon, spellName, traitUpgrade)
+end
+
+---@param itemID number
+---@return number? entryID
+function artifactTraitUtils:GetEntryIDFromItemID(itemID)
+    return const.REMIX_ARTIFACT_TRAITS.JEWELRY_ITEMS[itemID]
+end
+
+---@return table
+function artifactTraitUtils:GetJewelrySlots()
+    return const.REMIX_ARTIFACT_TRAITS.JEWELRY_SLOTS
+end
+
+---@param invSlot number
+---@return ItemLocationMixin? equippedItemLocation
+function artifactTraitUtils:GetEquippedJewelryBySlot(invSlot)
+    local itemLoc = ItemLocation:CreateFromEquipmentSlot(invSlot)
+    if itemLoc:IsValid() then
+        return itemLoc
+    end
+end
+
+---@param itemLocation ItemLocation
+---@param invSlot number
+function artifactTraitUtils:EquipJewelryForSlot(itemLocation, invSlot)
+    if not itemLocation or not itemLocation:IsValid() then return end
+    local bag, slot = itemLocation:GetBagAndSlot()
+
+    EquipmentManager_EquipContainerItem({
+        bag = bag,
+        slot = slot,
+        invSlot = invSlot,
+    })
+end
+
+---@param slot Enum.InventoryType
+---@return JewelryItemInfo[] slotItems
+function artifactTraitUtils:GetJewelryBySlot(slot)
+    local items = self:GetHighestJewelryItems()
+    local slotItems = {}
+    for _, itemInfo in pairs(items) do
+        if itemInfo.invType == slot then
+            tinsert(slotItems, itemInfo)
+        end
+    end
+    return slotItems
 end
 
 ---@return table<number, string> rowNames
@@ -239,6 +340,10 @@ function artifactTraitUtils:UpdateSpecs()
     for i = 1, GetNumSpecializations() do
         self.specsCache[i] = C_SpecializationInfo.GetSpecializationInfo(i)
     end
+end
+
+function artifactTraitUtils:OnEquipmentUpdate()
+    self:TriggerCallbacks(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_EQUIPPED)
 end
 
 ---@param specID number|string

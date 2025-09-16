@@ -39,7 +39,9 @@
         "NAME",
         "PlayerUtil",
         "TableUtil",
-        "CopyTableSafe"
+        "CopyTableSafe",
+        "EquipmentManager_EquipItemByLocation",
+        "EquipmentManager_EquipContainerItem"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

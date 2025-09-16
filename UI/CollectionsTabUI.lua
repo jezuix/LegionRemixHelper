@@ -66,7 +66,7 @@ function collectionsTabUI:SetupTab()
 
         if isSelected then
             CollectionsJournal:SetTitle("Legion Remix")
-            CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON);
+            CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON)
         end
     end
 

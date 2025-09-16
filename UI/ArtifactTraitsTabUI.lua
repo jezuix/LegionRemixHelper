@@ -91,25 +91,23 @@ function artifactTraitsTabUI:CreateTabUI()
             if nodeInfo and nodeInfo.entryIDs then
                 local entryID = nodeInfo.entryIDs[1]
                 local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
-                if entryInfo and entryInfo.definitionID and (entryInfo.type == Enum.TraitNodeEntryType.SpendCircle or entryInfo.type == Enum.TraitNodeEntryType.SpendSquare) then
-                    local definitionInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
-                    if definitionInfo and definitionInfo.spellID then
-                        traitIndex = traitIndex + 1
-                        local circle = components.RoundedIcon:CreateFrame(specs[index].frame, {
-                            width = 40,
-                            height = 40,
-                            anchors = {
-                                { "TOP", specs[index].sample, "BOTTOM", 0, (10 + (45 * (traitIndex - 1))) * -1 - 10 },
-                            },
-                            show_tooltip = true,
-                            frame_strata = "FULLSCREEN_DIALOG"
-                        })
-                        local spell = Spell:CreateFromSpellID(definitionInfo.spellID)
-                        spell:ContinueOnSpellLoad(function()
-                            circle:SetLink(C_Spell.GetSpellLink(definitionInfo.spellID))
-                            circle:SetTexture(C_Spell.GetSpellTexture(definitionInfo.spellID))
-                        end)
-                    end
+                local spellID = utils:GetSpellIDFromEntryID(entryID, configID)
+                if spellID and (entryInfo.type == Enum.TraitNodeEntryType.SpendCircle or entryInfo.type == Enum.TraitNodeEntryType.SpendSquare) then
+                    traitIndex = traitIndex + 1
+                    local circle = components.RoundedIcon:CreateFrame(specs[index].frame, {
+                        width = 40,
+                        height = 40,
+                        anchors = {
+                            { "TOP", specs[index].sample, "BOTTOM", 0, (10 + (45 * (traitIndex - 1))) * -1 - 10 },
+                        },
+                        show_tooltip = true,
+                        frame_strata = "FULLSCREEN_DIALOG"
+                    })
+                    local spell = Spell:CreateFromSpellID(spellID)
+                    spell:ContinueOnSpellLoad(function()
+                        circle:SetLink(C_Spell.GetSpellLink(spellID))
+                        circle:SetTexture(C_Spell.GetSpellTexture(spellID))
+                    end)
                 end
             end
         end
@@ -121,7 +119,9 @@ function artifactTraitsTabUI:CreateTabUI()
     bottomBar:SetPoint("TOPRIGHT", rowFrame, "BOTTOMRIGHT", 0, 0)
     bottomBar:SetAtlas("talents-background-bottombar", true)
 
-    for i = 1, 5 do
+    for i, slotInfo in ipairs(utils:GetJewelrySlots()) do
+        local slotName = _G["INVTYPE_" .. slotInfo.NAME]
+        ---@class JewelrySlotSwitcher : NodeIconComponentObject
         local jewelery = components.NodeIcon:CreateFrame(self.contentFrame, {
             anchors = {
                 { "LEFT", bottomBar, "LEFT", (i - 1) * 70 + 15, 0 },
@@ -129,15 +129,39 @@ function artifactTraitsTabUI:CreateTabUI()
             show_tooltip = true,
             onClick = function(jeweleryObj)
                 local function GeneratorFunction(genOwner, rootDescription)
-                    rootDescription:CreateButton("My Button", function(data)
-                        -- Button handling here.
-                    end);
-                end;
+                    ---@cast rootDescription RootMenuDescriptionProxy
+                    rootDescription:CreateTitle(slotName)
+
+                    local highestItems = utils:GetJewelryBySlot(slotInfo.INV_TYPE)
+                    for _, itemInfo in ipairs(highestItems) do
+                        rootDescription:CreateButton(utils:GetJewelryTooltip(itemInfo.location), function()
+                            utils:EquipJewelryForSlot(itemInfo.location, slotInfo.SLOT)
+                        end)
+                    end
+                end
 
 
                 MenuUtil.CreateContextMenu(jeweleryObj.frame, GeneratorFunction);
             end,
+            tooltipTextGetter = function()
+                return utils:GetJewelryTooltip(utils:GetEquippedJewelryBySlot(slotInfo.SLOT))
+            end,
         })
+        jewelery.Slot = slotInfo.SLOT
+
+        local function UpdateJewelrySlot()
+            local equippedItem = utils:GetEquippedJewelryBySlot(jewelery.Slot)
+            if equippedItem then
+                local icon = C_Item.GetItemIcon(equippedItem)
+                jewelery:SetState("SELECT")
+                jewelery:SetIconTexture(icon)
+                local itemLink = C_Item.GetItemLink(equippedItem)
+            else
+                jewelery:SetState("EMPTY")
+            end
+        end
+        UpdateJewelrySlot()
+        utils:AddCallback(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_EQUIPPED, UpdateJewelrySlot)
     end
 
     self.contentFrame:HookScript("OnShow", function()

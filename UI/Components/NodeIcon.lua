@@ -25,6 +25,22 @@ local function onClick(self, mouseButton, isDown)
     end
 end
 
+local function onEnter(self)
+    local obj = self.obj
+    local tooltipText = obj:GetTooltipTextGetter() and obj:GetTooltipTextGetter()()
+    if not tooltipText then
+        tooltipText = obj:GetTooltipText()
+        if not tooltipText then return end
+    end
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText(tooltipText, 1, .8, 0, 1, true)
+    GameTooltip:Show()
+end
+
+local function onLeave(self)
+    GameTooltip:Hide()
+end
+
 ---@class NodeIconComponentOptions
 ---@field frame_strata FrameStrata?
 ---@field width number?
@@ -32,6 +48,8 @@ end
 ---@field anchors table?
 ---@field disabled boolean?
 ---@field onClick fun(self, mouseButton:string, isDown:boolean)?
+---@field tooltipText string|nil?
+---@field tooltipTextGetter (fun():tooltipText:string|nil) | nil
 local defaultOptions = {
     frame_strata = "HIGH",
     width = 58,
@@ -42,6 +60,8 @@ local defaultOptions = {
     disabled = false,
     onClick = nil,
     state = "EMPTY",
+    tooltipText = nil,
+    tooltipTextGetter = nil,
 }
 
 ---@class NodeIconComponent
@@ -60,11 +80,34 @@ local componentsBase = Private.Components.Base
 ---@field disabled boolean
 ---@field onClick fun(self, mouseButton:string, isDown:boolean)|nil
 ---@field state NodeIconState|nil
+---@field tooltipText string|nil
+---@field tooltipTextGetter (fun():string|nil)|nil
 local nodeIconComponentMixin = {
     disabled = false,
     onClick = nil,
     state = nil,
+    tooltipText = nil,
+    tooltipTextGetter = nil,
 }
+---@return string|nil
+function nodeIconComponentMixin:GetTooltipText()
+    return self.tooltipText
+end
+
+---@param tooltipText string|nil
+function nodeIconComponentMixin:SetTooltipText(tooltipText)
+    self.tooltipText = tooltipText
+end
+
+---@return fun():tooltipText:string|nil tooltipTextGetter
+function nodeIconComponentMixin:GetTooltipTextGetter()
+    return self.tooltipTextGetter
+end
+
+---@param getter fun():tooltipText:string|nil
+function nodeIconComponentMixin:SetTooltipTextGetter(getter)
+    self.tooltipTextGetter = getter
+end
 
 ---@param iconTexture number|string
 function nodeIconComponentMixin:SetIconTexture(iconTexture)
@@ -151,6 +194,8 @@ function nodeIconComponent:CreateFrame(parent, options)
     frame:SetScript("OnSizeChanged", function(_, w, h)
         updateBgSize(w, h)
     end)
+    frame:SetScript("OnEnter", onEnter)
+    frame:SetScript("OnLeave", onLeave)
 
     return self:CreateObject(frame, bg, border, options)
 end
@@ -173,6 +218,8 @@ function nodeIconComponent:CreateObject(frame, bg, border, options)
     obj:SetDisabled(options.disabled)
     obj:SetOnClick(options.onClick)
     obj:SetState(options.state)
+    obj:SetTooltipText(options.tooltipText)
+    obj:SetTooltipTextGetter(options.tooltipTextGetter)
 
     return obj
 end
