@@ -139,6 +139,14 @@ function artifactTraitsTabUI:CreateTabUI()
             end,
         })
     end
+
+    self.contentFrame:HookScript("OnShow", function()
+        changeActive(utils:GetActiveRowID())
+    end)
+
+    utils:AddCallback(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_ROW, function()
+        changeActive(utils:GetActiveRowID())
+    end)
 end
 
 ---@param contentFrame Frame

@@ -115,13 +115,22 @@ function artifactTraitUtils:BuildBuyPath(treeID, stopAtNodes, overwriteRootNode)
     return pathNodes
 end
 
----@return table<number, boolean> rowRootNodes
+---@return boolean[] rowRootNodes
 function artifactTraitUtils:GetRowRootNodes()
     local rowRootNodes = {}
     for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do
         rowRootNodes[row.ROOT_NODE_ID] = true
     end
     return rowRootNodes
+end
+
+---@return number[] indexedRowRootNodes
+function artifactTraitUtils:GetIndexedRowRootNodes()
+    local indexedRowRootNodes = {}
+    for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do
+        indexedRowRootNodes[row.ID] = row.ROOT_NODE_ID
+    end
+    return indexedRowRootNodes
 end
 
 ---@return table<number, number[]> rowTraits
@@ -171,8 +180,8 @@ end
 
 ---@param callbackFunction fun(update: table)
 ---@return CallbackObject|nil callbackObject
-function artifactTraitUtils:AddCallback(callbackFunction)
-    return self.callbackUtils:AddCallback(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY, callbackFunction)
+function artifactTraitUtils:AddCallback(category, callbackFunction)
+    return self.callbackUtils:AddCallback(category, callbackFunction)
 end
 
 ---@param callbackObj CallbackObject
@@ -193,6 +202,11 @@ function artifactTraitUtils:OnConfigUpdate()
 end
 
 function artifactTraitUtils:OnWeaponUpdate()
+    local newRow = self:GetPlayerRow()
+    if newRow then
+        self:SwitchRowTraits(newRow)
+    end
+
     self:TriggerCallbacks(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_SPEC)
 end
 
@@ -241,7 +255,7 @@ end
 ---@param rowID number|nil
 function artifactTraitUtils:SetRowForSpec(specID, rowID)
     specID = tostring(specID)
-    local rowActive = self:GetRowForSpec(specID)
+    local rowActive = self:GetActiveRowID()
     if rowActive == rowID then
         rowID = nil
     end
@@ -280,6 +294,16 @@ function artifactTraitUtils:GetBaseTraits()
     return CopyTableSafe(self.baseTraits)
 end
 
+function artifactTraitUtils:GetActiveRowID()
+    local rows = self:GetIndexedRowRootNodes()
+    for rowID, nodeID in pairs(rows) do
+        local rowInfo = C_Traits.GetNodeInfo(self:GetConfigID(), nodeID)
+        if rowInfo and rowInfo.currentRank > 0 then
+            return rowID
+        end
+    end
+end
+
 function artifactTraitUtils:SwitchRowTraits(newRowID)
     local configID = self:GetConfigID()
     local treeID = const.REMIX_ARTIFACT_TRAITS.TREE_ID
@@ -290,6 +314,8 @@ function artifactTraitUtils:SwitchRowTraits(newRowID)
     C_Traits.TryPurchaseToNode(configID, rowTraits[#rowTraits])
     C_Traits.TryPurchaseAllRanks(configID, const.REMIX_ARTIFACT_TRAITS.FINAL_TRAIT.NODE_ID)
     C_Traits.CommitConfig(configID)
+
+    self:TriggerCallbacks(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_ROW)
 end
 
 local TRY_PURCHASE_RESULTS = {

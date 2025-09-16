@@ -78,6 +78,7 @@ constants.REMIX_ARTIFACT_TRAITS = {
     },
     CALLBACK_CATEGORY_SPEC = "ArtifactTraitSpecUpdate",
     CALLBACK_CATEGORY_CONFIG = "ArtifactTraitConfigUpdate",
+    CALLBACK_CATEGORY_ROW = "ArtifactTraitRowUpdate",
     CALLBACK_CATEGORY_CURRENCY = "ArtifactTraitCurrencyUpdate",
 }
 
