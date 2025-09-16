@@ -164,6 +164,7 @@ end
 function scrappingUI:Refresh()
     local scrappableItems = self.utils:GetFilteredScrappableItems()
     self.scrollFrame:UpdateContent(scrappableItems)
+    self.utils:AutoScrap()
 end
 
 function scrappingUI:RefreshPending()

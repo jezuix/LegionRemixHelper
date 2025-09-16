@@ -5,10 +5,12 @@ local Private = select(2, ...)
 ---@field contentFrame Frame
 ---@field tabSystem Frame|table
 ---@field contentTabs table<number, Frame>
+---@field researchBar ProgressBarComponentObject
 local collectionsTabUI = {
     contentFrame = nil,
     tabSystem = nil,
     contentTabs = {},
+    researchBar = nil,
 }
 Private.CollectionsTabUI = collectionsTabUI
 
@@ -53,6 +55,7 @@ function collectionsTabUI:SetupTab()
 
         self.Text:SetPoint("CENTER", self, "CENTER", 0, self:GetTextYOffset(isSelected))
     end
+
     local content = CreateFrame("Frame", nil, CollectionsJournal, "CollectionsBackgroundTemplate")
     self.contentFrame = content
 
@@ -69,7 +72,6 @@ function collectionsTabUI:SetupTab()
 
     hooksecurefunc("CollectionsJournal_SetTab", function(_, tabID)
         onTabUpdate(tabID)
-        addon:SetDatabaseValue("collectionsTab.selected", tabID)
     end)
     onTabUpdate(PanelTemplates_GetSelectedTab(CollectionsJournal))
 
@@ -81,20 +83,44 @@ function collectionsTabUI:SetupTab()
         for id, tabContent in pairs(self.contentTabs) do
             tabContent:SetShown(id == tabID)
         end
+
+        addon:SetDatabaseValue("collectionsTab.selected", tabID)
         return false
     end)
 
     self:SetupTraitsTab()
 
-    local selected = addon:GetDatabaseValue("collectionsTab.selected") or 1
-    tabSys:SetTab(selected)
+    local selectedID = addon:GetDatabaseValue("collectionsTab.selected") or 1
+    if not self.contentTabs[selectedID] then
+        selectedID = 1
+    end
+    tabSys:SetTab(selectedID)
+
+    local researchBar = components.ProgressBar:CreateFrame(content, {
+        anchors = {
+            {"BOTTOMRIGHT", content, "TOPRIGHT", -5, 10}
+        },
+        tooltipTextGetter = function()
+            return Private.ResearchTaskUtils:GetCurrentTooltipText()
+        end,
+    })
+    self.researchBar = researchBar
+    local callbackObj = Private.ResearchTaskUtils:AddCallback(function (progress, total)
+        researchBar:SetMinMaxValues(0, total or 1)
+        researchBar:SetValue(progress or 0)
+        researchBar:SetLabelText(string.format("Research: %s/%s", progress or "?", total or "?"))
+    end)
+    if callbackObj then
+        callbackObj:Trigger(Private.ResearchTaskUtils:GetTaskProgress())
+    end
 end
 
 function collectionsTabUI:SetupTraitsTab()
-    local tabContent = self:AddTopTab("Artifact Traits")
+    local artifactTraitsContent = self:AddTopTab("Artifact Traits")
+    local collectionContent = self:AddTopTab("Collection")
 
     local traitsUI = Private.ArtifactTraitsTabUI
-    traitsUI:Init(tabContent)
+    traitsUI:Init(artifactTraitsContent)
 end
 
 ---@return Frame contentFrame

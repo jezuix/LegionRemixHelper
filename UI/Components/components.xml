@@ -10,4 +10,5 @@
     <script file="CheckBox.lua"/>
     <script file="RoundedIcon.lua"/>
     <script file="NodeIcon.lua"/>
+    <script file="ProgressBar.lua"/>
 </Ui>

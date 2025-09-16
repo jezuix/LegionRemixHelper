@@ -31,7 +31,11 @@
         "UIParent",
         "MenuUtil",
         "GameTooltip",
-        "ItemLocation"
+        "ItemLocation",
+        "SAMPLE_ABILITIES",
+        "SPEC_ACTIVE",
+        "TALENT_SPEC_ACTIVATE",
+        "UIWidgetManager"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

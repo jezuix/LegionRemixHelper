@@ -102,4 +102,25 @@ function artifactTraitUtils:GetConfigID(treeID)
     return C_Traits.GetConfigIDByTreeID(treeID or const.REMIX_ARTIFACT_TRAITS.TREE_ID)
 end
 
+---@return number[] entryIDs
+function artifactTraitUtils:GetJewelryTraits()
+    local jewelryTraits = {}
+    for _, item in pairs(const.REMIX_ARTIFACT_TRAITS.JEWELRY_ITEMS) do
+        tinsert(jewelryTraits, item.ENTRY_ID)
+    end
+    return jewelryTraits
+end
+
+---@param slot Enum.ArtifactTraitJewelrySlot
+---@return number[] entryIDs
+function artifactTraitUtils:GetJewelryTraitsBySlot(slot)
+    local jewelryTraits = {}
+    for _, item in pairs(const.REMIX_ARTIFACT_TRAITS.JEWELRY_ITEMS) do
+        if item.SLOT == slot then
+            tinsert(jewelryTraits, item.ENTRY_ID)
+        end
+    end
+    return jewelryTraits
+end
+
 rasuF = artifactTraitUtils

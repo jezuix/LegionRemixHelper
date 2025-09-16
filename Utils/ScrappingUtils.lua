@@ -32,10 +32,11 @@ function scrappingUtils:Init()
         end
     end)
 
-    addon:RegisterEvent("SCRAPPING_MACHINE_PENDING_ITEM_CHANGED", "scrappingUtils_ScrappingMachinePendingItemChanged", function()
-        self.cachedMappedPendingItems = self:GetMappedPendingScrappableItems()
-        self:AutoScrap()
-    end)
+    addon:RegisterEvent("SCRAPPING_MACHINE_PENDING_ITEM_CHANGED", "scrappingUtils_ScrappingMachinePendingItemChanged",
+        function()
+            self.cachedMappedPendingItems = self:GetMappedPendingScrappableItems()
+            self:AutoScrap()
+        end)
 end
 
 ---@param bagID number
@@ -58,7 +59,7 @@ end
 function scrappingUtils:GetMappedPendingScrappableItems()
     local pendingItemsMap = {}
     for _, itemLoc in ipairs(self:GetPendingScrappableItems()) do
-        pendingItemsMap[table.concat({itemLoc:GetBagAndSlot()}, "-")] = true
+        pendingItemsMap[table.concat({ itemLoc:GetBagAndSlot() }, "-")] = true
     end
     return pendingItemsMap
 end
@@ -84,7 +85,7 @@ function scrappingUtils:IsItemLocationPendingScrap(itemLoc)
     if not self.cachedMappedPendingItems then
         self.cachedMappedPendingItems = self:GetMappedPendingScrappableItems()
     end
-    return self.cachedMappedPendingItems[table.concat({itemLoc:GetBagAndSlot()}, "-")] or false
+    return self.cachedMappedPendingItems[table.concat({ itemLoc:GetBagAndSlot() }, "-")] or false
 end
 
 ---@return ScrappableItem[]
@@ -120,13 +121,15 @@ function scrappingUtils:GetFilteredScrappableItems(capReturn)
     local filteredItems = {}
     for _, item in ipairs(scrappableItems) do
         local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(item.invType)
-        local equippedItemLevel = C_Item.GetCurrentItemLevel(equippedItemLoc)
-        if equippedItemLevel - item.level >= minLevelDiff and item.quality <= maxQuality then
-            tinsert(filteredItems, item)
-        end
+        if equippedItemLoc:IsValid() then
+            local equippedItemLevel = C_Item.GetCurrentItemLevel(equippedItemLoc)
+            if equippedItemLevel - item.level >= minLevelDiff and item.quality <= maxQuality then
+                tinsert(filteredItems, item)
+            end
 
-        if capReturn and #filteredItems >= capReturn then
-            break
+            if capReturn and #filteredItems >= capReturn then
+                break
+            end
         end
     end
     return filteredItems
