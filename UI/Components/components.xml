@@ -11,4 +11,5 @@
     <script file="RoundedIcon.lua"/>
     <script file="NodeIcon.lua"/>
     <script file="ProgressBar.lua"/>
+    <script file="SpecSelect.lua"/>
 </Ui>

@@ -35,7 +35,11 @@
         "SAMPLE_ABILITIES",
         "SPEC_ACTIVE",
         "TALENT_SPEC_ACTIVATE",
-        "UIWidgetManager"
+        "UIWidgetManager",
+        "NAME",
+        "PlayerUtil",
+        "TableUtil",
+        "CopyTableSafe"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

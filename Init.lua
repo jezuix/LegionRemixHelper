@@ -10,6 +10,9 @@ local defaultDatabase = {
     },
     collectionsTab = {
         selected = 1,
+    },
+    artifactTraits = {
+        autoActive = {}
     }
 }
 

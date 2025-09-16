@@ -42,22 +42,27 @@ constants.REMIX_ARTIFACT_TRAITS = {
     TREE_ID = 1161,
     ROWS = {
         NATURE_ROW = {
+            NAME = "Nature",
             ID = 1,
             ROOT_NODE_ID = 108114, -- Call of the Forest
         },
         FEL_ROW = {
+            NAME = "Fel",
             ID = 2,
             ROOT_NODE_ID = 108113, -- Twisted Crusade
         },
         ARCANE_ROW = {
+            NAME = "Arcane",
             ID = 3,
             ROOT_NODE_ID = 108111, -- Naran's Everdisc
         },
         STORM_ROW = {
+            NAME = "Storm",
             ID = 4,
             ROOT_NODE_ID = 108112, -- Tempest Wrath
         },
         HOLY_ROW = {
+            NAME = "Holy",
             ID = 5,
             ROOT_NODE_ID = 108875, -- Vindicator's Judgment
         },
@@ -71,6 +76,9 @@ constants.REMIX_ARTIFACT_TRAITS = {
         RING = 2,
         TRINKET = 3,
     },
+    CALLBACK_CATEGORY_SPEC = "ArtifactTraitSpecUpdate",
+    CALLBACK_CATEGORY_CONFIG = "ArtifactTraitConfigUpdate",
+    CALLBACK_CATEGORY_CURRENCY = "ArtifactTraitCurrencyUpdate",
 }
 
 do

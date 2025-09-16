@@ -2,7 +2,7 @@
 ---@field RegisteredAddons table<string, RasuAddonBase>
 ---@field CreateAddon fun(self:RasuAddon, name:string, db:string|table|?, defaultDB:table|?, loc:table|?, defaultLoc:string|?, ignoreError:boolean|?) : RasuAddonBase
 ---@field GetAddon fun(self:RasuAddon, name:string) : RasuAddonBase|?
-local lib = GetLib:RegisterLibrary("RasuAddon", "5.0.2")
+local lib = GetLib:RegisterLibrary("RasuAddon", "5.1.0")
 
 if not lib then
     return
@@ -293,14 +293,19 @@ function AddonBase:OnEvent(event, ...)
 end
 
 ---@param databasePath string
----@return unknown
-function AddonBase:GetDatabaseValue(databasePath)
+---@param silent boolean|?
+---@return unknown value
+function AddonBase:GetDatabaseValue(databasePath, silent)
     local dbValue = self.Database
-    if type(dbValue) ~= "table" then error("Database is not a table!", 2) end
+    if type(dbValue) ~= "table" then
+        if silent then return nil end
+        error("Database is not a table!", 2)
+    end
     for step in databasePath:gmatch("[^%.]+") do
         if type(dbValue) == "table" then
             dbValue = dbValue[step]
         else
+            if silent then return nil end
             error(string.format("Couldn't find %s!", step), 2)
         end
     end
@@ -389,7 +394,6 @@ function AddonBase:InitDatabasePath(databasePath, defaultValue)
         dbTable = dbTable[step]
     end
 end
-
 
 function AddonBase:CopyTable(originalTbl)
     local tbl = {}
