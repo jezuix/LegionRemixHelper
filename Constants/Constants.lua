@@ -1327,7 +1327,7 @@ do
             REWARD_ID = 239705,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 5000 },
             }
@@ -1337,7 +1337,7 @@ do
             REWARD_ID = 239699,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 5000 },
             }
@@ -1347,7 +1347,7 @@ do
             REWARD_ID = 129108,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 5000 },
             }
@@ -1357,7 +1357,7 @@ do
             REWARD_ID = 140261,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1367,7 +1367,7 @@ do
             REWARD_ID = 140320,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1377,7 +1377,7 @@ do
             REWARD_ID = 140316,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1387,7 +1387,7 @@ do
             REWARD_ID = 136922,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1397,7 +1397,7 @@ do
             REWARD_ID = 131724,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1407,7 +1407,7 @@ do
             REWARD_ID = 131717,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1417,7 +1417,7 @@ do
             REWARD_ID = 129165,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1427,7 +1427,7 @@ do
             REWARD_ID = 130169,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1437,7 +1437,7 @@ do
             REWARD_ID = 142530,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1447,7 +1447,7 @@ do
             REWARD_ID = 142529,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1457,7 +1457,7 @@ do
             REWARD_ID = 142528,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1467,7 +1467,7 @@ do
             REWARD_ID = 143662,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1477,7 +1477,7 @@ do
             REWARD_ID = 153195,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1487,7 +1487,7 @@ do
             REWARD_ID = 153026,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1497,7 +1497,7 @@ do
             REWARD_ID = 153204,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1507,7 +1507,7 @@ do
             REWARD_ID = 153193,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
             }
@@ -1517,7 +1517,7 @@ do
             REWARD_ID = 140363,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
             }
@@ -1527,7 +1527,7 @@ do
             REWARD_ID = 153055,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
             }
@@ -1537,7 +1537,7 @@ do
             REWARD_ID = 153054,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
             }
@@ -1547,7 +1547,7 @@ do
             REWARD_ID = 153056,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
             }
@@ -1557,7 +1557,7 @@ do
             REWARD_ID = 141862,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1567,7 +1567,7 @@ do
             REWARD_ID = 153293,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1577,7 +1577,7 @@ do
             REWARD_ID = 153179,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1587,7 +1587,7 @@ do
             REWARD_ID = 153181,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1597,7 +1597,7 @@ do
             REWARD_ID = 153180,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1607,7 +1607,7 @@ do
             REWARD_ID = 153253,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1617,7 +1617,7 @@ do
             REWARD_ID = 153182,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1627,7 +1627,7 @@ do
             REWARD_ID = 153126,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1637,7 +1637,7 @@ do
             REWARD_ID = 153194,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
             }
@@ -1647,7 +1647,7 @@ do
             REWARD_ID = 136900,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1657,7 +1657,7 @@ do
             REWARD_ID = 153252,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1667,7 +1667,7 @@ do
             REWARD_ID = 144394,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1677,7 +1677,7 @@ do
             REWARD_ID = 142265,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1687,7 +1687,7 @@ do
             REWARD_ID = 147841,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1697,7 +1697,7 @@ do
             REWARD_ID = 147843,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1707,7 +1707,7 @@ do
             REWARD_ID = 147867,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1717,7 +1717,7 @@ do
             REWARD_ID = 153124,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
             }
@@ -1727,7 +1727,7 @@ do
             REWARD_ID = 136903,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1737,7 +1737,7 @@ do
             REWARD_ID = 140160,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1747,7 +1747,7 @@ do
             REWARD_ID = 146953,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1757,7 +1757,7 @@ do
             REWARD_ID = 151828,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1767,7 +1767,7 @@ do
             REWARD_ID = 151829,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1777,7 +1777,7 @@ do
             REWARD_ID = 153183,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1787,7 +1787,7 @@ do
             REWARD_ID = 152982,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
             }
@@ -1797,7 +1797,7 @@ do
             REWARD_ID = 136901,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
             }
@@ -1807,7 +1807,7 @@ do
             REWARD_ID = 130167,
             REWARD_TYPE = enums.REWARD_TYPE.PET,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
             }
@@ -1817,7 +1817,7 @@ do
             REWARD_ID = 119211,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
             }
@@ -1827,7 +1827,7 @@ do
             REWARD_ID = 153004,
             REWARD_TYPE = enums.REWARD_TYPE.TOY,
             SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
             }
@@ -1837,7 +1837,7 @@ do
             REWARD_ID = 253385,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1847,7 +1847,7 @@ do
             REWARD_ID = 253358,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1857,7 +1857,7 @@ do
             REWARD_ID = 253551,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1867,7 +1867,7 @@ do
             REWARD_ID = 253556,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1877,7 +1877,7 @@ do
             REWARD_ID = 253561,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1887,7 +1887,7 @@ do
             REWARD_ID = 253565,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1897,7 +1897,7 @@ do
             REWARD_ID = 253569,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
             }
@@ -1907,7 +1907,7 @@ do
             REWARD_ID = 253382,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1917,7 +1917,7 @@ do
             REWARD_ID = 255156,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1927,7 +1927,7 @@ do
             REWARD_ID = 253379,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1937,7 +1937,7 @@ do
             REWARD_ID = 241416,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1947,7 +1947,7 @@ do
             REWARD_ID = 241415,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1957,7 +1957,7 @@ do
             REWARD_ID = 241414,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1967,7 +1967,7 @@ do
             REWARD_ID = 241413,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1977,7 +1977,7 @@ do
             REWARD_ID = 241412,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1987,7 +1987,7 @@ do
             REWARD_ID = 241411,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -1997,7 +1997,7 @@ do
             REWARD_ID = 241410,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2007,7 +2007,7 @@ do
             REWARD_ID = 241409,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2017,7 +2017,7 @@ do
             REWARD_ID = 241408,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2027,7 +2027,7 @@ do
             REWARD_ID = 241407,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2037,7 +2037,7 @@ do
             REWARD_ID = 241406,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2047,7 +2047,7 @@ do
             REWARD_ID = 241403,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2057,7 +2057,7 @@ do
             REWARD_ID = 241402,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2067,7 +2067,7 @@ do
             REWARD_ID = 241400,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2077,7 +2077,7 @@ do
             REWARD_ID = 241399,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2087,7 +2087,7 @@ do
             REWARD_ID = 241397,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2097,7 +2097,7 @@ do
             REWARD_ID = 241396,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2107,7 +2107,7 @@ do
             REWARD_ID = 241395,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2117,7 +2117,7 @@ do
             REWARD_ID = 241358,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2127,7 +2127,7 @@ do
             REWARD_ID = 241357,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2137,7 +2137,7 @@ do
             REWARD_ID = 241356,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2147,7 +2147,7 @@ do
             REWARD_ID = 241355,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2157,7 +2157,7 @@ do
             REWARD_ID = 251271,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2167,7 +2167,7 @@ do
             REWARD_ID = 241360,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2177,7 +2177,7 @@ do
             REWARD_ID = 241392,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2187,7 +2187,7 @@ do
             REWARD_ID = 241390,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2197,7 +2197,7 @@ do
             REWARD_ID = 241389,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2207,7 +2207,7 @@ do
             REWARD_ID = 241388,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2217,7 +2217,7 @@ do
             REWARD_ID = 241387,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2227,7 +2227,7 @@ do
             REWARD_ID = 241386,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2237,7 +2237,7 @@ do
             REWARD_ID = 241385,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
@@ -2247,7 +2247,7 @@ do
             REWARD_ID = 139170,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2257,7 +2257,7 @@ do
             REWARD_ID = 139169,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2267,7 +2267,7 @@ do
             REWARD_ID = 139168,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2277,7 +2277,7 @@ do
             REWARD_ID = 139167,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2287,7 +2287,7 @@ do
             REWARD_ID = 241440,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2297,7 +2297,7 @@ do
             REWARD_ID = 241438,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2307,7 +2307,7 @@ do
             REWARD_ID = 241437,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2317,7 +2317,7 @@ do
             REWARD_ID = 241435,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2327,7 +2327,7 @@ do
             REWARD_ID = 241433,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2337,7 +2337,7 @@ do
             REWARD_ID = 241432,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2347,7 +2347,7 @@ do
             REWARD_ID = 241430,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2357,7 +2357,7 @@ do
             REWARD_ID = 241429,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2367,7 +2367,7 @@ do
             REWARD_ID = 241384,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2377,7 +2377,7 @@ do
             REWARD_ID = 241383,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2387,7 +2387,7 @@ do
             REWARD_ID = 241382,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2397,7 +2397,7 @@ do
             REWARD_ID = 241381,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2407,7 +2407,7 @@ do
             REWARD_ID = 241380,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2417,7 +2417,7 @@ do
             REWARD_ID = 241379,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2427,7 +2427,7 @@ do
             REWARD_ID = 241378,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2437,7 +2437,7 @@ do
             REWARD_ID = 241377,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2447,7 +2447,7 @@ do
             REWARD_ID = 241376,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2457,7 +2457,7 @@ do
             REWARD_ID = 241375,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2467,7 +2467,7 @@ do
             REWARD_ID = 241374,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2477,7 +2477,7 @@ do
             REWARD_ID = 241373,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2487,7 +2487,7 @@ do
             REWARD_ID = 241372,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2497,7 +2497,7 @@ do
             REWARD_ID = 241371,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2507,7 +2507,7 @@ do
             REWARD_ID = 241370,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2517,7 +2517,7 @@ do
             REWARD_ID = 241369,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2527,7 +2527,7 @@ do
             REWARD_ID = 241364,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2537,7 +2537,7 @@ do
             REWARD_ID = 241363,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2547,7 +2547,7 @@ do
             REWARD_ID = 241362,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2557,7 +2557,7 @@ do
             REWARD_ID = 241361,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2567,7 +2567,7 @@ do
             REWARD_ID = 241444,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2577,7 +2577,7 @@ do
             REWARD_ID = 241443,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2587,7 +2587,7 @@ do
             REWARD_ID = 241442,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2597,7 +2597,7 @@ do
             REWARD_ID = 241441,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2607,7 +2607,7 @@ do
             REWARD_ID = 241359,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2617,7 +2617,7 @@ do
             REWARD_ID = 241368,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2627,7 +2627,7 @@ do
             REWARD_ID = 241367,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2637,7 +2637,7 @@ do
             REWARD_ID = 241366,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2647,7 +2647,7 @@ do
             REWARD_ID = 241365,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2657,7 +2657,7 @@ do
             REWARD_ID = 241391,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2667,7 +2667,7 @@ do
             REWARD_ID = 253594,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2677,7 +2677,7 @@ do
             REWARD_ID = 253588,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2687,7 +2687,7 @@ do
             REWARD_ID = 254753,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2697,7 +2697,7 @@ do
             REWARD_ID = 254754,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2707,7 +2707,7 @@ do
             REWARD_ID = 254752,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2717,7 +2717,7 @@ do
             REWARD_ID = 241439,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2727,7 +2727,7 @@ do
             REWARD_ID = 241436,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2737,7 +2737,7 @@ do
             REWARD_ID = 241434,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2747,7 +2747,7 @@ do
             REWARD_ID = 241431,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2757,7 +2757,7 @@ do
             REWARD_ID = 241428,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2767,7 +2767,7 @@ do
             REWARD_ID = 241427,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2777,7 +2777,7 @@ do
             REWARD_ID = 241425,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2787,7 +2787,7 @@ do
             REWARD_ID = 241424,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2797,7 +2797,7 @@ do
             REWARD_ID = 241422,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2807,7 +2807,7 @@ do
             REWARD_ID = 241421,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2817,7 +2817,7 @@ do
             REWARD_ID = 241419,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2827,7 +2827,7 @@ do
             REWARD_ID = 241418,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2837,7 +2837,7 @@ do
             REWARD_ID = 241417,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2847,7 +2847,7 @@ do
             REWARD_ID = 241426,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2857,7 +2857,7 @@ do
             REWARD_ID = 241423,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2867,7 +2867,7 @@ do
             REWARD_ID = 241420,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
@@ -2876,10 +2876,10 @@ do
             --
             REWARD_ID = 000000,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
-            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
-            SOURCE_TYPE = enums.RARE.VENDOR,
+            SOURCE_ID = npcs.LFR_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
-                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
             }
         },
     }
