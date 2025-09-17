@@ -4433,13 +4433,183 @@ do
             }
         },
         {
-            --
-            REWARD_ID = 000000,
+            -- Ensemble: Cloaks of the Fel Battler
+            REWARD_ID = 242231,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2000 },
+            }
+        },
+        {
+            -- Ensemble: Druidic Fur Drapes
+            REWARD_ID = 242229,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2000 },
+            }
+        },
+        {
+            -- Ensemble: Runespeaker Wraps
+            REWARD_ID = 235630,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
             SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 4000 },
+            }
+        },
+        {
+            -- Ensemble: Stormborne Wraps
+            REWARD_ID = 241590,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 4000 },
+            }
+        },
+        {
+            -- Ensemble: Cloaks of the Green Mountains
+            REWARD_ID = 242240,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 4000 },
+            }
+        },
+        {
+            -- Ensemble: Cloaks of the Lost Gladiator
+            REWARD_ID = 241593,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 4000 },
+            }
+        },
+        {
+            -- Ensemble: Legion Hunter's Capes
+            REWARD_ID = 241591,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Dalaran's Finest Silken Cloaks
+            REWARD_ID = 242234,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Cloaks of Silken Knowledge
+            REWARD_ID = 242233,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Drapes of Devouring Night
+            REWARD_ID = 242235,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Eredar Battle Capes
+            REWARD_ID = 242239,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Argussian Demonsbane Cloaks
+            REWARD_ID = 242237,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Drapes of Eredar Finery
+            REWARD_ID = 242236,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 6000 },
+            }
+        },
+        {
+            -- Ensemble: Cloaks of the Ironskin Gladiator
+            REWARD_ID = 242232,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 8000 },
+            }
+        },
+        {
+            -- Ensemble: Shrouds of the Lost Deathwyrms
+            REWARD_ID = 242230,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 8000 },
+            }
+        },
+        {
+            -- Ensemble: Shrouds of Azj'Aqir
+            REWARD_ID = 242228,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 8000 },
+            }
+        },
+        {
+            -- Ensemble: Cloaks of the Lost Combatant
+            REWARD_ID = 241592,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 8000 },
+            }
+        },
+        {
+            -- Ensemble: Cloaks of the Antoran Guard
+            REWARD_ID = 242238,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 8000 },
             }
         },
     }
