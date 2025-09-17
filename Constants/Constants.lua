@@ -1323,11 +1323,521 @@ do
             }
         },
         {
+            -- Morsel
+            REWARD_ID = 239705,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 5000 },
+            }
+        },
+        {
+            -- Tidbit
+            REWARD_ID = 239699,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 5000 },
+            }
+        },
+        {
+            -- Son of Goredome
+            REWARD_ID = 129108,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 5000 },
+            }
+        },
+        {
+            -- Hungering Claw
+            REWARD_ID = 140261,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Corgnelius
+            REWARD_ID = 140320,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Firebat Pup
+            REWARD_ID = 140316,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Wyrmy Tunkins
+            REWARD_ID = 136922,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Crystalline Eye of Undravius
+            REWARD_ID = 131724,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Starlight Beacon
+            REWARD_ID = 131717,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Barnacle-Encrusted Gem
+            REWARD_ID = 129165,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Tournament Favor
+            REWARD_ID = 130169,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Crate of Bobbers: Tugboat
+            REWARD_ID = 142530,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Crate of Bobbers: Cat Head
+            REWARD_ID = 142529,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Crate of Bobbers: Can of Worms
+            REWARD_ID = 142528,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Crate of Bobbers: Wooden Pepe
+            REWARD_ID = 143662,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Uuna's Doll
+            REWARD_ID = 153195,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Cross Gazer
+            REWARD_ID = 153026,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- All-Seer's Eye
+            REWARD_ID = 153204,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Baarut the Brisk
+            REWARD_ID = 153193,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 10000 },
+            }
+        },
+        {
+            -- Pocket Fel Spreader
+            REWARD_ID = 140363,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
+            }
+        },
+        {
+            -- Fel-Afflicted Skyfin
+            REWARD_ID = 153055,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
+            }
+        },
+        {
+            -- Docile Skyfin
+            REWARD_ID = 153054,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
+            }
+        },
+        {
+            -- Grasping Manifestation
+            REWARD_ID = 153056,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 20000 },
+            }
+        },
+        {
+            -- Mote of Light
+            REWARD_ID = 141862,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Sightless Eye
+            REWARD_ID = 153293,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Blue Conservatory Scroll
+            REWARD_ID = 153179,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Red Conservatory Scroll
+            REWARD_ID = 153181,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Yellow Conservatory Scroll
+            REWARD_ID = 153180,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- S.F.E. Interceptor
+            REWARD_ID = 153253,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Holy Lightsphere
+            REWARD_ID = 153182,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Micro-Artillery Controller
+            REWARD_ID = 153126,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Legion Communication Orb
+            REWARD_ID = 153194,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 25000 },
+            }
+        },
+        {
+            -- Hateful Eye
+            REWARD_ID = 136900,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Rebellious Imp
+            REWARD_ID = 153252,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Tylarr Gronnden
+            REWARD_ID = 144394,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Big Red Raygun
+            REWARD_ID = 142265,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Orphaned Felbat
+            REWARD_ID = 147841,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Sira's Extra Cloak
+            REWARD_ID = 147843,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Pilfered Sweeper
+            REWARD_ID = 147867,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Spire of Spite
+            REWARD_ID = 153124,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 35000 },
+            }
+        },
+        {
+            -- Nightmare Whelpling
+            REWARD_ID = 136903,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Stormforged Vrykul Horn
+            REWARD_ID = 140160,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Scraps
+            REWARD_ID = 146953,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Ageless Bronze Drake
+            REWARD_ID = 151828,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Bronze Proto-Whelp
+            REWARD_ID = 151829,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Barrier Generator
+            REWARD_ID = 153183,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Vixx's Chest of Tricks
+            REWARD_ID = 152982,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 80000 },
+            }
+        },
+        {
+            -- Eye of Inquisition
+            REWARD_ID = 136901,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
+            }
+        },
+        {
+            -- Thistleleaf Adventurer
+            REWARD_ID = 130167,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
+            }
+        },
+        {
+            -- Golden Hearthstone Card: Lord Jaraxxus
+            REWARD_ID = 119211,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
+            }
+        },
+        {
+            -- Unstable Portal Emitter
+            REWARD_ID = 153004,
+            REWARD_TYPE = enums.REWARD_TYPE.TOY,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
+            }
+        },
+        {
             --
             REWARD_ID = 000000,
-            REWARD_TYPE = enums.REWARD_TYPE.MOUNT,
-            SOURCE_ID = npcs.OTHER_MOUNTS.ID,
-            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            REWARD_TYPE = enums.REWARD_TYPE.PET,
+            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
             }
