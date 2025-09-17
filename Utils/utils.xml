@@ -5,4 +5,5 @@
     <script file="ResearchTaskUtils.lua"/>
     <script file="ScrappingUtils.lua"/>
     <script file="ArtifactTraitUtils.lua"/>
+    <script file="CollectionUtils.lua"/>
 </Ui>

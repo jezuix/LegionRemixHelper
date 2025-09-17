@@ -68,7 +68,10 @@ function dropdownComponent:CreateFrame(parent, options)
     for _, anchor in ipairs(options.anchors) do
         dropdown:SetPoint(unpack(anchor))
     end
-    dropdown:SetDefaultText(options.defaultText)
+
+    if dropdown.SetDefaultText then
+        dropdown:SetDefaultText(options.defaultText)
+    end
 
     dropdown.selectedValue = options.defaultSelection
     function dropdown.SetSelection(value)

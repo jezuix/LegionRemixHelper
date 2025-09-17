@@ -117,10 +117,12 @@ end
 
 function collectionsTabUI:SetupTraitsTab()
     local artifactTraitsContent = self:AddTopTab("Artifact Traits")
-    local collectionContent = self:AddTopTab("Collection")
-
     local traitsUI = Private.ArtifactTraitsTabUI
     traitsUI:Init(artifactTraitsContent)
+
+    local collectionContent = self:AddTopTab("Collection")
+    local collectionUI = Private.CollectionTabUI
+    collectionUI:Init(collectionContent)
 end
 
 ---@return Frame contentFrame

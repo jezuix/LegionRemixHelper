@@ -41,7 +41,13 @@
         "TableUtil",
         "CopyTableSafe",
         "EquipmentManager_EquipItemByLocation",
-        "EquipmentManager_EquipContainerItem"
+        "EquipmentManager_EquipContainerItem",
+        "class",
+        "TYPE",
+        "PET",
+        "ACHIEVEMENT",
+        "TOY",
+        "WORLD"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

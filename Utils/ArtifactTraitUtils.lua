@@ -313,6 +313,9 @@ end
 
 function artifactTraitUtils:OnPowerUpdate()
     self:TriggerCallbacks(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_CURRENCY)
+    -- Check where we are and if we could purchase the next node
+    -- First we would check the active Row if that isn't found we just buy the base traits, if that is found however we try to purchase the next node in that row
+    -- if the row isn't purchased but we have all the base traits we need to get the config choice or default to row 1
 end
 
 ---@return number[] specIDs
