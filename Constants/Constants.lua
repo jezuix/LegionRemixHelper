@@ -1833,13 +1833,423 @@ do
             }
         },
         {
-            --
-            REWARD_ID = 000000,
-            REWARD_TYPE = enums.REWARD_TYPE.PET,
-            SOURCE_ID = npcs.RARE_COLLECTIONS.ID,
+            -- Ensemble: Mantles of the Nightwell
+            REWARD_ID = 253385,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
             SOURCE_TYPE = enums.RARE.VENDOR,
             PRICES = {
-                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 100000 },
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Ensemble: Tideskorn Hunter's Munitions
+            REWARD_ID = 253358,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Arsenal: Mo'arg Swords
+            REWARD_ID = 253551,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Arsenal: Bone Scythes
+            REWARD_ID = 253556,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Arsenal: Immortal Maces
+            REWARD_ID = 253561,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Arsenal: Mo'arg Hornmaces
+            REWARD_ID = 253565,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Arsenal: Gems of the Lightforged Draenei
+            REWARD_ID = 253569,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 2500 },
+            }
+        },
+        {
+            -- Arsenal: Arms of the Felforged Knight
+            REWARD_ID = 253382,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Arsenal: Odyn's Spears
+            REWARD_ID = 255156,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Windrunner Quivers
+            REWARD_ID = 253379,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Blazing Dreamscribed Robes
+            REWARD_ID = 241416,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Dreamwatcher Vestments
+            REWARD_ID = 241415,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Dreamseeker Vestments
+            REWARD_ID = 241414,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Nightrune Robes
+            REWARD_ID = 241413,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Earthrune Robes
+            REWARD_ID = 241412,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Skyrune Robes
+            REWARD_ID = 241411,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Slayer's Golden Scarguards
+            REWARD_ID = 241410,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Slayer's Silver Scarguards
+            REWARD_ID = 241409,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Fel-Bloodied Battlegear
+            REWARD_ID = 241408,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Searaider's Battlegarb
+            REWARD_ID = 241407,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Gladeraider's Battlegarb
+            REWARD_ID = 241406,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Jarl's Battlescales
+            REWARD_ID = 241403,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Ruby Drake Hunter's Kit
+            REWARD_ID = 241402,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Highpeak Dragonscale
+            REWARD_ID = 241400,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Dreamweald Dragonscale
+            REWARD_ID = 241399,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Firewurm Dragonscale
+            REWARD_ID = 241397,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Jarl's Battlehorns
+            REWARD_ID = 241396,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Storm Champion's Warharness
+            REWARD_ID = 241395,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Dream Defender's Emerald Guardplate
+            REWARD_ID = 241358,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Barkbinds of the Archdruid's Nightmare
+            REWARD_ID = 241357,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Fel-Marked Scales
+            REWARD_ID = 241356,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Verdant Dreamscribed Robes
+            REWARD_ID = 241355,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Tidesoaked Battlegear
+            REWARD_ID = 251271,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Stygian Silks
+            REWARD_ID = 241360,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Argussian Demonsbane Armor
+            REWARD_ID = 241392,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Vestments of Eredathian Sacrifice
+            REWARD_ID = 241390,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Antoran Guard's Golden Battleplate
+            REWARD_ID = 241389,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Heritage of the Lightforged - Holy Gold
+            REWARD_ID = 241388,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Heritage of the Lightforged - Hologemmed
+            REWARD_ID = 241387,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Heritage of the Lightforged - Crimson Vengeance
+            REWARD_ID = 241386,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            -- Ensemble: Heritage of the Shal'dorei - Vineyard Red
+            REWARD_ID = 241385,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+            }
+        },
+        {
+            --
+            REWARD_ID = 000000,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
             }
         },
     }
