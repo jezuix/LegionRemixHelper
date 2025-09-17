@@ -4363,13 +4363,83 @@ do
             }
         },
         {
-            --
-            REWARD_ID = 000000,
+            -- Ensemble: Skyborne Brigandine
+            REWARD_ID = 241405,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
             SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Seaborne Brigandine
+            REWARD_ID = 241404,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Sunborne Runemail
+            REWARD_ID = 241401,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Earthbreaker Dragonscale
+            REWARD_ID = 241398,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Val'kyr's Warharness
+            REWARD_ID = 241394,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Winged Plate of the Valhalas Champion
+            REWARD_ID = 241393,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Emerald Drake Hunter's Kit
+            REWARD_ID = 241354,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            --
+            REWARD_ID = 000000,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DISCOUNT_CLOAK_DEALER.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 4000 },
             }
         },
     }
