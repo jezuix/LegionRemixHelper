@@ -2713,10 +2713,170 @@ do
             }
         },
         {
+            -- Ensemble: Seawitch's Terrorcloth
+            REWARD_ID = 241439,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Nighthide Coat
+            REWARD_ID = 241436,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Chains of Nightmare's Embrace
+            REWARD_ID = 241434,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Suramar Silver Plating
+            REWARD_ID = 241431,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Vesture of Borrowed Souls
+            REWARD_ID = 241428,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Sanguine Oath Vestments
+            REWARD_ID = 241427,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Bindings of Hungering Flesh
+            REWARD_ID = 241425,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Thirsting Hides
+            REWARD_ID = 241424,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Armor of the Skyfather's Chosen
+            REWARD_ID = 241422,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Ravensteel Mail
+            REWARD_ID = 241421,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Honorforged Valorplate
+            REWARD_ID = 241419,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Bloodforged Battleplate
+            REWARD_ID = 241418,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Nightforged Felplate
+            REWARD_ID = 241417,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Raiment of Night Eternal
+            REWARD_ID = 241426,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Guise of the Nightstalker
+            REWARD_ID = 241423,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Scalemail of Devouring Night
+            REWARD_ID = 241420,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
             --
             REWARD_ID = 000000,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
-            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_ID = npcs.DUNGEON_APPAREL.ID,
             SOURCE_TYPE = enums.RARE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
