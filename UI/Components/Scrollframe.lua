@@ -128,7 +128,7 @@ function scrollFrameComponent:CreateFrame(parent, options)
         scrollView = CreateScrollBoxListGridView(options.elements_per_row)
         scrollView:SetPadding(options.element_padding, 0, 0, 0, options.element_padding, options.element_padding)
         scrollView:SetElementInitializer(options.template or "BackdropTemplate", function(elementFrame, elementData)
-            elementFrame:SetSize(options.fill_width and fillWidth or options.element_height, options.element_width)
+            elementFrame:SetSize(options.fill_width and fillWidth or options.element_width, options.element_height)
             options.initializer(elementFrame, elementData)
         end)
 
