@@ -2243,13 +2243,483 @@ do
             }
         },
         {
+            -- Ensemble: Fel-Infused Cloth Armor
+            REWARD_ID = 139170,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Felshroud Leather Armor
+            REWARD_ID = 139169,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Fel-Chain Mail Armor
+            REWARD_ID = 139168,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Felforged Plate Armor
+            REWARD_ID = 139167,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Vestments of the Manasinged
+            REWARD_ID = 241440,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Moonfall Robes
+            REWARD_ID = 241438,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Battlegear of the Dreadhide Stalker
+            REWARD_ID = 241437,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Ambervale Bonehide
+            REWARD_ID = 241435,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Chains of Helheim
+            REWARD_ID = 241433,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Darkwatcher Bindings
+            REWARD_ID = 241432,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Jandvik Diver's Metal
+            REWARD_ID = 241430,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Leyline Defender's Sunplate Armor
+            REWARD_ID = 241429,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Regalia of the Hrydshal Runespeaker
+            REWARD_ID = 241384,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Crescent Vale Raiment
+            REWARD_ID = 241383,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Wine-dark Royal Robes
+            REWARD_ID = 241382,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Leyline Scholar's Regalia
+            REWARD_ID = 241381,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Highmountain Hides
+            REWARD_ID = 241380,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Haustvelt Leathers
+            REWARD_ID = 241379,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Sablehide Vestments
+            REWARD_ID = 241378,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Llothien Prowler's Kit
+            REWARD_ID = 241377,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Dreadthorn Battlegear
+            REWARD_ID = 241376,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Scales of Remembered Eternity
+            REWARD_ID = 241375,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Stormborn Laminar Armor
+            REWARD_ID = 241374,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Highmountain Riverscales
+            REWARD_ID = 241373,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Thunderpeak Boneguards
+            REWARD_ID = 241372,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Nar'thalas Graduate's Trim
+            REWARD_ID = 241371,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Kal'delar Battleplate
+            REWARD_ID = 241370,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Vrykul Funereal Regalia
+            REWARD_ID = 241369,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Riven Priesthood Regalia
+            REWARD_ID = 241364,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Lunarblight Leathers
+            REWARD_ID = 241363,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Shrinebreaker's Battlegear
+            REWARD_ID = 241362,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Moonshatter Warplate
+            REWARD_ID = 241361,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Vileweave Vestments
+            REWARD_ID = 241444,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Netherfiend Battlegear
+            REWARD_ID = 241443,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Ered'ruin Scalemail
+            REWARD_ID = 241442,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Xorothian Plate Armor
+            REWARD_ID = 241441,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Garothi Battleplate
+            REWARD_ID = 241359,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Doomsinger's Cloth Armor
+            REWARD_ID = 241368,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Arinor Keeper's Leather Armor
+            REWARD_ID = 241367,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Oronaar Disciple's Mail Armor
+            REWARD_ID = 241366,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Praetorium Guard's Plate Armor
+            REWARD_ID = 241365,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Stygian Hides
+            REWARD_ID = 241391,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Zealous Felslingers Battle Armor
+            REWARD_ID = 253594,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: World-Defiler's Battle Armor
+            REWARD_ID = 253588,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Forgotten Conservatory Clothes
+            REWARD_ID = 254753,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Eredath Lightseeker's Regalia
+            REWARD_ID = 254754,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
+            -- Ensemble: Triumvirate High Guard's Battlegear
+            REWARD_ID = 254752,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
+            SOURCE_TYPE = enums.RARE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
+            }
+        },
+        {
             --
             REWARD_ID = 000000,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
-            SOURCE_ID = npcs.EXCLUSIVE_ENSEMBLES.ID,
+            SOURCE_ID = npcs.WORLD_APPAREL_AND_TRANSMOG.ID,
             SOURCE_TYPE = enums.RARE.VENDOR,
             PRICES = {
-                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 7500 },
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
         },
     }
