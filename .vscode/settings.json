@@ -47,7 +47,9 @@
         "PET",
         "ACHIEVEMENT",
         "TOY",
-        "WORLD"
+        "WORLD",
+        "DressUpItemLink",
+        "DressUpLink"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

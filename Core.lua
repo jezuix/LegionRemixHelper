@@ -8,6 +8,7 @@ function addon:OnInitialize(...)
     Private.ScrappingUtils:Init()
     Private.ArtifactTraitUtils:Init()
     Private.ResearchTaskUtils:Init()
+    Private.CollectionUtils:Init()
 
     Private.CollectionsTabUI:Init()
 end

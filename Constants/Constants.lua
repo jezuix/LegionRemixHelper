@@ -256,6 +256,7 @@ constants.NPC = {
 
 constants.COLLECTIONS = {
     ENUM = {
+        ---@enum Enum.RHE_CollectionRewardType
         REWARD_TYPE = {
             TITLE = 1,
             SET = 2, -- We will use the Item ID for this cause we can get the set by doing: C_Item.GetItemLearnTransmogSet(itemID)
@@ -265,10 +266,12 @@ constants.COLLECTIONS = {
             MOUNT = 6, -- We will use the ITEM ID for this cause we can get the Mount by doing: C_MountJournal.GetMountFromItem(itemID)
             TOY = 7, -- We will use the ITEM ID for this cause we can get the Toy by doing: C_ToyBox.GetToyInfo(itemID)
         },
+        ---@enum Enum.RHE_CollectionSourceType
         SOURCE_TYPE = {
             ACHIEVEMENT = 1,
             VENDOR = 2,
         },
+        ---@enum Enum.RHE_CollectionPriceType
         PRICE_TYPE = { -- If a reward is buyable it will have indexed PRICES as extra field with { TYPE = PRICE_TYPE, AMOUNT = number }
             BRONZE = 1,
             HORNS_OF_THE_FIRST_SATYR = 2,
