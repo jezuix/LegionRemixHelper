@@ -4003,13 +4003,373 @@ do
             }
         },
         {
-            --
-            REWARD_ID = 000000,
+            -- Ensemble: Regalia of Everburning Knowledge
+            REWARD_ID = 241586,
             REWARD_TYPE = enums.REWARD_TYPE.SET,
             SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
             SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Vestments of the Purifier
+            REWARD_ID = 241582,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Legacy of Azj'aqir
+            REWARD_ID = 241578,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Vestment of Second Sight
+            REWARD_ID = 241574,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Garb of the Astral Warden
+            REWARD_ID = 241570,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Vestments of Enveloped Dissonance
+            REWARD_ID = 241566,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Doomblade Battlegear
+            REWARD_ID = 241562,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Eagletalon Battlegear
+            REWARD_ID = 241558,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Regalia of Shackled Elements
+            REWARD_ID = 241553,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Dreadwyrm Battleplate
+            REWARD_ID = 241549,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Battleplate of the Highlord
+            REWARD_ID = 241545,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Warplate of the Obsidian Aspect
+            REWARD_ID = 241541,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Regalia of the Arcane Tempest
+            REWARD_ID = 241537,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Vestments of Blind Absolution
+            REWARD_ID = 241533,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Diabolic Raiment
+            REWARD_ID = 241529,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Demonbane Armor
+            REWARD_ID = 241525,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Stormheart Raiment
+            REWARD_ID = 241521,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Xuen's Battlegear
+            REWARD_ID = 241517,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Fanged Slayer's Armor
+            REWARD_ID = 241513,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Wildstalker Armor
+            REWARD_ID = 241509,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Regalia of the Skybreaker
+            REWARD_ID = 241505,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Gravewarden Armaments
+            REWARD_ID = 241501,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Radiant Lightbringer Armor
+            REWARD_ID = 241497,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Titanic Onslaught Armor
+            REWARD_ID = 241493,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Runebound Regalia
+            REWARD_ID = 241489,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Gilded Seraph's Raiment
+            REWARD_ID = 241485,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Grim Inquisitor's Regalia
+            REWARD_ID = 241481,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Felreaper Vestments
+            REWARD_ID = 241477,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Bearmantle Battlegear
+            REWARD_ID = 241473,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Chi-Ji's Battlegear
+            REWARD_ID = 241469,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Regalia of the Dashing Scoundrel
+            REWARD_ID = 241465,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Serpentstalker Guise
+            REWARD_ID = 241461,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Garb of Venerated Spirits
+            REWARD_ID = 241459,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Dreadwake Armor
+            REWARD_ID = 241453,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Light's Vanguard Battleplate
+            REWARD_ID = 241449,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            -- Ensemble: Juggernaut Battlegear
+            REWARD_ID = 241445,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.MYTHIC_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+            }
+        },
+        {
+            --
+            REWARD_ID = 000000,
+            REWARD_TYPE = enums.REWARD_TYPE.SET,
+            SOURCE_ID = npcs.LOST_AND_FOUND_APPAREL.ID,
+            SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
+            PRICES = {
+                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 15000 },
             }
         },
     }
