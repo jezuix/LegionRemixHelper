@@ -77,11 +77,8 @@ function scrollFrameComponentMixin:UpdateContent(data, keepOldData)
     end
     if not keepOldData then
         dataProvider:Flush()
-    else
     end
-    for _, part in ipairs(data) do
-        dataProvider:Insert(part)
-    end
+    dataProvider:Insert(unpack(data))
     self.scrollBox:SetScrollPercentage(scrollPercent or 1)
 end
 

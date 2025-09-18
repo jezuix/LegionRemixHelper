@@ -12,7 +12,7 @@ Private.Components = Private.Components or {}
 ---@field anchors table?
 ---@field template string?
 ---@field defaultText string?
----@field setupMenu ?fun(dropdown:table, rootDescription:table)
+---@field setupMenu ?fun(dropdown:table, rootDescription:RootMenuDescriptionProxy)
 ---@field dropdownType "DROPDOWN"|"RADIO"|?
 ---@field onSelect ?fun(value:any)
 ---@field isSelected ?fun(value:any):boolean

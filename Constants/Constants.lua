@@ -18,6 +18,13 @@ constants.MEDIA = {
     }
 }
 
+constants.COLORS = {
+    WHITE = CreateColor(1, 1, 1, 1),
+    YELLOW = CreateColor(1, 0.82, 0, 1),
+    GREY = CreateColor(0.33, 0.27, 0.20, 1),
+    LIGHT_GREY = CreateColor(0.5, 0.5, 0.5, 1),
+}
+
 constants.SCRAPPING_MACHINE = {
     MAX_SLOTS = 9,
 }
@@ -121,10 +128,11 @@ constants.RESEARCH_TASKS = {
     CALLBACK_CATEGORY = "ResearchTaskUpdate",
 }
 
-constants.REMIX_HUB_MAP_ID = 627
+constants.REMIX_HUB_MAP_ID = 619
 
 constants.NPC = {
     MYTHIC_KEYSTONES = {
+        NAME = "Lindormi",
         ID = 244792,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -133,6 +141,7 @@ constants.NPC = {
         }
     },
     WORLD_APPAREL_AND_TRANSMOG = {
+        NAME = "Larah Treebender",
         ID = 241191,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -141,6 +150,7 @@ constants.NPC = {
         }
     },
     EXCLUSIVE_ENSEMBLES = {
+        NAME = "Unicus",
         ID = 246026,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -149,6 +159,7 @@ constants.NPC = {
         }
     },
     DUNGEON_APPAREL = {
+        NAME = "Arturos",
         ID = 241147,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -157,6 +168,7 @@ constants.NPC = {
         }
     },
     LFR_APPAREL = {
+        NAME = "Aeonicus",
         ID = 241145,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -165,6 +177,7 @@ constants.NPC = {
         }
     },
     NORMAL_APPAREL = {
+        NAME = "Durus",
         ID = 241143,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -173,6 +186,7 @@ constants.NPC = {
         }
     },
     HEROIC_APPAREL = {
+        NAME = "Sacerdormu",
         ID = 246028,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -181,6 +195,7 @@ constants.NPC = {
         }
     },
     MYTHIC_APPAREL = {
+        NAME = "Pythagorus",
         ID = 241168,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -189,6 +204,7 @@ constants.NPC = {
         }
     },
     LOST_AND_FOUND_APPAREL = {
+        NAME = "Agos the Silent",
         ID = 241184,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -197,6 +213,7 @@ constants.NPC = {
         }
     },
     DISCOUNT_CLOAK_DEALER = {
+        NAME = "Freddie Threads",
         ID = 246030,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -205,6 +222,7 @@ constants.NPC = {
         }
     },
     HOUSING_VENDOR = {
+        NAME = "Domelius",
         ID = 251042,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -213,6 +231,7 @@ constants.NPC = {
         }
     },
     RARE_COLLECTIONS = {
+        NAME = "Horos",
         ID = 241167,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -221,6 +240,7 @@ constants.NPC = {
         }
     },
     CLASS_MOUNTS = {
+        NAME = "Grandmaster Jakkus",
         ID = 241186,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -229,6 +249,7 @@ constants.NPC = {
         }
     },
     OTHER_MOUNTS = {
+        NAME = "Hemet Nesingwary XVII",
         ID = 241182,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -237,6 +258,7 @@ constants.NPC = {
         }
     },
     NOSTWIN = {
+        NAME = "Nostwin",
         ID = 241179,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -245,6 +267,7 @@ constants.NPC = {
         }
     },
     ETERNUS = {
+        NAME = "Eternus",
         ID = 241748,
         LOCATION = {
             MAP_ID = constants.REMIX_HUB_MAP_ID,
@@ -279,6 +302,9 @@ constants.COLLECTIONS = {
             COSMIC_SOULSILVER = 4,
         },
     },
+    DRUID_FORM_BY_ID = { -- Links the Item ID to the Quest ID that unlocks the form
+        [253025] = 92636,
+    }
 }
 
 do
@@ -297,6 +323,21 @@ do
         [enums.PRICE_TYPE.COSMIC_SOULSILVER] = {
             ITEM_ID = 253304,
         },
+    }
+
+    constants.COLLECTIONS.SOURCE_NAMES = {
+        [enums.SOURCE_TYPE.ACHIEVEMENT] = "Achievement",
+        [enums.SOURCE_TYPE.VENDOR] = "Vendor",
+    }
+
+    constants.COLLECTIONS.REWARD_TYPE_NAMES = {
+        [enums.REWARD_TYPE.TITLE] = "Title",
+        [enums.REWARD_TYPE.SET] = "Set",
+        [enums.REWARD_TYPE.PET] = "Pet",
+        [enums.REWARD_TYPE.ILLUSION] = "Illusion",
+        [enums.REWARD_TYPE.APPEARANCE] = "Appearance",
+        [enums.REWARD_TYPE.MOUNT] = "Mount",
+        [enums.REWARD_TYPE.TOY] = "Toy",
     }
 
     local npcs = constants.NPC
@@ -367,7 +408,7 @@ do
         },
         {
             -- Illusion: Felshatter
-            ILLUSION_ID = 98,
+            ILLUSION_ID = 8549, -- actually SpellItemEnchantment ID and not TransmogIllusion ID
             REWARD_ID = 253353,
             REWARD_TYPE = enums.REWARD_TYPE.ILLUSION,
             SOURCE_ID = 42630,

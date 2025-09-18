@@ -18,9 +18,9 @@ Private.Components = Private.Components or {}
 ---@field justifyH "LEFT"|"CENTER"|"RIGHT"?
 ---@field justifyV "TOP"|"MIDDLE"|"BOTTOM"?
 ---@field maxLetters integer?
----@field onEnterPressed fun(editBox:EditBox, text:string)?
----@field onEscapePressed fun(editBox:EditBox, text:string)?
----@field onTextChanged fun(editBox:EditBox, text:string, userInput:boolean)?
+---@field onEnterPressed fun(text:string)?
+---@field onEscapePressed fun(text:string)?
+---@field onTextChanged fun(text:string, userInput:boolean)?
 local defaultOptions = {
     frame_strata = "HIGH",
     width = 150,

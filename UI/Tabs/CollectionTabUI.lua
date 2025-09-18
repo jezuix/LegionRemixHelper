@@ -1,17 +1,32 @@
 ---@class AddonPrivate
 local Private = select(2, ...)
 
+local const = Private.constants
+local components = Private.Components
+
+local collEnums = const.COLLECTIONS.ENUM
+
 ---@class CollectionTabUI
 ---@field contentFrame Frame
 ---@field isUICreated boolean
+---@field scrollFrame ScrollFrameComponentObject
+---@field progress ProgressBarComponentObject
+---@field data CollectionRewardObject[]|nil
 local collectionTabUI = {
     contentFrame = nil,
     isUICreated = false,
+    scrollFrame = nil,
+    progress = nil,
+    data = nil,
+    filter = {
+        collected = true,
+        uncollected = true,
+        types = {},
+        sources = {},
+        search = "",
+    }
 }
 Private.CollectionTabUI = collectionTabUI
-
-local const = Private.constants
-local components = Private.Components
 
 --- MOVE TO EXTRA COMPONENT!!!!
 local function createCollectionItemFrame()
@@ -50,7 +65,7 @@ local function createCollectionItemFrame()
             borderCollected:SetPoint("CENTER")
             borderCollected:SetSize(56, 56)
             borderCollected:SetAtlas("collections-itemborder-collected")
-            name:SetTextColor(1, 0.82, 0, 1)
+            name:SetTextColor(const.COLORS.YELLOW:GetRGBA())
             name:SetShadowColor(0, 0, 0, 1)
         else
             iconTexture:SetPoint("CENTER", 0, 2)
@@ -61,7 +76,7 @@ local function createCollectionItemFrame()
             borderCollected:SetPoint("CENTER", 0, 2)
             borderCollected:SetSize(50, 50)
             borderCollected:SetAtlas("collections-itemborder-uncollected")
-            name:SetTextColor(0.33, 0.27, 0.20, 1)
+            name:SetTextColor(const.COLORS.GREY:GetRGBA())
             name:SetShadowColor(0, 0, 0, 0.33)
         end
     end
@@ -81,24 +96,56 @@ local function createCollectionItemFrame()
         end
     end
 
-    f:SetScript("OnEnter", function(self)
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    function f:SetDataInstanceID(dataInstanceID)
+        self.dataInstanceID = dataInstanceID
+    end
+
+    function f:RefreshTooltip()
+        if not GameTooltip:GetOwner() == self then return end
         if self.itemID then
-            GameTooltip:SetItemByID(self.itemID)
+            local itemTooltip = C_TooltipInfo.GetItemByID(self.itemID)
+            self:SetDataInstanceID(itemTooltip.dataInstanceID)
+            GameTooltip:ClearLines()
+            for _, line in ipairs(itemTooltip.lines) do
+                if line.leftText then
+                    local r, g, b = line.leftColor:GetRGB()
+                    GameTooltip:AddLine(line.leftText, r, g, b, line.wrapText)
+                end
+                if line.rightText then
+                    local r, g, b = line.rightColor:GetRGB()
+                    GameTooltip:AddLine(line.rightText, r, g, b, line.wrapText)
+                end
+            end
 
-            local cleanTooltip = C_TooltipInfo.GetItemByID(self.itemID)
-            local lastCleanLine = _G["GameTooltipTextLeft" .. #cleanTooltip.lines]
-            if lastCleanLine then
-                local prevText = lastCleanLine:GetText()
-
-                lastCleanLine:SetText(prevText .. "\n\n|cFFFFFFFF" .. self:GetParent().data:GetSourceTooltip())
+            ---@diagnostic disable-next-line: undefined-field
+            local data = self:GetParent().data
+            ---@cast data CollectionRewardObject?
+            if data and not data:IsCollected() then
+                GameTooltip:AddLine(" ")
+                GameTooltip:AddLine(data:GetSourceTooltip(), 1, 1, 1, true)
+            end
+            GameTooltip:AddLine(" ")
+            local r, g, b = const.COLORS.LIGHT_GREY:GetRGB()
+            GameTooltip:AddLine("Ctrl-Click to preview\nShift-Click to Link", r, g, b, true)
+            if data and data:HasSourceType(collEnums.SOURCE_TYPE.VENDOR) then
+                GameTooltip:AddLine("Alt-Click to set a Waypoint to the Vendor", r, g, b, true)
             end
         else
             GameTooltip:SetText(self.name or "No Name")
         end
-
-
         GameTooltip:Show()
+    end
+
+    Private.Addon:RegisterEvent("TOOLTIP_DATA_UPDATE", tostring(f), function(_, _, dataInstanceID)
+        if f.dataInstanceID and dataInstanceID == f.dataInstanceID then
+            f:RefreshTooltip()
+        end
+    end)
+
+    f:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+
+        f:RefreshTooltip()
 
         f:SetScript("OnUpdate", function()
             if IsModifiedClick("DRESSUP") then
@@ -112,12 +159,17 @@ local function createCollectionItemFrame()
     f:SetScript("OnLeave", function()
         GameTooltip:Hide()
         ResetCursor()
+        f:SetDataInstanceID(nil)
         f:SetScript("OnUpdate", nil)
     end)
 
     f:SetScript("OnClick", function(self)
         if IsModifiedClick("DRESSUP") then
-            rasuH:PreviewByItemID(self.itemID)
+            self:GetParent().data:Preview()
+        elseif IsModifiedClick("CHATLINK") then
+            self:GetParent().data:Link()
+        elseif IsAltKeyDown() then
+            self:GetParent().data:SetVendorWaypoint()
         end
     end)
 
@@ -125,8 +177,6 @@ local function createCollectionItemFrame()
 end
 
 function collectionTabUI:CreateTabUI()
-    local utils = Private.CollectionUtils
-
     local itemsFrame = CreateFrame("Frame", nil, self.contentFrame)
     itemsFrame:SetPoint("TOPLEFT")
     itemsFrame:SetPoint("BOTTOMRIGHT", 0, 50)
@@ -168,7 +218,6 @@ function collectionTabUI:CreateTabUI()
             frame.icon:SetCollected(data:IsCollected())
         end
     })
-    scrollFrame:UpdateContent(utils:DEV_GetEverything())
 
     local filterDropdown = components.Dropdown:CreateFrame(itemsFrame, {
         anchors = {
@@ -177,14 +226,81 @@ function collectionTabUI:CreateTabUI()
         width = 80,
         height = 20,
         template = "WowStyle1FilterDropdownTemplate",
+        setupMenu = function (dropdown, rootDescription)
+            rootDescription:CreateCheckbox("Collected", function (data)
+                return self.filter.collected
+            end,
+            function ()
+                self.filter.collected = not self.filter.collected
+                self:UpdateFilteredData()
+            end)
+            rootDescription:CreateCheckbox("Not Collected", function (data)
+                return self.filter.uncollected
+            end,
+            function ()
+                self.filter.uncollected = not self.filter.uncollected
+                self:UpdateFilteredData()
+            end)
+            ---@diagnostic disable-next-line: missing-parameter
+            local sourceSubMenu = rootDescription:CreateButton("Sources")
+            sourceSubMenu:CreateButton("Check All", function ()
+                for sourceEnum in pairs(self.filter.sources) do
+                    self.filter.sources[sourceEnum] = true
+                end
+                self:UpdateFilteredData()
+                return MenuResponse.Refresh
+            end)
+            sourceSubMenu:CreateButton("Uncheck All", function ()
+                for sourceEnum in pairs(self.filter.sources) do
+                    self.filter.sources[sourceEnum] = false
+                end
+                self:UpdateFilteredData()
+                return MenuResponse.Refresh
+            end)
+            for sourceEnum in pairs(self.filter.sources) do
+                sourceSubMenu:CreateCheckbox(const.COLLECTIONS.SOURCE_NAMES[sourceEnum], function ()
+                    return self.filter.sources[sourceEnum]
+                end,
+                function ()
+                    self.filter.sources[sourceEnum] = not self.filter.sources[sourceEnum]
+                    self:UpdateFilteredData()
+                end)
+            end
+            ---@diagnostic disable-next-line: missing-parameter
+            local typesSubMenu = rootDescription:CreateButton("Types")
+            typesSubMenu:CreateButton("Check All", function ()
+                for typeEnum in pairs(self.filter.types) do
+                    self.filter.types[typeEnum] = true
+                end
+                self:UpdateFilteredData()
+                return MenuResponse.Refresh
+            end)
+            typesSubMenu:CreateButton("Uncheck All", function ()
+                for typeEnum in pairs(self.filter.types) do
+                    self.filter.types[typeEnum] = false
+                end
+                self:UpdateFilteredData()
+                return MenuResponse.Refresh
+            end)
+            for typeEnum in pairs(self.filter.types) do
+                typesSubMenu:CreateCheckbox(const.COLLECTIONS.REWARD_TYPE_NAMES[typeEnum], function ()
+                    return self.filter.types[typeEnum]
+                end,
+                function ()
+                    self.filter.types[typeEnum] = not self.filter.types[typeEnum]
+                    self:UpdateFilteredData()
+                end)
+            end
+        end
     })
 
     local searchBar = components.TextBox:CreateFrame(itemsFrame, {
         anchors = {
             { "RIGHT", filterDropdown.dropdown, "LEFT", -5, 0 },
         },
-        onTextChanged = function(...)
-            print(...)
+        onTextChanged = function(text)
+            self.filter.search = text
+            self:UpdateFilteredData()
         end,
         instructions = "Search",
     })
@@ -197,16 +313,75 @@ function collectionTabUI:CreateTabUI()
         height = 12,
         barColor = CreateColor(0.2, 0.6, 0.2, 1),
     })
+
+    self.scrollFrame = scrollFrame
+    self.progress = progress
+end
+
+---@param reward CollectionRewardObject
+---@param filter {collected:boolean, uncollected:boolean, types:boolean[], sources:boolean[], search:string}
+function collectionTabUI:MatchFilter(reward, filter)
+    local isCollected = reward:IsCollected()
+    if isCollected and not filter.collected then return false end
+    if not isCollected and not filter.uncollected then return false end
+    if not filter.types[reward:GetRewardType()] then return false end
+    local sources = reward:GetSourceTypes()
+    local sourceMatch = false
+    for _, source in ipairs(sources) do
+        if filter.sources[source] then
+            sourceMatch = true
+            break
+        end
+    end
+    if not sourceMatch then return false end
+    if filter.search and filter.search ~= "" then
+        local name = reward:GetName()
+        if not name or not name:lower():find(filter.search:lower()) then
+            return false
+        end
+    end
+    return true
+end
+
+function collectionTabUI:UpdateFilteredData()
+    local filtered = {}
+    if not self.data then return end
+    local filter = self.filter
+
+    for _, reward in ipairs(self.data) do
+        if self:MatchFilter(reward, filter) then
+            tinsert(filtered, reward)
+        end
+    end
+
+    self.scrollFrame:UpdateContent(filtered)
 end
 
 ---@param contentFrame Frame
 function collectionTabUI:Init(contentFrame)
     self.contentFrame = contentFrame
 
+    for _, source in pairs(collEnums.SOURCE_TYPE) do
+        self.filter.sources[source] = true
+    end
+    for _, rType in pairs(collEnums.REWARD_TYPE) do
+        self.filter.types[rType] = true
+    end
+
     contentFrame:HookScript("OnShow", function()
         if not self.isUICreated then
             self.isUICreated = true
             self:CreateTabUI()
+        end
+
+
+        local data, collected, total = Private.CollectionUtils:GetCollectionData()
+        if data then
+            self.data = data
+            self:UpdateFilteredData()
+            self.progress:SetValue(collected)
+            self.progress:SetMinMaxValues(0, total)
+            self.progress:SetLabelText(string.format("%d / %d (%.2f%%)", collected, total, (collected / total) * 100))
         end
     end)
 end
