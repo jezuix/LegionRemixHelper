@@ -138,11 +138,12 @@ end
 
 ---@return table<number, number[]> rowTraits
 function artifactTraitUtils:GetRowTraits()
-    return CopyTableSafe(self.rowTraits)
+    if not self.rowTraits then return {} end
+    return CopyTable(self.rowTraits)
 end
 
 function artifactTraitUtils:GetRowTraitsForRow(rowID)
-    return CopyTableSafe(self:GetRowTraits()[rowID])
+    return CopyTable(self:GetRowTraits()[rowID])
 end
 
 ---@param treeID number|nil
@@ -399,7 +400,8 @@ function artifactTraitUtils:ResetTree()
 end
 
 function artifactTraitUtils:GetBaseTraits()
-    return CopyTableSafe(self.baseTraits)
+    if not self.baseTraits then return {} end
+    return CopyTable(self.baseTraits)
 end
 
 function artifactTraitUtils:GetActiveRowID()

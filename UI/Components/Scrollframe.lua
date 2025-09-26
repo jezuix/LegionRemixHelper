@@ -141,9 +141,13 @@ function scrollFrameComponent:CreateFrame(parent, options)
         if options.type == "LIST" then
             scrollView:SetElementExtent(options.element_height)
         elseif options.type == "GRID" then
-            scrollView:SetElementSizeCalculator(function()
-                return options.element_width, options.element_height
-            end)
+            if scrollView.SetElementSizeCalculator then
+                scrollView:SetElementSizeCalculator(function()
+                    return options.element_width, options.element_height
+                end)
+            else
+                scrollView:SetElementExtent(options.element_height)
+            end
         end
     end
 

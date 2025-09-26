@@ -45,6 +45,7 @@ local const = Private.constants
 ---@field rewardType Enum.RHE_CollectionRewardType|nil
 ---@field sourceTypes Enum.RHE_CollectionSourceType[]
 ---@field vendorInfo NPCInfo|nil
+---@field achievementID number|nil
 local collectionRewardMixin = {
     collectionCheckFunction = nil,
     collected = false,
@@ -56,6 +57,8 @@ local collectionRewardMixin = {
     rewardType = nil,
     sourceTypes = nil,
     vendorLocation = nil,
+    vendorInfo = nil,
+    achievementID = nil,
 }
 
 ---@return boolean isCollected
@@ -108,10 +111,23 @@ function collectionRewardMixin:SetVendorWaypoint()
         return
     else
         local mapPoint = UiMapPoint.CreateFromVector2D(loc.MAP_ID, CreateVector2D(loc.X / 100, loc.Y / 100))
-	    C_Map.SetUserWaypoint(mapPoint)
-		C_SuperTrack.SetSuperTrackedUserWaypoint(true)
-		PlaySound(SOUNDKIT.UI_MAP_WAYPOINT_SUPER_TRACK_ON)
+        C_Map.SetUserWaypoint(mapPoint)
+        C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+        PlaySound(SOUNDKIT.UI_MAP_WAYPOINT_SUPER_TRACK_ON)
     end
+end
+
+function collectionRewardMixin:ShowAchievement()
+    if not self.achievementID then return end
+    if not AchievementFrame then
+        AchievementFrame_LoadUI()
+    end
+    ShowUIPanel(AchievementFrame)
+    AchievementFrame_SelectAchievement(self.achievementID)
+end
+
+function collectionRewardMixin:SetAchievementId(achievementID)
+    self.achievementID = achievementID
 end
 
 ---@param vendorInfo NPCInfo
@@ -257,6 +273,8 @@ function collectionUtils:CreateCollectionObject(reward, name, icon, sourceToolti
         obj:AddSourceType(source.SOURCE_TYPE)
         if source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.VENDOR then
             obj:SetVendorInfo(collectionUtils:GetVendorByID(source.SOURCE_ID))
+        elseif source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.ACHIEVEMENT then
+            obj:SetAchievementId(source.SOURCE_ID)
         end
     end
 
@@ -388,6 +406,7 @@ function collectionUtils:GetSourceTooltip(reward)
     for _, source in ipairs(reward.SOURCES) do
         if source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.ACHIEVEMENT then
             local name = select(2, GetAchievementInfo(source.SOURCE_ID))
+            name = name or "Unknown Achievement"
             tooltip = ("%s\n%s%s\n"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode("Achievement: "), name)
         elseif source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.VENDOR then
             local vendorInfo = self:GetVendorByID(source.SOURCE_ID)
@@ -396,6 +415,7 @@ function collectionUtils:GetSourceTooltip(reward)
             local prices = ""
             for _, priceInfo in ipairs(reward.PRICES) do
                 local icon = self.priceIconCache[priceInfo.TYPE]
+                icon = icon or 134400
                 prices = ("%s|T%s:12|t %d\n"):format(prices, icon, priceInfo.AMOUNT)
             end
             tooltip = ("%s\n%s%s:\n%s"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode("Vendor, "), name, prices)
@@ -415,7 +435,7 @@ function collectionUtils:LoadReward(reward)
     if rewardType == rtEnum.TITLE then
         local titleID = reward.REWARD_ID
         local name = GetTitleName(titleID)
-        if name then
+        if name and name ~= "" then
             local icon = 134939
             tooltip = name
             local collectionFunc = self:GetTitleCollectionFunction(titleID)

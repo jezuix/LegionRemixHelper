@@ -4658,3 +4658,13 @@ do
         },
     }
 end
+
+constants.QUICK_ACTION_BAR = {
+    CALLBACK_CATEGORY = "QuickActionBarUpdate",
+    ---@enum QA_ACTION_TYPE
+    ACTION_TYPE = {
+        NONE = "",
+        SPELL = "spell",
+        ITEM = "item",
+    }
+}

@@ -87,7 +87,19 @@
         "SOUNDKIT",
         "TomTom",
         "DataProviderMixin",
-        "MenuResponse"
+        "MenuResponse",
+        "LE_EXPANSION_LEVEL_CURRENT",
+        "CollectionsJournalTab1",
+        "UIPanelWindows",
+        "UpdateScaleForFitForOpenPanels",
+        "SetUIPanelAttribute",
+        "UpdateUIPanelPositions",
+        "NONE",
+        "ToggleAchievementFrame",
+        "AchievementFrame",
+        "AchievementFrame_SelectAchievement",
+        "AchievementFrame_LoadUI",
+        "AchievementFrame_ToggleAchievementFrame"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

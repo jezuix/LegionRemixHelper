@@ -102,36 +102,44 @@ local function createCollectionItemFrame()
 
     function f:RefreshTooltip()
         if not GameTooltip:GetOwner() == self then return end
+        ---@diagnostic disable-next-line: undefined-field
+        local data = self:GetParent().data
+        local r, g, b = const.COLORS.LIGHT_GREY:GetRGB()
         if self.itemID then
             local itemTooltip = C_TooltipInfo.GetItemByID(self.itemID)
             self:SetDataInstanceID(itemTooltip.dataInstanceID)
             GameTooltip:ClearLines()
             for _, line in ipairs(itemTooltip.lines) do
                 if line.leftText then
-                    local r, g, b = line.leftColor:GetRGB()
-                    GameTooltip:AddLine(line.leftText, r, g, b, line.wrapText)
+                    local lr, lg, lb = line.leftColor:GetRGB()
+                    GameTooltip:AddLine(line.leftText, lr, lg, lb, line.wrapText)
                 end
                 if line.rightText then
-                    local r, g, b = line.rightColor:GetRGB()
-                    GameTooltip:AddLine(line.rightText, r, g, b, line.wrapText)
+                    local rr, rg, rb = line.rightColor:GetRGB()
+                    GameTooltip:AddLine(line.rightText, rr, rg, rb, line.wrapText)
                 end
             end
 
-            ---@diagnostic disable-next-line: undefined-field
-            local data = self:GetParent().data
             ---@cast data CollectionRewardObject?
             if data and not data:IsCollected() then
                 GameTooltip:AddLine(" ")
                 GameTooltip:AddLine(data:GetSourceTooltip(), 1, 1, 1, true)
             end
             GameTooltip:AddLine(" ")
-            local r, g, b = const.COLORS.LIGHT_GREY:GetRGB()
-            GameTooltip:AddLine("Ctrl-Click to preview\nShift-Click to Link", r, g, b, true)
-            if data and data:HasSourceType(collEnums.SOURCE_TYPE.VENDOR) then
-                GameTooltip:AddLine("Alt-Click to set a Waypoint to the Vendor", r, g, b, true)
+            if data and data:GetRewardType() ~= collEnums.REWARD_TYPE.TOY then
+                GameTooltip:AddLine("Ctrl-Click to preview", r, g, b, true)
             end
+            GameTooltip:AddLine("Shift-Click to Link", r, g, b, true)
         else
             GameTooltip:SetText(self.name or "No Name")
+        end
+
+        if data then
+            if data:HasSourceType(collEnums.SOURCE_TYPE.VENDOR) then
+                GameTooltip:AddLine("Alt-Click to set a Waypoint to the Vendor", r, g, b, true)
+            elseif data:HasSourceType(collEnums.SOURCE_TYPE.ACHIEVEMENT) then
+                GameTooltip:AddLine("Alt-Click to view the Achievement", r, g, b, true)
+            end
         end
         GameTooltip:Show()
     end
@@ -164,12 +172,19 @@ local function createCollectionItemFrame()
     end)
 
     f:SetScript("OnClick", function(self)
+        ---@type CollectionRewardObject?
+        local data = self:GetParent().data
+        if not data then return end
         if IsModifiedClick("DRESSUP") then
-            self:GetParent().data:Preview()
+            data:Preview()
         elseif IsModifiedClick("CHATLINK") then
-            self:GetParent().data:Link()
+            data:Link()
         elseif IsAltKeyDown() then
-            self:GetParent().data:SetVendorWaypoint()
+            if data:HasSourceType(collEnums.SOURCE_TYPE.VENDOR) then
+                data:SetVendorWaypoint()
+            elseif data:HasSourceType(collEnums.SOURCE_TYPE.ACHIEVEMENT) then
+                data:ShowAchievement()
+            end
         end
     end)
 
@@ -226,31 +241,31 @@ function collectionTabUI:CreateTabUI()
         width = 80,
         height = 20,
         template = "WowStyle1FilterDropdownTemplate",
-        setupMenu = function (dropdown, rootDescription)
-            rootDescription:CreateCheckbox("Collected", function (data)
-                return self.filter.collected
-            end,
-            function ()
-                self.filter.collected = not self.filter.collected
-                self:UpdateFilteredData()
-            end)
-            rootDescription:CreateCheckbox("Not Collected", function (data)
-                return self.filter.uncollected
-            end,
-            function ()
-                self.filter.uncollected = not self.filter.uncollected
-                self:UpdateFilteredData()
-            end)
+        setupMenu = function(dropdown, rootDescription)
+            rootDescription:CreateCheckbox("Collected", function(data)
+                    return self.filter.collected
+                end,
+                function()
+                    self.filter.collected = not self.filter.collected
+                    self:UpdateFilteredData()
+                end)
+            rootDescription:CreateCheckbox("Not Collected", function(data)
+                    return self.filter.uncollected
+                end,
+                function()
+                    self.filter.uncollected = not self.filter.uncollected
+                    self:UpdateFilteredData()
+                end)
             ---@diagnostic disable-next-line: missing-parameter
             local sourceSubMenu = rootDescription:CreateButton("Sources")
-            sourceSubMenu:CreateButton("Check All", function ()
+            sourceSubMenu:CreateButton("Check All", function()
                 for sourceEnum in pairs(self.filter.sources) do
                     self.filter.sources[sourceEnum] = true
                 end
                 self:UpdateFilteredData()
                 return MenuResponse.Refresh
             end)
-            sourceSubMenu:CreateButton("Uncheck All", function ()
+            sourceSubMenu:CreateButton("Uncheck All", function()
                 for sourceEnum in pairs(self.filter.sources) do
                     self.filter.sources[sourceEnum] = false
                 end
@@ -258,24 +273,24 @@ function collectionTabUI:CreateTabUI()
                 return MenuResponse.Refresh
             end)
             for sourceEnum in pairs(self.filter.sources) do
-                sourceSubMenu:CreateCheckbox(const.COLLECTIONS.SOURCE_NAMES[sourceEnum], function ()
-                    return self.filter.sources[sourceEnum]
-                end,
-                function ()
-                    self.filter.sources[sourceEnum] = not self.filter.sources[sourceEnum]
-                    self:UpdateFilteredData()
-                end)
+                sourceSubMenu:CreateCheckbox(const.COLLECTIONS.SOURCE_NAMES[sourceEnum], function()
+                        return self.filter.sources[sourceEnum]
+                    end,
+                    function()
+                        self.filter.sources[sourceEnum] = not self.filter.sources[sourceEnum]
+                        self:UpdateFilteredData()
+                    end)
             end
             ---@diagnostic disable-next-line: missing-parameter
             local typesSubMenu = rootDescription:CreateButton("Types")
-            typesSubMenu:CreateButton("Check All", function ()
+            typesSubMenu:CreateButton("Check All", function()
                 for typeEnum in pairs(self.filter.types) do
                     self.filter.types[typeEnum] = true
                 end
                 self:UpdateFilteredData()
                 return MenuResponse.Refresh
             end)
-            typesSubMenu:CreateButton("Uncheck All", function ()
+            typesSubMenu:CreateButton("Uncheck All", function()
                 for typeEnum in pairs(self.filter.types) do
                     self.filter.types[typeEnum] = false
                 end
@@ -283,13 +298,13 @@ function collectionTabUI:CreateTabUI()
                 return MenuResponse.Refresh
             end)
             for typeEnum in pairs(self.filter.types) do
-                typesSubMenu:CreateCheckbox(const.COLLECTIONS.REWARD_TYPE_NAMES[typeEnum], function ()
-                    return self.filter.types[typeEnum]
-                end,
-                function ()
-                    self.filter.types[typeEnum] = not self.filter.types[typeEnum]
-                    self:UpdateFilteredData()
-                end)
+                typesSubMenu:CreateCheckbox(const.COLLECTIONS.REWARD_TYPE_NAMES[typeEnum], function()
+                        return self.filter.types[typeEnum]
+                    end,
+                    function()
+                        self.filter.types[typeEnum] = not self.filter.types[typeEnum]
+                        self:UpdateFilteredData()
+                    end)
             end
         end
     })

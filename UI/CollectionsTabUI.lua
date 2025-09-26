@@ -65,8 +65,10 @@ function collectionsTabUI:SetupTab()
         content:SetShown(isSelected)
 
         if isSelected then
-            CollectionsJournal:SetTitle("Legion Remix")
-            CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON)
+            RunNextFrame(function()
+                CollectionsJournal:SetTitle("Legion Remix")
+                CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON)
+            end)
         end
     end
 
@@ -96,9 +98,32 @@ function collectionsTabUI:SetupTab()
     end
     tabSys:SetTab(selectedID)
 
+    --- MOVE THIS PART TO A NEW COMPONENT!!!
+    local quickActionBar = CreateFrame("Button", nil, content)
+    quickActionBar:SetPoint("TOPRIGHT", content, "TOPRIGHT", -5, 30)
+    quickActionBar:SetSize(25, 25)
+    quickActionBar:SetHighlightAtlas("RedButton-Highlight", "ADD")
+    local function updateQuickActionBarState()
+        if Private.QuickActionBarUI:IsVisible() then
+            quickActionBar:SetNormalAtlas("RedButton-Condense")
+            quickActionBar:SetPushedAtlas("RedButton-Condense-Pressed")
+            quickActionBar:SetDisabledAtlas("RedButton-Condense-Disabled")
+        else
+            quickActionBar:SetNormalAtlas("RedButton-Expand")
+            quickActionBar:SetPushedAtlas("RedButton-Expand-Pressed")
+            quickActionBar:SetDisabledAtlas("RedButton-Expand-Disabled")
+        end
+    end
+    Private.QuickActionBarUI:Init(content)
+    quickActionBar:SetScript("OnClick", function()
+        Private.QuickActionBarUI:Toggle()
+        updateQuickActionBarState()
+    end)
+    updateQuickActionBarState()
+
     local researchBar = components.ProgressBar:CreateFrame(content, {
         anchors = {
-            {"BOTTOMRIGHT", content, "TOPRIGHT", -5, 10}
+            {"TOPRIGHT", quickActionBar, "TOPLEFT", -10, -5}
         },
         tooltipTextGetter = function()
             return Private.ResearchTaskUtils:GetCurrentTooltipText()

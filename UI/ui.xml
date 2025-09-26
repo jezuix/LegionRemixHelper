@@ -4,5 +4,6 @@
     <Include file="Components/components.xml"/>
     <script file="ScrappingUI.lua"/>
     <script file="CollectionsTabUI.lua"/>
+    <script file="QuickActionBarUI.lua"/>
     <Include file="Tabs/tabs.xml"/>
 </Ui>
