@@ -6,5 +6,6 @@
 ## IconTexture: Interface\Addons\LegionRemixHelper\Media\Textures\logo.tga
 ## SavedVariables: LegionRemixHelperDB
 ## X-Curse-Project-ID: 1352479
+## X-Wago-ID: aNDmz26o
 
 embed.xml
