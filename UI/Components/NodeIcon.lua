@@ -169,8 +169,8 @@ function nodeIconComponent:CreateFrame(parent, options)
     local bg = frame:CreateTexture(nil, "BACKGROUND")
     bg:SetPoint("CENTER")
     local function updateBgSize(w, h)
-        local wScale = 36/58
-        local hScale = 36/52
+        local wScale = 36 / 58
+        local hScale = 36 / 52
         bg:SetSize(w * wScale, h * hScale)
     end
     updateBgSize(options.width, options.height)

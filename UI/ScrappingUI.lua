@@ -40,7 +40,7 @@ function scrappingUI:Init()
 
     local qualityLabel = components.Label:CreateFrame(frame, {
         anchors = {
-            { "TOPLEFT", 15, -30 },
+            { "TOPLEFT",  15,  -30 },
             { "TOPRIGHT", -15, -30 }
         },
         text = "Max Scrapping Quality",
@@ -54,13 +54,13 @@ function scrappingUI:Init()
             qualityString = qualityColor:WrapTextInColorCode(qualityString)
         end
         if qualityIndex <= 4 and qualityIndex >= 1 then
-            tinsert(qualities, {qualityString, qualityIndex})
+            tinsert(qualities, { qualityString, qualityIndex })
         end
     end
     sort(qualities, function(a, b) return a[2] < b[2] end)
     local qualityDropdown = components.Dropdown:CreateFrame(frame, {
         anchors = {
-            { "TOPLEFT", qualityLabel.frame, "BOTTOMLEFT", 0, -2 },
+            { "TOPLEFT",  qualityLabel.frame, "BOTTOMLEFT",  0, -2 },
             { "TOPRIGHT", qualityLabel.frame, "BOTTOMRIGHT", 0, -2 },
         },
         dropdownType = "RADIO",
@@ -77,7 +77,7 @@ function scrappingUI:Init()
 
     local minItemLevelLabel = components.Label:CreateFrame(frame, {
         anchors = {
-            { "TOPLEFT", qualityDropdown.dropdown, "BOTTOMLEFT", 0, -5 },
+            { "TOPLEFT",  qualityDropdown.dropdown, "BOTTOMLEFT",  0, -5 },
             { "TOPRIGHT", qualityDropdown.dropdown, "BOTTOMRIGHT", 0, -5 }
         },
         text = "Min Item Level Difference",
@@ -85,7 +85,7 @@ function scrappingUI:Init()
     })
     local minItemLevelTextBox = components.TextBox:CreateFrame(frame, {
         anchors = {
-            { "TOPLEFT", minItemLevelLabel.frame, "BOTTOMLEFT", 5, -2 },
+            { "TOPLEFT",  minItemLevelLabel.frame, "BOTTOMLEFT",  5, -2 },
             { "TOPRIGHT", minItemLevelLabel.frame, "BOTTOMRIGHT", 0, -2 },
         },
         font = "GameFontHighlight",

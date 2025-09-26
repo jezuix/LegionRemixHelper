@@ -25,12 +25,12 @@ local defaultOptions = {
     height = 150,
     anchors = {
         with_scroll_bar = {
-            {"TOPLEFT", 12, -54},
-            {"BOTTOMRIGHT", -37, 49}
+            { "TOPLEFT",     12,  -54 },
+            { "BOTTOMRIGHT", -37, 49 }
         },
         without_scroll_bar = {
-            {"TOPLEFT", 12, -54},
-            {"BOTTOMRIGHT", -37, 49}
+            { "TOPLEFT",     12,  -54 },
+            { "BOTTOMRIGHT", -37, 49 }
         },
     },
     type = "LIST",

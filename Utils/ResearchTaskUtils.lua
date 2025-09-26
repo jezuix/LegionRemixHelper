@@ -32,7 +32,7 @@ end
 function researchTaskUtils:GetTaskProgress()
     if not self.progress or not self.total then
         self:UpdateTaskProgress()
-     end
+    end
     return self.progress, self.total
 end
 

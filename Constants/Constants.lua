@@ -11,6 +11,7 @@ Private.constants = constants
 constants.ADDON_NAME = ADDON_NAME
 constants.ADDON_VERSION = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version")
 constants.ADDON_MEDIA_PATH = [[Interface\AddOns\]] .. constants.ADDON_NAME .. [[\Media]]
+constants.INTERFACE_VERSION = select(4, GetBuildInfo())
 
 constants.MEDIA = {
     TEXTURES = {
@@ -110,11 +111,11 @@ constants.REMIX_ARTIFACT_TRAITS = {
         [246208] = 133488, -- I am My Scars!
     },
     JEWELRY_SLOTS = {
-        {INV_TYPE = Enum.InventoryType.IndexFingerType, SLOT = 11, NAME = "FINGER"},
-        {INV_TYPE = Enum.InventoryType.IndexFingerType, SLOT = 12, NAME = "FINGER"},
-        {INV_TYPE = Enum.InventoryType.IndexTrinketType, SLOT = 13, NAME = "TRINKET"},
-        {INV_TYPE = Enum.InventoryType.IndexTrinketType, SLOT = 14, NAME = "TRINKET"},
-        {INV_TYPE = Enum.InventoryType.IndexNeckType, SLOT = 2, NAME = "NECK"},
+        { INV_TYPE = Enum.InventoryType.IndexFingerType,  SLOT = 11, NAME = "FINGER" },
+        { INV_TYPE = Enum.InventoryType.IndexFingerType,  SLOT = 12, NAME = "FINGER" },
+        { INV_TYPE = Enum.InventoryType.IndexTrinketType, SLOT = 13, NAME = "TRINKET" },
+        { INV_TYPE = Enum.InventoryType.IndexTrinketType, SLOT = 14, NAME = "TRINKET" },
+        { INV_TYPE = Enum.InventoryType.IndexNeckType,    SLOT = 2,  NAME = "NECK" },
     },
     CALLBACK_CATEGORY_SPEC = "ArtifactTraitSpecUpdate",
     CALLBACK_CATEGORY_CONFIG = "ArtifactTraitConfigUpdate",
@@ -282,12 +283,12 @@ constants.COLLECTIONS = {
         ---@enum Enum.RHE_CollectionRewardType
         REWARD_TYPE = {
             TITLE = 1,
-            SET = 2, -- We will use the Item ID for this cause we can get the set by doing: C_Item.GetItemLearnTransmogSet(itemID)
-            PET = 3, -- We will use the Item ID for this cause we can get the Pet by doing: C_PetJournal.GetPetInfoByItemID(itemID)
-            ILLUSION = 4, -- has ILLUSION_ID as extra Field to check
+            SET = 2,        -- We will use the Item ID for this cause we can get the set by doing: C_Item.GetItemLearnTransmogSet(itemID)
+            PET = 3,        -- We will use the Item ID for this cause we can get the Pet by doing: C_PetJournal.GetPetInfoByItemID(itemID)
+            ILLUSION = 4,   -- has ILLUSION_ID as extra Field to check
             APPEARANCE = 5, -- We will use the ITEM ID for this cause we can get the Appareance by doing: C_TransmogCollection.GetItemInfo(itemID)
-            MOUNT = 6, -- We will use the ITEM ID for this cause we can get the Mount by doing: C_MountJournal.GetMountFromItem(itemID)
-            TOY = 7, -- We will use the ITEM ID for this cause we can get the Toy by doing: C_ToyBox.GetToyInfo(itemID)
+            MOUNT = 6,      -- We will use the ITEM ID for this cause we can get the Mount by doing: C_MountJournal.GetMountFromItem(itemID)
+            TOY = 7,        -- We will use the ITEM ID for this cause we can get the Toy by doing: C_ToyBox.GetToyInfo(itemID)
         },
         ---@enum Enum.RHE_CollectionSourceType
         SOURCE_TYPE = {
@@ -527,7 +528,7 @@ do
             SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.HORNS_OF_THE_FIRST_SATYR, AMOUNT = 20 },
-                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+                { TYPE = enums.PRICE_TYPE.BRONZE,                   AMOUNT = 30000 },
             }
         },
         {
@@ -538,7 +539,7 @@ do
             SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.EVERFLAME_OF_HATRED, AMOUNT = 20 },
-                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+                { TYPE = enums.PRICE_TYPE.BRONZE,              AMOUNT = 30000 },
             }
         },
         {
@@ -549,7 +550,7 @@ do
             SOURCE_TYPE = enums.SOURCE_TYPE.VENDOR,
             PRICES = {
                 { TYPE = enums.PRICE_TYPE.COSMIC_SOULSILVER, AMOUNT = 20 },
-                { TYPE = enums.PRICE_TYPE.BRONZE, AMOUNT = 30000 },
+                { TYPE = enums.PRICE_TYPE.BRONZE,            AMOUNT = 30000 },
             }
         },
         {

@@ -5,10 +5,10 @@ Private.Components = Private.Components or {}
 
 ---@class ProgressBarComponentObject: ProgressBarComponentMixin
 
-local BAR_HEIGHT_SCALE = 18/15
-local BAR_WIDTH_SCALE = 29/15
-local BORDER_HEIGHT_SCALE = 31/15
-local BORDER_WIDTH_SCALE = 35/15
+local BAR_HEIGHT_SCALE = 18 / 15
+local BAR_WIDTH_SCALE = 29 / 15
+local BORDER_HEIGHT_SCALE = 31 / 15
+local BORDER_WIDTH_SCALE = 35 / 15
 
 local function onEnter(self)
     local obj = self.obj
@@ -380,7 +380,8 @@ end
 ---@param label FontString
 ---@param options ProgressBarComponentOptions
 ---@return ProgressBarComponentObject
-function progressBarComponent:CreateObject(frame, bar, backgroundLeft, backgroundCenter, backgroundRight, borderLeft, borderCenter, borderRight, label, options)
+function progressBarComponent:CreateObject(frame, bar, backgroundLeft, backgroundCenter, backgroundRight, borderLeft,
+                                           borderCenter, borderRight, label, options)
     local obj = {}
     setmetatable(obj, { __index = progressBarComponentMixin })
     ---@cast obj ProgressBarComponentObject
@@ -414,7 +415,8 @@ function progressBarComponent:CreateObject(frame, bar, backgroundLeft, backgroun
         obj:SetBorderAtlas(options.borderLeftAtlas, options.borderCenterAtlas, options.borderRightAtlas)
     end
     if options.backgroundLeftTexture or options.backgroundCenterTexture or options.backgroundRightTexture then
-        obj:SetBackgroundTextures(options.backgroundLeftTexture, options.backgroundCenterTexture, options.backgroundRightTexture)
+        obj:SetBackgroundTextures(options.backgroundLeftTexture, options.backgroundCenterTexture,
+            options.backgroundRightTexture)
     end
     if options.borderLeftTexture or options.borderCenterTexture or options.borderRightTexture then
         obj:SetBorderTextures(options.borderLeftTexture, options.borderCenterTexture, options.borderRightTexture)

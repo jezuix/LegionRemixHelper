@@ -123,14 +123,14 @@ function collectionsTabUI:SetupTab()
 
     local researchBar = components.ProgressBar:CreateFrame(content, {
         anchors = {
-            {"TOPRIGHT", quickActionBar, "TOPLEFT", -10, -5}
+            { "TOPRIGHT", quickActionBar, "TOPLEFT", -10, -5 }
         },
         tooltipTextGetter = function()
             return Private.ResearchTaskUtils:GetCurrentTooltipText()
         end,
     })
     self.researchBar = researchBar
-    local callbackObj = Private.ResearchTaskUtils:AddCallback(function (progress, total)
+    local callbackObj = Private.ResearchTaskUtils:AddCallback(function(progress, total)
         researchBar:SetMinMaxValues(0, total or 1)
         researchBar:SetValue(progress or 0)
         researchBar:SetLabelText(string.format("Research: %s/%s", progress or "?", total or "?"))
@@ -141,9 +141,11 @@ function collectionsTabUI:SetupTab()
 end
 
 function collectionsTabUI:SetupTraitsTab()
-    local artifactTraitsContent = self:AddTopTab("Artifact Traits")
-    local traitsUI = Private.ArtifactTraitsTabUI
-    traitsUI:Init(artifactTraitsContent)
+    if const.INTERFACE_VERSION > 110200 then
+        local artifactTraitsContent = self:AddTopTab("Artifact Traits")
+        local traitsUI = Private.ArtifactTraitsTabUI
+        traitsUI:Init(artifactTraitsContent)
+    end
 
     local collectionContent = self:AddTopTab("Collection")
     local collectionUI = Private.CollectionTabUI

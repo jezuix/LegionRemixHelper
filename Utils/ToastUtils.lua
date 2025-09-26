@@ -10,7 +10,8 @@ Private.ToastUtils = toastUtils
 local const = Private.constants
 
 function toastUtils:GetFromToastPool()
-    local toastFrame tremove(self.toastPool)
+    local toastFrame
+    tremove(self.toastPool)
     if not toastFrame then
         toastFrame = self:CreateToastFrame()
     end

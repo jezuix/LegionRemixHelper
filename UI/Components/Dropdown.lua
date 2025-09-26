@@ -80,6 +80,7 @@ function dropdownComponent:CreateFrame(parent, options)
             options.onSelect(value)
         end
     end
+
     function dropdown.isSelected(value)
         if options.isSelected then
             return options.isSelected(value)
