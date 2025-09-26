@@ -5,5 +5,6 @@
 ## DefaultState: enabled
 ## IconTexture: Interface\Addons\LegionRemixHelper\Media\Textures\logo.tga
 ## SavedVariables: LegionRemixHelperDB
+## X-Curse-Project-ID: 1352479
 
 embed.xml
