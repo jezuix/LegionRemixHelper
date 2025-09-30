@@ -1,0 +1,42 @@
+name: Create Discord Forum Post and Link Back to Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create_and_link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Discord Forum Post
+        id: create_post
+        run: |
+          # Use curl to send the request and save the full response from Discord
+          # The ?wait=true is CRITICAL. It makes Discord send back the created message object.
+          DISCORD_RESPONSE=$(curl -X POST -H "Content-Type: application/json" \
+          -d '{
+            "thread_name": "${{ github.event.issue.title }}",
+            "content": "New issue created by **${{ github.event.issue.user.login }}**\n\n**Link:** ${{ github.event.issue.html_url }}\n\n**Description:**\n${{ github.event.issue.body }}"
+          }' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}?wait=true)
+
+          # Output the response so the next step can use it
+          echo "response=$DISCORD_RESPONSE" >> $GITHUB_OUTPUT
+
+      - name: Post Discord Thread Link to GitHub Issue
+        run: |
+          # Use jq to parse the JSON response and get the new thread's ID
+          THREAD_ID=$(echo '${{ steps.create_post.outputs.response }}' | jq -r '.id')
+          
+          # Construct the full URL to the new Discord thread
+          DISCORD_URL="https://discord.com/channels/${{ secrets.DISCORD_GUILD_ID }}/${{ secrets.DISCORD_CHANNEL_ID }}/$THREAD_ID"
+          
+          # Prepare the comment body for the GitHub API
+          COMMENT_BODY="💬 A discussion for this issue has been created on Discord!\n\n[Click here to join the conversation]($DISCORD_URL)"
+
+          # Use the GitHub API to post the comment
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" \
+          -d "{\"body\": \"$COMMENT_BODY\"}"
