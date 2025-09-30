@@ -1,5 +1,5 @@
 ## Interface: 110200, 110205
-## Version: 1.0.1
+## Version: 1.0.2
 ## Title: Legion Remix Helper
 ## Author: Rasu | Larsj_02
 ## DefaultState: enabled

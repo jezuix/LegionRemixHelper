@@ -2,7 +2,7 @@
 ---@field RegisteredAddons table<string, RasuAddonBase>
 ---@field CreateAddon fun(self:RasuAddon, name:string, db:string|table|?, defaultDB:table|?, loc:table|?, defaultLoc:string|?, ignoreError:boolean|?) : RasuAddonBase
 ---@field GetAddon fun(self:RasuAddon, name:string) : RasuAddonBase|?
-local lib = GetLib:RegisterLibrary("RasuAddon", "5.1.0")
+local lib = LibStub:NewLibrary("RasuAddon", 51)
 
 if not lib then
     return
