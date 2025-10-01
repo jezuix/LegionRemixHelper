@@ -4669,3 +4669,11 @@ constants.QUICK_ACTION_BAR = {
         ITEM = "item",
     }
 }
+
+constants.SETTINGS = {
+    TYPES = {
+        BOOLEAN = "boolean",
+        NUMBER = "number",
+        STRING = "string",
+    }
+}

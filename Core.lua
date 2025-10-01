@@ -5,6 +5,8 @@ local const = Private.constants
 local addon = Private.Addon
 
 function addon:OnInitialize(...)
+    Private.SettingsUtils:Init()
+
     Private.ScrappingUtils:Init()
     Private.ArtifactTraitUtils:Init()
     Private.ResearchTaskUtils:Init()
