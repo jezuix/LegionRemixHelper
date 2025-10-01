@@ -31,11 +31,12 @@ end
 function collectionsTabUI:SetupTab()
     local addon = Private.Addon
 
-    local collectionsTab = CreateFrame("Button", nil, CollectionsJournal, "CollectionsJournalTab")
+    local collectionsTab = CreateFrame("Button", "CollectionsJournalTab7", CollectionsJournal, "CollectionsJournalTab")
     collectionsTab:SetID(const.COLLECTIONS_TAB.TAB_ID)
     collectionsTab:SetText("Legion Remix")
     collectionsTab:SetPoint("LEFT", CollectionsJournal.WarbandScenesTab, "RIGHT", 5, 0)
     PanelTemplates_TabResize(collectionsTab)
+    CollectionsJournal.numTabs = CollectionsJournal.numTabs + 1
 
     function collectionsTab:GetTextYOffset(isSelected)
         return isSelected and -3 or 2
