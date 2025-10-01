@@ -31,51 +31,19 @@ end
 function collectionsTabUI:SetupTab()
     local addon = Private.Addon
 
-    local collectionsTab = CreateFrame("Button", nil, CollectionsJournal, "CollectionsJournalTab")
-    collectionsTab:SetID(const.COLLECTIONS_TAB.TAB_ID)
-    collectionsTab:SetText("Legion Remix")
-    collectionsTab:SetPoint("LEFT", CollectionsJournal.WarbandScenesTab, "RIGHT", 5, 0)
-    PanelTemplates_TabResize(collectionsTab)
-
-    function collectionsTab:GetTextYOffset(isSelected)
-        return isSelected and -3 or 2
-    end
-
-    function collectionsTab:SetTabSelected(isSelected)
-        self.Left:SetShown(not isSelected)
-        self.Middle:SetShown(not isSelected)
-        self.Right:SetShown(not isSelected)
-        self.LeftActive:SetShown(isSelected)
-        self.MiddleActive:SetShown(isSelected)
-        self.RightActive:SetShown(isSelected)
-
-        local selectedFontObject = GameFontHighlightSmall
-        local unselectedFontObject = GameFontNormalSmall
-        self:SetNormalFontObject(isSelected and selectedFontObject or unselectedFontObject)
-
-        self.Text:SetPoint("CENTER", self, "CENTER", 0, self:GetTextYOffset(isSelected))
-    end
-
-    local content = CreateFrame("Frame", nil, CollectionsJournal, "CollectionsBackgroundTemplate")
+    local content = CreateFrame("Frame", nil, CollectionsJournal)
+    local bg = CreateFrame("Frame", nil, content, "CollectionsBackgroundTemplate")
+    bg:SetPoint("TOPLEFT", 0, -50)
+    bg:SetPoint("BOTTOMRIGHT", 0, 0)
     self.contentFrame = content
+    content:Hide()
 
-    local function onTabUpdate(tabID)
-        local isSelected = tabID == collectionsTab:GetID()
-        collectionsTab:SetTabSelected(isSelected)
-        content:SetShown(isSelected)
+    local secureTabs = LibStub("SecureTabs-2.0")
+    local tab = secureTabs:Add(CollectionsJournal, content, "Legion Remix")
 
-        if isSelected then
-            RunNextFrame(function()
-                CollectionsJournal:SetTitle("Legion Remix")
-                CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON)
-            end)
-        end
+    function tab.OnSelect()
+        CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON)
     end
-
-    hooksecurefunc("CollectionsJournal_SetTab", function(_, tabID)
-        onTabUpdate(tabID)
-    end)
-    onTabUpdate(PanelTemplates_GetSelectedTab(CollectionsJournal))
 
     local tabSys = CreateFrame("Frame", nil, content, "TabSystemTemplate")
     self.tabSystem = tabSys
