@@ -48,31 +48,6 @@ function settingsUtils:Init()
     local category = Settings.RegisterVerticalLayoutCategory(addon.DisplayName)
     Settings.RegisterAddOnCategory(category)
     self.category = category
-
-    self:CreatePanel(category, "BackdropTemplate", {}, 50, function(frame)
-        ---@cast frame BackdropTemplate|Frame
-        frame:SetBackdrop({
-            bgFile = "interface/buttons/white8x8",
-            edgeFile = "interface/buttons/white8x8",
-            edgeSize = 2,
-            insets = { left = 4, right = 4, top = 4, bottom = 4 },
-        })
-        frame:SetBackdropColor(0, 0, 0, 0.5)
-        frame:SetBackdropBorderColor(1, 1, 1, 0.5)
-        local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-        title:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -10)
-        title:SetText(addon.DisplayName .. " v" .. tostring(addon.Version))
-
-        local desc = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-        desc:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -5)
-        desc:SetPoint("RIGHT", frame, "RIGHT", -10, 0)
-        desc:SetJustifyH("LEFT")
-        desc:SetJustifyV("TOP")
-        desc:SetText("This is where the settings will be shown for " .. addon.DisplayName .. ".")
-    end,
-    function()
-        print(addon.DisplayName .. " settings panel defaulted.")
-    end)
 end
 
 ---@param category any
@@ -161,9 +136,12 @@ end
 
 ---@param category any
 ---@param title string
+---@param tooltip string?
+---@param searchTags string[]?
 ---@return table initializer
-function settingsUtils:CreateHeader(category, title)
-    local initializer = CreateSettingsListSectionHeaderInitializer(title)
+function settingsUtils:CreateHeader(category, title, tooltip, searchTags)
+    local initializer = CreateSettingsListSectionHeaderInitializer(title, tooltip)
+    initializer:AddSearchTags(unpack(searchTags or {}))
     settingsUtils:AddToCategoryLayout(category, initializer)
     return initializer
 end
@@ -179,8 +157,9 @@ end
 ---@param height number?
 ---@param onInit fun(frame: Frame, data: table?)
 ---@param onDefaulted fun()?
+---@param searchTags string[]?
 ---@return table initializer
-function settingsUtils:CreatePanel(category, template, data, height, onInit, onDefaulted)
+function settingsUtils:CreatePanel(category, template, data, height, onInit, onDefaulted, searchTags)
     local initializer = Settings.CreatePanelInitializer(template or "BackdropTemplate", data or {})
 
     function initializer:GetExtent()
@@ -223,7 +202,9 @@ function settingsUtils:CreatePanel(category, template, data, height, onInit, onD
     initializer:SetHeight(height or 200)
     initializer:SetOnInit(onInit)
     initializer:SetOnDefaulted(onDefaulted)
+    initializer:AddSearchTags(unpack(searchTags or {}))
 
     self:AddToCategoryLayout(category, initializer)
+
     return initializer
 end

@@ -16,7 +16,7 @@ function addon:OnInitialize(...)
 end
 
 function addon:OnEnable(...)
-    -- On Enable
+    Private.QuickActionBarUtils:CreateSettings()
 end
 
 function addon:OnDisable(...)

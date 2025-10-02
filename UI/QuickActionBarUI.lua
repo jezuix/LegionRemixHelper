@@ -19,6 +19,52 @@ function quickActionBarUI:Init(parentTab)
     self.parent = parentTab
 end
 
+---@return fun(button:Button|table, elementData:QuickActionObject)
+function quickActionBarUI:GetInitializer()
+    return function(button, elementData)
+        if not button.isInitialized then
+            button.icon = button:CreateTexture(nil, "ARTWORK")
+            button.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+            button:RegisterForClicks("AnyUp", "AnyDown")
+
+            button:SetScript("OnSizeChanged", function(btn)
+                local w, h = btn:GetSize()
+                local size = math.min(w, h)
+                btn.icon:ClearAllPoints()
+                btn.icon:SetSize(size, size)
+                btn.icon:SetPoint("CENTER")
+            end)
+
+            button:SetScript("PostClick", function()
+                ---@type QuickActionObject?
+                local data = button.data
+                if not data then return end
+
+                local codeStr = data:GetCustomCode()
+                if not codeStr then return end
+
+                pcall(function()
+                    local loadedFunc = loadstring(codeStr)
+                    if not loadedFunc then return end
+
+                    loadedFunc()
+                end)
+            end)
+
+            button.isInitialized = true
+        end
+        button.data = elementData
+
+        local actionType = elementData:GetActionType()
+        button:SetAttribute("type", actionType)
+        button:SetAttribute(actionType, elementData:GetActionID())
+
+        button.icon:SetTexture(elementData:GetIcon())
+
+        button:GetScript("OnSizeChanged")(button)
+    end
+end
+
 function quickActionBarUI:CreateFrame()
     self.defaultPanelInfo = UIPanelWindows["CollectionsJournal"]
 
@@ -64,38 +110,56 @@ function quickActionBarUI:CreateFrame()
         element_padding = 5,
         elements_per_row = 1,
         type = "GRID",
-        initializer = function(button, elementData)
-            if not button.isInitialized then
-                button.icon = button:CreateTexture(nil, "ARTWORK")
-                button.icon:SetTexture(134414)
-                button.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
-                button:RegisterForClicks("AnyUp", "AnyDown")
-
-                button:SetScript("OnSizeChanged", function(btn)
-                    local w, h = btn:GetSize()
-                    local size = math.min(w, h)
-                    btn.icon:ClearAllPoints()
-                    btn.icon:SetSize(size, size)
-                    btn.icon:SetPoint("CENTER")
-                end)
-
-                button.isInitialized = true
-            end
-
-            button:SetAttribute("type", "item")
-            button:SetAttribute("item", elementData.itemloc)
-
-            -- Force initial layout
-            button:GetScript("OnSizeChanged")(button)
-        end
+        initializer = self:GetInitializer()
     })
-    local content = {}
-    for i = 1, 100 do
-        content[i] = {
-            itemloc = "0 1",
-        }
+
+    for i = 1, 20 do
+        Private.QuickActionBarUtils:CreateAction("spell", "Living Flame")
     end
-    scrollFrame:UpdateContent(content)
+    scrollFrame:UpdateContent(Private.QuickActionBarUtils:GetActions())
+end
+
+---@return fun(frame:Frame|BackdropTemplate|table, data:table)
+function quickActionBarUI:GetTreeSettingsInitializer()
+    return function(frame, data)
+        if frame.isInitialized then
+            return
+        end
+        frame.isInitialized = true
+        NineSliceUtil.ApplyUniqueCornersLayout(frame, "OptionsFrame")
+
+        local list = components.ScrollFrame:CreateFrame(frame, {
+            anchors = {
+                with_scroll_bar = {
+                    { "TOPLEFT",    16, -15 },
+                    { "BOTTOMLEFT", 16, 16 }
+                },
+                without_scroll_bar = {
+                    { "TOPLEFT",    16, -16 },
+                    { "BOTTOMLEFT", 16, 16 }
+                },
+            },
+            width = 200,
+            template = "BackdropTemplate",
+            element_height = 35,
+            element_padding = 5,
+            elements_per_row = 1,
+            type = "LIST",
+            initializer = function(gridFrame)
+                if gridFrame.isInit then return end
+                gridFrame.isInit = true
+
+                local tex = gridFrame:CreateTexture()
+                tex:SetAllPoints()
+                tex:SetColorTexture(math.random(), math.random(), math.random())
+            end
+        })
+        local sampleData = {}
+        for i = 1, 100 do
+            tinsert(sampleData, {})
+        end
+        list:UpdateContent(sampleData)
+    end
 end
 
 function quickActionBarUI:Toggle()
