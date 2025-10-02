@@ -5,10 +5,12 @@ local Private = select(2, ...)
 ---@field frame Frame
 ---@field parent Frame
 ---@field defaultPanelInfo {area: string, pushable: number, whileDead: boolean, width: number}?
+---@field selectedEditSetting {button: Button|table, data: QuickActionObject}?
 local quickActionBarUI = {
     frame = nil,
     parent = nil,
     defaultPanelInfo = nil,
+    selectedEditSetting = nil
 }
 Private.QuickActionBarUI = quickActionBarUI
 
@@ -119,6 +121,88 @@ function quickActionBarUI:CreateFrame()
     scrollFrame:UpdateContent(Private.QuickActionBarUtils:GetActions())
 end
 
+---@return fun(gridFrame:Frame|BackdropTemplate|table, elementData:table)
+function quickActionBarUI:GetSettingsListInitializer()
+    return function(gridFrame, elementData)
+        if not gridFrame.isInit then
+            gridFrame.isInit = true
+
+            local btn = CreateFrame("Button", nil, gridFrame)
+            btn:SetAllPoints()
+
+            local tex = btn:CreateTexture()
+            tex:SetPoint("CENTER")
+
+            local label = btn:CreateFontString(nil, nil, "GameFontHighlight")
+            label:SetPoint("TOPLEFT", 36, 1)
+            label:SetPoint("BOTTOMRIGHT", 0, 1)
+            label:SetJustifyH("LEFT")
+
+            btn.Label = label
+            btn.Texture = tex
+
+            function btn:UpdateState()
+                if quickActionBarUI.selectedEditSetting and quickActionBarUI.selectedEditSetting.data == self.data then
+                    self.Texture:SetAtlas("Options_List_Active", true)
+                    self.Texture:Show()
+                else
+                    self.Texture:SetShown(self.over)
+                    if self.over then
+                        self.Texture:SetAtlas("Options_List_Hover", true)
+                    end
+                end
+            end
+
+            function btn:SetHover(isHovered)
+                if self:IsEnabled() then
+                    self.over = isHovered
+                    self:UpdateState()
+                    return true
+                end
+                return false
+            end
+
+            function btn:OnEnter()
+                return self:SetHover(true)
+            end
+
+            function btn:OnLeave()
+                return self:SetHover(nil)
+            end
+
+            function btn:OnClick()
+                local activeSelect = quickActionBarUI.selectedEditSetting
+                if not activeSelect or activeSelect.data ~= self.data then
+                    local oldBtn
+                    if activeSelect and activeSelect.button.data == activeSelect.data then
+                        oldBtn = activeSelect.button
+                    end
+                    quickActionBarUI.selectedEditSetting = { button = self, data = self.data }
+                    if oldBtn then
+                        oldBtn:UpdateState()
+                    end
+                end
+                self:UpdateState()
+            end
+
+            btn:SetScript("OnEnter", btn.OnEnter)
+            btn:SetScript("OnLeave", btn.OnLeave)
+            btn:SetScript("OnClick", btn.OnClick)
+
+            gridFrame.button = btn
+        end
+
+        local btn = gridFrame.button
+        btn.data = elementData
+        btn.Label:SetText(elementData.name)
+
+        if quickActionBarUI.selectedEditSetting and quickActionBarUI.selectedEditSetting.data == elementData then
+            quickActionBarUI.selectedEditSetting.button = btn
+        end
+        btn:UpdateState()
+    end
+end
+
 ---@return fun(frame:Frame|BackdropTemplate|table, data:table)
 function quickActionBarUI:GetTreeSettingsInitializer()
     return function(frame, data)
@@ -139,24 +223,137 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                     { "BOTTOMLEFT", 16, 16 }
                 },
             },
-            width = 200,
-            template = "BackdropTemplate",
-            element_height = 35,
+            width = 175,
+            element_height = 20,
             element_padding = 5,
             elements_per_row = 1,
             type = "LIST",
-            initializer = function(gridFrame)
-                if gridFrame.isInit then return end
-                gridFrame.isInit = true
-
-                local tex = gridFrame:CreateTexture()
-                tex:SetAllPoints()
-                tex:SetColorTexture(math.random(), math.random(), math.random())
-            end
+            initializer = self:GetSettingsListInitializer()
         })
+
+        local editorTitle = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", list.scrollBox, "TOPRIGHT", 50, -15 },
+                { "TOPRIGHT", -150, -15 }
+            },
+            font = "GameFontNormalHuge",
+            text = "Editing Action",
+        })
+
+        local titlePreview = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", editorTitle.frame, "BOTTOMLEFT", 0, -5 },
+                { "TOPRIGHT", editorTitle.frame, "BOTTOMRIGHT", 0, -5 },
+            },
+            text = "Action Title here",
+            color = const.COLORS.YELLOW
+        })
+
+        local iconPreview = components.RoundedIcon:CreateFrame(frame, {
+            anchors = {
+                { "TOPRIGHT", -31, -30 },
+            },
+            height = 40,
+            width = 40,
+        })
+        iconPreview:SetTexture(4622476)
+
+        local titleLabel = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", titlePreview.frame, "BOTTOMLEFT", 0, -25 }
+            },
+            color = const.COLORS.YELLOW,
+            text = "Action Title:",
+        })
+
+        local titleInput = components.TextBox:CreateFrame(frame, {
+            anchors = {
+                { "TOPRIGHT", -31, -100 },
+            },
+            width = 200,
+        })
+
+        local iconLabel = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", titleLabel.frame, "BOTTOMLEFT", 0, -15 }
+            },
+            color = const.COLORS.YELLOW,
+            text = "Icon (ID or Path):",
+        })
+
+        local iconInput = components.TextBox:CreateFrame(frame, {
+            anchors = {
+                { "TOPRIGHT", titleInput.editBox, "BOTTOMRIGHT", 0, -15 },
+                { "TOPLEFT", titleInput.editBox, "BOTTOMLEFT", 0, -15 },
+            },
+        })
+
+        local actionIDLabel = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", iconLabel.frame, "BOTTOMLEFT", 0, -15 }
+            },
+            color = const.COLORS.YELLOW,
+            text = "Action ID (Name or ID):",
+        })
+
+        local actionIDInput = components.TextBox:CreateFrame(frame, {
+            anchors = {
+                { "TOPRIGHT", iconInput.editBox, "BOTTOMRIGHT", 0, -15 },
+                { "TOPLEFT", iconInput.editBox, "BOTTOMLEFT", 0, -15 },
+            },
+        })
+
+        local actionTypeLabel = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", actionIDLabel.frame, "BOTTOMLEFT", 0, -15 }
+            },
+            color = const.COLORS.YELLOW,
+            text = "Action Type:",
+        })
+
+        local actionTypeDropdown = components.Dropdown:CreateFrame(frame, {
+            anchors = {
+                { "TOPRIGHT", actionIDInput.editBox, "BOTTOMRIGHT", 0, -15 },
+                { "TOPLEFT", actionIDInput.editBox, "BOTTOMLEFT", -5, -15 },
+            },
+            dropdownType = "RADIO",
+            radioOptions = {
+                { "Spell", "spell" },
+                { "Item", "item" },
+            }
+        })
+
+        local checkUsabilityLabel = components.Label:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", actionTypeLabel.frame, "BOTTOMLEFT", 0, -15 }
+            },
+            color = const.COLORS.YELLOW,
+            text = "Only show when usable:",
+        })
+
+        local checkUsabilityInput = components.CheckBox:CreateFrame(frame, {
+            anchors = {
+                { "TOPLEFT", actionTypeDropdown.dropdown, "BOTTOMLEFT", 0, -12 }
+            },
+            width = 20,
+            height = 20,
+        })
+
+        local saveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+        saveButton:SetPoint("BOTTOMRIGHT", -31, 31)
+        saveButton:SetSize(80, 22)
+        saveButton:SetText(SAVE)
+
+        local newButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+        newButton:SetPoint("BOTTOMRIGHT", saveButton, "BOTTOMLEFT", -5, 0)
+        newButton:SetSize(80, 22)
+        newButton:SetText(NEW)
+
         local sampleData = {}
-        for i = 1, 100 do
-            tinsert(sampleData, {})
+        for i = 1, 35 do
+            tinsert(sampleData, {
+                name = "Sample Item " .. i
+            })
         end
         list:UpdateContent(sampleData)
     end

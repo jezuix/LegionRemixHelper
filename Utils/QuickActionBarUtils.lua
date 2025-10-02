@@ -113,7 +113,7 @@ function quickActionBarUtils:CreateSettings()
     local settingsPrefix = "Quick Action Bar"
 
     settingsUtils:CreateHeader(settingsCategory, "Quick Action Bar", "Settings for the Quick Action Bar", {settingsPrefix})
-    settingsUtils:CreatePanel(settingsCategory, nil, nil, 500, Private.QuickActionBarUI:GetTreeSettingsInitializer(), self:GetOnDefaulted(), {settingsPrefix})
+    settingsUtils:CreatePanel(settingsCategory, nil, nil, 400, Private.QuickActionBarUI:GetTreeSettingsInitializer(), self:GetOnDefaulted(), {settingsPrefix})
 end
 
 ---@return QuickActionObject[]

@@ -72,6 +72,7 @@ function roundedIconComponent:CreateFrame(parent, options)
 
     if options.show_tooltip then
         frame:SetScript("OnEnter", function()
+            if not frame.link then return end
             GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
             GameTooltip:SetHyperlink(frame.link)
             GameTooltip:Show()
