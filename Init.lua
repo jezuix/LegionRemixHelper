@@ -13,7 +13,22 @@ local defaultDatabase = {
     },
     artifactTraits = {
         autoActive = {}
-    }
+    },
+    quickActionBar = {
+        actions = nil,
+    },
+    quest = {
+        autoAccept = true,
+        autoTurnIn = true,
+    },
+    toast = {
+        activate = true,
+        bronze = true,
+        artifact = true,
+        upgrade = true,
+        trait = true,
+        sound = true,
+    },
 }
 
 ---@class LegionRH : RasuAddonBase

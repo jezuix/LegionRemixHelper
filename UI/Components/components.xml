@@ -12,4 +12,5 @@
     <script file="NodeIcon.lua"/>
     <script file="ProgressBar.lua"/>
     <script file="SpecSelect.lua"/>
+    <script file="Alert.lua"/>
 </Ui>

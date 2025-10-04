@@ -57,10 +57,12 @@ local componentsBase = Private.Components.Base
 ---@field scrollBox ScrollBoxFrame
 ---@field scrollView ScrollView
 ---@field scrollBar ScrollBar
+---@field lastQueuedChange table[]?
 local scrollFrameComponentMixin = {
     scrollBox = nil,
     scrollView = nil,
     scrollBar = nil,
+    lastQueuedChange = nil
 }
 
 ---@param data table[]
@@ -69,6 +71,10 @@ function scrollFrameComponentMixin:UpdateContent(data, keepOldData)
     if not data then return end
     local view = self.scrollView
     if not view then return end
+    if not self.scrollBox:IsVisible() then
+        self.lastQueuedChange = { data, keepOldData }
+        return
+    end
     local scrollPercent = self.scrollBox:GetScrollPercentage()
     local dataProvider = view:GetDataProvider()
     if not dataProvider then
@@ -163,12 +169,23 @@ function scrollFrameComponent:CreateFrame(parent, options)
     scrollBar:HookScript("OnHide", function()
         setAnchors()
     end)
+
+    scrollBox:HookScript("OnShow", function()
+        ---@diagnostic disable-next-line: undefined-field
+        local obj = scrollBox.obj
+        ---@cast obj ScrollFrameComponentObject
+        if obj and obj.lastQueuedChange then
+            obj:UpdateContent(unpack(obj.lastQueuedChange))
+            obj.lastQueuedChange = nil
+        end
+    end)
+
     setAnchors()
 
     return self:CreateObject(scrollBox, scrollView, scrollBar)
 end
 
----@param scrollBox ScrollBoxFrame
+---@param scrollBox ScrollBoxFrame|table
 ---@param scrollView ScrollView
 ---@param scrollBar ScrollBar
 ---@return ScrollFrameComponentObject
@@ -179,5 +196,8 @@ function scrollFrameComponent:CreateObject(scrollBox, scrollView, scrollBar)
     obj.scrollBar = scrollBar
 
     setmetatable(obj, { __index = scrollFrameComponentMixin })
+
+    scrollBox.obj = obj
+
     return obj
 end

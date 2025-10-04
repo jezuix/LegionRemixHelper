@@ -120,12 +120,9 @@ function scrappingUtils:GetFilteredScrappableItems(capReturn)
     local scrappableItems = self:GetScrappableItems()
     local filteredItems = {}
     for _, item in ipairs(scrappableItems) do
-        local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(item.invType)
-        if equippedItemLoc:IsValid() then
-            local equippedItemLevel = C_Item.GetCurrentItemLevel(equippedItemLoc)
-            if equippedItemLevel - item.level >= minLevelDiff and item.quality <= maxQuality then
-                tinsert(filteredItems, item)
-            end
+        local equippedItemLevel = Private.ItemUtils:GetMinLevelForInvType(item.invType)
+        if equippedItemLevel and equippedItemLevel - item.level >= minLevelDiff and item.quality <= maxQuality then
+            tinsert(filteredItems, item)
 
             if capReturn and #filteredItems >= capReturn then
                 break

@@ -79,6 +79,7 @@ function dropdownComponent:CreateFrame(parent, options)
         if options.onSelect then
             options.onSelect(value)
         end
+        dropdown:SignalUpdate()
     end
 
     function dropdown.isSelected(value)

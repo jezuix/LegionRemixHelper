@@ -4661,7 +4661,8 @@ do
 end
 
 constants.QUICK_ACTION_BAR = {
-    CALLBACK_CATEGORY = "QuickActionBarUpdate",
+    CALLBACK_CATEGORY_UPDATE = "QuickActionBarUpdate",
+    CALLBACK_CATEGORY_VISIBILITY = "QuickActionBarVisibilityUpdate",
     ---@enum QA_ACTION_TYPE
     ACTION_TYPE = {
         NONE = "",
@@ -4669,3 +4670,176 @@ constants.QUICK_ACTION_BAR = {
         ITEM = "item",
     }
 }
+
+do
+    local types = constants.QUICK_ACTION_BAR.ACTION_TYPE
+    constants.QUICK_ACTION_BAR.DEFAULT_ACTIONS = {
+        {
+            actionType = types.ITEM,
+            actionID = 237812,
+            checkVisibility = true,
+            title = "Cache of Infinite Treasure",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 251821,
+            checkVisibility = true,
+            title = "Cache of Infinite Power",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 245553,
+            checkVisibility = true,
+            title = "Heroic Cache of Infinite Treasure",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 246814,
+            checkVisibility = true,
+            title = "Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 254847,
+            checkVisibility = true,
+            title = "Minor Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 246815,
+            checkVisibility = true,
+            title = "Lesser Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 246813,
+            checkVisibility = true,
+            title = "Greater Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 245925,
+            checkVisibility = true,
+            title = "Artifactium Sand",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 249891,
+            checkVisibility = true,
+            title = "Mound of Artifactium Sand",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 238727,
+            checkVisibility = true,
+            title = "Nostwin's Voucher",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 250411,
+            checkVisibility = true,
+            title = "Timerunner's Hearthstone",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 140192,
+            checkVisibility = true,
+            title = "Dalaran Hearthstone",
+        },
+        {
+            actionType = types.SPELL,
+            actionID = 1232807,
+            checkVisibility = true,
+            title = "Unraveling Sands",
+        },
+    }
+
+    for _, action in ipairs(constants.QUICK_ACTION_BAR.DEFAULT_ACTIONS) do
+        if action.convert then
+            if action.actionType == types.ITEM then
+                local item = Item:CreateFromItemID(action.actionID)
+                item:ContinueOnItemLoad(function()
+                    local name = item:GetItemName()
+                    if name and name ~= "" then
+                        action.title = name
+                        action.icon = item:GetItemIcon()
+                        action.actionID = name
+                    end
+                end)
+            end
+        end
+    end
+end
+
+constants.SETTINGS = {
+    TYPES = {
+        BOOLEAN = "boolean",
+        NUMBER = "number",
+        STRING = "string",
+    }
+}
+
+constants.TOASTS = {
+    BRONZE = {
+        ICON = 4638724,
+        CURRENCY_ID = 3252
+    },
+    ARTIFACT = {
+        ICON = 4638725,
+        ITEM_IDS = {
+            [245925] = true, -- Artifactium Sand
+            [249891] = true, -- Mound of Artifactium Sand
+        }
+    },
+    FALLBACK_ICON = 134400,
+    PLACEHOLDER_ICON = 5228749,
+    SOUND_ID = 165974,
+}
+
+do
+    local invType = Enum.InventoryType
+
+    constants.ITEM_TO_INV_SLOT = {
+        [invType.IndexHeadType] = 1,
+        [invType.IndexNeckType] = 2,
+        [invType.IndexShoulderType] = 3,
+        [invType.IndexBodyType] = 15,
+        [invType.IndexChestType] = 5,
+        [invType.IndexWaistType] = 6,
+        [invType.IndexLegsType] = 7,
+        [invType.IndexFeetType] = 8,
+        [invType.IndexWristType] = 9,
+        [invType.IndexHandType] = 10,
+        [invType.IndexFingerType] = { 11, 12 },
+        [invType.IndexTrinketType] = { 13, 14 },
+        [invType.IndexWeaponType] = { 16, 17 },
+        [invType.IndexShieldType] = 17,
+        [invType.IndexRangedType] = 16,
+        [invType.IndexCloakType] = 15,
+        [invType.Index2HweaponType] = 16,
+        [invType.IndexBagType] = 0,
+        [invType.IndexTabardType] = 19,
+        [invType.IndexRobeType] = 5,
+        [invType.IndexWeaponmainhandType] = 16,
+        [invType.IndexWeaponoffhandType] = 16,
+        [invType.IndexHoldableType] = 17,
+        [invType.IndexAmmoType] = 0,
+        [invType.IndexThrownType] = 16,
+        [invType.IndexRangedrightType] = 16,
+        [invType.IndexQuiverType] = 0,
+        [invType.IndexRelicType] = 0,
+        [invType.IndexProfessionToolType] = { 20, 23 },
+        [invType.IndexProfessionGearType] = { 21, 22, 24, 25 },
+        [invType.IndexEquipablespellOffensiveType] = 0,
+        [invType.IndexEquipablespellUtilityType] = 0,
+        [invType.IndexEquipablespellDefensiveType] = 0,
+        [invType.IndexEquipablespellWeaponType] = 0,
+    }
+end

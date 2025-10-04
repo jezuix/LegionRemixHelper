@@ -5,18 +5,24 @@ local const = Private.constants
 local addon = Private.Addon
 
 function addon:OnInitialize(...)
+    Private.SettingsUtils:Init()
+
     Private.ScrappingUtils:Init()
+    Private.ToastUtils:Init()
     Private.ArtifactTraitUtils:Init()
     Private.ResearchTaskUtils:Init()
     Private.CollectionUtils:Init()
+    Private.QuickActionBarUtils:Init()
+    Private.QuestUtils:Init()
 
     Private.CollectionsTabUI:Init()
+    Private.ToastUI:Init()
 end
 
 function addon:OnEnable(...)
-    -- On Enable
+    Private.QuickActionBarUtils:CreateSettings()
 end
 
 function addon:OnDisable(...)
-    -- On Disable
+    Private.QuickActionBarUtils:OnDisable()
 end
