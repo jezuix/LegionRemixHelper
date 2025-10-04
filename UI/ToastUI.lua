@@ -56,11 +56,13 @@ end
 ---@param title string
 ---@param description string
 ---@param texture string|number
-function toastUI:ShowToast(title, description, texture)
+---@param onClick fun(self: AlertComponentObject, button: string, down: boolean)?
+function toastUI:ShowToast(title, description, texture, onClick)
     local toast = self:GetFromToastPool()
     toast:SetTitle(title)
     toast:SetDescription(description)
     toast:SetIcon(texture)
+    toast:SetOnClick(onClick)
     toast.frame:Show()
 end
 

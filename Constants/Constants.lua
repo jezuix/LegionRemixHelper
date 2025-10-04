@@ -4785,3 +4785,61 @@ constants.SETTINGS = {
         STRING = "string",
     }
 }
+
+constants.TOASTS = {
+    BRONZE = {
+        ICON = 4638724,
+        CURRENCY_ID = 3252
+    },
+    ARTIFACT = {
+        ICON = 4638725,
+        ITEM_IDS = {
+            [245925] = true, -- Artifactium Sand
+            [249891] = true, -- Mound of Artifactium Sand
+        }
+    },
+    FALLBACK_ICON = 134400,
+    PLACEHOLDER_ICON = 5228749,
+    SOUND_ID = 165974,
+}
+
+do
+    local invType = Enum.InventoryType
+
+    constants.ITEM_TO_INV_SLOT = {
+        [invType.IndexHeadType] = 1,
+        [invType.IndexNeckType] = 2,
+        [invType.IndexShoulderType] = 3,
+        [invType.IndexBodyType] = 15,
+        [invType.IndexChestType] = 5,
+        [invType.IndexWaistType] = 6,
+        [invType.IndexLegsType] = 7,
+        [invType.IndexFeetType] = 8,
+        [invType.IndexWristType] = 9,
+        [invType.IndexHandType] = 10,
+        [invType.IndexFingerType] = { 11, 12 },
+        [invType.IndexTrinketType] = { 13, 14 },
+        [invType.IndexWeaponType] = { 16, 17 },
+        [invType.IndexShieldType] = 17,
+        [invType.IndexRangedType] = 16,
+        [invType.IndexCloakType] = 15,
+        [invType.Index2HweaponType] = 16,
+        [invType.IndexBagType] = 0,
+        [invType.IndexTabardType] = 19,
+        [invType.IndexRobeType] = 5,
+        [invType.IndexWeaponmainhandType] = 16,
+        [invType.IndexWeaponoffhandType] = 16,
+        [invType.IndexHoldableType] = 17,
+        [invType.IndexAmmoType] = 0,
+        [invType.IndexThrownType] = 16,
+        [invType.IndexRangedrightType] = 16,
+        [invType.IndexQuiverType] = 0,
+        [invType.IndexRelicType] = 0,
+        [invType.IndexProfessionToolType] = { 20, 23 },
+        [invType.IndexProfessionGearType] = { 21, 22, 24, 25 },
+        [invType.IndexEquipablespellOffensiveType] = 0,
+        [invType.IndexEquipablespellUtilityType] = 0,
+        [invType.IndexEquipablespellDefensiveType] = 0,
+        [invType.IndexEquipablespellWeaponType] = 0,
+    }
+end

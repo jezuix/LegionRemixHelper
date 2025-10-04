@@ -23,6 +23,11 @@ local defaultDatabase = {
     },
     toast = {
         activate = true,
+        bronze = true,
+        artifact = true,
+        upgrade = true,
+        trait = true,
+        sound = true,
     },
 }
 
