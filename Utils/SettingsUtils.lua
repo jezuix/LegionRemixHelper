@@ -32,8 +32,7 @@ function settingsUtils:GetDBFunc(funcType, setting, default)
             return self.addon:GetDatabaseValue(setting, true) or default
         end
     elseif funcType == "SETTER" then
-        return function(...)
-            local newValue = select(3, ...)
+        return function(newValue)
             self.addon:SetDatabaseValue(setting, newValue)
         end
     elseif funcType == "GETTERSETTER" then

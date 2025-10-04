@@ -121,7 +121,8 @@
         "NineSliceUtil",
         "SAVE",
         "NEW",
-        "DELETE"
+        "DELETE",
+        "StaticPopup_Hide"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

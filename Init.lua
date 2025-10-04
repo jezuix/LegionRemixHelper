@@ -17,6 +17,10 @@ local defaultDatabase = {
     quickActionBar = {
         actions = nil,
     },
+    quest = {
+        autoAccept = true,
+        autoTurnIn = true,
+    }
 }
 
 ---@class LegionRH : RasuAddonBase

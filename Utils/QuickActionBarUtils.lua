@@ -184,10 +184,10 @@ function quickActionBarUtils:Init()
         self:CreateFromDTO(actionData)
     end
 
-    addon:RegisterEvent("ITEM_COUNT_CHANGED", "QuickActionBarUtils_ItemCountChanged", function(_, _, itemID)
+    addon:RegisterEvent("ITEM_COUNT_CHANGED", "QuickActionBarUtils_ItemCountChanged", function()
         self:TriggerVisibilityCallbacks()
     end)
-    addon:RegisterEvent("SPELLS_CHANGED", "QuickActionBarUtils_ItemCountChanged", function(_, _, itemID)
+    addon:RegisterEvent("SPELLS_CHANGED", "QuickActionBarUtils_SpellsChanged", function()
         self:TriggerVisibilityCallbacks()
     end)
 end

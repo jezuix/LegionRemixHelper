@@ -12,6 +12,7 @@ function addon:OnInitialize(...)
     Private.ResearchTaskUtils:Init()
     Private.CollectionUtils:Init()
     Private.QuickActionBarUtils:Init()
+    Private.QuestUtils:Init()
 
     Private.CollectionsTabUI:Init()
 end
