@@ -33,14 +33,26 @@ function toastUtils:Init()
         end
     end)
 
-    addon:RegisterEvent("CURRENCY_DISPLAY_UPDATE", "ToastUtils_OnQuestAccepted", function(_, _, currencyID)
+    addon:RegisterEvent("CURRENCY_DISPLAY_UPDATE", "ToastUtils_OnQuestAccepted", function(_, _, currencyID, _, quantityChange)
         if not currencyID then return end
         if currencyID == const.TOASTS.BRONZE.CURRENCY_ID then
             local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(currencyID)
             local current = currencyInfo.quantity
-            local max = currencyInfo.maxQuantity
-            local percentage = (current / max) * 100
-            self:ShowBronzeToast(current, percentage)
+            local percentage = (current / currencyInfo.maxQuantity) * 100
+            local previous = current - (quantityChange or 0)
+            local previewPercentage = (previous / currencyInfo.maxQuantity) * 100
+            for _, milestone in ipairs(const.TOASTS.BRONZE.MILESTONES) do
+                if previous < milestone and current >= milestone then
+                    self:ShowBronzeToast(current, percentage)
+                    break
+                end
+            end
+            for _, milestone in ipairs(const.TOASTS.BRONZE.PERCENTAGE_MILESTONES) do
+                if previewPercentage < milestone and percentage >= milestone then
+                    self:ShowBronzeToast(current, percentage)
+                    break
+                end
+            end
         end
     end)
 end

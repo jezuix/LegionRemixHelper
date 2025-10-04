@@ -4789,7 +4789,32 @@ constants.SETTINGS = {
 constants.TOASTS = {
     BRONZE = {
         ICON = 4638724,
-        CURRENCY_ID = 3252
+        CURRENCY_ID = 3252,
+        MILESTONES = { -- We could actually have all the amount breakpoints, but it would probably be annoying
+            --2,
+            --2.5,
+            --4,
+            --5,
+            --6,
+            --7.5,
+            --8,
+            10000,
+            --15,
+            20000,
+            --25,
+            30000,
+            --35,
+            40000,
+            80000,
+            100000
+        },
+        PERCENTAGE_MILESTONES = {
+            80,
+            90,
+            95,
+            99,
+            100
+        },
     },
     ARTIFACT = {
         ICON = 4638725,
