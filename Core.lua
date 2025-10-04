@@ -8,6 +8,7 @@ function addon:OnInitialize(...)
     Private.SettingsUtils:Init()
 
     Private.ScrappingUtils:Init()
+    Private.ToastUtils:Init()
     Private.ArtifactTraitUtils:Init()
     Private.ResearchTaskUtils:Init()
     Private.CollectionUtils:Init()
@@ -15,6 +16,7 @@ function addon:OnInitialize(...)
     Private.QuestUtils:Init()
 
     Private.CollectionsTabUI:Init()
+    Private.ToastUI:Init()
 end
 
 function addon:OnEnable(...)

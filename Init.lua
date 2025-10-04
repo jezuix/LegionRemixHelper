@@ -20,7 +20,10 @@ local defaultDatabase = {
     quest = {
         autoAccept = true,
         autoTurnIn = true,
-    }
+    },
+    toast = {
+        activate = true,
+    },
 }
 
 ---@class LegionRH : RasuAddonBase

@@ -122,7 +122,8 @@
         "SAVE",
         "NEW",
         "DELETE",
-        "StaticPopup_Hide"
+        "StaticPopup_Hide",
+        "SCENARIO_INVASION_COMPLETE"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [
