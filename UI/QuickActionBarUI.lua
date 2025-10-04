@@ -4,13 +4,35 @@ local Private = select(2, ...)
 ---@class QuickActionBarUI
 ---@field frame Frame
 ---@field parent Frame
+---@field utils QuickActionBarUtils
 ---@field defaultPanelInfo {area: string, pushable: number, whileDead: boolean, width: number}?
----@field selectedEditSetting {button: Button|table, data: QuickActionObject}?
 local quickActionBarUI = {
     frame = nil,
     parent = nil,
+    utils = nil,
     defaultPanelInfo = nil,
-    selectedEditSetting = nil
+    editor = {
+        ---@type ScrollFrameComponentObject
+        scrollFrame = nil,
+        ---@type QuickActionObject|nil
+        selected = nil,
+        ---@type LabelComponentObject
+        titlePreview = nil,
+        ---@type RoundedIconComponentObject
+        iconPreview = nil,
+        ---@type TextBoxComponentObject
+        titleInput = nil,
+        ---@type TextBoxComponentObject
+        iconInput = nil,
+        ---@type TextBoxComponentObject
+        actionIDInput = nil,
+        ---@type DropdownComponentObject
+        actionTypeDropdown = nil,
+        ---@type CheckBoxComponentObject
+        checkUsabilityInput = nil,
+        ---@type number
+        entryID = nil,
+    }
 }
 Private.QuickActionBarUI = quickActionBarUI
 
@@ -19,6 +41,7 @@ local components = Private.Components
 
 function quickActionBarUI:Init(parentTab)
     self.parent = parentTab
+    self.utils = Private.QuickActionBarUtils
 end
 
 ---@return fun(button:Button|table, elementData:QuickActionObject)
@@ -59,7 +82,21 @@ function quickActionBarUI:GetInitializer()
 
         local actionType = elementData:GetActionType()
         button:SetAttribute("type", actionType)
-        button:SetAttribute(actionType, elementData:GetActionID())
+        if actionType == const.QUICK_ACTION_BAR.ACTION_TYPE.ITEM then
+            local itemName = elementData:GetActionID()
+            if tonumber(itemName) then
+                local item = Item:CreateFromItemID(tonumber(itemName))
+                item:ContinueOnItemLoad(function()
+                    if button and button.SetAttribute then
+                        button:SetAttribute(actionType, item:GetItemName())
+                    end
+                end)
+            else
+                button:SetAttribute(actionType, itemName)
+            end
+        else
+            button:SetAttribute(actionType, elementData:GetActionID())
+        end
 
         button.icon:SetTexture(elementData:GetIcon())
 
@@ -115,13 +152,12 @@ function quickActionBarUI:CreateFrame()
         initializer = self:GetInitializer()
     })
 
-    for i = 1, 20 do
-        Private.QuickActionBarUtils:CreateAction("spell", "Living Flame")
-    end
-    scrollFrame:UpdateContent(Private.QuickActionBarUtils:GetActions())
+    self.utils:AddVisibilityCallback(function(actions)
+        scrollFrame:UpdateContent(actions)
+    end)
 end
 
----@return fun(gridFrame:Frame|BackdropTemplate|table, elementData:table)
+---@return fun(gridFrame:Frame|BackdropTemplate|table, elementData:QuickActionObject)
 function quickActionBarUI:GetSettingsListInitializer()
     return function(gridFrame, elementData)
         if not gridFrame.isInit then
@@ -142,7 +178,7 @@ function quickActionBarUI:GetSettingsListInitializer()
             btn.Texture = tex
 
             function btn:UpdateState()
-                if quickActionBarUI.selectedEditSetting and quickActionBarUI.selectedEditSetting.data == self.data then
+                if quickActionBarUI.editor.selected == self.data then
                     self.Texture:SetAtlas("Options_List_Active", true)
                     self.Texture:Show()
                 else
@@ -171,18 +207,7 @@ function quickActionBarUI:GetSettingsListInitializer()
             end
 
             function btn:OnClick()
-                local activeSelect = quickActionBarUI.selectedEditSetting
-                if not activeSelect or activeSelect.data ~= self.data then
-                    local oldBtn
-                    if activeSelect and activeSelect.button.data == activeSelect.data then
-                        oldBtn = activeSelect.button
-                    end
-                    quickActionBarUI.selectedEditSetting = { button = self, data = self.data }
-                    if oldBtn then
-                        oldBtn:UpdateState()
-                    end
-                end
-                self:UpdateState()
+                quickActionBarUI:SetSelection(self.data)
             end
 
             btn:SetScript("OnEnter", btn.OnEnter)
@@ -194,17 +219,64 @@ function quickActionBarUI:GetSettingsListInitializer()
 
         local btn = gridFrame.button
         btn.data = elementData
-        btn.Label:SetText(elementData.name)
+        btn.Label:SetText(elementData:GetTitle())
 
-        if quickActionBarUI.selectedEditSetting and quickActionBarUI.selectedEditSetting.data == elementData then
-            quickActionBarUI.selectedEditSetting.button = btn
-        end
         btn:UpdateState()
     end
 end
 
+---@param data QuickActionObject
+---@return Button|table|nil
+function quickActionBarUI:GetButtonForData(data)
+    if not data then return end
+    local list = self.editor.scrollFrame
+    if not list then return end
+    local view = list.scrollView
+    if not view then return end
+
+    ---@diagnostic disable-next-line: undefined-field
+    local frame = view:FindFrame(data)
+    if not frame then return end
+    return frame.button
+end
+
+---@param data QuickActionObject|nil
+function quickActionBarUI:SetSelection(data)
+    local activeSelect = self.editor.selected
+    if not activeSelect or activeSelect ~= data then
+        local oldBtn = self:GetButtonForData(activeSelect)
+        self.editor.selected = data
+        if oldBtn then
+            oldBtn:UpdateState()
+        end
+    end
+    local newBtn = self:GetButtonForData(data)
+    if newBtn then
+        newBtn:UpdateState()
+    end
+
+    local editor = self.editor
+    local newID = data and data:GetID() or nil
+    local newTitle = data and data:GetTitle() or "Action Title here"
+    local newIcon = data and data:GetIconOverride() or ""
+    local newIconPreview = data and data:GetIcon() or 5228749
+    local newActionID = data and data:GetActionID() or ""
+    local newActionType = data and data:GetActionType() or const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL
+    local newCheckUsability = data and not (not data.checkVisibility) or false
+
+    editor.entryID = newID
+    editor.titlePreview:SetText(newTitle)
+    editor.iconPreview:SetTexture(newIconPreview)
+    editor.titleInput:SetText(newTitle)
+    editor.iconInput:SetText(newIcon)
+    editor.actionIDInput:SetText(newActionID)
+    editor.actionTypeDropdown:GetDropdown().SetSelection(newActionType)
+    editor.checkUsabilityInput:SetChecked(newCheckUsability)
+end
+
 ---@return fun(frame:Frame|BackdropTemplate|table, data:table)
 function quickActionBarUI:GetTreeSettingsInitializer()
+    self.utils = Private.QuickActionBarUtils
     return function(frame, data)
         if frame.isInitialized then
             return
@@ -233,8 +305,8 @@ function quickActionBarUI:GetTreeSettingsInitializer()
 
         local editorTitle = components.Label:CreateFrame(frame, {
             anchors = {
-                { "TOPLEFT", list.scrollBox, "TOPRIGHT", 50, -15 },
-                { "TOPRIGHT", -150, -15 }
+                { "TOPLEFT",  list.scrollBox, "TOPRIGHT", 50, -15 },
+                { "TOPRIGHT", -125,           -15 }
             },
             font = "GameFontNormalHuge",
             text = "Editing Action",
@@ -242,7 +314,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
 
         local titlePreview = components.Label:CreateFrame(frame, {
             anchors = {
-                { "TOPLEFT", editorTitle.frame, "BOTTOMLEFT", 0, -5 },
+                { "TOPLEFT",  editorTitle.frame, "BOTTOMLEFT",  0, -5 },
                 { "TOPRIGHT", editorTitle.frame, "BOTTOMRIGHT", 0, -5 },
             },
             text = "Action Title here",
@@ -256,7 +328,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
             height = 40,
             width = 40,
         })
-        iconPreview:SetTexture(4622476)
+        iconPreview:SetTexture(5228749)
 
         local titleLabel = components.Label:CreateFrame(frame, {
             anchors = {
@@ -270,7 +342,8 @@ function quickActionBarUI:GetTreeSettingsInitializer()
             anchors = {
                 { "TOPRIGHT", -31, -100 },
             },
-            width = 200,
+            width = 175,
+            instructions = "Name of the action",
         })
 
         local iconLabel = components.Label:CreateFrame(frame, {
@@ -278,14 +351,15 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", titleLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Icon (ID or Path):",
+            text = "Icon:",
         })
 
         local iconInput = components.TextBox:CreateFrame(frame, {
             anchors = {
                 { "TOPRIGHT", titleInput.editBox, "BOTTOMRIGHT", 0, -15 },
-                { "TOPLEFT", titleInput.editBox, "BOTTOMLEFT", 0, -15 },
+                { "TOPLEFT",  titleInput.editBox, "BOTTOMLEFT",  0, -15 },
             },
+            instructions = "Texture ID or Path",
         })
 
         local actionIDLabel = components.Label:CreateFrame(frame, {
@@ -293,14 +367,15 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", iconLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Action ID (Name or ID):",
+            text = "Action ID:",
         })
 
         local actionIDInput = components.TextBox:CreateFrame(frame, {
             anchors = {
                 { "TOPRIGHT", iconInput.editBox, "BOTTOMRIGHT", 0, -15 },
-                { "TOPLEFT", iconInput.editBox, "BOTTOMLEFT", 0, -15 },
+                { "TOPLEFT",  iconInput.editBox, "BOTTOMLEFT",  0, -15 },
             },
+            instructions = "Item/Spell name or ID",
         })
 
         local actionTypeLabel = components.Label:CreateFrame(frame, {
@@ -313,13 +388,13 @@ function quickActionBarUI:GetTreeSettingsInitializer()
 
         local actionTypeDropdown = components.Dropdown:CreateFrame(frame, {
             anchors = {
-                { "TOPRIGHT", actionIDInput.editBox, "BOTTOMRIGHT", 0, -15 },
-                { "TOPLEFT", actionIDInput.editBox, "BOTTOMLEFT", -5, -15 },
+                { "TOPRIGHT", actionIDInput.editBox, "BOTTOMRIGHT", 0,  -15 },
+                { "TOPLEFT",  actionIDInput.editBox, "BOTTOMLEFT",  -5, -15 },
             },
             dropdownType = "RADIO",
             radioOptions = {
-                { "Spell", "spell" },
-                { "Item", "item" },
+                { "Spell", const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL },
+                { "Item",  const.QUICK_ACTION_BAR.ACTION_TYPE.ITEM },
             }
         })
 
@@ -328,7 +403,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", actionTypeLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Only show when usable:",
+            text = "Only when usable:",
         })
 
         local checkUsabilityInput = components.CheckBox:CreateFrame(frame, {
@@ -349,14 +424,83 @@ function quickActionBarUI:GetTreeSettingsInitializer()
         newButton:SetSize(80, 22)
         newButton:SetText(NEW)
 
-        local sampleData = {}
-        for i = 1, 35 do
-            tinsert(sampleData, {
-                name = "Sample Item " .. i
-            })
-        end
-        list:UpdateContent(sampleData)
+        local deleteButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+        deleteButton:SetPoint("BOTTOMRIGHT", newButton, "BOTTOMLEFT", -5, 0)
+        deleteButton:SetSize(80, 22)
+        deleteButton:SetText(DELETE)
+
+        self.editor.scrollFrame = list
+        self.editor.titlePreview = titlePreview
+        self.editor.iconPreview = iconPreview
+        self.editor.titleInput = titleInput
+        self.editor.iconInput = iconInput
+        self.editor.actionIDInput = actionIDInput
+        self.editor.actionTypeDropdown = actionTypeDropdown
+        self.editor.checkUsabilityInput = checkUsabilityInput
+
+        self.utils:AddUpdateCallback(function(actions)
+            self:UpdateEditor(actions)
+        end)
+
+        newButton:SetScript("OnClick", function()
+            local newAction = self.utils:CreateAction(const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL, "New Action", nil,
+                self.utils:GetDefaultVisibilityFunc())
+            list:UpdateContent(self.utils:GetAllActions())
+            self:SetSelection(newAction)
+        end)
+
+        deleteButton:SetScript("OnClick", function()
+            if not self.editor.selected then return end
+            self.utils:DeleteActionByID(self.editor.selected:GetID())
+            list:UpdateContent(self.utils:GetAllActions())
+            self:SetSelection(nil)
+        end)
+
+        saveButton:SetScript("OnClick", function()
+            local obj = self.editor.selected
+            if not obj then
+                Private.Addon:FPrint("No action selected to save!")
+                return
+            end
+
+            local title = self.editor.titleInput:GetText()
+            local icon = tonumber(self.editor.iconInput:GetText()) or self.editor.iconInput:GetText()
+            local actionID = self.editor.actionIDInput:GetText()
+            local actionType = self.editor.actionTypeDropdown:GetDropdown().selectedValue
+            local checkUsability = self.editor.checkUsabilityInput:GetChecked()
+
+            if title == "" then
+                title = "Action " .. tostring(self.editor.entryID or "?")
+            end
+            if not actionType then
+                actionType = const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL
+            end
+
+            obj:SetActionID(actionID)
+            obj:SetActionType(actionType)
+            obj:SetIconOverride(icon and icon ~= "" and icon or nil)
+            obj:SetTitle(title)
+            if checkUsability then
+                obj:SetVisibilityFunc(self.utils:GetDefaultVisibilityFunc())
+            else
+                obj:SetVisibilityFunc(nil)
+            end
+
+            local errMsg = self.utils:EditActionByID(self.editor.entryID, obj)
+            if errMsg then
+                Private.Addon:FPrint("Got an error while saving action: " .. errMsg)
+                return
+            end
+
+            self:UpdateEditor(self.utils:GetAllActions())
+            self:SetSelection(obj)
+        end)
     end
+end
+
+---@param actions QuickActionObject[]
+function quickActionBarUI:UpdateEditor(actions)
+    self.editor.scrollFrame:UpdateContent(actions)
 end
 
 function quickActionBarUI:Toggle()

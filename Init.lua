@@ -13,7 +13,10 @@ local defaultDatabase = {
     },
     artifactTraits = {
         autoActive = {}
-    }
+    },
+    quickActionBar = {
+        actions = nil,
+    },
 }
 
 ---@class LegionRH : RasuAddonBase

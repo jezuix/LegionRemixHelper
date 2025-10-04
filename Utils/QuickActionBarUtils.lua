@@ -21,6 +21,8 @@ local qaConst = const.QUICK_ACTION_BAR
 ---@field customCode string|nil
 ---@field checkVisibility (fun(self:QuickActionObject):shouldShow:boolean)?
 ---@field icon number|string|?
+---@field title string
+---@field id number
 local quickActionMixin = {
     actionType = qaConst.ACTION_TYPE.NONE,
     actionID = nil,
@@ -78,6 +80,11 @@ function quickActionMixin:GetIcon()
     end
 end
 
+---@return string|number? iconOverride
+function quickActionMixin:GetIconOverride()
+    return self.icon
+end
+
 ---@param icon string|number|?
 function quickActionMixin:SetIconOverride(icon)
     self.icon = icon
@@ -92,18 +99,125 @@ function quickActionMixin:GetVisibility()
 end
 
 ---@param func (fun(self:QuickActionObject):shouldShow:boolean)?
-function quickActionMixin:SetVisbilityFunc(func)
+function quickActionMixin:SetVisibilityFunc(func)
     self.checkVisibility = func
 end
 
+---@return fun(self: QuickActionObject):(shouldShow: boolean)? func
+function quickActionMixin:GetVisibilityFunc()
+    return self.checkVisibility
+end
+
+---@return number
+function quickActionMixin:GetID()
+    return self.id
+end
+
+---@param id number
+function quickActionMixin:SetID(id)
+    self.id = id
+end
+
+---@return string
+function quickActionMixin:GetTitle()
+    return self.title
+end
+
+---@param title string
+function quickActionMixin:SetTitle(title)
+    self.title = title
+end
+
+---@return fun(self:QuickActionObject):shouldShow:boolean
+function quickActionBarUtils:GetDefaultVisibilityFunc()
+    return function(obj)
+        local objType = obj:GetActionType()
+        if objType == qaConst.ACTION_TYPE.NONE then
+            return false
+        elseif objType == qaConst.ACTION_TYPE.SPELL then
+            local spellIdentifier = obj:GetActionID()
+            local isUsable = C_Spell.IsSpellUsable(spellIdentifier)
+            return isUsable
+        elseif objType == qaConst.ACTION_TYPE.ITEM then
+            local itemIdentifier = obj:GetActionID()
+            local count = C_Item.GetItemCount(itemIdentifier, false, true)
+            if count <= 0 and itemIdentifier then
+                local itemID = C_Item.GetItemIDForItemInfo(itemIdentifier)
+                local usable = C_ToyBox.IsToyUsable(itemID) or false
+                return usable and PlayerHasToy(itemID)
+            end
+            return count > 0
+        end
+
+        return true
+    end
+end
+
+---@class QuickActionObjectDTO
+---@field actionType QA_ACTION_TYPE
+---@field actionID number|string
+---@field icon string|number
+---@field checkVisibility boolean|nil
+---@field title string|nil
+---@field customCode string|nil
+
+---@param dto QuickActionObjectDTO
+function quickActionBarUtils:CreateFromDTO(dto)
+    local obj = self:CreateAction(
+        dto.actionType,
+        dto.actionID,
+        dto.icon,
+        dto.checkVisibility and self:GetDefaultVisibilityFunc() or nil,
+        dto.title
+    )
+    obj:SetCustomCode(dto.customCode)
+end
+
 function quickActionBarUtils:Init()
+    local addon = Private.Addon
     self.callbackUtils = Private.CallbackUtils
+
+    local actions = addon:GetDatabaseValue("quickActionBar.actions", true)
+    if not actions then actions = self:GetDefaultOptions() end
+    ---@cast actions QuickActionObjectDTO[]
+    for _, actionData in ipairs(actions) do
+        self:CreateFromDTO(actionData)
+    end
+
+    addon:RegisterEvent("ITEM_COUNT_CHANGED", "QuickActionBarUtils_ItemCountChanged", function(_, _, itemID)
+        self:TriggerVisibilityCallbacks()
+    end)
+    addon:RegisterEvent("SPELLS_CHANGED", "QuickActionBarUtils_ItemCountChanged", function(_, _, itemID)
+        self:TriggerVisibilityCallbacks()
+    end)
+end
+
+function quickActionBarUtils:GetDefaultOptions()
+    return qaConst.DEFAULT_ACTIONS
+end
+
+function quickActionBarUtils:OnDisable()
+    local actionsToSave = {}
+    for _, action in ipairs(self.actions) do
+        tinsert(actionsToSave, {
+            actionType = action:GetActionType(),
+            actionID = action:GetActionID(),
+            icon = action:GetIconOverride(),
+            checkVisibility = action:GetVisibilityFunc() ~= nil,
+            title = action:GetTitle(),
+            customCode = action:GetCustomCode(),
+        })
+    end
+    Private.Addon:SetDatabaseValue("quickActionBar.actions", actionsToSave)
 end
 
 ---@return function
 function quickActionBarUtils:GetOnDefaulted()
-    return function ()
-        Private.Addon:Print("Addon Settings Defaulted [TODO: code Logic for this Placeholder]")
+    return function()
+        self.actions = {}
+        for _, action in ipairs(self:GetDefaultOptions()) do
+            self:CreateFromDTO(action)
+        end
     end
 end
 
@@ -112,12 +226,52 @@ function quickActionBarUtils:CreateSettings()
     local settingsCategory = settingsUtils:GetCategory()
     local settingsPrefix = "Quick Action Bar"
 
-    settingsUtils:CreateHeader(settingsCategory, "Quick Action Bar", "Settings for the Quick Action Bar", {settingsPrefix})
-    settingsUtils:CreatePanel(settingsCategory, nil, nil, 400, Private.QuickActionBarUI:GetTreeSettingsInitializer(), self:GetOnDefaulted(), {settingsPrefix})
+    settingsUtils:CreateHeader(settingsCategory, "Quick Action Bar", "Settings for the Quick Action Bar",
+        { settingsPrefix })
+    settingsUtils:CreatePanel(settingsCategory, nil, nil, 400, Private.QuickActionBarUI:GetTreeSettingsInitializer(),
+        self:GetOnDefaulted(), { settingsPrefix })
+end
+
+---@param id number
+---@return QuickActionObject|nil
+function quickActionBarUtils:GetActionByID(id)
+    for _, action in ipairs(self.actions) do
+        if action:GetID() == id then
+            return action
+        end
+    end
+    return nil
+end
+
+---@param id number
+---@param newObj QuickActionObject
+---@return string? errorMessage
+function quickActionBarUtils:EditActionByID(id, newObj)
+    local action = self:GetActionByID(id)
+    if not action then return "Not Found" end
+
+    action:SetActionType(newObj:GetActionType())
+    action:SetActionID(newObj:GetActionID())
+    action:SetIconOverride(newObj:GetIconOverride())
+    action:SetVisibilityFunc(newObj:GetVisibilityFunc())
+    action:SetTitle(newObj:GetTitle())
+
+    self:TriggerUpdateCallbacks()
+end
+
+---@param id number
+function quickActionBarUtils:DeleteActionByID(id)
+    for index, action in ipairs(self.actions) do
+        if action:GetID() == id then
+            tremove(self.actions, index)
+            self:TriggerUpdateCallbacks()
+            return
+        end
+    end
 end
 
 ---@return QuickActionObject[]
-function quickActionBarUtils:GetActions()
+function quickActionBarUtils:GetVisibleActions()
     local visibleActions = {}
 
     for _, action in ipairs(self.actions) do
@@ -129,12 +283,18 @@ function quickActionBarUtils:GetActions()
     return visibleActions
 end
 
+---@return QuickActionObject[]
+function quickActionBarUtils:GetAllActions()
+    return self.actions
+end
+
 ---@param actionType QA_ACTION_TYPE?
 ---@param actionID string|number|nil
 ---@param iconOverride string|number|nil
 ---@param visibilityFunc (fun(self:QuickActionObject):shouldShow:boolean)?
+---@param title string|nil
 ---@return QuickActionObject
-function quickActionBarUtils:CreateAction(actionType, actionID, iconOverride, visibilityFunc)
+function quickActionBarUtils:CreateAction(actionType, actionID, iconOverride, visibilityFunc, title)
     local obj = {}
     setmetatable(obj, { __index = quickActionMixin })
     ---@cast obj QuickActionObject
@@ -142,16 +302,20 @@ function quickActionBarUtils:CreateAction(actionType, actionID, iconOverride, vi
     obj:SetActionType(actionType)
     obj:SetActionID(actionID)
     obj:SetIconOverride(iconOverride)
-    obj:SetVisbilityFunc(visibilityFunc)
+    obj:SetVisibilityFunc(visibilityFunc)
+
+    local nextID = #self.actions + 1
+    while self:GetActionByID(nextID) do
+        nextID = nextID + 1
+    end
+    obj:SetID(nextID)
+    obj:SetTitle(title or ("Action " .. tostring(nextID)))
 
     tinsert(self.actions, obj)
-    return obj
-end
 
----@param callbackFunction fun(actions: QuickActionObject[])
----@return CallbackObject|nil callbackObject
-function quickActionBarUtils:AddCallback(callbackFunction)
-    return self.callbackUtils:AddCallback(const.QUICK_ACTION_BAR.CALLBACK_CATEGORY, callbackFunction)
+    self:TriggerUpdateCallbacks()
+
+    return obj
 end
 
 ---@param callbackObj CallbackObject
@@ -159,10 +323,37 @@ function quickActionBarUtils:RemoveCallback(callbackObj)
     self.callbackUtils:RemoveCallback(callbackObj)
 end
 
-function quickActionBarUtils:TriggerCallbacks()
-    local callbacks = self.callbackUtils:GetCallbacks(const.QUICK_ACTION_BAR.CALLBACK_CATEGORY)
-    local actions = self:GetActions()
+---@param callbackFunction fun(actions: QuickActionObject[])
+---@return CallbackObject|nil callbackObject
+function quickActionBarUtils:AddUpdateCallback(callbackFunction)
+    local callback = self.callbackUtils:AddCallback(const.QUICK_ACTION_BAR.CALLBACK_CATEGORY_UPDATE, callbackFunction)
+    if not callback then return nil end
+    callback:Trigger(self:GetAllActions())
+    return callback
+end
+
+function quickActionBarUtils:TriggerUpdateCallbacks()
+    local callbacks = self.callbackUtils:GetCallbacks(const.QUICK_ACTION_BAR.CALLBACK_CATEGORY_UPDATE)
+    local actions = self:GetAllActions()
     for _, callback in ipairs(callbacks) do
         callback:Trigger(actions)
+    end
+    self:TriggerVisibilityCallbacks()
+end
+
+---@param callbackFunction fun(visibleActions: QuickActionObject[])
+---@return CallbackObject|nil callbackObject
+function quickActionBarUtils:AddVisibilityCallback(callbackFunction)
+    local callback = self.callbackUtils:AddCallback(const.QUICK_ACTION_BAR.CALLBACK_CATEGORY_VISIBILITY, callbackFunction)
+    if not callback then return nil end
+    callback:Trigger(self:GetVisibleActions())
+    return callback
+end
+
+function quickActionBarUtils:TriggerVisibilityCallbacks()
+    local callbacks = self.callbackUtils:GetCallbacks(const.QUICK_ACTION_BAR.CALLBACK_CATEGORY_VISIBILITY)
+    local visibleActions = self:GetVisibleActions()
+    for _, callback in ipairs(callbacks) do
+        callback:Trigger(visibleActions)
     end
 end

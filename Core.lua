@@ -11,6 +11,7 @@ function addon:OnInitialize(...)
     Private.ArtifactTraitUtils:Init()
     Private.ResearchTaskUtils:Init()
     Private.CollectionUtils:Init()
+    Private.QuickActionBarUtils:Init()
 
     Private.CollectionsTabUI:Init()
 end
@@ -20,5 +21,5 @@ function addon:OnEnable(...)
 end
 
 function addon:OnDisable(...)
-    -- On Disable
+    Private.QuickActionBarUtils:OnDisable()
 end

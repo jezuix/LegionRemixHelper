@@ -120,7 +120,8 @@
         "RARITY",
         "NineSliceUtil",
         "SAVE",
-        "NEW"
+        "NEW",
+        "DELETE"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

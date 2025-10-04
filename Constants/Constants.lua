@@ -4661,7 +4661,8 @@ do
 end
 
 constants.QUICK_ACTION_BAR = {
-    CALLBACK_CATEGORY = "QuickActionBarUpdate",
+    CALLBACK_CATEGORY_UPDATE = "QuickActionBarUpdate",
+    CALLBACK_CATEGORY_VISIBILITY = "QuickActionBarVisibilityUpdate",
     ---@enum QA_ACTION_TYPE
     ACTION_TYPE = {
         NONE = "",
@@ -4669,6 +4670,113 @@ constants.QUICK_ACTION_BAR = {
         ITEM = "item",
     }
 }
+
+do
+    local types = constants.QUICK_ACTION_BAR.ACTION_TYPE
+    constants.QUICK_ACTION_BAR.DEFAULT_ACTIONS = {
+        {
+            actionType = types.ITEM,
+            actionID = 237812,
+            checkVisibility = true,
+            title = "Cache of Infinite Treasure",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 251821,
+            checkVisibility = true,
+            title = "Cache of Infinite Power",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 245553,
+            checkVisibility = true,
+            title = "Heroic Cache of Infinite Treasure",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 246814,
+            checkVisibility = true,
+            title = "Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 254847,
+            checkVisibility = true,
+            title = "Minor Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 246815,
+            checkVisibility = true,
+            title = "Lesser Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 246813,
+            checkVisibility = true,
+            title = "Greater Bronze Cache",
+            convert = true
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 245925,
+            checkVisibility = true,
+            title = "Artifactium Sand",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 249891,
+            checkVisibility = true,
+            title = "Mound of Artifactium Sand",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 238727,
+            checkVisibility = true,
+            title = "Nostwin's Voucher",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 250411,
+            checkVisibility = true,
+            title = "Timerunner's Hearthstone",
+        },
+        {
+            actionType = types.ITEM,
+            actionID = 140192,
+            checkVisibility = true,
+            title = "Dalaran Hearthstone",
+        },
+        {
+            actionType = types.SPELL,
+            actionID = 1232807,
+            checkVisibility = true,
+            title = "Unraveling Sands",
+        },
+    }
+
+    for _, action in ipairs(constants.QUICK_ACTION_BAR.DEFAULT_ACTIONS) do
+        if action.convert then
+            if action.actionType == types.ITEM then
+                local item = Item:CreateFromItemID(action.actionID)
+                item:ContinueOnItemLoad(function()
+                    local name = item:GetItemName()
+                    if name and name ~= "" then
+                        action.title = name
+                        action.icon = item:GetItemIcon()
+                        action.actionID = name
+                    end
+                end)
+            end
+        end
+    end
+end
 
 constants.SETTINGS = {
     TYPES = {
