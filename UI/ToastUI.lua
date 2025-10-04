@@ -34,6 +34,7 @@ function toastUI:NewToastFrame()
         onHide = function(obj)
             toastUI.activeToasts[obj] = nil
             self:ReorderFrames()
+            tinsert(self.toastPool, obj)
         end,
         onShow = function(obj)
             toastUI.activeToasts[obj] = true

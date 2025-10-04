@@ -45,31 +45,6 @@ function toastUtils:Init()
     end)
 end
 
----@param invType Enum.InventoryType
----@return number? minLevel
-function toastUtils:GetMinLevelForInvType(invType)
-    local equipementSlot = const.ITEM_TO_INV_SLOT[invType]
-    if not equipementSlot then return end
-    if type(equipementSlot) == "number" then
-        local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(equipementSlot)
-        if equippedItemLoc:IsValid() then
-            return C_Item.GetCurrentItemLevel(equippedItemLoc)
-        end
-    elseif type(equipementSlot) == "table" then
-        local minLevel = nil
-        for _, slot in ipairs(equipementSlot) do
-            local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(slot)
-            if equippedItemLoc:IsValid() then
-                local itemLevel = C_Item.GetCurrentItemLevel(equippedItemLoc)
-                if not minLevel or itemLevel < minLevel then
-                    minLevel = itemLevel
-                end
-            end
-        end
-        return minLevel
-    end
-end
-
 ---@return ItemLocationMixin?
 function toastUtils:GetHighestUpgradeItem()
     local highestLoc, highestLevel = nil, 0
@@ -80,7 +55,7 @@ function toastUtils:GetHighestUpgradeItem()
                 local itemGUID = C_Item.GetItemGUID(itemLoc)
                 if not self.notifiedUpgrades[itemGUID] and C_Item.IsEquippableItem(C_Item.GetItemID(itemLoc)) then
                     local bagItemLevel = C_Item.GetCurrentItemLevel(itemLoc)
-                    local equippedItemLevel = self:GetMinLevelForInvType(C_Item.GetItemInventoryType(itemLoc)) or 0
+                    local equippedItemLevel = Private.ItemUtils:GetMinLevelForInvType(C_Item.GetItemInventoryType(itemLoc)) or 0
                     if equippedItemLevel < bagItemLevel and bagItemLevel > highestLevel then
                         highestLoc = itemLoc
                         highestLevel = bagItemLevel

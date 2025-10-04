@@ -111,31 +111,6 @@ function scrappingUtils:GetScrappableItems()
     return scrappableItems
 end
 
----@param invType Enum.InventoryType
----@return number? minLevel
-function scrappingUtils:GetMinLevelForInvType(invType)
-    local equipementSlot = const.ITEM_TO_INV_SLOT[invType]
-    if not equipementSlot then return end
-    if type(equipementSlot) == "number" then
-        local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(equipementSlot)
-        if equippedItemLoc:IsValid() then
-            return C_Item.GetCurrentItemLevel(equippedItemLoc)
-        end
-    elseif type(equipementSlot) == "table" then
-        local minLevel = nil
-        for _, slot in ipairs(equipementSlot) do
-            local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(slot)
-            if equippedItemLoc:IsValid() then
-                local itemLevel = C_Item.GetCurrentItemLevel(equippedItemLoc)
-                if not minLevel or itemLevel < minLevel then
-                    minLevel = itemLevel
-                end
-            end
-        end
-        return minLevel
-    end
-end
-
 ---@param capReturn number|nil
 ---@return ScrappableItem[]
 function scrappingUtils:GetFilteredScrappableItems(capReturn)
@@ -145,7 +120,7 @@ function scrappingUtils:GetFilteredScrappableItems(capReturn)
     local scrappableItems = self:GetScrappableItems()
     local filteredItems = {}
     for _, item in ipairs(scrappableItems) do
-        local equippedItemLevel = self:GetMinLevelForInvType(item.invType)
+        local equippedItemLevel = Private.ItemUtils:GetMinLevelForInvType(item.invType)
         if equippedItemLevel and equippedItemLevel - item.level >= minLevelDiff and item.quality <= maxQuality then
             tinsert(filteredItems, item)
 
