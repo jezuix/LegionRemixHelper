@@ -10,16 +10,16 @@ Private.ItemUtils = itemUtils
 ---@param invType Enum.InventoryType
 ---@return number? minLevel
 function itemUtils:GetMinLevelForInvType(invType)
-    local equipementSlot = const.ITEM_TO_INV_SLOT[invType]
-    if not equipementSlot then return end
-    if type(equipementSlot) == "number" then
-        local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(equipementSlot)
+    local equipmentSlot = const.ITEM_TO_INV_SLOT[invType]
+    if not equipmentSlot then return end
+    if type(equipmentSlot) == "number" then
+        local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(equipmentSlot)
         if equippedItemLoc:IsValid() then
             return C_Item.GetCurrentItemLevel(equippedItemLoc)
         end
-    elseif type(equipementSlot) == "table" then
+    elseif type(equipmentSlot) == "table" then
         local minLevel = nil
-        for _, slot in ipairs(equipementSlot) do
+        for _, slot in ipairs(equipmentSlot) do
             local equippedItemLoc = ItemLocation:CreateFromEquipmentSlot(slot)
             if equippedItemLoc:IsValid() then
                 local itemLevel = C_Item.GetCurrentItemLevel(equippedItemLoc)

@@ -129,7 +129,7 @@ end
 ---@return table initializer
 function settingsUtils:CreateButton(category, title, text, onClick, tooltip, addToSearch)
     local initializer = CreateSettingsButtonInitializer(title, text, onClick, tooltip, addToSearch)
-    settingsUtils:AddToCategoryLayout(category, initializer)
+    self:AddToCategoryLayout(category, initializer)
     return initializer
 end
 
@@ -141,7 +141,7 @@ end
 function settingsUtils:CreateHeader(category, title, tooltip, searchTags)
     local initializer = CreateSettingsListSectionHeaderInitializer(title, tooltip)
     initializer:AddSearchTags(unpack(searchTags or {}))
-    settingsUtils:AddToCategoryLayout(category, initializer)
+    self:AddToCategoryLayout(category, initializer)
     return initializer
 end
 

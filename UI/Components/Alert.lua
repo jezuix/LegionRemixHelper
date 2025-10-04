@@ -131,10 +131,10 @@ end
 ---@return AlertComponentObject sampleFrame
 function alertComponent:CreateFrame(parent, options)
     parent = parent or UIParent
+    options = componentsBase:MixTables(defaultOptions, options or {})
     if not options.frame_strata then
         options.frame_strata = parent:GetFrameStrata()
     end
-    options = componentsBase:MixTables(defaultOptions, options)
 
     local frame = CreateFrame("Frame", nil, parent)
     frame:SetFrameStrata(options.frame_strata)

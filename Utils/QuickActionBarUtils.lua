@@ -17,7 +17,7 @@ local qaConst = const.QUICK_ACTION_BAR
 
 ---@class QuickActionMixin
 ---@field actionType QA_ACTION_TYPE
----@field actionID number|nil
+---@field actionID number|string|nil
 ---@field customCode string|nil
 ---@field checkVisibility (fun(self:QuickActionObject):shouldShow:boolean)?
 ---@field icon number|string|?
@@ -41,7 +41,7 @@ function quickActionMixin:SetActionType(actionType)
     self.actionType = actionType
 end
 
----@return number|nil actionID
+---@return number|string|nil actionID
 function quickActionMixin:GetActionID()
     return self.actionID
 end

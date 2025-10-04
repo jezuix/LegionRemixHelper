@@ -3,12 +3,12 @@
 ..\FrameXML\UI.xsd">
     <script file="CallbackUtils.lua" />
     <script file="SettingsUtils.lua" />
-    <script file="ItemUtils.lua"/>
-    <script file="ToastUtils.lua"/>
-    <script file="QuestUtils.lua"/>
+    <script file="ItemUtils.lua" />
+    <script file="ToastUtils.lua" />
+    <script file="QuestUtils.lua" />
     <script file="QuickActionBarUtils.lua" />
-    <script file="ResearchTaskUtils.lua"/>
-    <script file="ScrappingUtils.lua"/>
-    <script file="ArtifactTraitUtils.lua"/>
-    <script file="CollectionUtils.lua"/>
+    <script file="ResearchTaskUtils.lua" />
+    <script file="ScrappingUtils.lua" />
+    <script file="ArtifactTraitUtils.lua" />
+    <script file="CollectionUtils.lua" />
 </Ui>
