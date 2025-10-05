@@ -67,8 +67,8 @@ function toastUtils:GetHighestUpgradeItem()
                 local itemGUID = C_Item.GetItemGUID(itemLoc)
                 if not self.notifiedUpgrades[itemGUID] and C_Item.IsEquippableItem(C_Item.GetItemID(itemLoc)) then
                     local bagItemLevel = C_Item.GetCurrentItemLevel(itemLoc)
-                    local equippedItemLevel = Private.ItemUtils:GetMinLevelForInvType(C_Item.GetItemInventoryType(itemLoc)) or 0
-                    if equippedItemLevel < bagItemLevel and bagItemLevel > highestLevel then
+                    local equippedItemLevel = Private.ItemUtils:GetMinLevelForInvType(C_Item.GetItemInventoryType(itemLoc))
+                    if equippedItemLevel and equippedItemLevel < bagItemLevel and bagItemLevel > highestLevel then
                         highestLoc = itemLoc
                         highestLevel = bagItemLevel
                     end

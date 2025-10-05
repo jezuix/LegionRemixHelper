@@ -4,7 +4,9 @@
     <script file="DatabaseUtils.lua" />
     <script file="CallbackUtils.lua" />
     <script file="SettingsUtils.lua" />
+    <script file="CommsUtils.lua" />
     <script file="ItemUtils.lua" />
+    <script file="TooltipUtils.lua" />
     <script file="ToastUtils.lua" />
     <script file="QuestUtils.lua" />
     <script file="QuickActionBarUtils.lua" />
@@ -12,4 +14,5 @@
     <script file="ScrappingUtils.lua" />
     <script file="ArtifactTraitUtils.lua" />
     <script file="CollectionUtils.lua" />
+    <script file="UpdateUtils.lua" />
 </Ui>

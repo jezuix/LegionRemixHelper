@@ -18,17 +18,23 @@ local defaultDatabase = {
         actions = nil,
     },
     quest = {
-        autoAccept = true,
-        autoTurnIn = true,
+        autoAccept = false,
+        autoTurnIn = false,
     },
     toast = {
-        activate = true,
-        bronze = true,
-        artifact = true,
-        upgrade = true,
-        trait = true,
-        sound = true,
+        activate = false,
+        bronze = false,
+        artifact = false,
+        upgrade = false,
+        trait = false,
+        sound = false,
     },
+    tooltip = {
+        activate = false,
+        threads = false,
+        power = false,
+    },
+    version = nil
 }
 
 ---@class LegionRH : RasuAddonBase

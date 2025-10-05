@@ -7,6 +7,8 @@ local addon = Private.Addon
 function addon:OnInitialize(...)
     Private.SettingsUtils:Init()
 
+    Private.CommsUtils:Init()
+    Private.TooltipUtils:Init()
     Private.ScrappingUtils:Init()
     Private.ToastUtils:Init()
     Private.ArtifactTraitUtils:Init()
@@ -21,7 +23,11 @@ end
 
 function addon:OnEnable(...)
     Private.DatabaseUtils:LoadDefaultsForMissing()
+
+    Private.TooltipUtils:CreateSettings()
     Private.QuickActionBarUtils:CreateSettings()
+
+    Private.UpdateUtils:OnEnable()
 end
 
 function addon:OnDisable(...)
