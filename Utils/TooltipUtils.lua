@@ -51,7 +51,7 @@ end
 ---@return number totalThreads
 function tooltipUtils:GetThreadsCount(unit)
     local threadsAura = self:GetThreadsBuff(unit)
-    if not threadsAura then return 0 end
+    if not threadsAura or not threadsAura.points then return 0 end
     local total = 0
     for _, threadCount in ipairs(threadsAura.points) do
         total = total + (threadCount or 0)
@@ -67,13 +67,13 @@ function tooltipUtils:SendPowerRequest(unit)
     if not guid then return end
 
     local cached = self.cachedPower[guid]
-    if cached and cached.timestamp > timeNow - (600) then -- cache for 10 minutes
+    if cached and cached.timestamp > timeNow - (const.TOOLTIP.CACHE_DURATION) then -- cache for 10 minutes
         return cached.power
     end
 
     local lastSent = self.lastRequestSent[guid] or 0
     local target = self.comms:GetTargetFromUnitToken(unit)
-    if target and timeNow - lastSent > 600 then
+    if target and timeNow - lastSent > const.TOOLTIP.CACHE_DURATION then
         self.lastRequestSent[guid] = timeNow
         self.comms:SendMessage(const.TOOLTIP.COMMS_PREFIX.REQUEST_DATA, {}, "WHISPER", target)
     end
@@ -97,7 +97,7 @@ function tooltipUtils:GetInfinitePowerEstimate(unit)
     local maxEstimate = const.TOOLTIP.POWER_VERS_START + const.TOOLTIP.POWER_PER_VERS
 
     local threadsAura = self:GetThreadsBuff(unit)
-    if not threadsAura then return minEstimate, maxEstimate end
+    if not threadsAura or not threadsAura.points then return minEstimate, maxEstimate end
     local vers = threadsAura.points[const.TOOLTIP.VERS_INDEX] or 0
     if vers > 0 then
         minEstimate = maxEstimate + ((vers - 1) * const.TOOLTIP.POWER_PER_VERS)

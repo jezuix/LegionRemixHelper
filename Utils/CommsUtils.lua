@@ -18,7 +18,7 @@ function commsUtils:Init()
         C_ChatInfo.RegisterAddonMessagePrefix(const.ADDON_COMMS.PREFIX)
     end
 
-    Private.Addon:RegisterEvent("CHAT_MSG_ADDON", "CommsUtils_OnReceivedMessage", function (_, _, ...)
+    Private.Addon:RegisterEvent("CHAT_MSG_ADDON", "CommsUtils_OnReceivedMessage", function(_, _, ...)
         self:OnReceivedMessage(...)
     end)
 end
@@ -26,19 +26,25 @@ end
 ---@param encoded string
 ---@return table|nil data
 function commsUtils:Decode(encoded)
-  local decoded = C_EncodingUtil.DecodeBase64(encoded, Enum.Base64Variant.Standard)
-  local decompressed = C_EncodingUtil.DecompressString(decoded, Enum.CompressionMethod.Deflate)
-  local data = C_EncodingUtil.DeserializeCBOR(decompressed)
-  return data
+    if not encoded then return end
+    local decoded = C_EncodingUtil.DecodeBase64(encoded, Enum.Base64Variant.Standard)
+    if not decoded then return end
+    local decompressed = C_EncodingUtil.DecompressString(decoded, Enum.CompressionMethod.Deflate)
+    if not decompressed then return end
+    local data = C_EncodingUtil.DeserializeCBOR(decompressed)
+    return data
 end
 
 ---@param data table
 ---@return string encoded
 function commsUtils:Encode(data)
-  local serialized = C_EncodingUtil.SerializeCBOR(data)
-  local compressed = C_EncodingUtil.CompressString(serialized, Enum.CompressionMethod.Deflate)
-  local encoded = C_EncodingUtil.EncodeBase64(compressed, Enum.Base64Variant.Standard)
-  return encoded
+    if not data then return "" end
+    local serialized = C_EncodingUtil.SerializeCBOR(data)
+    if not serialized then return "" end
+    local compressed = C_EncodingUtil.CompressString(serialized, Enum.CompressionMethod.Deflate)
+    if not compressed then return "" end
+    local encoded = C_EncodingUtil.EncodeBase64(compressed, Enum.Base64Variant.Standard)
+    return encoded or ""
 end
 
 ---@param prefix string
