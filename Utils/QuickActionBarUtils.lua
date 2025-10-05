@@ -7,6 +7,8 @@ local Private = select(2, ...)
 local quickActionBarUtils = {
     callbackUtils = nil,
     actions = {},
+    ---@type table<any, string>
+    L = nil,
 }
 Private.QuickActionBarUtils = quickActionBarUtils
 
@@ -174,6 +176,7 @@ function quickActionBarUtils:CreateFromDTO(dto)
 end
 
 function quickActionBarUtils:Init()
+    self.L = Private.L
     local addon = Private.Addon
     self.callbackUtils = Private.CallbackUtils
 
@@ -224,9 +227,9 @@ end
 function quickActionBarUtils:CreateSettings()
     local settingsUtils = Private.SettingsUtils
     local settingsCategory = settingsUtils:GetCategory()
-    local settingsPrefix = "Quick Action Bar"
+    local settingsPrefix = self.L["QuickActionBarUtils.SettingsCategoryPrefix"]
 
-    settingsUtils:CreateHeader(settingsCategory, "Quick Action Bar", "Settings for the Quick Action Bar",
+    settingsUtils:CreateHeader(settingsCategory, settingsPrefix, self.L["QuickActionBarUtils.SettingsCategoryTooltip"],
         { settingsPrefix })
     settingsUtils:CreatePanel(settingsCategory, nil, nil, 400, Private.QuickActionBarUI:GetTreeSettingsInitializer(),
         self:GetOnDefaulted(), { settingsPrefix })
@@ -248,7 +251,7 @@ end
 ---@return string? errorMessage
 function quickActionBarUtils:EditActionByID(id, newObj)
     local action = self:GetActionByID(id)
-    if not action then return "Not Found" end
+    if not action then return self.L["QuickActionBarUtils.ActionNotFound"] end
 
     action:SetActionType(newObj:GetActionType())
     action:SetActionID(newObj:GetActionID())
@@ -309,7 +312,7 @@ function quickActionBarUtils:CreateAction(actionType, actionID, iconOverride, vi
         nextID = nextID + 1
     end
     obj:SetID(nextID)
-    obj:SetTitle(title or ("Action " .. tostring(nextID)))
+    obj:SetTitle(title or (self.L["QuickActionBarUtils.Action"]:format(tostring(nextID))))
 
     tinsert(self.actions, obj)
 

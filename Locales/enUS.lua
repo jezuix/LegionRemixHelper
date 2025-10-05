@@ -55,5 +55,79 @@ local L = {
     ["ScrappingUI.MinItemLevelDifference"] = "Min Item Level Difference",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "x levels lower than equipped",
     ["ScrappingUI.AutoScrap"] = "Auto Scrap",
+
+    -- Utils/ArtifactTraitUtils.lua
+    ["ArtifactTraitUtils.NoItemEquipped"] = "No Item Equipped.",
+    ["ArtifactTraitUtils.UnknownTrait"] = "Unknown Trait",
+    ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
+    ["ArtifactTraitUtils.MaxTriesReached"] = "Max tries reached when purchasing nodes.",
+
+    -- Utils/CollectionUtils.lua
+    ["CollectionUtils.Sources"] = "Sources:",
+    ["CollectionUtils.Achievement"] = "Achievement: ",
+    ["CollectionUtils.UnknownAchievement"] = "Unknown Achievement",
+    ["CollectionUtils.UnknownVendor"] = "Unknown Vendor",
+    ["CollectionUtils.Vendor"] = "Vendor, ",
+
+    -- Utils/QuestUtils.lua
+    ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",
+    ["QuestUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Quest feature",
+    ["QuestUtils.AutoTurnIn"] = "Auto Turn-In",
+    ["QuestUtils.AutoTurnInTooltip"] = "Automatically turn in quests when interacting with NPCs.",
+    ["QuestUtils.AutoAccept"] = "Auto Accept",
+    ["QuestUtils.AutoAcceptTooltip"] = "Automatically accept quests when interacting with NPCs.",
+
+    -- Utils/QuickActionBarUtils.lua
+    ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Quick Action Bar",
+    ["QuickActionBarUtils.SettingsCategoryTooltip"] = "Settings for the Quick-Bar feature",
+    ["QuickActionBarUtils.ActionNotFound"] = "Action not found",
+    ["QuickActionBarUtils.Action"] = "Action %s",
+
+    -- Utils/ToastUtils.lua
+    ["ToastUtils.SettingsCategoryPrefix"] = "Toasts",
+    ["ToastUtils.SettingsCategoryTooltip"] = "Settings for the Toasts feature",
+    ["ToastUtils.TypeBronze"] = "Bronze Milestones",
+    ["ToastUtils.TypeBronzeTooltip"] = "Show a toast when you reach a new bronze milestone.",
+    ["ToastUtils.TypeArtifact"] = "Artifact Upgrades",
+    ["ToastUtils.TypeArtifactTooltip"] = "Show a toast when you find an artifact upgrade in your bags.",
+    ["ToastUtils.TypeUpgrade"] = "Item Upgrades",
+    ["ToastUtils.TypeUpgradeTooltip"] = "Show a toast when you find an item upgrade in your bags.",
+    ["ToastUtils.TypeTrait"] = "New Traits",
+    ["ToastUtils.TypeTraitTooltip"] = "Show a toast when you unlock a new artifact trait.",
+    ["ToastUtils.TypeSound"] = "Play Sound",
+    ["ToastUtils.TypeSoundTooltip"] = "Play a sound when showing any toast.",
+    ["ToastUtils.TypeGeneral"] = "Enable Toasts",
+    ["ToastUtils.TypeGeneralTooltip"] = "Enable or disable all toast notifications.",
+    ["ToastUtils.TestToast"] = "Test Toast",
+    ["ToastUtils.TestToastButtonTitle"] = "Test Toast Notification",
+    ["ToastUtils.TestToastTooltip"] = "Show a test toast notification.",
+    ["ToastUtils.TestToastTitle"] = "Test Toast Notification",
+    ["ToastUtils.TestToastDescription"] = "This is a test toast notification.",
+    ["ToastUtils.TypeBronzeTitle"] = "New Bronze Milestone!",
+    ["ToastUtils.TypeBronzeDescription"] = "You have reached %d bronze! (%.2f%% to cap)",
+    ["ToastUtils.TypeArtifactTitle"] = "New Artifact Upgrade!",
+    ["ToastUtils.TypeArtifactDescription"] = "You have found a new artifact upgrade! Check your inventory or quick action bar.",
+    ["ToastUtils.TypeUpgradeTitle"] = "New Item Upgrade!",
+    ["ToastUtils.TypeUpgradeFallback"] = "Unknown Item",
+    ["ToastUtils.TypeTraitTitle"] = "New Trait Unlocked!",
+    ["ToastUtils.TypeTraitDescription"] = "New Trait: %s",
+    ["ToastUtils.TypeTraitFallback"] = "Unknown Trait",
+
+    -- Utils/TooltipUtils.lua
+    ["TooltipUtils.Threads"] = "Threads",
+    ["TooltipUtils.InfinitePower"] = "Infinite Power",
+    ["TooltipUtils.Estimate"] = " (Estimate)",
+    ["TooltipUtils.SettingsCategoryPrefix"] = "Tooltip Power",
+    ["TooltipUtils.SettingsCategoryTooltip"] = "Settings for the Tooltip-Power feature",
+    ["TooltipUtils.Activate"] = "Activate",
+    ["TooltipUtils.ActivateTooltip"] = "Show Tooltip-Power information",
+    ["TooltipUtils.ThreadsInfo"] = "Threads Information",
+    ["TooltipUtils.ThreadsInfoTooltip"] = "Show Tooltip-Power Threads information",
+    ["TooltipUtils.PowerInfo"] = "Power Information",
+    ["TooltipUtils.PowerInfoTooltip"] = "Show Tooltip-Power Infinite Power information",
+
+    -- Utils/UpdateUtils.lua
+    ["UpdateUtils.PatchNotesMessage"] = "Your Version changed from %s to Version %s. Check the Addon Discord for Patch Notes!",
+    ["UpdateUtils.NilVersion"] = "N/A",
 }
 locales["enUS"] = L

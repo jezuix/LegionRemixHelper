@@ -6,11 +6,14 @@ local const = Private.constants
 ---@class UpdateUtils
 local updateUtils = {
     ---@type LegionRH
-    addon = nil
+    addon = nil,
+    ---@type table<any, string>
+    L = nil,
 }
 Private.UpdateUtils = updateUtils
 
 function updateUtils:OnEnable()
+    self.L = Private.L
     local addon = Private.Addon
     self.addon = addon
 
@@ -25,7 +28,7 @@ end
 ---@param oldVersion string|nil
 ---@param newVersion string|nil
 function updateUtils:ShowPatchNotes(oldVersion, newVersion)
-    oldVersion = oldVersion or "N/A"
-    newVersion = newVersion or "N/A"
-    self.addon:FPrint("Your Version changed from %s to Version %s. Check the Addon Discord for Patch Notes!", tostring(oldVersion), tostring(newVersion))
+    oldVersion = oldVersion or self.L["UpdateUtils.NilVersion"]
+    newVersion = newVersion or self.L["UpdateUtils.NilVersion"]
+    self.addon:FPrint(self.L["UpdateUtils.PatchNotesMessage"], tostring(oldVersion), tostring(newVersion))
 end

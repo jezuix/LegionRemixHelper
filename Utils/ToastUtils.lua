@@ -5,13 +5,16 @@ local Private = select(2, ...)
 ---@field addon LegionRH
 local toastUtils = {
     addon = nil,
-    notifiedUpgrades = {}
+    notifiedUpgrades = {},
+    ---@type table<any, string>
+    L = nil,
 }
 Private.ToastUtils = toastUtils
 
 local const = Private.constants
 
 function toastUtils:Init()
+    self.L = Private.L
     local addon = Private.Addon
     self.addon = addon
     self:CreateSettings()
@@ -87,34 +90,34 @@ end
 function toastUtils:CreateSettings()
     local settingsUtils = Private.SettingsUtils
     local settingsCategory = settingsUtils:GetCategory()
-    local settingsPrefix = "Toasts"
+    local settingsPrefix = self.L["ToastUtils.SettingsCategoryPrefix"]
 
-    settingsUtils:CreateHeader(settingsCategory, "Toasts", "Settings for the Toast feature",
+    settingsUtils:CreateHeader(settingsCategory, settingsPrefix, self.L["ToastUtils.SettingsCategoryTooltip"],
         { settingsPrefix })
-    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_GENERAL", "BOOLEAN", "Activate Toast",
-        "Show toast notifications.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_GENERAL", "BOOLEAN", self.L["ToastUtils.TypeGeneral"],
+        self.L["ToastUtils.TypeGeneralTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "toast.activate"))
-    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_SOUND", "BOOLEAN", "Sound Toasts",
-        "Play a sound when a toast is shown.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_SOUND", "BOOLEAN", self.L["ToastUtils.TypeSound"],
+        self.L["ToastUtils.TypeSoundTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "toast.sound"))
-    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_BRONZE", "BOOLEAN", "Bronze Toasts",
-        "Show toast notifications when you reach certain milestones.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_BRONZE", "BOOLEAN", self.L["ToastUtils.TypeBronze"],
+        self.L["ToastUtils.TypeBronzeTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "toast.bronze"))
-    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_ARTIFACT", "BOOLEAN", "Artifact Toasts",
-        "Show toast notifications when you loot an artifact upgrade.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_ARTIFACT", "BOOLEAN", self.L["ToastUtils.TypeArtifact"],
+        self.L["ToastUtils.TypeArtifactTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "toast.artifact"))
-    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_UPGRADE", "BOOLEAN", "Upgrade Toasts",
-        "Show toast notifications when you loot a general item upgrade.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_UPGRADE", "BOOLEAN", self.L["ToastUtils.TypeUpgrade"],
+        self.L["ToastUtils.TypeUpgradeTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "toast.upgrade"))
-    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_TRAIT", "BOOLEAN", "Trait Toasts",
-        "Show toast notifications when you unlocked a new trait.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "ACTIVATE_TOAST_TRAIT", "BOOLEAN", self.L["ToastUtils.TypeTrait"],
+        self.L["ToastUtils.TypeTraitTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "toast.trait"))
-    settingsUtils:CreateButton(settingsCategory, "Test Toast",
-        "Test Toast Notification",
+    settingsUtils:CreateButton(settingsCategory, self.L["ToastUtils.TestToast"],
+        self.L["ToastUtils.TestToastButtonTitle"],
         function()
-            self:ShowToast("Test Toast", "This is a test toast notification.", const.TOASTS.PLACEHOLDER_ICON)
+            self:ShowToast(self.L["ToastUtils.TestToastTitle"], self.L["ToastUtils.TestToastDescription"], const.TOASTS.PLACEHOLDER_ICON)
         end,
-        "Show a test toast notification",
+        self.L["ToastUtils.TestToastTooltip"],
         true)
 end
 
@@ -145,8 +148,8 @@ function toastUtils:ShowBronzeToast(amount, percentage)
         return
     end
     self:ShowToast(
-        "New Bronze Milestone!",
-        string.format("You have reached %d bronze! (%.2f%% to cap)", amount, percentage or 0),
+        self.L["ToastUtils.TypeBronzeTitle"],
+        self.L["ToastUtils.TypeBronzeDescription"]:format(amount, percentage or 0),
         const.TOASTS.BRONZE.ICON
     )
 end
@@ -156,8 +159,8 @@ function toastUtils:ShowArtifactToast()
         return
     end
     self:ShowToast(
-        "Artifact Upgrade found!",
-        "Check your Inventory or Quick Action Bar.",
+        self.L["ToastUtils.TypeArtifactTitle"],
+        self.L["ToastUtils.TypeArtifactDescription"],
         const.TOASTS.ARTIFACT.ICON
     )
 end
@@ -170,8 +173,8 @@ function toastUtils:ShowUpgradeToast(itemLink, location)
     end
     local icon = C_Item.GetItemIconByID(itemLink)
     self:ShowToast(
-        "Item Upgrade found!",
-        itemLink or "Unknown Item",
+        self.L["ToastUtils.TypeUpgradeTitle"],
+        itemLink or self.L["ToastUtils.TypeUpgradeFallback"],
         icon or const.TOASTS.FALLBACK_ICON,
         function()
             C_Container.PickupContainerItem(location:GetBagAndSlot())
@@ -185,8 +188,8 @@ function toastUtils:ShowTraitToast(name, icon)
         return
     end
     self:ShowToast(
-        "New Trait Unlocked!",
-        string.format("New trait: %s", name or "Unknown Trait"),
+        self.L["ToastUtils.TypeTraitTitle"],
+        self.L["ToastUtils.TypeTraitDescription"]:format(name or self.L["ToastUtils.TypeTraitFallback"]),
         icon or const.TOASTS.FALLBACK_ICON
     )
 end

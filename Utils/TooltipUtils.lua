@@ -11,6 +11,8 @@ local cachedUnitPowerMixin = {
     power = 0,
     ---@type number
     timestamp = 0,
+    ---@type table<any, string>
+    L = nil,
 }
 
 ---@param guid WOWGUID
@@ -134,14 +136,14 @@ function tooltipUtils:GetTooltipPostCall()
 
         tooltip:AddLine(" ")
         if threadsActive then
-            tooltip:AddDoubleLine("Threads", self:GetThreadsCount(unit))
+            tooltip:AddDoubleLine(self.L["TooltipUtils.Threads"], self:GetThreadsCount(unit))
         end
         if powerActive then
-            local lineTitle = "Infinite Power"
+            local lineTitle = self.L["TooltipUtils.InfinitePower"]
             local powerText = ""
             local power = self:SendPowerRequest(unit)
             if not power then
-                lineTitle = lineTitle .. " (Estimate)"
+                lineTitle = lineTitle .. self.L["TooltipUtils.Estimate"]
                 local minEstimate, maxEstimate = self:GetInfinitePowerEstimate(unit)
                 powerText = ("%s-%s"):format(AbbreviateNumbers(minEstimate), AbbreviateNumbers(maxEstimate))
             else
@@ -153,6 +155,7 @@ function tooltipUtils:GetTooltipPostCall()
 end
 
 function tooltipUtils:Init()
+    self.L = Private.L
     local playerGUID = UnitGUID("player")
     self.addon = Private.Addon
     TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, self:GetTooltipPostCall())
@@ -176,17 +179,17 @@ end
 function tooltipUtils:CreateSettings()
     local settingsUtils = Private.SettingsUtils
     local settingsCategory = settingsUtils:GetCategory()
-    local settingsPrefix = "Tooltip-Power"
+    local settingsPrefix = self.L["TooltipUtils.SettingsCategoryPrefix"]
 
-    settingsUtils:CreateHeader(settingsCategory, "Tooltip-Power", "Settings for the Tooltip-Power feature",
+    settingsUtils:CreateHeader(settingsCategory, settingsPrefix, self.L["TooltipUtils.SettingsCategoryTooltip"],
         { settingsPrefix })
-    settingsUtils:CreateCheckbox(settingsCategory, "TOOLTIP_POWER_ACTIVATE", "BOOLEAN", "Activate Tooltip Information",
-        "Show Tooltip-Power information", false,
+    settingsUtils:CreateCheckbox(settingsCategory, "TOOLTIP_POWER_ACTIVATE", "BOOLEAN", self.L["TooltipUtils.Activate"],
+        self.L["TooltipUtils.ActivateTooltip"], false,
         settingsUtils:GetDBFunc("GETTERSETTER", "tooltip.activate"))
-    settingsUtils:CreateCheckbox(settingsCategory, "TOOLTIP_POWER_THREADS", "BOOLEAN", "Threads Information",
-        "Show Tooltip-Power Threads information", false,
+    settingsUtils:CreateCheckbox(settingsCategory, "TOOLTIP_POWER_THREADS", "BOOLEAN", self.L["TooltipUtils.ThreadsInfo"],
+        self.L["TooltipUtils.ThreadsInfoTooltip"], false,
         settingsUtils:GetDBFunc("GETTERSETTER", "tooltip.threads"))
-    settingsUtils:CreateCheckbox(settingsCategory, "TOOLTIP_POWER_POWER", "BOOLEAN", "Power Information",
-        "Show Tooltip-Power Infinite Power information", false,
+    settingsUtils:CreateCheckbox(settingsCategory, "TOOLTIP_POWER_POWER", "BOOLEAN", self.L["TooltipUtils.PowerInfo"],
+        self.L["TooltipUtils.PowerInfoTooltip"], false,
         settingsUtils:GetDBFunc("GETTERSETTER", "tooltip.power"))
 end
