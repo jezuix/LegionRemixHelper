@@ -155,6 +155,10 @@ function tooltipUtils:GetTooltipPostCall()
 end
 
 function tooltipUtils:Init()
+    local spell = Spell:CreateFromSpellID(const.TOOLTIP.THREADS_BUFF_ID)
+    spell:ContinueOnSpellLoad(function()
+        const.TOOLTIP.THREADS_BUFF_NAME = spell:GetSpellName() or ""
+    end)
     self.L = Private.L
     local playerGUID = UnitGUID("player")
     self.addon = Private.Addon
