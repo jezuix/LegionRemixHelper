@@ -4844,27 +4844,31 @@ do
         [invType.IndexHandType] = 10,
         [invType.IndexFingerType] = { 11, 12 },
         [invType.IndexTrinketType] = { 13, 14 },
-        [invType.IndexWeaponType] = { 16, 17 },
-        [invType.IndexShieldType] = 17,
-        [invType.IndexRangedType] = 16,
         [invType.IndexCloakType] = 15,
-        [invType.Index2HweaponType] = 16,
-        [invType.IndexBagType] = 0,
-        [invType.IndexTabardType] = 19,
         [invType.IndexRobeType] = 5,
-        [invType.IndexWeaponmainhandType] = 16,
-        [invType.IndexWeaponoffhandType] = 16,
-        [invType.IndexHoldableType] = 17,
-        [invType.IndexAmmoType] = 0,
-        [invType.IndexThrownType] = 16,
-        [invType.IndexRangedrightType] = 16,
-        [invType.IndexQuiverType] = 0,
-        [invType.IndexRelicType] = 0,
-        [invType.IndexProfessionToolType] = { 20, 23 },
-        [invType.IndexProfessionGearType] = { 21, 22, 24, 25 },
-        [invType.IndexEquipablespellOffensiveType] = 0,
-        [invType.IndexEquipablespellUtilityType] = 0,
-        [invType.IndexEquipablespellDefensiveType] = 0,
-        [invType.IndexEquipablespellWeaponType] = 0,
     }
+end
+
+constants.ADDON_COMMS = {
+    PREFIX = "LRH_DATA_V1",
+}
+
+constants.TOOLTIP = {
+    THREADS_BUFF_ID = 1232454,
+    VERS_INDEX = 8,
+    POWER_VERS_START = 115625,
+    POWER_PER_VERS = 50000,
+    POWER_CURRENCY_ID = 3268,
+    THREADS_BUFF_NAME = "",
+    COMMS_PREFIX = {
+        SEND_DATA = "TOOLTIP_DATA",
+        REQUEST_DATA = "TOOLTIP_REQUEST",
+    }
+}
+
+do
+    local spell = Spell:CreateFromSpellID(constants.TOOLTIP.THREADS_BUFF_ID)
+    spell:ContinueOnSpellLoad(function()
+        constants.TOOLTIP.THREADS_BUFF_NAME = spell:GetSpellName() or ""
+    end)
 end

@@ -125,7 +125,14 @@
         "StaticPopup_Hide",
         "SCENARIO_INVASION_COMPLETE",
         "SOUND",
-        "UPGRADE"
+        "UPGRADE",
+        "MouseIsOver",
+        "ITEM_QUALITY_COLORS",
+        "BuffFrame",
+        "INVSLOT_FIRST_EQUIPPED",
+        "INVSLOT_LAST_EQUIPPED",
+        "INVSLOT_MAINHAND",
+        "LARGE_NUMBER_SEPERATOR"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [
