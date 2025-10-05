@@ -67,7 +67,7 @@ function tooltipUtils:SendPowerRequest(unit)
     if not guid then return end
 
     local cached = self.cachedPower[guid]
-    if cached and cached.timestamp > timeNow - (const.TOOLTIP.CACHE_DURATION) then -- cache for 10 minutes
+    if cached and cached.timestamp > timeNow - (const.TOOLTIP.CACHE_DURATION) then
         return cached.power
     end
 
