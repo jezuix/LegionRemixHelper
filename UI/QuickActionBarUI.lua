@@ -420,17 +420,17 @@ function quickActionBarUI:GetTreeSettingsInitializer()
 
         local saveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         saveButton:SetPoint("BOTTOMRIGHT", -31, 31)
-        saveButton:SetSize(80, 22)
+        saveButton:SetSize(125, 22)
         saveButton:SetText(self.L["QuickActionBarUI.SettingsEditorSave"])
 
         local newButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         newButton:SetPoint("BOTTOMRIGHT", saveButton, "BOTTOMLEFT", -5, 0)
-        newButton:SetSize(80, 22)
+        newButton:SetSize(125, 22)
         newButton:SetText(self.L["QuickActionBarUI.SettingsEditorNew"])
 
         local deleteButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         deleteButton:SetPoint("BOTTOMRIGHT", newButton, "BOTTOMLEFT", -5, 0)
-        deleteButton:SetSize(80, 22)
+        deleteButton:SetSize(125, 22)
         deleteButton:SetText(self.L["QuickActionBarUI.SettingsEditorDelete"])
 
         self.editor.scrollFrame = list
