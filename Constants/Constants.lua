@@ -4866,10 +4866,3 @@ constants.TOOLTIP = {
         REQUEST_DATA = "TOOLTIP_REQUEST",
     }
 }
-
-do
-    local spell = Spell:CreateFromSpellID(constants.TOOLTIP.THREADS_BUFF_ID)
-    spell:ContinueOnSpellLoad(function()
-        constants.TOOLTIP.THREADS_BUFF_NAME = spell:GetSpellName() or ""
-    end)
-end

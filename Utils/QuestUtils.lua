@@ -4,11 +4,14 @@ local Private = select(2, ...)
 ---@class QuestUtils
 ---@field addon LegionRH
 local questUtils = {
-    addon = nil
+    addon = nil,
+    ---@type table<any, string>
+    L = nil,
 }
 Private.QuestUtils = questUtils
 
 function questUtils:Init()
+    self.L = Private.L
     local addon = Private.Addon
     self.addon = addon
 
@@ -30,15 +33,15 @@ end
 function questUtils:CreateSettings()
     local settingsUtils = Private.SettingsUtils
     local settingsCategory = settingsUtils:GetCategory()
-    local settingsPrefix = "Auto-Quest"
+    local settingsPrefix = self.L["QuestUtils.SettingsCategoryPrefix"]
 
-    settingsUtils:CreateHeader(settingsCategory, "Auto-Quest", "Settings for the Auto-Quest feature",
+    settingsUtils:CreateHeader(settingsCategory, settingsPrefix, self.L["QuestUtils.SettingsCategoryTooltip"],
         { settingsPrefix })
-    settingsUtils:CreateCheckbox(settingsCategory, "AUTO_QUEST_TURN_IN", "BOOLEAN", "Auto Turn-In",
-        "Automatically turn in quests when interacting with NPCs.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "AUTO_QUEST_TURN_IN", "BOOLEAN", self.L["QuestUtils.AutoTurnIn"],
+        self.L["QuestUtils.AutoTurnInTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "quest.autoTurnIn"))
-    settingsUtils:CreateCheckbox(settingsCategory, "AUTO_QUEST_ACCEPT", "BOOLEAN", "Auto Accept",
-        "Automatically accept quests when interacting with NPCs.", true,
+    settingsUtils:CreateCheckbox(settingsCategory, "AUTO_QUEST_ACCEPT", "BOOLEAN", self.L["QuestUtils.AutoAccept"],
+        self.L["QuestUtils.AutoAcceptTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "quest.autoAccept"))
 end
 

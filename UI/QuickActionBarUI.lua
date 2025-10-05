@@ -32,7 +32,9 @@ local quickActionBarUI = {
         checkUsabilityInput = nil,
         ---@type number
         entryID = nil,
-    }
+    },
+    ---@type table<any, string>
+    L = nil
 }
 Private.QuickActionBarUI = quickActionBarUI
 
@@ -42,6 +44,7 @@ local components = Private.Components
 function quickActionBarUI:Init(parentTab)
     self.parent = parentTab
     self.utils = Private.QuickActionBarUtils
+    self.L = Private.L
 end
 
 ---@return fun(button:Button|table, elementData:QuickActionObject)
@@ -130,7 +133,7 @@ function quickActionBarUI:CreateFrame()
     end)
     f:Hide()
     self.frame = f
-    f:SetTitle("Quick-Bar")
+    f:SetTitle(self.L["QuickActionBarUI.QuickBarTitle"])
 
     local scrollFrame = components.ScrollFrame:CreateFrame(f, {
         anchors = {
@@ -257,7 +260,7 @@ function quickActionBarUI:SetSelection(data)
 
     local editor = self.editor
     local newID = data and data:GetID() or nil
-    local newTitle = data and data:GetTitle() or "Action Title here"
+    local newTitle = data and data:GetTitle() or self.L["QuickActionBarUI.SettingTitlePreview"]
     local newIcon = data and data:GetIconOverride() or ""
     local newIconPreview = data and data:GetIcon() or 5228749
     local newActionID = data and data:GetActionID() or ""
@@ -277,7 +280,8 @@ end
 ---@return fun(frame:Frame|BackdropTemplate|table, data:table)
 function quickActionBarUI:GetTreeSettingsInitializer()
     self.utils = Private.QuickActionBarUtils
-    return function(frame, data)
+    self.L = Private.L
+    return function(frame)
         if frame.isInitialized then
             return
         end
@@ -309,7 +313,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPRIGHT", -125,           -15 }
             },
             font = "GameFontNormalHuge",
-            text = "Editing Action",
+            text = self.L["QuickActionBarUI.SettingsEditorTitle"],
         })
 
         local titlePreview = components.Label:CreateFrame(frame, {
@@ -317,7 +321,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT",  editorTitle.frame, "BOTTOMLEFT",  0, -5 },
                 { "TOPRIGHT", editorTitle.frame, "BOTTOMRIGHT", 0, -5 },
             },
-            text = "Action Title here",
+            text = self.L["QuickActionBarUI.SettingTitlePreview"],
             color = const.COLORS.YELLOW
         })
 
@@ -335,7 +339,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", titlePreview.frame, "BOTTOMLEFT", 0, -25 }
             },
             color = const.COLORS.YELLOW,
-            text = "Action Title:",
+            text = self.L["QuickActionBarUI.SettingsTitleLabel"],
         })
 
         local titleInput = components.TextBox:CreateFrame(frame, {
@@ -343,7 +347,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPRIGHT", -31, -100 },
             },
             width = 175,
-            instructions = "Name of the action",
+            instructions = self.L["QuickActionBarUI.SettingsTitleInput"],
         })
 
         local iconLabel = components.Label:CreateFrame(frame, {
@@ -351,7 +355,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", titleLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Icon:",
+            text = self.L["QuickActionBarUI.SettingsIconLabel"],
         })
 
         local iconInput = components.TextBox:CreateFrame(frame, {
@@ -359,7 +363,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPRIGHT", titleInput.editBox, "BOTTOMRIGHT", 0, -15 },
                 { "TOPLEFT",  titleInput.editBox, "BOTTOMLEFT",  0, -15 },
             },
-            instructions = "Texture ID or Path",
+            instructions = self.L["QuickActionBarUI.SettingsIconInput"],
         })
 
         local actionIDLabel = components.Label:CreateFrame(frame, {
@@ -367,7 +371,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", iconLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Action ID:",
+            text = self.L["QuickActionBarUI.SettingsIDLabel"],
         })
 
         local actionIDInput = components.TextBox:CreateFrame(frame, {
@@ -375,7 +379,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPRIGHT", iconInput.editBox, "BOTTOMRIGHT", 0, -15 },
                 { "TOPLEFT",  iconInput.editBox, "BOTTOMLEFT",  0, -15 },
             },
-            instructions = "Item/Spell name or ID",
+            instructions = self.L["QuickActionBarUI.SettingsIDInput"],
         })
 
         local actionTypeLabel = components.Label:CreateFrame(frame, {
@@ -383,7 +387,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", actionIDLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Action Type:",
+            text = self.L["QuickActionBarUI.SettingsTypeLabel"],
         })
 
         local actionTypeDropdown = components.Dropdown:CreateFrame(frame, {
@@ -393,8 +397,8 @@ function quickActionBarUI:GetTreeSettingsInitializer()
             },
             dropdownType = "RADIO",
             radioOptions = {
-                { "Spell", const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL },
-                { "Item",  const.QUICK_ACTION_BAR.ACTION_TYPE.ITEM },
+                { self.L["QuickActionBarUI.SettingsTypeInputSpell"], const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL },
+                { self.L["QuickActionBarUI.SettingsTypeInputItem"], const.QUICK_ACTION_BAR.ACTION_TYPE.ITEM },
             }
         })
 
@@ -403,7 +407,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
                 { "TOPLEFT", actionTypeLabel.frame, "BOTTOMLEFT", 0, -15 }
             },
             color = const.COLORS.YELLOW,
-            text = "Only when usable:",
+            text = self.L["QuickActionBarUI.SettingsCheckUsableLabel"],
         })
 
         local checkUsabilityInput = components.CheckBox:CreateFrame(frame, {
@@ -417,17 +421,17 @@ function quickActionBarUI:GetTreeSettingsInitializer()
         local saveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         saveButton:SetPoint("BOTTOMRIGHT", -31, 31)
         saveButton:SetSize(80, 22)
-        saveButton:SetText(SAVE)
+        saveButton:SetText(self.L["QuickActionBarUI.SettingsEditorSave"])
 
         local newButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         newButton:SetPoint("BOTTOMRIGHT", saveButton, "BOTTOMLEFT", -5, 0)
         newButton:SetSize(80, 22)
-        newButton:SetText(NEW)
+        newButton:SetText(self.L["QuickActionBarUI.SettingsEditorNew"])
 
         local deleteButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
         deleteButton:SetPoint("BOTTOMRIGHT", newButton, "BOTTOMLEFT", -5, 0)
         deleteButton:SetSize(80, 22)
-        deleteButton:SetText(DELETE)
+        deleteButton:SetText(self.L["QuickActionBarUI.SettingsEditorDelete"])
 
         self.editor.scrollFrame = list
         self.editor.titlePreview = titlePreview
@@ -443,7 +447,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
         end)
 
         newButton:SetScript("OnClick", function()
-            local newAction = self.utils:CreateAction(const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL, "New Action", nil,
+            local newAction = self.utils:CreateAction(const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL, self.L["QuickActionBarUI.SettingsEditorNew"], nil,
                 self.utils:GetDefaultVisibilityFunc())
             list:UpdateContent(self.utils:GetAllActions())
             self:SetSelection(newAction)
@@ -459,7 +463,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
         saveButton:SetScript("OnClick", function()
             local obj = self.editor.selected
             if not obj then
-                Private.Addon:FPrint("No action selected to save!")
+                Private.Addon:FPrint(self.L["QuickActionBarUI.SettingsNoActionSaveError"])
                 return
             end
 
@@ -470,7 +474,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
             local checkUsability = self.editor.checkUsabilityInput:GetChecked()
 
             if title == "" then
-                title = "Action " .. tostring(self.editor.entryID or "?")
+                title = self.L["QuickActionBarUI.SettingsEditorAction"]:format(tostring(self.editor.entryID) or "?")
             end
             if not actionType then
                 actionType = const.QUICK_ACTION_BAR.ACTION_TYPE.SPELL
@@ -488,7 +492,7 @@ function quickActionBarUI:GetTreeSettingsInitializer()
 
             local errMsg = self.utils:EditActionByID(self.editor.entryID, obj)
             if errMsg then
-                Private.Addon:FPrint("Got an error while saving action: " .. errMsg)
+                Private.Addon:FPrint(self.L["QuickActionBarUI.SettingsGeneralActionSaveError"], errMsg)
                 return
             end
 

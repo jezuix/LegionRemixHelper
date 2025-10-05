@@ -7,6 +7,8 @@ local Private = select(2, ...)
 local artifactTraitsTabUI = {
     contentFrame = nil,
     isUICreated = false,
+    ---@type table<any, string>
+    L = nil
 }
 Private.ArtifactTraitsTabUI = artifactTraitsTabUI
 
@@ -57,7 +59,7 @@ function artifactTraitsTabUI:CreateTabUI()
                 local ownerFrame = obj.frame
                 local function GeneratorFunction(genOwner, rootDescription)
                     ---@cast rootDescription RootMenuDescriptionProxy
-                    rootDescription:CreateTitle("Auto-Activate for Spec")
+                    rootDescription:CreateTitle(self.L["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"])
 
                     for _, specID in ipairs(utils:GetSpecs()) do
                         local specName = select(2, GetSpecializationInfoByID(specID))
@@ -155,7 +157,6 @@ function artifactTraitsTabUI:CreateTabUI()
                 local icon = C_Item.GetItemIcon(equippedItem)
                 jewelery:SetState("SELECT")
                 jewelery:SetIconTexture(icon)
-                local itemLink = C_Item.GetItemLink(equippedItem)
             else
                 jewelery:SetState("EMPTY")
             end
@@ -175,6 +176,7 @@ end
 
 ---@param contentFrame Frame
 function artifactTraitsTabUI:Init(contentFrame)
+    self.L = Private.L
     self.contentFrame = contentFrame
 
     contentFrame:HookScript("OnShow", function()

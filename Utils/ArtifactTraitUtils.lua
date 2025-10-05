@@ -14,13 +14,16 @@ local artifactTraitUtils = {
     rowTraits = {},
     configCache = nil,
     specsCache = {},
-    addon = nil
+    addon = nil,
+    ---@type table<any, string>
+    L = nil,
 }
 Private.ArtifactTraitUtils = artifactTraitUtils
 
 local const = Private.constants
 
 function artifactTraitUtils:Init()
+    self.L = Private.L
     self.callbackUtils = Private.CallbackUtils
     local addon = Private.Addon
     self.addon = addon
@@ -208,10 +211,10 @@ end
 ---@param itemLocation ItemLocation
 ---@return string tooltip
 function artifactTraitUtils:GetJewelryTooltip(itemLocation)
-    if not itemLocation or not itemLocation:IsValid() then return "No Item Equipped" end
+    if not itemLocation or not itemLocation:IsValid() then return self.L["ArtifactTraitUtils.NoItemEquipped"] end
     local itemID = C_Item.GetItemID(itemLocation)
     local entryID = self:GetEntryIDFromItemID(itemID)
-    local spellName, spellIcon, traitUpgrade = "Unknown Trait", 134400, 0
+    local spellName, spellIcon, traitUpgrade = self.L["ArtifactTraitUtils.UnknownTrait"], 134400, 0
     if entryID then
         local spellID = self:GetSpellIDFromEntryID(entryID)
         if spellID then
@@ -222,7 +225,7 @@ function artifactTraitUtils:GetJewelryTooltip(itemLocation)
             traitUpgrade = const.REMIX_ARTIFACT_TRAITS.JEWELRY_QUALITY_UPGRADES[itemQuality] or 0
         end
     end
-    return string.format("|T%s:16|t %s (+%d)", spellIcon, spellName, traitUpgrade)
+    return self.L["ArtifactTraitUtils.JewelryFormat"]:format(spellIcon, spellName, traitUpgrade)
 end
 
 ---@param itemID number
@@ -514,11 +517,9 @@ function artifactTraitUtils:PurchaseNodes(treeID, nodes)
             return
         end
         if tries >= maxTries then
-            print("Max tries reached when purchasing nodes.")
+            self.addon:Print(self.L["ArtifactTraitUtils.MaxTriesReached"])
             return
         end
         tries = tries + 1
     end
 end
-
-rasuF = artifactTraitUtils

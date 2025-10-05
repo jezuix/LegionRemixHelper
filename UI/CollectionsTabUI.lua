@@ -11,6 +11,8 @@ local collectionsTabUI = {
     tabSystem = nil,
     contentTabs = {},
     researchBar = nil,
+    ---@type table<any, string>
+    L = nil,
 }
 Private.CollectionsTabUI = collectionsTabUI
 
@@ -19,6 +21,7 @@ local components = Private.Components
 
 function collectionsTabUI:Init()
     local addon = Private.Addon
+    self.L = Private.L
 
     addon:RegisterEvent("ADDON_LOADED", "collectionsTabUI_AddonLoaded", function(_, _, loadedAddonName)
         if loadedAddonName == "Blizzard_Collections" then
@@ -33,7 +36,7 @@ function collectionsTabUI:SetupTab()
 
     local collectionsTab = CreateFrame("Button", "CollectionsJournalTab7", CollectionsJournal, "CollectionsJournalTab")
     collectionsTab:SetID(const.COLLECTIONS_TAB.TAB_ID)
-    collectionsTab:SetText("Legion Remix")
+    collectionsTab:SetText(self.L["CollectionsTabUI.TabTitle"])
     collectionsTab:SetPoint("LEFT", CollectionsJournal.WarbandScenesTab, "RIGHT", 5, 0)
     PanelTemplates_TabResize(collectionsTab)
     CollectionsJournal.numTabs = CollectionsJournal.numTabs + 1
@@ -67,7 +70,7 @@ function collectionsTabUI:SetupTab()
 
         if isSelected then
             RunNextFrame(function()
-                CollectionsJournal:SetTitle("Legion Remix")
+                CollectionsJournal:SetTitle(self.L["CollectionsTabUI.TabTitle"])
                 CollectionsJournal:SetPortraitToAsset(const.COLLECTIONS_TAB.TAB_ICON)
             end)
         end
@@ -134,7 +137,7 @@ function collectionsTabUI:SetupTab()
     local callbackObj = Private.ResearchTaskUtils:AddCallback(function(progress, total)
         researchBar:SetMinMaxValues(0, total or 1)
         researchBar:SetValue(progress or 0)
-        researchBar:SetLabelText(string.format("Research: %s/%s", progress or "?", total or "?"))
+        researchBar:SetLabelText(string.format(self.L["CollectionsTabUI.ResearchProgress"], progress or "?", total or "?"))
     end)
     if callbackObj then
         callbackObj:Trigger(Private.ResearchTaskUtils:GetTaskProgress())
@@ -143,12 +146,12 @@ end
 
 function collectionsTabUI:SetupTraitsTab()
     if const.INTERFACE_VERSION > 110200 then
-        local artifactTraitsContent = self:AddTopTab("Artifact Traits")
+        local artifactTraitsContent = self:AddTopTab(self.L["CollectionsTabUI.TraitsTabTitle"])
         local traitsUI = Private.ArtifactTraitsTabUI
         traitsUI:Init(artifactTraitsContent)
     end
 
-    local collectionContent = self:AddTopTab("Collection")
+    local collectionContent = self:AddTopTab(self.L["CollectionsTabUI.CollectionTabTitle"])
     local collectionUI = Private.CollectionTabUI
     collectionUI:Init(collectionContent)
 end

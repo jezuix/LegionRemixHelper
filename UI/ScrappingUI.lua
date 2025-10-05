@@ -12,6 +12,8 @@ local scrappingUI = {
     scrappingMachine = nil,
     scrollFrame = nil,
     iconFrames = {},
+    ---@type table<any, string>
+    L = nil
 }
 Private.ScrappingUI = scrappingUI
 
@@ -20,6 +22,7 @@ local components = Private.Components
 
 function scrappingUI:Init()
     self.scrappingMachine = ScrappingMachineFrame
+    self.L = Private.L
     local addon = Private.Addon
 
     local resetButton = CreateFrame("Frame", nil, self.scrappingMachine)
@@ -43,7 +46,7 @@ function scrappingUI:Init()
             { "TOPLEFT",  15,  -30 },
             { "TOPRIGHT", -15, -30 }
         },
-        text = "Max Scrapping Quality",
+        text = self.L["ScrappingUI.MaxScrappingQuality"],
         font = "GameFontNormalSmall",
     })
 
@@ -80,7 +83,7 @@ function scrappingUI:Init()
             { "TOPLEFT",  qualityDropdown.dropdown, "BOTTOMLEFT",  0, -5 },
             { "TOPRIGHT", qualityDropdown.dropdown, "BOTTOMRIGHT", 0, -5 }
         },
-        text = "Min Item Level Difference",
+        text = self.L["ScrappingUI.MinItemLevelDifference"],
         font = "GameFontNormalSmall",
     })
     local minItemLevelTextBox = components.TextBox:CreateFrame(frame, {
@@ -89,7 +92,7 @@ function scrappingUI:Init()
             { "TOPRIGHT", minItemLevelLabel.frame, "BOTTOMRIGHT", 0, -2 },
         },
         font = "GameFontHighlight",
-        instructions = "x levels lower than equipped",
+        instructions = self.L["ScrappingUI.MinItemLevelDifferenceInstructions"],
         text = tostring(self.utils:GetMinimumLevelDifference() or 0),
         maxLetters = 3,
         onTextChanged = function(text, userInput)
@@ -109,7 +112,7 @@ function scrappingUI:Init()
         },
         width = 20,
         height = 20,
-        text = "Auto Scrap",
+        text = self.L["ScrappingUI.AutoScrap"],
         font = "GameFontNormalSmall",
         checked = self.utils:GetAutoScrap(),
         onClick = function(checked)

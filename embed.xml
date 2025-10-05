@@ -3,6 +3,7 @@
 ..\FrameXML\UI.xsd">
     <!-- First Load Libs and Constans -->
     <Include file="Libs\libs.xml" />
+    <Include file="Locales\locales.xml" />
     <Include file="Constants\Constants.xml" />
 
     <!-- Initialize the base Addon -->

@@ -7,6 +7,8 @@ local collectionUtils = {
     vendorCache = nil,
     isUpdated = false,
     priceIconCache = nil,
+    ---@type table<any, string>
+    L = nil,
 }
 Private.CollectionUtils = collectionUtils
 
@@ -220,6 +222,7 @@ function collectionRewardMixin:HasSourceType(sourceType)
 end
 
 function collectionUtils:Init()
+    self.L = Private.L
     self:CachePriceIcons()
     self:LoadRewardInfos()
 
@@ -401,16 +404,16 @@ end
 ---@param reward CombinedCollectionReward
 ---@return string sourceTooltip
 function collectionUtils:GetSourceTooltip(reward)
-    local tooltip = const.COLORS.YELLOW:WrapTextInColorCode("Sources:")
+    local tooltip = const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Sources"])
 
     for _, source in ipairs(reward.SOURCES) do
         if source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.ACHIEVEMENT then
             local name = select(2, GetAchievementInfo(source.SOURCE_ID))
-            name = name or "Unknown Achievement"
-            tooltip = ("%s\n%s%s\n"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode("Achievement: "), name)
+            name = name or self.L["CollectionUtils.UnknownAchievement"]
+            tooltip = ("%s\n%s%s\n"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Achievement"]), name)
         elseif source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.VENDOR then
             local vendorInfo = self:GetVendorByID(source.SOURCE_ID)
-            local name = vendorInfo and vendorInfo.NAME or "Unknown Vendor"
+            local name = vendorInfo and vendorInfo.NAME or self.L["CollectionUtils.UnknownVendor"]
 
             local prices = ""
             for _, priceInfo in ipairs(reward.PRICES) do
@@ -418,7 +421,7 @@ function collectionUtils:GetSourceTooltip(reward)
                 icon = icon or 134400
                 prices = ("%s|T%s:12|t %d\n"):format(prices, icon, priceInfo.AMOUNT)
             end
-            tooltip = ("%s\n%s%s:\n%s"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode("Vendor, "), name, prices)
+            tooltip = ("%s\n%s%s:\n%s"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Vendor"]), name, prices)
         end
     end
 
@@ -623,5 +626,3 @@ function collectionUtils:GetCollectionData()
 
     return items, collected, total
 end
-
-rasuH = collectionUtils
