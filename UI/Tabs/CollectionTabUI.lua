@@ -129,18 +129,18 @@ local function createCollectionItemFrame()
             end
             GameTooltip:AddLine(" ")
             if data and data:GetRewardType() ~= collEnums.REWARD_TYPE.TOY then
-                GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.CtrlClickPreview"], r, g, b, true)
+                GameTooltip:AddLine(collectionTabUI.L["Tabs.CollectionTabUI.CtrlClickPreview"], r, g, b, true)
             end
-            GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.ShiftClickToLink"], r, g, b, true)
+            GameTooltip:AddLine(collectionTabUI.L["Tabs.CollectionTabUI.ShiftClickToLink"], r, g, b, true)
         else
-            GameTooltip:SetText(self.name or self.L["Tabs.CollectionTabUI.NoName"])
+            GameTooltip:SetText(self.name or collectionTabUI.L["Tabs.CollectionTabUI.NoName"])
         end
 
         if data then
             if data:HasSourceType(collEnums.SOURCE_TYPE.VENDOR) then
-                GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.AltClickVendor"], r, g, b, true)
+                GameTooltip:AddLine(collectionTabUI.L["Tabs.CollectionTabUI.AltClickVendor"], r, g, b, true)
             elseif data:HasSourceType(collEnums.SOURCE_TYPE.ACHIEVEMENT) then
-                GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.AltClickAchievement"], r, g, b, true)
+                GameTooltip:AddLine(collectionTabUI.L["Tabs.CollectionTabUI.AltClickAchievement"], r, g, b, true)
             end
         end
         GameTooltip:Show()
