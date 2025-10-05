@@ -20,6 +20,7 @@ function addon:OnInitialize(...)
 end
 
 function addon:OnEnable(...)
+    Private.DatabaseUtils:LoadDefaultsForMissing()
     Private.QuickActionBarUtils:CreateSettings()
 end
 

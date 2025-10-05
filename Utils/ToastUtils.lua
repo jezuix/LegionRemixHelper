@@ -135,7 +135,7 @@ function toastUtils:ShowToast(title, description, texture, func)
     Private.ToastUI:ShowToast(title, description, texture, func)
 
     if self:IsTypeActive("sound") then
-        PlaySound(const.TOASTS.SOUND_ID, "MASTER")
+        PlaySound(const.TOASTS.SOUND_ID, "SFX")
     end
 end
 
