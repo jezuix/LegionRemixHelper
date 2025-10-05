@@ -24,7 +24,9 @@ local collectionTabUI = {
         types = {},
         sources = {},
         search = "",
-    }
+    },
+    ---@type table<any, string>
+    L = nil
 }
 Private.CollectionTabUI = collectionTabUI
 
@@ -127,18 +129,18 @@ local function createCollectionItemFrame()
             end
             GameTooltip:AddLine(" ")
             if data and data:GetRewardType() ~= collEnums.REWARD_TYPE.TOY then
-                GameTooltip:AddLine("Ctrl-Click to preview", r, g, b, true)
+                GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.CtrlClickPreview"], r, g, b, true)
             end
-            GameTooltip:AddLine("Shift-Click to Link", r, g, b, true)
+            GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.ShiftClickToLink"], r, g, b, true)
         else
-            GameTooltip:SetText(self.name or "No Name")
+            GameTooltip:SetText(self.name or self.L["Tabs.CollectionTabUI.NoName"])
         end
 
         if data then
             if data:HasSourceType(collEnums.SOURCE_TYPE.VENDOR) then
-                GameTooltip:AddLine("Alt-Click to set a Waypoint to the Vendor", r, g, b, true)
+                GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.AltClickVendor"], r, g, b, true)
             elseif data:HasSourceType(collEnums.SOURCE_TYPE.ACHIEVEMENT) then
-                GameTooltip:AddLine("Alt-Click to view the Achievement", r, g, b, true)
+                GameTooltip:AddLine(self.L["Tabs.CollectionTabUI.AltClickAchievement"], r, g, b, true)
             end
         end
         GameTooltip:Show()
@@ -242,14 +244,14 @@ function collectionTabUI:CreateTabUI()
         height = 20,
         template = "WowStyle1FilterDropdownTemplate",
         setupMenu = function(dropdown, rootDescription)
-            rootDescription:CreateCheckbox("Collected", function(data)
+            rootDescription:CreateCheckbox(self.L["Tabs.CollectionTabUI.FilterCollected"], function(data)
                     return self.filter.collected
                 end,
                 function()
                     self.filter.collected = not self.filter.collected
                     self:UpdateFilteredData()
                 end)
-            rootDescription:CreateCheckbox("Not Collected", function(data)
+            rootDescription:CreateCheckbox(self.L["Tabs.CollectionTabUI.FilterNotCollected"], function(data)
                     return self.filter.uncollected
                 end,
                 function()
@@ -257,15 +259,15 @@ function collectionTabUI:CreateTabUI()
                     self:UpdateFilteredData()
                 end)
             ---@diagnostic disable-next-line: missing-parameter
-            local sourceSubMenu = rootDescription:CreateButton("Sources")
-            sourceSubMenu:CreateButton("Check All", function()
+            local sourceSubMenu = rootDescription:CreateButton(self.L["Tabs.CollectionTabUI.FilterSources"])
+            sourceSubMenu:CreateButton(self.L["Tabs.CollectionTabUI.FilterCheckAll"], function()
                 for sourceEnum in pairs(self.filter.sources) do
                     self.filter.sources[sourceEnum] = true
                 end
                 self:UpdateFilteredData()
                 return MenuResponse.Refresh
             end)
-            sourceSubMenu:CreateButton("Uncheck All", function()
+            sourceSubMenu:CreateButton(self.L["Tabs.CollectionTabUI.FilterUncheckAll"], function()
                 for sourceEnum in pairs(self.filter.sources) do
                     self.filter.sources[sourceEnum] = false
                 end
@@ -282,15 +284,15 @@ function collectionTabUI:CreateTabUI()
                     end)
             end
             ---@diagnostic disable-next-line: missing-parameter
-            local typesSubMenu = rootDescription:CreateButton("Types")
-            typesSubMenu:CreateButton("Check All", function()
+            local typesSubMenu = rootDescription:CreateButton(self.L["Tabs.CollectionTabUI.Type"])
+            typesSubMenu:CreateButton(self.L["Tabs.CollectionTabUI.FilterCheckAll"], function()
                 for typeEnum in pairs(self.filter.types) do
                     self.filter.types[typeEnum] = true
                 end
                 self:UpdateFilteredData()
                 return MenuResponse.Refresh
             end)
-            typesSubMenu:CreateButton("Uncheck All", function()
+            typesSubMenu:CreateButton(self.L["Tabs.CollectionTabUI.FilterUncheckAll"], function()
                 for typeEnum in pairs(self.filter.types) do
                     self.filter.types[typeEnum] = false
                 end
@@ -317,7 +319,7 @@ function collectionTabUI:CreateTabUI()
             self.filter.search = text
             self:UpdateFilteredData()
         end,
-        instructions = "Search",
+        instructions = self.L["Tabs.CollectionTabUI.SearchInstructions"],
     })
 
     local progress = components.ProgressBar:CreateFrame(itemsFrame, {
@@ -374,6 +376,7 @@ end
 
 ---@param contentFrame Frame
 function collectionTabUI:Init(contentFrame)
+    self.L = Private.L
     self.contentFrame = contentFrame
 
     for _, source in pairs(collEnums.SOURCE_TYPE) do
@@ -396,7 +399,7 @@ function collectionTabUI:Init(contentFrame)
             self:UpdateFilteredData()
             self.progress:SetValue(collected)
             self.progress:SetMinMaxValues(0, total)
-            self.progress:SetLabelText(string.format("%d / %d (%.2f%%)", collected, total, (collected / total) * 100))
+            self.progress:SetLabelText(self.L["Tabs.CollectionTabUI.Progress"]:format(collected, total, (collected / total) * 100))
         end
     end)
 end

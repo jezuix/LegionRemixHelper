@@ -45,3 +45,9 @@ local addon = LibStub("RasuAddon"):CreateAddon(
 )
 
 Private.Addon = addon
+
+local localeObj = LibStub("RasuLocale"):CreateLocale(const.ADDON_NAME)
+localeObj:AddFullTranslationTbl(Private.Locales)
+localeObj:SetLocale(GetLocale())
+
+Private.L = localeObj:GetTranslationObj()
