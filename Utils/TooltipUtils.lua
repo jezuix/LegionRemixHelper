@@ -159,7 +159,9 @@ function tooltipUtils:GetTooltipPostCall()
             local powerText = ""
             local power
             if not UnitIsUnit(unit, "player") then
-                power = self:SendPowerRequest(unit)
+                if UnitIsFriend(unit, "player") and UnitIsConnected(unit) then
+                    power = self:SendPowerRequest(unit)
+                end
             else
                 power = self:GetPlayerPower()
             end
