@@ -631,22 +631,17 @@ function collectionUtils:RefreshCollectionByType(rewardType)
     end
 end
 
----@return CollectionRewardObject[]|nil scrollData, number? collected, number? total
+---@return CollectionRewardObject[]|nil scrollData
 function collectionUtils:GetCollectionData()
     if self.isUpdated then return end
     self.isUpdated = true
 
-    local collected, total = 0, 0
     local items = {}
     for rewardType, rewards in pairs(self.cache) do
         self:RefreshCollectionByType(rewardType)
         for _, reward in ipairs(rewards) do
             ---@cast reward CollectionRewardObject
             tinsert(items, reward)
-            if reward:IsCollected() then
-                collected = collected + 1
-            end
-            total = total + 1
         end
     end
 
@@ -654,7 +649,7 @@ function collectionUtils:GetCollectionData()
         return a:GetName() < b:GetName()
     end)
 
-    return items, collected, total
+    return items
 end
 
 ---@param data CollectionRewardObject[]

@@ -362,7 +362,7 @@ end
 
 function collectionTabUI:UpdateFilteredData()
     local filtered = {}
-    if not self.data then return 0, 0 end
+    if not self.data then return end
     local collected = 0
     local filter = self.filter
 
