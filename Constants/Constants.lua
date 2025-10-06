@@ -4864,5 +4864,23 @@ constants.TOOLTIP = {
     COMMS_PREFIX = {
         SEND_DATA = "TOOLTIP_DATA",
         REQUEST_DATA = "TOOLTIP_REQUEST",
-    }
+    },
+    THREADS_COLORS = {
+        {COLOR = CreateColorFromHexString("FF9b59b6"), MILESTONE = 0 }, -- Placeholder
+
+        --- As soon as we have information on how much is good, we can adjust these milestones and uncomment
+        --{COLOR = CreateColorFromHexString("FFe74c3c"), MILESTONE = 0 }, -- Beginner
+        --{COLOR = CreateColorFromHexString("FFe67e22"), MILESTONE = 0 }, -- Poor
+        --{COLOR = CreateColorFromHexString("FFf1c40f"), MILESTONE = 0 }, -- Decent
+        --{COLOR = CreateColorFromHexString("FF1abc9c"), MILESTONE = 0 }, -- Good
+        --{COLOR = CreateColorFromHexString("FF2ecc71"), MILESTONE = 0 }, -- Best
+    },
+    INFINITE_POWER_COLORS = {
+        -- We should probably adjust these as we get more information
+        {COLOR = CreateColorFromHexString("FFe74c3c"), MILESTONE = 0 }, -- Beginner
+        {COLOR = CreateColorFromHexString("FFe67e22"), MILESTONE = 250000 }, -- Unlimited Power IV
+        {COLOR = CreateColorFromHexString("FFf1c40f"), MILESTONE = 500000 }, -- Unlimited Power V
+        {COLOR = CreateColorFromHexString("FF1abc9c"), MILESTONE = 1000000 }, -- Unlimited Power VII
+        {COLOR = CreateColorFromHexString("FF2ecc71"), MILESTONE = 5000000 }, -- Unlimited Power XII
+    },
 }
