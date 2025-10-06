@@ -148,6 +148,7 @@ function tooltipUtils:GetTooltipPostCall()
         if not (threadsActive or powerActive) then return end
         local unit = select(2, tooltip:GetUnit())
         if not unit then return end
+        if not UnitIsPlayer(unit) then return end
 
         tooltip:AddLine(" ")
         if threadsActive then
@@ -157,7 +158,7 @@ function tooltipUtils:GetTooltipPostCall()
             local lineTitle = self.L["TooltipUtils.InfinitePower"]
             local powerText = ""
             local power
-            if not UnitIsPlayer(unit) then
+            if not UnitIsUnit(unit, "player") then
                 power = self:SendPowerRequest(unit)
             else
                 power = self:GetPlayerPower()
