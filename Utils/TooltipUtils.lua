@@ -148,6 +148,7 @@ function tooltipUtils:GetTooltipPostCall()
         if not (threadsActive or powerActive) then return end
         local unit = select(2, tooltip:GetUnit())
         if not unit then return end
+        if not UnitIsPlayer(unit) then return end
 
         tooltip:AddLine(" ")
         if threadsActive then
@@ -157,8 +158,10 @@ function tooltipUtils:GetTooltipPostCall()
             local lineTitle = self.L["TooltipUtils.InfinitePower"]
             local powerText = ""
             local power
-            if not UnitIsPlayer(unit) then
-                power = self:SendPowerRequest(unit)
+            if not UnitIsUnit(unit, "player") then
+                if UnitIsFriend(unit, "player") and UnitIsConnected(unit) then
+                    power = self:SendPowerRequest(unit)
+                end
             else
                 power = self:GetPlayerPower()
             end
@@ -182,13 +185,15 @@ function tooltipUtils:GetPlayerPower()
 end
 
 function tooltipUtils:Init()
+    self.L = Private.L
+    self.addon = Private.Addon
+
+    if not const.IS_REMIX_VERSION then return end
     local spell = Spell:CreateFromSpellID(const.TOOLTIP.THREADS_BUFF_ID)
     spell:ContinueOnSpellLoad(function()
         const.TOOLTIP.THREADS_BUFF_NAME = spell:GetSpellName() or ""
     end)
-    self.L = Private.L
     local playerGUID = UnitGUID("player")
-    self.addon = Private.Addon
     TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, self:GetTooltipPostCall())
     self.comms = Private.CommsUtils
 
@@ -206,7 +211,6 @@ function tooltipUtils:Init()
 end
 
 function tooltipUtils:CreateSettings()
-    self.L = Private.L
     local settingsUtils = Private.SettingsUtils
     local settingsCategory = settingsUtils:GetCategory()
     local settingsPrefix = self.L["TooltipUtils.SettingsCategoryPrefix"]

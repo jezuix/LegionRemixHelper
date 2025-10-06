@@ -145,7 +145,7 @@ function collectionsTabUI:SetupTab()
 end
 
 function collectionsTabUI:SetupTraitsTab()
-    if const.INTERFACE_VERSION > 110200 then
+    if const.IS_REMIX_VERSION then
         local artifactTraitsContent = self:AddTopTab(self.L["CollectionsTabUI.TraitsTabTitle"])
         local traitsUI = Private.ArtifactTraitsTabUI
         traitsUI:Init(artifactTraitsContent)
