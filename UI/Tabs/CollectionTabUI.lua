@@ -362,16 +362,33 @@ end
 
 function collectionTabUI:UpdateFilteredData()
     local filtered = {}
-    if not self.data then return end
+    if not self.data then return 0, 0 end
+    local collected = 0
     local filter = self.filter
 
     for _, reward in ipairs(self.data) do
         if self:MatchFilter(reward, filter) then
             tinsert(filtered, reward)
+            if reward:IsCollected() then
+                collected = collected + 1
+            end
         end
     end
 
+    local total = #filtered
+    local collectedPercent = total > 0 and (collected / total) * 100 or 0
+    local spentBronze, totalBronze = Private.CollectionUtils:GetCollectionBronzeCost(filtered)
+    local spentStr = AbbreviateNumbers(spentBronze)
+    local totalStr = AbbreviateNumbers(totalBronze)
+    local leftToCollectStr = AbbreviateNumbers(totalBronze - spentBronze)
+    local tooltipText = self.L["Tabs.CollectionTabUI.ProgressTooltip"]:format(spentStr, totalStr, leftToCollectStr)
+    tooltipText = const.COLORS.WHITE:WrapTextInColorCode(tooltipText)
+
     self.scrollFrame:UpdateContent(filtered)
+    self.progress:SetValue(collected)
+    self.progress:SetMinMaxValues(0, total)
+    self.progress:SetLabelText(self.L["Tabs.CollectionTabUI.Progress"]:format(collected, total, collectedPercent))
+    self.progress:SetTooltipText(tooltipText)
 end
 
 ---@param contentFrame Frame
@@ -393,13 +410,10 @@ function collectionTabUI:Init(contentFrame)
         end
 
 
-        local data, collected, total = Private.CollectionUtils:GetCollectionData()
+        local data = Private.CollectionUtils:GetCollectionData()
         if data then
             self.data = data
             self:UpdateFilteredData()
-            self.progress:SetValue(collected)
-            self.progress:SetMinMaxValues(0, total)
-            self.progress:SetLabelText(self.L["Tabs.CollectionTabUI.Progress"]:format(collected, total, (collected / total) * 100))
         end
     end)
 end
