@@ -22,6 +22,7 @@ local L = {
     ["Tabs.CollectionTabUI.Source"] = "来源",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "搜索",
     ["Tabs.CollectionTabUI.Progress"] = "%d / %d（%.2f%%）",
+    ["Tabs.CollectionTabUI.ProgressTooltip"] = "Your collection is worth %s of %s Bronze.\nYou need to spend %s more to collect everything!",
 
     -- UI/CollectionsTabUI.lua
     ["CollectionsTabUI.TabTitle"] = "军团再临幻境新生",

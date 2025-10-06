@@ -23,6 +23,7 @@ local L = {
     ["Tabs.CollectionTabUI.Source"] = "Источник",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Поиск",
     ["Tabs.CollectionTabUI.Progress"] = "%d / %d (%.2f%%)",
+    ["Tabs.CollectionTabUI.ProgressTooltip"] = "Your collection is worth %s of %s Bronze.\nYou need to spend %s more to collect everything!",
 
     -- UI/CollectionsTabUI.lua
     ["CollectionsTabUI.TabTitle"] = "Legion Remix",

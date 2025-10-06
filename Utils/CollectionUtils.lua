@@ -48,6 +48,7 @@ local const = Private.constants
 ---@field sourceTypes Enum.RHE_CollectionSourceType[]
 ---@field vendorInfo NPCInfo|nil
 ---@field achievementID number|nil
+---@field bronzePrice number
 local collectionRewardMixin = {
     collectionCheckFunction = nil,
     collected = false,
@@ -61,6 +62,7 @@ local collectionRewardMixin = {
     vendorLocation = nil,
     vendorInfo = nil,
     achievementID = nil,
+    bronzePrice = 0
 }
 
 ---@return boolean isCollected
@@ -221,6 +223,16 @@ function collectionRewardMixin:HasSourceType(sourceType)
     return false
 end
 
+---@param price number
+function collectionRewardMixin:SetBronzePrice(price)
+    self.bronzePrice = price
+end
+
+---@return number
+function collectionRewardMixin:GetBronzePrice()
+    return self.bronzePrice
+end
+
 function collectionUtils:Init()
     self.L = Private.L
     self:CachePriceIcons()
@@ -256,11 +268,12 @@ end
 ---@param icon string|number
 ---@param sourceTooltip string
 ---@param isCollected boolean
+---@param bronzeCost number
 ---@param collectionCheckFunction fun():isCollected:boolean)
 ---@param itemID number|nil
 ---@param illusionID number|nil
 ---@return CollectionRewardObject
-function collectionUtils:CreateCollectionObject(reward, name, icon, sourceTooltip, isCollected, collectionCheckFunction,
+function collectionUtils:CreateCollectionObject(reward, name, icon, sourceTooltip, isCollected, bronzeCost, collectionCheckFunction,
                                                 itemID, illusionID)
     local obj = setmetatable({}, { __index = collectionRewardMixin })
 
@@ -268,6 +281,7 @@ function collectionUtils:CreateCollectionObject(reward, name, icon, sourceToolti
     obj:SetIcon(icon)
     obj:SetSourceTooltip(sourceTooltip)
     obj:SetCollected(isCollected)
+    obj:SetBronzePrice(bronzeCost)
     obj:SetCollectionCheckFunction(collectionCheckFunction)
     obj:SetItemID(itemID)
     obj:SetIllusion(illusionID)
@@ -429,11 +443,27 @@ function collectionUtils:GetSourceTooltip(reward)
 end
 
 ---@param reward CombinedCollectionReward
+---@return number bronzeCost
+function collectionUtils:GetBronzeCost(reward)
+    local bronzePrice = 0
+    if reward.PRICES then
+        for _, priceInfo in ipairs(reward.PRICES) do
+            if priceInfo.TYPE == const.COLLECTIONS.ENUM.PRICE_TYPE.BRONZE then
+                bronzePrice = priceInfo.AMOUNT
+                break
+            end
+        end
+    end
+    return bronzePrice
+end
+
+---@param reward CombinedCollectionReward
 function collectionUtils:LoadReward(reward)
     if not reward or not reward.REWARD_ID then return end
     local rewardType = reward.REWARD_TYPE
     local rtEnum = const.COLLECTIONS.ENUM.REWARD_TYPE
     local tooltip = self:GetSourceTooltip(reward)
+    local bronzePrice = self:GetBronzeCost(reward)
 
     if rewardType == rtEnum.TITLE then
         local titleID = reward.REWARD_ID
@@ -443,7 +473,7 @@ function collectionUtils:LoadReward(reward)
             tooltip = name
             local collectionFunc = self:GetTitleCollectionFunction(titleID)
 
-            local titleObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), collectionFunc)
+            local titleObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc)
             self:AddToCache(titleObj, rewardType)
         end
     elseif rewardType == rtEnum.SET then
@@ -455,7 +485,7 @@ function collectionUtils:LoadReward(reward)
             local setID = C_Item.GetItemLearnTransmogSet(itemID)
             local collectionFunc = self:GetSetCollectionFunction(setID)
 
-            local setObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), collectionFunc,
+            local setObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
                 itemID)
             self:AddToCache(setObj, rewardType)
         end)
@@ -468,7 +498,7 @@ function collectionUtils:LoadReward(reward)
             local speciesID = select(13, C_PetJournal.GetPetInfoByItemID(itemID))
             local collectionFunc = self:GetPetCollectionFunction(speciesID)
 
-            local petObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), collectionFunc,
+            local petObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
                 itemID)
             self:AddToCache(petObj, rewardType)
         end)
@@ -481,7 +511,7 @@ function collectionUtils:LoadReward(reward)
             local name = item:GetItemName()
             local collectionFunc = self:GetIllusionCollectionFunction(illusionID)
 
-            local illusionObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), collectionFunc,
+            local illusionObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
                 itemID, illusionID)
             self:AddToCache(illusionObj, rewardType)
         end)
@@ -493,7 +523,7 @@ function collectionUtils:LoadReward(reward)
             local name = item:GetItemName()
             local collectionFunc = self:GetAppearanceCollectionFunction(itemID)
 
-            local appearanceObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(),
+            local appearanceObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
                 collectionFunc, itemID)
             self:AddToCache(appearanceObj, rewardType)
         end)
@@ -506,7 +536,7 @@ function collectionUtils:LoadReward(reward)
             local mountID = C_MountJournal.GetMountFromItem(itemID)
             local collectionFunc = self:GetMountCollectionFunction(mountID, itemID)
 
-            local mountObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), collectionFunc,
+            local mountObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
                 itemID)
             self:AddToCache(mountObj, rewardType)
         end)
@@ -518,7 +548,7 @@ function collectionUtils:LoadReward(reward)
             local name = item:GetItemName()
             local collectionFunc = self:GetToyCollectionFunction(itemID)
 
-            local toyObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), collectionFunc,
+            local toyObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
                 itemID)
             self:AddToCache(toyObj, rewardType)
         end)
@@ -601,22 +631,17 @@ function collectionUtils:RefreshCollectionByType(rewardType)
     end
 end
 
----@return CollectionRewardObject[]|nil scrollData, number? collected, number? total
+---@return CollectionRewardObject[]|nil scrollData
 function collectionUtils:GetCollectionData()
     if self.isUpdated then return end
     self.isUpdated = true
 
-    local collected, total = 0, 0
     local items = {}
     for rewardType, rewards in pairs(self.cache) do
         self:RefreshCollectionByType(rewardType)
         for _, reward in ipairs(rewards) do
             ---@cast reward CollectionRewardObject
             tinsert(items, reward)
-            if reward:IsCollected() then
-                collected = collected + 1
-            end
-            total = total + 1
         end
     end
 
@@ -624,5 +649,19 @@ function collectionUtils:GetCollectionData()
         return a:GetName() < b:GetName()
     end)
 
-    return items, collected, total
+    return items
+end
+
+---@param data CollectionRewardObject[]
+---@return number spent, number total
+function collectionUtils:GetCollectionBronzeCost(data)
+    local spent, total = 0, 0
+    for _, reward in ipairs(data) do
+        local price = reward:GetBronzePrice() or 0
+        total = total + price
+        if reward:IsCollected() then
+            spent = spent + price
+        end
+    end
+    return spent, total
 end

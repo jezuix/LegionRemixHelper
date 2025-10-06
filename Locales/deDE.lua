@@ -22,6 +22,7 @@ local L = {
     ["Tabs.CollectionTabUI.Source"] = "Quelle",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Suchen",
     ["Tabs.CollectionTabUI.Progress"] = "%d / %d (%.2f%%)",
+    ["Tabs.CollectionTabUI.ProgressTooltip"] = "Deine Sammlung hat einen Wert von %s von möglichen %s Bronze.\nDu musst noch %s ausgeben um alles zu sammeln!",
 
     -- UI/CollectionsTabUI.lua
     ["CollectionsTabUI.TabTitle"] = "Legion-Remix",
