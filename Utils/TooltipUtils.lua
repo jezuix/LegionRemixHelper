@@ -123,6 +123,21 @@ function tooltipUtils:RefreshTooltip()
     tooltip:SetUnit(unit)
 end
 
+---@param number number
+---@param isThreads boolean?
+---@return string coloredAndAbbreviatedString
+function tooltipUtils:ColorAndAbbrev(number, isThreads)
+    number = tonumber(number) or 0
+    local color = isThreads and const.TOOLTIP.THREADS_COLORS or const.TOOLTIP.INFINITE_POWER_COLORS
+    for i = #color, 1, -1 do
+        if number >= color[i].MILESTONE then
+            local col = color[i].COLOR
+            return col:WrapTextInColorCode(AbbreviateNumbers(number))
+        end
+    end
+    return "0"
+end
+
 ---@return fun(tooltip: GameTooltip)
 function tooltipUtils:GetTooltipPostCall()
     return function(tooltip)
@@ -136,22 +151,34 @@ function tooltipUtils:GetTooltipPostCall()
 
         tooltip:AddLine(" ")
         if threadsActive then
-            tooltip:AddDoubleLine(self.L["TooltipUtils.Threads"], self:GetThreadsCount(unit))
+            tooltip:AddDoubleLine(self.L["TooltipUtils.Threads"], self:ColorAndAbbrev(self:GetThreadsCount(unit), true))
         end
         if powerActive then
             local lineTitle = self.L["TooltipUtils.InfinitePower"]
             local powerText = ""
-            local power = self:SendPowerRequest(unit)
+            local power
+            if not UnitIsPlayer(unit) then
+                power = self:SendPowerRequest(unit)
+            else
+                power = self:GetPlayerPower()
+            end
             if not power then
                 lineTitle = lineTitle .. self.L["TooltipUtils.Estimate"]
                 local minEstimate, maxEstimate = self:GetInfinitePowerEstimate(unit)
-                powerText = ("%s-%s"):format(AbbreviateNumbers(minEstimate), AbbreviateNumbers(maxEstimate))
+                powerText = ("%s-%s"):format(self:ColorAndAbbrev(minEstimate), self:ColorAndAbbrev(maxEstimate))
             else
-                powerText = AbbreviateNumbers(power)
+                powerText = self:ColorAndAbbrev(power)
             end
             tooltip:AddDoubleLine(lineTitle, powerText)
         end
     end
+end
+
+---@return number infinitePower
+function tooltipUtils:GetPlayerPower()
+    local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(const.TOOLTIP.POWER_CURRENCY_ID)
+    if not currencyInfo then return 0 end
+    return currencyInfo.quantity
 end
 
 function tooltipUtils:Init()
@@ -170,17 +197,16 @@ function tooltipUtils:Init()
     end)
     self.comms:AddCallback(const.TOOLTIP.COMMS_PREFIX.REQUEST_DATA, function (data)
         if not (data and data.sender) then return end
-        local currencyInfo = C_CurrencyInfo.GetCurrencyInfo(const.TOOLTIP.POWER_CURRENCY_ID)
-        if not currencyInfo then return end
         local response = {
             unitGUID = playerGUID,
-            power = currencyInfo.quantity,
+            power = self:GetPlayerPower(),
         }
         self.comms:SendMessage(const.TOOLTIP.COMMS_PREFIX.SEND_DATA, response, "WHISPER", data.sender)
     end)
 end
 
 function tooltipUtils:CreateSettings()
+    self.L = Private.L
     local settingsUtils = Private.SettingsUtils
     local settingsCategory = settingsUtils:GetCategory()
     local settingsPrefix = self.L["TooltipUtils.SettingsCategoryPrefix"]
