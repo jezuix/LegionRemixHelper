@@ -188,7 +188,7 @@ function tooltipUtils:Init()
     self.L = Private.L
     self.addon = Private.Addon
 
-    if const.INTERFACE_VERSION <= 110200 then return end
+    if not const.IS_REMIX_VERSION then return end
     local spell = Spell:CreateFromSpellID(const.TOOLTIP.THREADS_BUFF_ID)
     spell:ContinueOnSpellLoad(function()
         const.TOOLTIP.THREADS_BUFF_NAME = spell:GetSpellName() or ""
