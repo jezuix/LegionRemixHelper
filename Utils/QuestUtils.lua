@@ -80,8 +80,10 @@ end
 
 function questUtils:OnQuestComplete()
     if self:IsActive("autoTurnIn") then
-        ---@diagnostic disable-next-line: param-type-mismatch
-        GetQuestReward(nil)
+        pcall(function () -- Only complete with no selection
+            ---@diagnostic disable-next-line: param-type-mismatch
+            GetQuestReward(nil)
+        end)
     end
 end
 
