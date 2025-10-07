@@ -152,6 +152,9 @@ function scrappingUtils:AutoScrapBatch()
             return
         end
     end
+    if C_ScrappingMachineUI.HasScrappableItems() then
+        return
+    end
     C_ScrappingMachineUI.RemoveAllScrapItems()
     for _, item in ipairs(itemsToScrap) do
         self:ScrapItemFromBag(item.bagID, item.slotID)
