@@ -94,7 +94,7 @@ function questUtils:OnQuestDetail()
 end
 
 function questUtils:OnQuestProgress()
-    if self:IsActive("autoTurnIn") then
+    if self:IsActive("autoTurnIn") and IsQuestCompletable() then
         CompleteQuest()
     end
 end
