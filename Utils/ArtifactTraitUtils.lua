@@ -45,6 +45,21 @@ function artifactTraitUtils:Init()
                 self:OnPowerUpdate()
             end
         end)
+    addon:RegisterEvent("CURRENCY_DISPLAY_UPDATE", "artifactTraitUtils_CURRENCY_DISPLAY_UPDATE",
+        function(_, _, currencyID)
+            if not currencyID then return end
+            if currencyID ~= const.REMIX_ARTIFACT_TRAITS.CURRENCY_ID then return end
+            local nextNode = self:GetNextPurchaseNode()
+            if not nextNode then return end
+            if self:PurchasePossibleRanks(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nextNode) then return end
+            local spellId = self:GetSpellIDFromNodeID(nextNode)
+            if not spellId then return end
+            local spell = Spell:CreateFromSpellID(spellId)
+            if not spell then return end
+            spell:ContinueOnSpellLoad(function()
+                Private.ToastUtils:ShowTraitToast(spell:GetSpellName(), C_Spell.GetSpellTexture(spellId))
+            end)
+        end)
     addon:RegisterEvent("PLAYER_ENTERING_WORLD", "artifactTraitUtils_PLAYER_ENTERING_WORLD", function()
         self.baseTraits = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, self:GetRowRootNodes())
 
@@ -206,6 +221,16 @@ function artifactTraitUtils:GetSpellIDFromEntryID(entryID, configID)
     if not entryInfo or not entryInfo.definitionID then return end
     local definitionInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
     return definitionInfo.overriddenSpellID or definitionInfo.spellID
+end
+
+---@param nodeID number
+---@param configID number?
+---@return number? spellID
+function artifactTraitUtils:GetSpellIDFromNodeID(nodeID, configID)
+    if not configID then configID = self:GetConfigID() end
+    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
+    if not nodeInfo or not nodeInfo.entryIDs or #nodeInfo.entryIDs == 0 then return end
+    return self:GetSpellIDFromEntryID(nodeInfo.entryIDs[1], configID)
 end
 
 ---@param itemLocation ItemLocation
@@ -491,6 +516,9 @@ function artifactTraitUtils:PurchasePossibleRanks(treeID, nodeID)
     end
     local costPerRank = costInfo[1].amount
     local possibleRanks = math.floor(currencyLeft / costPerRank)
+    if possibleRanks <= 0 then
+        return TRY_PURCHASE_RESULTS.NOT_ENOUGH_CURRENCY
+    end
 
     for i = 1, possibleRanks do
         local success = C_Traits.PurchaseRank(configID, nodeID)
@@ -522,4 +550,24 @@ function artifactTraitUtils:PurchaseNodes(treeID, nodes)
         end
         tries = tries + 1
     end
+end
+
+---@return number nextNodeID
+function artifactTraitUtils:GetNextPurchaseNode()
+    local baseTraits = self:GetBaseTraits()
+    for _, nodeID in ipairs(baseTraits) do
+        local nodeInfo = C_Traits.GetNodeInfo(self:GetConfigID(), nodeID)
+        if nodeInfo and nodeInfo.isAvailable and nodeInfo.ranksPurchased < nodeInfo.maxRanks then
+            return nodeID
+        end
+    end
+
+    local rowTraits = self:GetRowTraitsForRow(self:GetRowForSpec(self:GetSpecID()) or 1)
+    for _, nodeID in ipairs(rowTraits) do
+        local nodeInfo = C_Traits.GetNodeInfo(self:GetConfigID(), nodeID)
+        if nodeInfo and nodeInfo.isAvailable and nodeInfo.ranksPurchased < nodeInfo.maxRanks then
+            return nodeID
+        end
+    end
+    return const.REMIX_ARTIFACT_TRAITS.FINAL_TRAIT.NODE_ID
 end
