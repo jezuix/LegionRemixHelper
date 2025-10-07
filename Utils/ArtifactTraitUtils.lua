@@ -52,6 +52,7 @@ function artifactTraitUtils:Init()
             local nextNode = self:GetNextPurchaseNode()
             if not nextNode then return end
             if self:PurchasePossibleRanks(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nextNode) then return end
+            if not C_Traits.CommitConfig(self:GetConfigID()) then return end
             local spellId = self:GetSpellIDFromNodeID(nextNode)
             if not spellId then return end
             local spell = Spell:CreateFromSpellID(spellId)
