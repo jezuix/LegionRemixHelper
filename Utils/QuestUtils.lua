@@ -27,6 +27,10 @@ function questUtils:Init()
         self:OnQuestDetail()
     end)
 
+    addon:RegisterEvent("QUEST_PROGRESS", "QuestUtils_QuestProgress", function()
+        self:OnQuestProgress()
+    end)
+
     self:CreateSettings()
 end
 
@@ -76,15 +80,21 @@ end
 
 function questUtils:OnQuestComplete()
     if self:IsActive("autoTurnIn") then
-        if GetNumQuestRewards() > 0 then return end
-
-        ---@diagnostic disable-next-line: param-type-mismatch
-        GetQuestReward(nil)
+        pcall(function () -- Only complete with no selection
+            ---@diagnostic disable-next-line: param-type-mismatch
+            GetQuestReward(nil)
+        end)
     end
 end
 
 function questUtils:OnQuestDetail()
     if self:IsActive("autoAccept") then
         AcceptQuest()
+    end
+end
+
+function questUtils:OnQuestProgress()
+    if self:IsActive("autoTurnIn") then
+        CompleteQuest()
     end
 end

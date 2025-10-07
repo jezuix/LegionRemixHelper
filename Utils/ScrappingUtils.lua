@@ -132,9 +132,27 @@ function scrappingUtils:GetFilteredScrappableItems(capReturn)
     return filteredItems
 end
 
+function scrappingUtils:GetNumActiveScrap(max)
+    local count = 0
+    if C_ScrappingMachineUI.HasScrappableItems() then
+        for i = 1, max do
+            if C_ScrappingMachineUI.GetCurrentPendingScrapItemLocationByIndex(i - 1) then
+                count = count + 1
+            end
+        end
+    end
+
+    return count
+end
+
 function scrappingUtils:AutoScrapBatch()
-    C_ScrappingMachineUI.RemoveAllScrapItems()
     local itemsToScrap = self:GetFilteredScrappableItems(const.SCRAPPING_MACHINE.MAX_SLOTS)
+    if #itemsToScrap < const.SCRAPPING_MACHINE.MAX_SLOTS then
+        if self:GetNumActiveScrap(const.SCRAPPING_MACHINE.MAX_SLOTS) >= #itemsToScrap then
+            return
+        end
+    end
+    C_ScrappingMachineUI.RemoveAllScrapItems()
     for _, item in ipairs(itemsToScrap) do
         self:ScrapItemFromBag(item.bagID, item.slotID)
     end

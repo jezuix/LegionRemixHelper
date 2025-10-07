@@ -49,6 +49,7 @@ constants.COLLECTIONS_TAB = {
 
 constants.REMIX_ARTIFACT_TRAITS = {
     TREE_ID = 1161,
+    CURRENCY_ID = 3268,
     ROWS = {
         NATURE_ROW = {
             NAME = "Nature",
