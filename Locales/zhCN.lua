@@ -53,10 +53,10 @@ local L = {
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "保存动作栏时出错：%s",
 
     -- UI/ScrappingUI.lua
-    ["ScrappingUI.MaxScrappingQuality"] = "最大分解品质",
+    ["ScrappingUI.MaxScrappingQuality"] = "最大拆解品质",
     ["ScrappingUI.MinItemLevelDifference"] = "最低物品等级差",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "比装备低 x 级",
-    ["ScrappingUI.AutoScrap"] = "自动分解",
+    ["ScrappingUI.AutoScrap"] = "自动拆解",
 
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "未装备物品。",
