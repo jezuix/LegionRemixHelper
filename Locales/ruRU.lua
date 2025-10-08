@@ -64,6 +64,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "Неизвестная особенность",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Достигнут максимум попыток при покупке.",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artifact Traits",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Settings for the Artifact Traits feature",
+    ["ArtifactTraitUtils.AutoBuy"] = "Automatic Node Purchase",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Automatically purchases the preset talents when you have enough Artifact Power.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "Источники:",
@@ -73,6 +77,7 @@ local L = {
     ["CollectionUtils.Vendor"] = "Торговец, ",
 
     -- Utils/ItemOpenerUtils.lua
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Авто открывание предметов",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Настройки функции автоматического открытия предметов",
     ["ItemOpenerUtils.AutoItemOpen"] = "Автоматически открывать предметы",
@@ -138,5 +143,9 @@ local L = {
     -- Utils/UpdateUtils.lua
     ["UpdateUtils.PatchNotesMessage"] = "Ваша версия изменилась с %s на версию %s. Проверьте Discord аддона для заметок к патчу!",
     ["UpdateUtils.NilVersion"] = "Н/Д",
+
+    -- Utils/UXUtils.lua
+    ["UXUtils.SettingsCategoryPrefix"] = "General Settings",
+    ["UXUtils.SettingsCategoryTooltip"] = "General Addon Settings",
 }
 locales["ruRU"] = L

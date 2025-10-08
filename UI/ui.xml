@@ -6,5 +6,6 @@
     <script file="CollectionsTabUI.lua"/>
     <script file="QuickActionBarUI.lua"/>
     <script file="ToastUI.lua"/>
+    <script file="UXUI.lua"/>
     <Include file="Tabs/tabs.xml"/>
 </Ui>

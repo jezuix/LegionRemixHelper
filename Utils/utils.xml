@@ -16,4 +16,5 @@
     <script file="ArtifactTraitUtils.lua" />
     <script file="CollectionUtils.lua" />
     <script file="UpdateUtils.lua" />
+    <script file="UXUtils.lua" />
 </Ui>

@@ -197,8 +197,18 @@ function artifactTraitsTabUI:ShowPlaceholder()
     self.placeholder.frame:Show()
 end
 
+---@return boolean hasArtifact
+function artifactTraitsTabUI:HasArtifactEquipped()
+    for _, slot in pairs(const.INV_SLOT) do
+        if C_RemixArtifactUI.ItemInSlotIsRemixArtifact(slot) then
+            return true
+        end
+    end
+    return false
+end
+
 function artifactTraitsTabUI:HandleShowUI()
-    if C_RemixArtifactUI.ItemInSlotIsRemixArtifact(const.INV_SLOT.WEAPON) then
+    if self:HasArtifactEquipped() then
         if not self.isUICreated then
             self:CreateTabUI()
             self.isUICreated = true

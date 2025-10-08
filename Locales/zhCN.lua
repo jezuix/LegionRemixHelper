@@ -63,6 +63,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "未知专长",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s （+%d）",
     ["ArtifactTraitUtils.MaxTriesReached"] = "购买节点时达到最大尝试次数。",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artifact Traits",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Settings for the Artifact Traits feature",
+    ["ArtifactTraitUtils.AutoBuy"] = "Automatic Node Purchase",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Automatically purchases the preset talents when you have enough Artifact Power.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "来源：",
@@ -76,6 +80,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自动开启物品功能设置",
     ["ItemOpenerUtils.AutoItemOpen"] = "自动开启物品",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "获得特定物品时自动开启背包中的物品。（此功能仍在开发中）",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "自动任务",
@@ -137,5 +142,9 @@ local L = {
     -- Utils/UpdateUtils.lua
     ["UpdateUtils.PatchNotesMessage"] = "你的版本已从 %s 变更为版本 %s。请查看插件或者到Discord获取更新说明！",
     ["UpdateUtils.NilVersion"] = "N/A",
+
+    -- Utils/UXUtils.lua
+    ["UXUtils.SettingsCategoryPrefix"] = "General Settings",
+    ["UXUtils.SettingsCategoryTooltip"] = "General Addon Settings",
 }
 locales["zhCN"] = L

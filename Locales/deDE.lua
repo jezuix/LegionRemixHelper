@@ -63,6 +63,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "Unbekanntes Talent",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Maximale Versuche beim Kauf von Knoten erreicht.",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artefakt-Talente",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Einstellungen für die Artefakt-Talente-Funktion",
+    ["ArtifactTraitUtils.AutoBuy"] = "Automatischer Kauf von Knoten",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Kauft automatisch die voreingestellten Talente, wenn du genug Artefaktmacht hast.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "Quellen:",
@@ -76,6 +80,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Gegenstand-Öffner-Funktion",
     ["ItemOpenerUtils.AutoItemOpen"] = "Automatisch Gegenstände öffnen",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Öffnet automatisch bestimmte Gegenstände in deinem Inventar, wenn sie gefunden werden. (Dieses Feature wird noch entwickelt)",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Öffnet %s automatisch, wenn es im Inventar gefunden wird.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",
@@ -137,5 +142,9 @@ local L = {
     -- Utils/UpdateUtils.lua
     ["UpdateUtils.PatchNotesMessage"] = "Deine Version wurde von %s auf Version %s aktualisiert. Sieh im Addon-Discord nach den Patchnotes!",
     ["UpdateUtils.NilVersion"] = "N/A",
+
+    -- Utils/UXUtils.lua
+    ["UXUtils.SettingsCategoryPrefix"] = "Allgemeine Einstellungen",
+    ["UXUtils.SettingsCategoryTooltip"] = "Allgemeine Addon-Einstellungen",
 }
 locales["deDE"] = L

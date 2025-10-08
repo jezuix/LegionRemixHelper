@@ -34,8 +34,6 @@ function questUtils:Init()
     addon:RegisterEvent("QUEST_PROGRESS", "QuestUtils_QuestProgress", function()
         self:OnQuestProgress()
     end)
-
-    self:CreateSettings()
 end
 
 function questUtils:CreateSettings()

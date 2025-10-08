@@ -17,7 +17,6 @@ function toastUtils:Init()
     self.L = Private.L
     local addon = Private.Addon
     self.addon = addon
-    self:CreateSettings()
 
     addon:RegisterEvent("BAG_UPDATE_DELAYED", "ToastUtils_OnBagUpdateDelayed", function()
         local upgradeItem = self:GetHighestUpgradeItem()
