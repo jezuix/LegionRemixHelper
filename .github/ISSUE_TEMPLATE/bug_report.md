@@ -26,7 +26,7 @@ Paste your LUA error log here
   * **Legion Remix Helper Version:** [e.g., v1.0.1]
   * **Other Addons Enabled:** [Please list any other major addons you have enabled, or if possible, a full list.]
 
-### Advanced Troubleshooting (Optional but very helpful\!)
+### Advanced Troubleshooting (Optional but very helpful!)
 
   - [ ] I have tested with **only** Legion Remix Helper enabled and the bug still occurs.
   - [ ] I have used an addon like [Bisector](https://www.curseforge.com/wow/addons/bisector) to identify a conflict.
