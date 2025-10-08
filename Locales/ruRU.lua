@@ -77,11 +77,11 @@ local L = {
     ["CollectionUtils.Vendor"] = "Торговец, ",
 
     -- Utils/ItemOpenerUtils.lua
-    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Авто открывание предметов",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Настройки функции автоматического открытия предметов",
     ["ItemOpenerUtils.AutoItemOpen"] = "Автоматически открывать предметы",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Автоматически открывает определённые предметы в вашем инвентаре при их нахождении. (Эта функция всё ещё находится в разработке.)",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Автозадание",
