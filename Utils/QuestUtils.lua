@@ -19,6 +19,10 @@ function questUtils:Init()
         self:OnGossipShow()
     end)
 
+    addon:RegisterEvent("QUEST_GREETING", "QuestUtils_QuestGreeting", function()
+        self:OnQuestGreeting()
+    end)
+
     addon:RegisterEvent("QUEST_COMPLETE", "QuestUtils_QuestComplete", function()
         self:OnQuestComplete()
     end)
@@ -78,9 +82,29 @@ function questUtils:OnGossipShow()
     end
 end
 
+function questUtils:OnQuestGreeting()
+    if self:IsActive("autoTurnIn") then
+        local numActive = GetNumActiveQuests()
+        for i = 1, numActive do
+            local activeID = GetActiveQuestID(i)
+            if activeID then
+                local isComplete = C_QuestLog.IsComplete(activeID)
+                if isComplete then
+                    ---@diagnostic disable-next-line: redundant-parameter
+                    SelectActiveQuest(i)
+                end
+            end
+        end
+    end
+    if self:IsActive("autoAccept") and GetNumAvailableQuests() > 0 then
+        ---@diagnostic disable-next-line: redundant-parameter
+        SelectAvailableQuest(1)
+    end
+end
+
 function questUtils:OnQuestComplete()
     if self:IsActive("autoTurnIn") then
-        pcall(function () -- Only complete with no selection
+        pcall(function()  -- Only complete with no selection
             ---@diagnostic disable-next-line: param-type-mismatch
             GetQuestReward(nil)
         end)

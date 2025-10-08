@@ -103,7 +103,11 @@ function collectionsTabUI:SetupTab()
     tabSys:SetTab(selectedID)
 
     --- MOVE THIS PART TO A NEW COMPONENT!!!
-    local quickActionBar = CreateFrame("Button", nil, content)
+    --- This is a very sloppy and quick way to fix this for now
+    --- Will refactor later
+    local proxyFrame = CreateFrame("Frame", nil, content)
+    proxyFrame:SetAllPoints()
+    local quickActionBar = CreateFrame("Button", nil, proxyFrame)
     quickActionBar:SetPoint("TOPRIGHT", content, "TOPRIGHT", -5, 30)
     quickActionBar:SetSize(25, 25)
     quickActionBar:SetHighlightAtlas("RedButton-Highlight", "ADD")
