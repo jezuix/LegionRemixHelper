@@ -83,7 +83,7 @@ local L = {
     ["QuestUtils.AutoTurnIn"] = "Entrega Automática",
     ["QuestUtils.AutoTurnInTooltip"] = "Automaticamente entrega as missões ao interagir com os PNJs.",
     ["QuestUtils.AutoAccept"] = "Aceitação automática",
-    ["QuestUtils.AutoAcceptTooltip"] = "Automaticamente aceita a missões automaticamente ao interagir com os PNJs.",
+    ["QuestUtils.AutoAcceptTooltip"] = "Automaticamente aceita as missões ao interagir com os PNJs.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Barra de Ações Rápidas",
@@ -114,7 +114,7 @@ local L = {
     ["ToastUtils.TypeBronzeTitle"] = "Novo Marco de Bronze!",
     ["ToastUtils.TypeBronzeDescription"] = "Você alcançou %d bronze! (%.2f%% até o limite)",
     ["ToastUtils.TypeArtifactTitle"] = "Novo Aprimoramento de Artefato!",
-    ["ToastUtils.TypeArtifactDescription"] = "You have Encontrei uma nova melhoria de artefato! Confira seu inventário ou a barra de ação rápida.",
+    ["ToastUtils.TypeArtifactDescription"] = "Você possui uma nova melhoria de artefato! Confira seu inventário ou a barra de ação rápida.",
     ["ToastUtils.TypeUpgradeTitle"] = "Novo Aprimoramento de Item!",
     ["ToastUtils.TypeUpgradeFallback"] = "Item Desconhecido",
     ["ToastUtils.TypeTraitTitle"] = "Novo Traço Desbloqueado!",
