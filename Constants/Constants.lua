@@ -4886,3 +4886,7 @@ constants.TOOLTIP = {
         {COLOR = CreateColorFromHexString("FF2ecc71"), MILESTONE = 5000000 }, -- Unlimited Power XII
     },
 }
+
+constants.INV_SLOT = {
+    WEAPON = 16,
+}

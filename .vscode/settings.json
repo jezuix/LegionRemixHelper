@@ -132,7 +132,9 @@
         "INVSLOT_FIRST_EQUIPPED",
         "INVSLOT_LAST_EQUIPPED",
         "INVSLOT_MAINHAND",
-        "LARGE_NUMBER_SEPERATOR"
+        "LARGE_NUMBER_SEPERATOR",
+        "WEAPON",
+        "C_RemixArtifactUI"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

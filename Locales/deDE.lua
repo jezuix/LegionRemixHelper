@@ -6,6 +6,7 @@ Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Automatisch für Spezialisierung aktivieren",
+    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Bitte rüste deine Artefaktwaffe aus!",
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Strg-Klick für Vorschau",

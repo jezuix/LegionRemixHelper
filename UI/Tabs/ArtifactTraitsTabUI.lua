@@ -4,9 +4,13 @@ local Private = select(2, ...)
 ---@class ArtifactTraitsTabUI
 ---@field contentFrame Frame
 ---@field isUICreated boolean
+---@field placeholder LabelComponentObject
+---@field rowsFrame Frame
 local artifactTraitsTabUI = {
     contentFrame = nil,
     isUICreated = false,
+    placeholder = nil,
+    rowsFrame = nil,
     ---@type table<any, string>
     L = nil
 }
@@ -23,6 +27,7 @@ function artifactTraitsTabUI:CreateTabUI()
     rowFrame:SetPoint("TOPLEFT")
     rowFrame:SetPoint("BOTTOMRIGHT", 0, 100)
     local WIDTH, HEIGHT = rowFrame:GetSize()
+    self.rowsFrame = rowFrame
 
     local rowFrameBackground = rowFrame:CreateTexture(nil, "BACKGROUND")
     rowFrameBackground:SetAllPoints()
@@ -174,16 +179,53 @@ function artifactTraitsTabUI:CreateTabUI()
     end)
 end
 
+function artifactTraitsTabUI:ShowPlaceholder()
+    if not self.placeholder then
+        local placeholder = components.Label:CreateFrame(self.contentFrame, {
+            text = self.L["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"],
+            color = const.COLORS.LIGHT_GREY,
+            justifyH = "CENTER",
+            justifyV = "MIDDLE",
+            anchors = {
+                { "TOPLEFT" },
+                { "BOTTOMRIGHT" },
+            },
+            font = "GameFontHighlightHuge2"
+        })
+        self.placeholder = placeholder
+    end
+    self.placeholder.frame:Show()
+end
+
+function artifactTraitsTabUI:HandleShowUI()
+    if C_RemixArtifactUI.ItemInSlotIsRemixArtifact(const.INV_SLOT.WEAPON) then
+        if not self.isUICreated then
+            self:CreateTabUI()
+            self.isUICreated = true
+        end
+        self.rowsFrame:Show()
+        if self.placeholder then
+            self.placeholder.frame:Hide()
+        end
+        return
+    end
+    if self.rowsFrame then
+        self.rowsFrame:Hide()
+    end
+    self:ShowPlaceholder()
+end
+
 ---@param contentFrame Frame
 function artifactTraitsTabUI:Init(contentFrame)
     self.L = Private.L
     self.contentFrame = contentFrame
 
+    Private.Addon:RegisterEvent("WEAPON_SLOT_CHANGED", "ArtifactTraitsTabUI_WeaponSlotChanged", function()
+        self:HandleShowUI()
+    end)
+
     contentFrame:HookScript("OnShow", function()
-        if not self.isUICreated then
-            self:CreateTabUI()
-            self.isUICreated = true
-        end
+        self:HandleShowUI()
     end)
 end
 
