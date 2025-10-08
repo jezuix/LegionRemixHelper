@@ -71,6 +71,12 @@ local L = {
     ["CollectionUtils.UnknownVendor"] = "Unbekannter Händler",
     ["CollectionUtils.Vendor"] = "Händler, ",
 
+    -- Utils/ItemOpenerUtils.lua
+    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Gegenstand-Öffner",
+    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Gegenstand-Öffner-Funktion",
+    ["ItemOpenerUtils.AutoItemOpen"] = "Automatisch Gegenstände öffnen",
+    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Öffnet automatisch bestimmte Gegenstände in deinem Inventar, wenn sie gefunden werden. (Dieses Feature wird noch entwickelt)",
+
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",
     ["QuestUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Quest-Funktion",

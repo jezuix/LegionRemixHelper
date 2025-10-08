@@ -134,7 +134,8 @@
         "INVSLOT_MAINHAND",
         "LARGE_NUMBER_SEPERATOR",
         "WEAPON",
-        "C_RemixArtifactUI"
+        "C_RemixArtifactUI",
+        "NUM_BAG_SLOTS"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

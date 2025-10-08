@@ -31,3 +31,21 @@ function itemUtils:GetMinLevelForInvType(invType)
         return minLevel
     end
 end
+
+function itemUtils:ForEachBagItem()
+    local bagPos = BACKPACK_CONTAINER
+    local slotPos = 1
+    return function()
+        for bagID = bagPos, NUM_TOTAL_EQUIPPED_BAG_SLOTS do
+            for slotID = slotPos, C_Container.GetContainerNumSlots(bagID) do
+                local itemLoc = ItemLocation:CreateFromBagAndSlot(bagID, slotID)
+                if itemLoc:IsValid() then
+                    bagPos = bagID
+                    slotPos = slotID + 1
+                    return itemLoc
+                end
+            end
+            slotPos = 0
+        end
+    end
+end
