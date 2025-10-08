@@ -6,6 +6,7 @@ Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Automatisch für Spezialisierung aktivieren",
+    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Bitte rüste deine Artefaktwaffe aus!",
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Strg-Klick für Vorschau",
@@ -69,6 +70,12 @@ local L = {
     ["CollectionUtils.UnknownAchievement"] = "Unbekannter Erfolg",
     ["CollectionUtils.UnknownVendor"] = "Unbekannter Händler",
     ["CollectionUtils.Vendor"] = "Händler, ",
+
+    -- Utils/ItemOpenerUtils.lua
+    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Gegenstand-Öffner",
+    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Gegenstand-Öffner-Funktion",
+    ["ItemOpenerUtils.AutoItemOpen"] = "Automatisch Gegenstände öffnen",
+    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Öffnet automatisch bestimmte Gegenstände in deinem Inventar, wenn sie gefunden werden. (Dieses Feature wird noch entwickelt)",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",

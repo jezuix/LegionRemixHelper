@@ -16,6 +16,7 @@ function addon:OnInitialize(...)
     Private.CollectionUtils:Init()
     Private.QuickActionBarUtils:Init()
     Private.QuestUtils:Init()
+    Private.ItemOpenerUtils:Init()
 
     Private.CollectionsTabUI:Init()
     Private.ToastUI:Init()
@@ -24,6 +25,7 @@ end
 function addon:OnEnable(...)
     Private.DatabaseUtils:LoadDefaultsForMissing()
 
+    Private.ItemOpenerUtils:CreateSettings()
     Private.TooltipUtils:CreateSettings()
     Private.QuickActionBarUtils:CreateSettings()
 

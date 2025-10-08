@@ -34,6 +34,9 @@ local defaultDatabase = {
         threads = false,
         power = false,
     },
+    itemOpener = {
+        autoItemOpen = false,
+    },
     version = nil
 }
 

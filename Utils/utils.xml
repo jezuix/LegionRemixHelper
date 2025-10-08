@@ -6,6 +6,7 @@
     <script file="SettingsUtils.lua" />
     <script file="CommsUtils.lua" />
     <script file="ItemUtils.lua" />
+    <script file="ItemOpenerUtils.lua" />
     <script file="TooltipUtils.lua" />
     <script file="ToastUtils.lua" />
     <script file="QuestUtils.lua" />

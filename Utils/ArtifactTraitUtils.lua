@@ -63,8 +63,9 @@ function artifactTraitUtils:Init()
         end)
     addon:RegisterEvent("PLAYER_ENTERING_WORLD", "artifactTraitUtils_PLAYER_ENTERING_WORLD", function()
         self.baseTraits = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, self:GetRowRootNodes())
+         -- we need to do this after getting an artifact weapon
 
-        for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do
+        for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do -- we need to do this after getting an artifact weapon
             local rowPath = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nil, row.ROOT_NODE_ID)
             self.rowTraits[row.ID] = rowPath
         end

@@ -6,6 +6,7 @@ Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "自动激活专精",
+    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "No Artifact Equipped",
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Ctrl+点击预览",
@@ -69,6 +70,12 @@ local L = {
     ["CollectionUtils.UnknownAchievement"] = "未知成就",
     ["CollectionUtils.UnknownVendor"] = "未知商人",
     ["CollectionUtils.Vendor"] = "商人, ",
+
+    -- Utils/ItemOpenerUtils.lua
+    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Item-Opener",
+    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Item-Opener feature",
+    ["ItemOpenerUtils.AutoItemOpen"] = "Automatically Open Items",
+    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Automatically opens certain items in your inventory when found. (This feature is still in development)",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "自动任务",
