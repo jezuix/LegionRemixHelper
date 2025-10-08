@@ -50,7 +50,7 @@ local L = {
     ["QuickActionBarUI.SettingsEditorDelete"] = "Deletar Ação",
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "Nenhuma ação para salvar.",
     ["QuickActionBarUI.SettingsEditorAction"] = "Ação %s",
-    ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Houve um error durante o salvamento da ação: %s",
+    ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Houve um erro durante o salvamento da ação: %s",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "Qualidade Máxima do Sucateamento",
@@ -97,9 +97,9 @@ local L = {
     ["ToastUtils.TypeBronze"] = "Marco de Bronze",
     ["ToastUtils.TypeBronzeTooltip"] = "Mostrar um Pop-up quando você alcançar um novo marco de Bronze.",
     ["ToastUtils.TypeArtifact"] = "Aprimoramentos de Artefato",
-    ["ToastUtils.TypeArtifactTooltip"] = "Mostrar Pop-up quando você encontra uma aprimoramento do artefato em suas bolsas.",
+    ["ToastUtils.TypeArtifactTooltip"] = "Mostrar Pop-up quando você encontra um aprimoramento do artefato em suas bolsas.",
     ["ToastUtils.TypeUpgrade"] = "Aprimoramentos de Items",
-    ["ToastUtils.TypeUpgradeTooltip"] = "Mostrar Pop-up quando você encontra uma aprimoramento de item em suas bolsas.",
+    ["ToastUtils.TypeUpgradeTooltip"] = "Mostrar Pop-up quando você encontra um aprimoramento de item em suas bolsas.",
     ["ToastUtils.TypeTrait"] = "Novos Traços",
     ["ToastUtils.TypeTraitTooltip"] = "Mostrar Pop-up quando você desbloqueia um novo traço de artefato.",
     ["ToastUtils.TypeSound"] = "Tocar Sons",
