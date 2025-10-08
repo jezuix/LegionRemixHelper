@@ -7,7 +7,7 @@ Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Автоактивация для специализации",
-    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "No Artifact Equipped",
+    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Артефакт не экипирован",
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Ctrl-Клик для предпросмотра",
@@ -73,10 +73,10 @@ local L = {
     ["CollectionUtils.Vendor"] = "Торговец, ",
 
     -- Utils/ItemOpenerUtils.lua
-    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Item-Opener",
-    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Item-Opener feature",
-    ["ItemOpenerUtils.AutoItemOpen"] = "Automatically Open Items",
-    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Automatically opens certain items in your inventory when found. (This feature is still in development)",
+    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Авто открывание предметов",
+    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Настройки функции автоматического открытия предметов",
+    ["ItemOpenerUtils.AutoItemOpen"] = "Автоматически открывать предметы",
+    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Автоматически открывает определённые предметы в вашем инвентаре при их нахождении. (Эта функция всё ещё находится в разработке.)",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Автозадание",
