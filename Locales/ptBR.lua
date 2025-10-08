@@ -63,10 +63,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "Traço Desconhecido",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Máximo de tentativas alcançadas ao comprar nós.",
-    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artifact Traits",
-    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Settings for the Artifact Traits feature",
-    ["ArtifactTraitUtils.AutoBuy"] = "Automatic Node Purchase",
-    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Automatically purchases the preset talents when you have enough Artifact Power.",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Traços do Artefato",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Configurações para recursos de Traços de Artefato",
+    ["ArtifactTraitUtils.AutoBuy"] = "Compras de Nós Automaticamente",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Compra automaticamente os talentos predefinidos quando você tem Poder de Artefato suficiente.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "Fontes:",
@@ -80,7 +80,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Configurações do recurso Abridor Automático de itens",
     ["ItemOpenerUtils.AutoItemOpen"] = "Abre Itens Automaticamente",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Abre automaticamente determinados itens no seu inventário quando encontrados. (Este recurso ainda está em desenvolvimento)",
-    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Abre automaticamente %s quando encontrado no seu inventário.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Missões-Automáticas",
@@ -144,7 +144,7 @@ local L = {
     ["UpdateUtils.NilVersion"] = "N/D",
 
     -- Utils/UXUtils.lua
-    ["UXUtils.SettingsCategoryPrefix"] = "General Settings",
-    ["UXUtils.SettingsCategoryTooltip"] = "General Addon Settings",
+    ["UXUtils.SettingsCategoryPrefix"] = "Configurações Gerais",
+    ["UXUtils.SettingsCategoryTooltip"] = "Configurações Gerais do Addon",
 }
 locales["ptBR"] = L
