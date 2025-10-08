@@ -4943,4 +4943,5 @@ constants.TOOLTIP = {
 
 constants.INV_SLOT = {
     WEAPON = 16,
+    OFF_HAND = 17,
 }

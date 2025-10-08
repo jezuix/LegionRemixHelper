@@ -10,7 +10,7 @@ local Private = select(2, ...)
 ---@field addon LegionRH
 local artifactTraitUtils = {
     callbackUtils = nil,
-    baseTraits = {},
+    baseTraits = nil,
     rowTraits = {},
     configCache = nil,
     specsCache = {},
@@ -62,13 +62,7 @@ function artifactTraitUtils:Init()
             end)
         end)
     addon:RegisterEvent("PLAYER_ENTERING_WORLD", "artifactTraitUtils_PLAYER_ENTERING_WORLD", function()
-        self.baseTraits = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, self:GetRowRootNodes())
-         -- we need to do this after getting an artifact weapon
-
-        for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do -- we need to do this after getting an artifact weapon
-            local rowPath = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nil, row.ROOT_NODE_ID)
-            self.rowTraits[row.ID] = rowPath
-        end
+        self:BuildTraitTrees()
         self:UpdateSpecs()
     end)
     addon:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", "artifactTraitUtils_PLAYER_EQUIPMENT_CHANGED", function()
@@ -156,9 +150,20 @@ function artifactTraitUtils:GetIndexedRowRootNodes()
     return indexedRowRootNodes
 end
 
+function artifactTraitUtils:BuildTraitTrees()
+    self.baseTraits = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, self:GetRowRootNodes())
+    for _, row in pairs(const.REMIX_ARTIFACT_TRAITS.ROWS) do
+        local rowPath = self:BuildBuyPath(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nil, row.ROOT_NODE_ID)
+        self.rowTraits[row.ID] = rowPath
+    end
+end
+
 ---@return table<number, number[]> rowTraits
 function artifactTraitUtils:GetRowTraits()
-    if not self.rowTraits then return {} end
+    if not self.rowTraits then
+        self:BuildTraitTrees()
+        if not self.rowTraits then return {} end
+    end
     return CopyTable(self.rowTraits)
 end
 
@@ -344,9 +349,9 @@ end
 
 function artifactTraitUtils:OnPowerUpdate()
     self:TriggerCallbacks(const.REMIX_ARTIFACT_TRAITS.CALLBACK_CATEGORY_CURRENCY)
-    -- Check where we are and if we could purchase the next node
-    -- First we would check the active Row if that isn't found we just buy the base traits, if that is found however we try to purchase the next node in that row
-    -- if the row isn't purchased but we have all the base traits we need to get the config choice or default to row 1
+    if not self.baseTraits then
+        self:BuildTraitTrees()
+    end
 end
 
 ---@return number[] specIDs
@@ -430,7 +435,10 @@ function artifactTraitUtils:ResetTree()
 end
 
 function artifactTraitUtils:GetBaseTraits()
-    if not self.baseTraits then return {} end
+    if not self.baseTraits then
+        self:BuildTraitTrees()
+        if not self.baseTraits then return {} end
+    end
     return CopyTable(self.baseTraits)
 end
 
@@ -554,9 +562,10 @@ function artifactTraitUtils:PurchaseNodes(treeID, nodes)
     end
 end
 
----@return number nextNodeID
+---@return number|nil nextNodeID
 function artifactTraitUtils:GetNextPurchaseNode()
     local baseTraits = self:GetBaseTraits()
+    if #baseTraits <= 0 then return end
     for _, nodeID in ipairs(baseTraits) do
         local nodeInfo = C_Traits.GetNodeInfo(self:GetConfigID(), nodeID)
         if nodeInfo and nodeInfo.isAvailable and nodeInfo.ranksPurchased < nodeInfo.maxRanks then
