@@ -6,7 +6,7 @@ Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "自动激活专精",
-    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "No Artifact Equipped",
+    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "未装备神器",
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Ctrl+点击预览",
@@ -23,7 +23,7 @@ local L = {
     ["Tabs.CollectionTabUI.Source"] = "来源",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "搜索",
     ["Tabs.CollectionTabUI.Progress"] = "%d / %d（%.2f%%）",
-    ["Tabs.CollectionTabUI.ProgressTooltip"] = "你的收藏价值为 %s/%s 青铜。\n还需消耗 %s 可收集齐所有物品！",
+    ["Tabs.CollectionTabUI.ProgressTooltip"] = "你的收藏已消耗 %s/%s 青铜币。\n还需消耗 %s 可收集齐所有物品！",
 
     -- UI/CollectionsTabUI.lua
     ["CollectionsTabUI.TabTitle"] = "军团再临幻境新生",
@@ -38,7 +38,7 @@ local L = {
     ["QuickActionBarUI.SettingsTitleLabel"] = "动作栏标题：",
     ["QuickActionBarUI.SettingsTitleInput"] = "动作栏名称",
     ["QuickActionBarUI.SettingsIconLabel"] = "图标：",
-    ["QuickActionBarUI.SettingsIconInput"] = "纹理ID或路径",
+    ["QuickActionBarUI.SettingsIconInput"] = "图标ID或路径",
     ["QuickActionBarUI.SettingsIDLabel"] = "动作ID：",
     ["QuickActionBarUI.SettingsIDInput"] = "物品/法术名称或ID",
     ["QuickActionBarUI.SettingsTypeLabel"] = "动作类型：",
@@ -53,10 +53,10 @@ local L = {
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "保存动作栏时出错：%s",
 
     -- UI/ScrappingUI.lua
-    ["ScrappingUI.MaxScrappingQuality"] = "最大分解品质",
+    ["ScrappingUI.MaxScrappingQuality"] = "最大拆解品质",
     ["ScrappingUI.MinItemLevelDifference"] = "最低物品等级差",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "比装备低 x 级",
-    ["ScrappingUI.AutoScrap"] = "自动分解",
+    ["ScrappingUI.AutoScrap"] = "自动拆解",
 
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "未装备物品。",
@@ -76,10 +76,10 @@ local L = {
     ["CollectionUtils.Vendor"] = "商人, ",
 
     -- Utils/ItemOpenerUtils.lua
-    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Item-Opener",
-    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Item-Opener feature",
-    ["ItemOpenerUtils.AutoItemOpen"] = "Automatically Open Items",
-    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Automatically opens certain items in your inventory when found. (This feature is still in development)",
+    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自动开启物品",
+    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自动开启物品功能设置",
+    ["ItemOpenerUtils.AutoItemOpen"] = "自动开启物品",
+    ["ItemOpenerUtils.AutoItemOpenTooltip"] = "获得特定物品时自动开启背包中的物品。（此功能仍在开发中）",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
 
     -- Utils/QuestUtils.lua
@@ -99,8 +99,8 @@ local L = {
     -- Utils/ToastUtils.lua
     ["ToastUtils.SettingsCategoryPrefix"] = "提示通知",
     ["ToastUtils.SettingsCategoryTooltip"] = "提示通知功能设置",
-    ["ToastUtils.TypeBronze"] = "青铜货币",
-    ["ToastUtils.TypeBronzeTooltip"] = "达到新的青铜货币进度时显示提示。",
+    ["ToastUtils.TypeBronze"] = "青铜币",
+    ["ToastUtils.TypeBronzeTooltip"] = "达到新的青铜币进度时显示提示。",
     ["ToastUtils.TypeArtifact"] = "神器升级",
     ["ToastUtils.TypeArtifactTooltip"] = "在背包中找到神器升级时显示提示。",
     ["ToastUtils.TypeUpgrade"] = "物品升级",
@@ -116,8 +116,8 @@ local L = {
     ["ToastUtils.TestToastTooltip"] = "显示测试提示通知。",
     ["ToastUtils.TestToastTitle"] = "测试提示通知",
     ["ToastUtils.TestToastDescription"] = "这是一个测试提示通知。",
-    ["ToastUtils.TypeBronzeTitle"] = "新的青铜货币进度！",
-    ["ToastUtils.TypeBronzeDescription"] = "你已达成 %d 青铜！(%.2f%% 达到上限)",
+    ["ToastUtils.TypeBronzeTitle"] = "新的青铜币进度！",
+    ["ToastUtils.TypeBronzeDescription"] = "你的青铜币达到 %d！(%.2f%% 达到上限)",
     ["ToastUtils.TypeArtifactTitle"] = "新的神器升级！",
     ["ToastUtils.TypeArtifactDescription"] = "你找到了一个新的神器升级！请检查你的背包或快捷动作栏。",
     ["ToastUtils.TypeUpgradeTitle"] = "新的物品升级！",
@@ -127,15 +127,15 @@ local L = {
     ["ToastUtils.TypeTraitFallback"] = "未知专长",
 
     -- Utils/TooltipUtils.lua
-    ["TooltipUtils.Threads"] = "故事线",
-    ["TooltipUtils.InfinitePower"] = "无限能量",
+    ["TooltipUtils.Threads"] = "故事",
+    ["TooltipUtils.InfinitePower"] = "永恒能量",
     ["TooltipUtils.Estimate"] = " (预估)",
     ["TooltipUtils.SettingsCategoryPrefix"] = "鼠标提示能量",
     ["TooltipUtils.SettingsCategoryTooltip"] = "在鼠标提示上显示能量功能设置",
     ["TooltipUtils.Activate"] = "激活",
     ["TooltipUtils.ActivateTooltip"] = "在鼠标提示上显示激活信息",
-    ["TooltipUtils.ThreadsInfo"] = "能量线信息",
-    ["TooltipUtils.ThreadsInfoTooltip"] = "在鼠标提示上显示能量线信息",
+    ["TooltipUtils.ThreadsInfo"] = "故事信息",
+    ["TooltipUtils.ThreadsInfoTooltip"] = "在鼠标提示上显示故事信息",
     ["TooltipUtils.PowerInfo"] = "能量信息",
     ["TooltipUtils.PowerInfoTooltip"] = "在鼠标提示上显示能量信息",
 
