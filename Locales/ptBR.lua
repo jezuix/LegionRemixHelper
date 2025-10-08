@@ -65,7 +65,7 @@ local L = {
     ["ArtifactTraitUtils.MaxTriesReached"] = "Máximo de tentativas alcançadas ao comprar nós.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Traços do Artefato",
     ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Configurações para recursos de Traços de Artefato",
-    ["ArtifactTraitUtils.AutoBuy"] = "Compras de Nós Automaticamente",
+    ["ArtifactTraitUtils.AutoBuy"] = "Comprar Nós Automaticamente",
     ["ArtifactTraitUtils.AutoBuyTooltip"] = "Compra automaticamente os talentos predefinidos quando você tem Poder de Artefato suficiente.",
 
     -- Utils/CollectionUtils.lua
