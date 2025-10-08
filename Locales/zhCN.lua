@@ -123,7 +123,7 @@ local L = {
 
     -- Utils/TooltipUtils.lua
     ["TooltipUtils.Threads"] = "故事",
-    ["TooltipUtils.InfinitePower"] = "无限能量",
+    ["TooltipUtils.InfinitePower"] = "永恒能量",
     ["TooltipUtils.Estimate"] = " (预估)",
     ["TooltipUtils.SettingsCategoryPrefix"] = "鼠标提示能量",
     ["TooltipUtils.SettingsCategoryTooltip"] = "在鼠标提示上显示能量功能设置",
