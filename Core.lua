@@ -25,6 +25,7 @@ end
 function addon:OnEnable(...)
     Private.DatabaseUtils:LoadDefaultsForMissing()
 
+    Private.ArtifactTraitUtils:CreateSettings()
     Private.ItemOpenerUtils:CreateSettings()
     Private.TooltipUtils:CreateSettings()
     Private.QuickActionBarUtils:CreateSettings()

@@ -49,17 +49,7 @@ function artifactTraitUtils:Init()
         function(_, _, currencyID)
             if not currencyID then return end
             if currencyID ~= const.REMIX_ARTIFACT_TRAITS.CURRENCY_ID then return end
-            local nextNode = self:GetNextPurchaseNode()
-            if not nextNode then return end
-            if self:PurchasePossibleRanks(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nextNode) then return end
-            if not C_Traits.CommitConfig(self:GetConfigID()) then return end
-            local spellId = self:GetSpellIDFromNodeID(nextNode)
-            if not spellId then return end
-            local spell = Spell:CreateFromSpellID(spellId)
-            if not spell then return end
-            spell:ContinueOnSpellLoad(function()
-                Private.ToastUtils:ShowTraitToast(spell:GetSpellName(), C_Spell.GetSpellTexture(spellId))
-            end)
+            self:TryNextAutoBuy()
         end)
     addon:RegisterEvent("PLAYER_ENTERING_WORLD", "artifactTraitUtils_PLAYER_ENTERING_WORLD", function()
         self:BuildTraitTrees()
@@ -67,6 +57,21 @@ function artifactTraitUtils:Init()
     end)
     addon:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", "artifactTraitUtils_PLAYER_EQUIPMENT_CHANGED", function()
         self:OnEquipmentUpdate()
+    end)
+end
+
+function artifactTraitUtils:TryNextAutoBuy()
+    if not self.addon:GetDatabaseValue("artifactTraits.autoBuy", true) then return end
+    local nextNode = self:GetNextPurchaseNode()
+    if not nextNode then return end
+    if self:PurchasePossibleRanks(const.REMIX_ARTIFACT_TRAITS.TREE_ID, nextNode) then return end
+    if not C_Traits.CommitConfig(self:GetConfigID()) then return end
+    local spellId = self:GetSpellIDFromNodeID(nextNode)
+    if not spellId then return end
+    local spell = Spell:CreateFromSpellID(spellId)
+    if not spell then return end
+    spell:ContinueOnSpellLoad(function()
+        Private.ToastUtils:ShowTraitToast(spell:GetSpellName(), C_Spell.GetSpellTexture(spellId))
     end)
 end
 
@@ -581,4 +586,16 @@ function artifactTraitUtils:GetNextPurchaseNode()
         end
     end
     return const.REMIX_ARTIFACT_TRAITS.FINAL_TRAIT.NODE_ID
+end
+
+function artifactTraitUtils:CreateSettings()
+    local settingsUtils = Private.SettingsUtils
+    local settingsCategory = settingsUtils:GetCategory()
+    local settingsPrefix = self.L["ArtifactTraitUtils.SettingsCategoryPrefix"]
+
+    settingsUtils:CreateHeader(settingsCategory, settingsPrefix, self.L["ArtifactTraitUtils.SettingsCategoryTooltip"],
+        { settingsPrefix })
+    settingsUtils:CreateCheckbox(settingsCategory, "AUTO_ARTIFACT_BUY", "BOOLEAN", self.L["ArtifactTraitUtils.AutoBuy"],
+        self.L["ArtifactTraitUtils.AutoBuyTooltip"], true,
+        settingsUtils:GetDBFunc("GETTERSETTER", "artifactTraits.autoBuy"))
 end

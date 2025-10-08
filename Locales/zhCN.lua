@@ -63,6 +63,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "未知专长",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s （+%d）",
     ["ArtifactTraitUtils.MaxTriesReached"] = "购买节点时达到最大尝试次数。",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artifact Traits",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Settings for the Artifact Traits feature",
+    ["ArtifactTraitUtils.AutoBuy"] = "Automatic Node Purchase",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Automatically purchases the preset talents when you have enough Artifact Power.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "来源：",

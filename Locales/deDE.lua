@@ -63,6 +63,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "Unbekanntes Talent",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Maximale Versuche beim Kauf von Knoten erreicht.",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artefakt-Talente",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Einstellungen für die Artefakt-Talente-Funktion",
+    ["ArtifactTraitUtils.AutoBuy"] = "Automatischer Kauf von Knoten",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Kauft automatisch die voreingestellten Talente, wenn du genug Artefaktmacht hast.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "Quellen:",

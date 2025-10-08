@@ -12,7 +12,8 @@ local defaultDatabase = {
         selected = 1,
     },
     artifactTraits = {
-        autoActive = {}
+        autoActive = {},
+        autoBuy = false,
     },
     quickActionBar = {
         actions = nil,
