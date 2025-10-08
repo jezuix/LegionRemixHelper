@@ -20,7 +20,6 @@ Please provide detailed steps to reproduce the behavior:
 ### Error Message (from BugSack or similar)
 ```lua
 Paste your LUA error log here
-````
 
 ### Addon Environment
 
