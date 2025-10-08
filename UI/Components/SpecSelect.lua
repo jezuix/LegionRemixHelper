@@ -160,7 +160,6 @@ function specSelectComponent:CreateFrame(parent, options)
 
     local sample = frame:CreateFontString(nil, nil, "GameFontHighlightSmall2")
     sample:SetPoint("TOP", name, "BOTTOM", 0, -25)
-    sample:SetText(SAMPLE_ABILITIES)
 
     local activeT = frame:CreateFontString(nil, nil, "GameFontNormalSmall2")
     activeT:SetPoint("BOTTOM", 0, 50)
