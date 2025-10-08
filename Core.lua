@@ -20,11 +20,16 @@ function addon:OnInitialize(...)
 
     Private.CollectionsTabUI:Init()
     Private.ToastUI:Init()
+
+    Private.UXUtils:Init()
 end
 
 function addon:OnEnable(...)
     Private.DatabaseUtils:LoadDefaultsForMissing()
 
+    Private.UXUtils:CreateSettings()
+    Private.ToastUtils:CreateSettings()
+    Private.QuestUtils:CreateSettings()
     Private.ArtifactTraitUtils:CreateSettings()
     Private.ItemOpenerUtils:CreateSettings()
     Private.TooltipUtils:CreateSettings()

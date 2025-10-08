@@ -22,6 +22,18 @@ function itemOpenerUtils:CreateSettings()
     settingsUtils:CreateCheckbox(settingsCategory, "AUTO_ITEM_OPEN", "BOOLEAN", self.L["ItemOpenerUtils.AutoItemOpen"],
         self.L["ItemOpenerUtils.AutoItemOpenTooltip"], true,
         settingsUtils:GetDBFunc("GETTERSETTER", "itemOpener.autoItemOpen"))
+
+    local openItemTooltip = self.L["ItemOpenerUtils.AutoOpenItemEntryTooltip"]
+    for _, itemEntry in ipairs(const.ITEM_OPENER.ITEMS) do
+        local id = itemEntry.ITEM_ID
+        local item = Item:CreateFromItemID(id)
+        item:ContinueOnItemLoad(function()
+            local link = item:GetItemLink()
+            settingsUtils:CreateCheckbox(settingsCategory, "AUTO_ITEM_OPEN_"..id, "BOOLEAN", link,
+                openItemTooltip:format(link), true,
+                settingsUtils:GetDBFunc("GETTERSETTER", "itemOpener.items."..id))
+        end)
+    end
 end
 
 ---@param itemLoc ItemLocationMixin

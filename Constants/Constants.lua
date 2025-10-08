@@ -16,7 +16,10 @@ constants.IS_REMIX_VERSION = (constants.INTERFACE_VERSION >= 110205)
 
 constants.MEDIA = {
     TEXTURES = {
-        LOGO = constants.ADDON_MEDIA_PATH .. [[\Textures\logo.tga]]
+        LOGO = constants.ADDON_MEDIA_PATH .. [[\Textures\logo.tga]],
+        KOFI = constants.ADDON_MEDIA_PATH .. [[\Textures\kofi.tga]],
+        GITHUB = constants.ADDON_MEDIA_PATH .. [[\Textures\github.tga]],
+        DISCORD = constants.ADDON_MEDIA_PATH .. [[\Textures\discord.tga]]
     }
 }
 
@@ -4944,4 +4947,10 @@ constants.TOOLTIP = {
 constants.INV_SLOT = {
     WEAPON = 16,
     OFF_HAND = 17,
+}
+
+constants.SOCIALS = {
+    {NAME = "GitHub", ICON = constants.MEDIA.TEXTURES.GITHUB, URL = "https://github.com/Larsj02/LegionRemixHelper"},
+    {NAME = "Discord", ICON = constants.MEDIA.TEXTURES.DISCORD, URL = "https://discord.gg/NmBab5wvPS"},
+    {NAME = "Ko-fi", ICON = constants.MEDIA.TEXTURES.KOFI, URL = "https://ko-fi.com/larsj02"},
 }

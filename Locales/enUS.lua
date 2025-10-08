@@ -80,6 +80,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Item-Opener feature",
     ["ItemOpenerUtils.AutoItemOpen"] = "Automatically Open Items",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Automatically opens certain items in your inventory when found. (This feature is still in development)",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",
@@ -141,5 +142,9 @@ local L = {
     -- Utils/UpdateUtils.lua
     ["UpdateUtils.PatchNotesMessage"] = "Your Version changed from %s to Version %s. Check the Addon Discord for Patch Notes!",
     ["UpdateUtils.NilVersion"] = "N/A",
+
+    -- Utils/UXUtils.lua
+    ["UXUtils.SettingsCategoryPrefix"] = "General Settings",
+    ["UXUtils.SettingsCategoryTooltip"] = "General Addon Settings",
 }
 locales["enUS"] = L

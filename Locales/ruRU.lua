@@ -81,6 +81,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Item-Opener feature",
     ["ItemOpenerUtils.AutoItemOpen"] = "Automatically Open Items",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Automatically opens certain items in your inventory when found. (This feature is still in development)",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Автозадание",
@@ -142,5 +143,9 @@ local L = {
     -- Utils/UpdateUtils.lua
     ["UpdateUtils.PatchNotesMessage"] = "Ваша версия изменилась с %s на версию %s. Проверьте Discord аддона для заметок к патчу!",
     ["UpdateUtils.NilVersion"] = "Н/Д",
+
+    -- Utils/UXUtils.lua
+    ["UXUtils.SettingsCategoryPrefix"] = "General Settings",
+    ["UXUtils.SettingsCategoryTooltip"] = "General Addon Settings",
 }
 locales["ruRU"] = L
