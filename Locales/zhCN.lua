@@ -54,7 +54,7 @@ local L = {
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "最大拆解品质",
-    ["ScrappingUI.MinItemLevelDifference"] = "最低物品等级差",
+    ["ScrappingUI.MinItemLevelDifference"] = "最低物品等级",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "比装备低 x 级",
     ["ScrappingUI.AutoScrap"] = "自动拆解",
 
