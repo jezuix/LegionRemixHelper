@@ -65,10 +65,10 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "Неизвестная особенность",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Достигнут максимум попыток при покупке.",
-    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artifact Traits",
-    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Settings for the Artifact Traits feature",
-    ["ArtifactTraitUtils.AutoBuy"] = "Automatic Node Purchase",
-    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Automatically purchases the preset talents when you have enough Artifact Power.",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Особености артефакта",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Настройки для функции Особености артефакта",
+    ["ArtifactTraitUtils.AutoBuy"] = "Автоматическое изучения артефакта",
+    ["ArtifactTraitUtils.AutoBuyTooltip"] = "Автоматически изучает предустановленные таланты, когда у вас достаточно бесконечной силы.",
 
     -- Utils/CollectionUtils.lua
     ["CollectionUtils.Sources"] = "Источники:",
@@ -82,7 +82,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Настройки функции автоматического открытия предметов",
     ["ItemOpenerUtils.AutoItemOpen"] = "Автоматически открывать предметы",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Автоматически открывает определённые предметы в вашем инвентаре при их нахождении. (Эта функция всё ещё находится в разработке.)",
-    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Автоматически открывает %s при нахождении в вашем инвентаре.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Автозадание",
@@ -146,7 +146,7 @@ local L = {
     ["UpdateUtils.NilVersion"] = "Н/Д",
 
     -- Utils/UXUtils.lua
-    ["UXUtils.SettingsCategoryPrefix"] = "General Settings",
-    ["UXUtils.SettingsCategoryTooltip"] = "General Addon Settings",
+    ["UXUtils.SettingsCategoryPrefix"] = "Общие настройки",
+    ["UXUtils.SettingsCategoryTooltip"] = "Общие настройки аддона",
 }
 locales["ruRU"] = L
