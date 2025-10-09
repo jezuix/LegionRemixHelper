@@ -51,6 +51,7 @@ local L = {
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "没有可保存的动作栏。",
     ["QuickActionBarUI.SettingsEditorAction"] = "动作栏 %s",
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "保存动作栏时出错：%s",
+    ["QuickActionBarUI.CombatToggleError"] = "The Quick Action Bar cannot be opened or closed in combat.",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "最大拆解品质",

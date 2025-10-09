@@ -52,6 +52,7 @@ local L = {
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "Нет действия для сохранения.",
     ["QuickActionBarUI.SettingsEditorAction"] = "Действие %s",
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Ошибка при сохранении действия: %s",
+    ["QuickActionBarUI.CombatToggleError"] = "The Quick Action Bar cannot be opened or closed in combat.",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "Макс. качество разбора",

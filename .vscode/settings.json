@@ -136,7 +136,15 @@
         "WEAPON",
         "C_RemixArtifactUI",
         "NUM_BAG_SLOTS",
-        "ITEMS"
+        "ITEMS",
+        "MerchantFrame",
+        "MountJournal",
+        "PetJournal",
+        "ToyBox",
+        "HeirloomsJournal",
+        "WardrobeCollectionFrame",
+        "WarbandSceneJournal",
+        "CollectionsJournal_SetTab"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [
