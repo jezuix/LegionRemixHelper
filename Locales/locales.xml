@@ -6,4 +6,5 @@
     <script file="ptBR.lua" />
     <script file="ruRU.lua" />
     <script file="zhCN.lua" />
+    <script file="zhTW.lua" />
 </Ui>
