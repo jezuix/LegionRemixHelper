@@ -514,7 +514,7 @@ function quickActionBarUI:UpdateEditor(actions)
 end
 
 function quickActionBarUI:Toggle()
-    if PlayerIsInCombat() then
+    if InCombatLockdown() then
         Private.Addon:Print(self.L["QuickActionBarUI.CombatToggleError"])
         return
     end

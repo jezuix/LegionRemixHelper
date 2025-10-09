@@ -70,7 +70,7 @@ function itemOpenerUtils:OpenBagItems()
     if not Private.Addon:GetDatabaseValue("itemOpener.autoItemOpen", true) then
         return
     end
-    if PlayerIsInCombat() then
+    if InCombatLockdown() then
         local callback = self.addon:GetEventCallback("PLAYER_REGEN_ENABLED", "ItemOpenerUtils_OnPlayerRegenEnabled")
         if callback then
             return
