@@ -41,7 +41,7 @@ end
 ---@param itemID number
 ---@return boolean isEnabled
 function itemOpenerUtils:IsOpenItemEnabled(itemID)
-    local db = self.addon:GetDatabaseValue("itemOpener.items"..itemID, true)
+    local db = self.addon:GetDatabaseValue("itemOpener.items."..itemID, true)
     return db and true or false
 end
 
