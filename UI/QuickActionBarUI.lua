@@ -116,6 +116,9 @@ function quickActionBarUI:CreateFrame()
     f:SetPoint("TOPLEFT", CollectionsJournal, "TOPRIGHT", 5, 0)
     f:SetPoint("BOTTOMLEFT", CollectionsJournal, "BOTTOMRIGHT", 5, 0)
     f:SetScript("OnShow", function()
+        if not self.defaultPanelInfo then
+            self.defaultPanelInfo = UIPanelWindows["CollectionsJournal"]
+        end
         local newWidth = self.defaultPanelInfo.width + f:GetWidth()
         UIPanelWindows["CollectionsJournal"] = {
             area = self.defaultPanelInfo.area,
@@ -127,6 +130,9 @@ function quickActionBarUI:CreateFrame()
         UpdateScaleForFitForOpenPanels()
     end)
     f:SetScript("OnHide", function()
+        if not self.defaultPanelInfo then
+            self.defaultPanelInfo = UIPanelWindows["CollectionsJournal"]
+        end
         UIPanelWindows["CollectionsJournal"] = self.defaultPanelInfo
         SetUIPanelAttribute(CollectionsJournal, "width", self.defaultPanelInfo.width)
         UpdateScaleForFitForOpenPanels()
