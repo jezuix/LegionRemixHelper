@@ -76,9 +76,9 @@ local L = {
     ["CollectionUtils.Vendor"] = "商人, ",
 
     -- Utils/ItemOpenerUtils.lua
-    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自动开启宝箱",
-    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自动开启宝箱功能设置",
-    ["ItemOpenerUtils.AutoItemOpen"] = "自动开启宝箱",
+    ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自动开启物品",
+    ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自动开启物品设置选项",
+    ["ItemOpenerUtils.AutoItemOpen"] = "自动开启物品",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "获得特定物品时自动开启背包中的物品。（此功能仍在开发中）",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "在背包中发现%s时自动开启。",
 
