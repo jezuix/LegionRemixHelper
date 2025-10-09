@@ -508,6 +508,10 @@ function quickActionBarUI:UpdateEditor(actions)
 end
 
 function quickActionBarUI:Toggle()
+    if PlayerIsInCombat() then
+        Private.Addon:Print(self.L["QuickActionBarUI.CombatToggleError"])
+        return
+    end
     if not self.frame then
         self:CreateFrame()
     end
