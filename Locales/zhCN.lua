@@ -128,15 +128,15 @@ local L = {
     ["ToastUtils.TypeTraitFallback"] = "未知专长",
 
     -- Utils/TooltipUtils.lua
-    ["TooltipUtils.Threads"] = "故事线",
+    ["TooltipUtils.Threads"] = "线",
     ["TooltipUtils.InfinitePower"] = "永恒能量",
     ["TooltipUtils.Estimate"] = " (预估)",
     ["TooltipUtils.SettingsCategoryPrefix"] = "鼠标提示信息",
     ["TooltipUtils.SettingsCategoryTooltip"] = "在鼠标提示上显示信息的功能设置",
     ["TooltipUtils.Activate"] = "启用",
     ["TooltipUtils.ActivateTooltip"] = "在鼠标提示上显示启用详细信息",
-    ["TooltipUtils.ThreadsInfo"] = "故事线信息",
-    ["TooltipUtils.ThreadsInfoTooltip"] = "在鼠标提示上显示完成故事线信息",
+    ["TooltipUtils.ThreadsInfo"] = "线信息",
+    ["TooltipUtils.ThreadsInfoTooltip"] = "在鼠标提示上显示线信息",
     ["TooltipUtils.PowerInfo"] = "永恒能量信息",
     ["TooltipUtils.PowerInfoTooltip"] = "在鼠标提示上显示永恒能量信息",
 
