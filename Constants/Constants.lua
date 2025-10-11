@@ -4816,7 +4816,6 @@ do
             local name = item:GetItemName()
             if name and name ~= "" then
                 itemEntry.ITEM_NAME = name
-                itemEntry.ITEM_LINK = item:GetItemLink()
             end
         end)
     end

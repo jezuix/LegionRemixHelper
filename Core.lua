@@ -31,9 +31,9 @@ function addon:OnEnable(...)
     Private.ToastUtils:CreateSettings()
     Private.QuestUtils:CreateSettings()
     Private.ArtifactTraitUtils:CreateSettings()
-    Private.ItemOpenerUtils:CreateSettings()
     Private.TooltipUtils:CreateSettings()
     Private.QuickActionBarUtils:CreateSettings()
+    Private.ItemOpenerUtils:InitAndCreateSettings()
 
     Private.UpdateUtils:OnEnable()
 end
