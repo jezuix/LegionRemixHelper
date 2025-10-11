@@ -51,7 +51,7 @@ local L = {
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "没有可保存的动作栏。",
     ["QuickActionBarUI.SettingsEditorAction"] = "动作栏 %s",
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "保存动作栏时出错：%s",
-    ["QuickActionBarUI.CombatToggleError"] = "The Quick Action Bar cannot be opened or closed in combat.",
+    ["QuickActionBarUI.CombatToggleError"] = "快捷动作条无法在战斗中开启或关闭。",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "最大拆解品质",
@@ -128,17 +128,17 @@ local L = {
     ["ToastUtils.TypeTraitFallback"] = "未知专长",
 
     -- Utils/TooltipUtils.lua
-    ["TooltipUtils.Threads"] = "故事",
+    ["TooltipUtils.Threads"] = "线索",
     ["TooltipUtils.InfinitePower"] = "永恒能量",
     ["TooltipUtils.Estimate"] = " (预估)",
-    ["TooltipUtils.SettingsCategoryPrefix"] = "鼠标提示能量",
-    ["TooltipUtils.SettingsCategoryTooltip"] = "在鼠标提示上显示能量功能设置",
-    ["TooltipUtils.Activate"] = "激活",
-    ["TooltipUtils.ActivateTooltip"] = "在鼠标提示上显示激活信息",
-    ["TooltipUtils.ThreadsInfo"] = "故事信息",
-    ["TooltipUtils.ThreadsInfoTooltip"] = "在鼠标提示上显示故事信息",
-    ["TooltipUtils.PowerInfo"] = "能量信息",
-    ["TooltipUtils.PowerInfoTooltip"] = "在鼠标提示上显示能量信息",
+    ["TooltipUtils.SettingsCategoryPrefix"] = "鼠标提示信息",
+    ["TooltipUtils.SettingsCategoryTooltip"] = "在鼠标提示上显示信息的功能设置",
+    ["TooltipUtils.Activate"] = "启用",
+    ["TooltipUtils.ActivateTooltip"] = "在鼠标提示上显示启用详细信息",
+    ["TooltipUtils.ThreadsInfo"] = "线索信息",
+    ["TooltipUtils.ThreadsInfoTooltip"] = "在鼠标提示上显示线索信息",
+    ["TooltipUtils.PowerInfo"] = "永恒能量信息",
+    ["TooltipUtils.PowerInfoTooltip"] = "在鼠标提示上显示永恒能量信息",
 
     -- Utils/UpdateUtils.lua
     ["UpdateUtils.PatchNotesMessage"] = "你的版本已从 %s 变更为版本 %s。请查看插件或者到Discord获取更新说明！",
