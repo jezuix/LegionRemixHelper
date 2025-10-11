@@ -4814,12 +4814,6 @@ do
                 ITEM_ID = 246813, -- Greater Bronze Cache
                 NEEDS_CONVERT = true
             },
-            {
-                ITEM_ID = 245925, -- Artifactium Sand
-            },
-            {
-                ITEM_ID = 249891, -- Mound of Artifactium Sand
-            },
         },
     }
 
