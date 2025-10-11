@@ -52,7 +52,7 @@ local L = {
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "Нет действия для сохранения.",
     ["QuickActionBarUI.SettingsEditorAction"] = "Действие %s",
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Ошибка при сохранении действия: %s",
-    ["QuickActionBarUI.CombatToggleError"] = "The Quick Action Bar cannot be opened or closed in combat.",
+    ["QuickActionBarUI.CombatToggleError"] = "Панель быстрых действий нельзя открыть или закрыть во время боя.",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "Макс. качество разбора",
@@ -65,9 +65,9 @@ local L = {
     ["ArtifactTraitUtils.UnknownTrait"] = "Неизвестная особенность",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Достигнут максимум попыток при покупке.",
-    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Особености артефакта",
-    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Настройки для функции Особености артефакта",
-    ["ArtifactTraitUtils.AutoBuy"] = "Автоматическое изучения артефакта",
+    ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Особенности артефакта",
+    ["ArtifactTraitUtils.SettingsCategoryTooltip"] = "Настройки для функции Особенности артефакта",
+    ["ArtifactTraitUtils.AutoBuy"] = "Автоматическое изучение артефакта",
     ["ArtifactTraitUtils.AutoBuyTooltip"] = "Автоматически изучает предустановленные таланты, когда у вас достаточно бесконечной силы.",
 
     -- Utils/CollectionUtils.lua
