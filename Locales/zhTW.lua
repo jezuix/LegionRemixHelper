@@ -98,6 +98,12 @@ Example: /LRH s]],
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "在背包中找到特定物品時自動開啟。（此功能仍在開發中）",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "在背包中發現 %s 時自動開啟。",
 
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "自動任務",
     ["QuestUtils.SettingsCategoryTooltip"] = "自動任務功能設定",

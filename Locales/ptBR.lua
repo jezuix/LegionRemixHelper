@@ -98,6 +98,12 @@ Example: /LRH s]],
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Abre automaticamente determinados itens no seu inventário quando encontrados. (Este recurso ainda está em desenvolvimento)",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Abre automaticamente %s quando encontrado no seu inventário.",
 
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Missões-Automáticas",
     ["QuestUtils.SettingsCategoryTooltip"] = "Configurações do recurso Missões-Automáticas",

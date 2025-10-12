@@ -98,6 +98,12 @@ Beispiel: /LRH s]],
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Öffnet automatisch bestimmte Gegenstände in deinem Inventar, wenn sie gefunden werden. (Dieses Feature wird noch entwickelt)",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Öffnet %s automatisch, wenn es im Inventar gefunden wird.",
 
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Händler Einstellungen",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Einstellungen für die Händler-Funktion",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Gesammelte Händlergegenstände ausblenden",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Blendet Gegenstände aus dem Händlerfenster aus, die du bereits in deiner Sammlung hast.",
+
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",
     ["QuestUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Quest-Funktion",

@@ -98,6 +98,12 @@ local L = {
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "获得特定物品时自动开启背包中的物品。（此功能仍在开发中）",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "在背包中发现%s时自动开启。",
 
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "自动任务",
     ["QuestUtils.SettingsCategoryTooltip"] = "自动任务功能设置",

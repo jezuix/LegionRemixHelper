@@ -40,6 +40,9 @@ local defaultDatabase = {
     itemOpener = {
         autoItemOpen = false,
     },
+    merchant = {
+        hideCollectedItems = false,
+    },
     version = nil
 }
 

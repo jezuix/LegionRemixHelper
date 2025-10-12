@@ -99,6 +99,12 @@ local L = {
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Автоматически открывает определённые предметы в вашем инвентаре при их нахождении. (Эта функция всё ещё находится в разработке.)",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Автоматически открывает %s при нахождении в вашем инвентаре.",
 
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Автозадание",
     ["QuestUtils.SettingsCategoryTooltip"] = "Настройки функции Автозадание",
