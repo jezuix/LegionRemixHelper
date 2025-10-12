@@ -4,6 +4,9 @@ local Private = select(2, ...)
 local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
+    -- UI/Components/Dropdown.lua
+    ["Components.Dropdown.SelectOption"] = "Select an option",
+
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Auto-Activate for Spec",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "No Artifact Equipped",
@@ -62,6 +65,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "No Item Equipped.",
     ["ArtifactTraitUtils.UnknownTrait"] = "Unknown Trait",
+    ["ArtifactTraitUtils.ColumnNature"] = "Nature",
+    ["ArtifactTraitUtils.ColumnFel"] = "Fel",
+    ["ArtifactTraitUtils.ColumnArcane"] = "Arcane",
+    ["ArtifactTraitUtils.ColumnStorm"] = "Storm",
+    ["ArtifactTraitUtils.ColumnHoly"] = "Holy",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Max tries reached when purchasing nodes.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artifact Traits",

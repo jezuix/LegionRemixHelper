@@ -5,6 +5,9 @@ local Private = select(2, ...)
 local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
+    -- UI/Components/Dropdown.lua
+    ["Components.Dropdown.SelectOption"] = "Выберите опцию",
+
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Автоактивация для специализации",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Артефакт не экипирован",
@@ -63,6 +66,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "Предмет не экипирован.",
     ["ArtifactTraitUtils.UnknownTrait"] = "Неизвестная особенность",
+    ["ArtifactTraitUtils.ColumnNature"] = "Природа",
+    ["ArtifactTraitUtils.ColumnFel"] = "Хаос",
+    ["ArtifactTraitUtils.ColumnArcane"] = "Тайная магия",
+    ["ArtifactTraitUtils.ColumnStorm"] = "Буря",
+    ["ArtifactTraitUtils.ColumnHoly"] = "Свет",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Достигнут максимум попыток при покупке.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Особенности артефакта",

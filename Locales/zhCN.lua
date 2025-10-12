@@ -4,6 +4,9 @@ local Private = select(2, ...)
 local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
+    -- UI/Components/Dropdown.lua
+    ["Components.Dropdown.SelectOption"] = "选择一个选项",
+
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "自动激活专精",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "未装备神器",
@@ -62,6 +65,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "未装备物品。",
     ["ArtifactTraitUtils.UnknownTrait"] = "未知专长",
+    ["ArtifactTraitUtils.ColumnNature"] = "自然",
+    ["ArtifactTraitUtils.ColumnFel"] = "混乱",
+    ["ArtifactTraitUtils.ColumnArcane"] = "奥术",
+    ["ArtifactTraitUtils.ColumnStorm"] = "风暴",
+    ["ArtifactTraitUtils.ColumnHoly"] = "神圣",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s （+%d）",
     ["ArtifactTraitUtils.MaxTriesReached"] = "购买节点时达到最大尝试次数。",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "神器特质",

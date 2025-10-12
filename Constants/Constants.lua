@@ -55,27 +55,27 @@ constants.REMIX_ARTIFACT_TRAITS = {
     CURRENCY_ID = 3268,
     ROWS = {
         NATURE_ROW = {
-            NAME = "Nature",
+            NAME_KEY = "ArtifactTraitUtils.ColumnNature",
             ID = 1,
             ROOT_NODE_ID = 108114, -- Call of the Forest
         },
         FEL_ROW = {
-            NAME = "Fel",
+            NAME_KEY = "ArtifactTraitUtils.ColumnFel",
             ID = 2,
             ROOT_NODE_ID = 108113, -- Twisted Crusade
         },
         ARCANE_ROW = {
-            NAME = "Arcane",
+            NAME_KEY = "ArtifactTraitUtils.ColumnArcane",
             ID = 3,
             ROOT_NODE_ID = 108111, -- Naran's Everdisc
         },
         STORM_ROW = {
-            NAME = "Storm",
+            NAME_KEY = "ArtifactTraitUtils.ColumnStorm",
             ID = 4,
             ROOT_NODE_ID = 108112, -- Tempest Wrath
         },
         HOLY_ROW = {
-            NAME = "Holy",
+            NAME_KEY = "ArtifactTraitUtils.ColumnHoly",
             ID = 5,
             ROOT_NODE_ID = 108875, -- Vindicator's Judgment
         },
