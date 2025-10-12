@@ -28,6 +28,7 @@ end
 
 function addon:OnEnable(...)
     Private.DatabaseUtils:LoadDefaultsForMissing()
+    Private.EditModeUtils:Init()
 
     Private.UXUtils:CreateSettings()
     Private.MerchantUtils:CreateSettings()

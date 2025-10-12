@@ -99,6 +99,9 @@ Example: /LRH s]],
     ["CommandUtils.SettingsCommand"] = "settings",
     ["CommandUtils.SettingsCommandShort"] = "s",
 
+    -- Utils/EditModeUtils.lua
+    ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自動開啟物品",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自動開啟物品功能設定",

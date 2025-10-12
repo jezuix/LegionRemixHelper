@@ -43,6 +43,9 @@ local defaultDatabase = {
     merchant = {
         hideCollectedItems = false,
     },
+    editMode = {
+
+    },
     version = nil
 }
 

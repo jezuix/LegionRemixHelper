@@ -166,7 +166,8 @@
         "DressUpMount",
         "DressUpBattlePet",
         "TEXTURE_ITEM_QUEST_BANG",
-        "SetItemButtonNameFrameVertexColor"
+        "SetItemButtonNameFrameVertexColor",
+        "EditModeManagerFrame"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

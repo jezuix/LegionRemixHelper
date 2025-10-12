@@ -99,6 +99,9 @@ local L = {
     ["CommandUtils.SettingsCommand"] = "settings",
     ["CommandUtils.SettingsCommandShort"] = "s",
 
+    -- Utils/EditModeUtils.lua
+    ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自动开启物品",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自动开启物品设置选项",
