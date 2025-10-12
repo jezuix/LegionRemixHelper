@@ -82,10 +82,10 @@ local L = {
 [[Неизвестная команда!
 Использование: /LRH или /LegionRH <подкоманда>
 Подкоманды:
-    коллекции(c) — открыть вкладку Коллекции.
-    настройки(s) - Открыть меню настроек.
+     коллекция (c) — открыть вкладку Коллекции.
+     настройки (s) — Открыть меню настроек.
 Пример: /LRH s]],
-    ["CommandUtils.CollectionsCommand"] = "коллекция",
+    ["CommandUtils.CollectionsCommand"] = "коллекции",
     ["CommandUtils.CollectionsCommandShort"] = "c",
     ["CommandUtils.SettingsCommand"] = "настройки",
     ["CommandUtils.SettingsCommandShort"] = "s",
