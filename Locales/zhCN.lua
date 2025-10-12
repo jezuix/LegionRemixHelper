@@ -78,12 +78,12 @@ local L = {
 
     -- Utils/CommandUtils.lua
     ["CommandUtils.UnknownCommand"] =
-[[Unknown Command!
-Usage: /LRH or /LegionRH <subCommand>
-Subcommands:
-    collections (c) - Open the Collections tab.
-    settings (s) - Open the settings menu.
-Example: /LRH s]],
+[[未知命令！
+用法：/LRH 和 /LegionRH <子命令>
+子命令：
+    collections (c) - 打开战团藏品。
+    settings (s) - 打开设置界面。
+例如：/LRH s]],
     ["CommandUtils.CollectionsCommand"] = "collections",
     ["CommandUtils.CollectionsCommandShort"] = "c",
     ["CommandUtils.SettingsCommand"] = "settings",
@@ -103,16 +103,16 @@ Example: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "与NPC交互时自动交任务。",
     ["QuestUtils.AutoAccept"] = "自动接任务",
     ["QuestUtils.AutoAcceptTooltip"] = "与NPC交互时自动接任务。",
-    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
-    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
-    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
-    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
+    ["QuestUtils.IgnoreEternus"] = "忽略伊特努丝",
+    ["QuestUtils.IgnoreEternusTooltip"] = "忽略来自伊特努丝的任务。",
+    ["QuestUtils.SuppressShift"] = "按住Shift键临时禁用",
+    ["QuestUtils.SuppressShiftTooltip"] = "按住Shift键可临时禁用自动交/接任务功能。",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "快捷动作栏",
     ["QuickActionBarUtils.SettingsCategoryTooltip"] = "快捷栏功能设置",
-    ["QuickActionBarUtils.ActionNotFound"] = "未找到动作",
-    ["QuickActionBarUtils.Action"] = "动作 %s",
+    ["QuickActionBarUtils.ActionNotFound"] = "未找到动作栏",
+    ["QuickActionBarUtils.Action"] = "动作栏 %s",
 
     -- Utils/ToastUtils.lua
     ["ToastUtils.SettingsCategoryPrefix"] = "提示通知",
