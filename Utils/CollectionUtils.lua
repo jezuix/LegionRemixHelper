@@ -21,6 +21,7 @@ local const = Private.constants
 ---@field SOURCE_TYPE Enum.RHE_CollectionSourceType
 ---@field PRICES? { TYPE: Enum.RHE_CollectionPriceType, AMOUNT: number }[]
 ---@field ILLUSION_ID number|nil
+---@field UNIQUE_TO_REMIX boolean|nil
 
 ---@class CombinedCollectionReward
 ---@field REWARD_ID number
@@ -28,6 +29,7 @@ local const = Private.constants
 ---@field SOURCES { SOURCE_ID: number, SOURCE_TYPE: Enum.RHE_CollectionSourceType }[]
 ---@field PRICES? { TYPE: Enum.RHE_CollectionPriceType, AMOUNT: number }[]
 ---@field ILLUSION_ID number|nil
+---@field UNIQUE_TO_REMIX boolean|nil
 
 ---@class NPCInfo
 ---@field ID number
@@ -49,6 +51,8 @@ local const = Private.constants
 ---@field vendorInfo NPCInfo|nil
 ---@field achievementID number|nil
 ---@field bronzePrice number
+---@field isRaidVariant boolean
+---@field isUnique boolean
 local collectionRewardMixin = {
     collectionCheckFunction = nil,
     collected = false,
@@ -62,7 +66,9 @@ local collectionRewardMixin = {
     vendorLocation = nil,
     vendorInfo = nil,
     achievementID = nil,
-    bronzePrice = 0
+    bronzePrice = 0,
+    isRaidVariant = false,
+    isUnique = false,
 }
 
 ---@return boolean isCollected
@@ -228,9 +234,29 @@ function collectionRewardMixin:SetBronzePrice(price)
     self.bronzePrice = price
 end
 
----@return number
+---@return number price
 function collectionRewardMixin:GetBronzePrice()
     return self.bronzePrice
+end
+
+---@param isUnique boolean
+function collectionRewardMixin:SetUniqueToRemix(isUnique)
+    self.isUnique = isUnique
+end
+
+---@return boolean isUnique
+function collectionRewardMixin:IsUniqueToRemix()
+    return self.isUnique
+end
+
+---@param isRaidVariant boolean
+function collectionRewardMixin:SetRaidVariant(isRaidVariant)
+    self.isRaidVariant = isRaidVariant
+end
+
+---@return boolean isRaidVariant
+function collectionRewardMixin:IsRaidVariant()
+    return self.isRaidVariant
 end
 
 function collectionUtils:Init()
@@ -286,11 +312,13 @@ function collectionUtils:CreateCollectionObject(reward, name, icon, sourceToolti
     obj:SetCollectionCheckFunction(collectionCheckFunction)
     obj:SetItemID(itemID)
     obj:SetIllusion(illusionID)
+    obj:SetUniqueToRemix(reward.UNIQUE_TO_REMIX == true)
     obj:SetRewardType(reward.REWARD_TYPE)
     for _, source in ipairs(reward.SOURCES) do
         obj:AddSourceType(source.SOURCE_TYPE)
         if source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.VENDOR then
             obj:SetVendorInfo(collectionUtils:GetVendorByID(source.SOURCE_ID))
+            obj:SetRaidVariant(collectionUtils:IsRemovedRaidVendor(source.SOURCE_ID) == true)
         elseif source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.ACHIEVEMENT then
             obj:SetAchievementId(source.SOURCE_ID)
         end
@@ -404,6 +432,17 @@ function collectionUtils:GetVendorByID(npcID)
     end
 
     return self.vendorCache[npcID]
+end
+
+---@param npcID number
+---@return boolean|nil isRemovedVendor
+function collectionUtils:IsRemovedRaidVendor(npcID)
+    if npcID == const.NPC.LFR_APPAREL.ID or
+        npcID == const.NPC.NORMAL_APPAREL.ID or
+        npcID == const.NPC.HEROIC_APPAREL.ID
+    then
+        return true
+    end
 end
 
 function collectionUtils:CachePriceIcons()
@@ -582,7 +621,8 @@ function collectionUtils:LoadRewardInfos()
                 REWARD_TYPE = reward.REWARD_TYPE,
                 SOURCES = {},
                 PRICES = reward.PRICES,
-                ILLUSION_ID = reward.ILLUSION_ID
+                ILLUSION_ID = reward.ILLUSION_ID,
+                UNIQUE_TO_REMIX = reward.UNIQUE_TO_REMIX
             }
         end
         if not combinedRewards[key].PRICES and reward.PRICES then
