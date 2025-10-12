@@ -5,7 +5,12 @@ local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
-    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Auto-Ativar para Especialização",
+    local L = {
+    -- UI/Components/Dropdown.lua
+    ["Components.Dropdown.SelectOption"] = "Selecione uma opção",
+
+    -- UI/Tabs/ArtifactTraitsTabUI.lua
+    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Auto-Activate for Spec",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Nenhum Artefato Equipado",
 
     -- UI/Tabs/CollectionTabUI.lua
@@ -64,6 +69,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "Nenhum Item Equipado.",
     ["ArtifactTraitUtils.UnknownTrait"] = "Traço Desconhecido",
+    ["ArtifactTraitUtils.ColumnNature"] = "Natureza",
+    ["ArtifactTraitUtils.ColumnFel"] = "Caos",
+    ["ArtifactTraitUtils.ColumnArcane"] = "Arcano",
+    ["ArtifactTraitUtils.ColumnStorm"] = "Tempestade",
+    ["ArtifactTraitUtils.ColumnHoly"] = "Sagrado",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Máximo de tentativas alcançadas ao comprar nós.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Traços do Artefato",

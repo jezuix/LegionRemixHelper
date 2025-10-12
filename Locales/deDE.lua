@@ -5,7 +5,12 @@ local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
     -- UI/Tabs/ArtifactTraitsTabUI.lua
-    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Automatisch für Spezialisierung aktivieren",
+    local L = {
+    -- UI/Components/Dropdown.lua
+    ["Components.Dropdown.SelectOption"] = "Option auswählen",
+
+    -- UI/Tabs/ArtifactTraitsTabUI.lua
+    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Auto-Activate for Spec",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Bitte rüste deine Artefaktwaffe aus!",
 
     -- UI/Tabs/CollectionTabUI.lua
@@ -64,6 +69,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "Kein Gegenstand ausgerüstet.",
     ["ArtifactTraitUtils.UnknownTrait"] = "Unbekanntes Talent",
+    ["ArtifactTraitUtils.ColumnNature"] = "Natur",
+    ["ArtifactTraitUtils.ColumnFel"] = "Chaos",
+    ["ArtifactTraitUtils.ColumnArcane"] = "Arkan",
+    ["ArtifactTraitUtils.ColumnStorm"] = "Sturm",
+    ["ArtifactTraitUtils.ColumnHoly"] = "Heilig",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "Maximale Versuche beim Kauf von Knoten erreicht.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "Artefakt-Talente",
