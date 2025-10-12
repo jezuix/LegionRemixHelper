@@ -94,7 +94,7 @@ local L = {
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "자동 아이템 열기 기능 설정",
     ["ItemOpenerUtils.AutoItemOpen"] = "아이템 자동 열기",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "인벤토리에서 특정 아이템을 발견했을 때 자동으로 엽니다. (이 기능은 아직 개발 중입니다)",
-    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "인벤토리에서 %s가 발견했을 때 자동으로 엽니다.",
+    ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "인벤토리에서 %s를 발견했을 때 자동으로 엽니다.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "자동 퀘스트",
