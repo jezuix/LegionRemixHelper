@@ -62,7 +62,7 @@ function merchantUtils:UpdateMerchantBtn(btn, i)
         return
     end
     local item = C_MerchantFrame.GetItemInfo(i)
-    if item.name == nil then
+    if not item or item.name == nil then
         popItem()
         return
     end
@@ -103,9 +103,10 @@ function merchantUtils:UpdateMerchantBtn(btn, i)
 end
 
 function merchantUtils:UpdateMerchant()
-    if not self.addon:GetDatabaseValue("merchant.hideCollectedItems", true) then
+    if not self:IsSettingsAndMerchantValid() then
         return
     end
+
     local size = MERCHANT_ITEMS_PER_PAGE
     MerchantPageText:SetFormattedText(MERCHANT_PAGE_NUMBER, MerchantFrame.page,
         math.ceil(#self.filteredVendorItems / size))
@@ -144,13 +145,21 @@ function merchantUtils:IsItemCollected(itemID)
     return self.collectionsUtils:GetAppearanceCollectionFunction(itemID)()
 end
 
-function merchantUtils:OnMerchantShow()
+---@return boolean isValid
+function merchantUtils:IsSettingsAndMerchantValid()
     if not self.addon:GetDatabaseValue("merchant.hideCollectedItems", true) then
-        return
+        return false
     end
     local npcID = self:GetNpcID()
-    if not npcID then return end
-    if not self.collectionsUtils:GetVendorByID(npcID) then return end
+    if not npcID then return false end
+    if not self.collectionsUtils:GetVendorByID(npcID) then return false end
+    return true
+end
+
+function merchantUtils:OnMerchantShow()
+    if not self:IsSettingsAndMerchantValid() then
+        return
+    end
 
     self.filteredVendorItems = {}
     for i = 1, GetMerchantNumItems() do
