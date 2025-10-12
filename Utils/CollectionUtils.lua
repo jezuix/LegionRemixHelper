@@ -273,7 +273,8 @@ end
 ---@param itemID number|nil
 ---@param illusionID number|nil
 ---@return CollectionRewardObject
-function collectionUtils:CreateCollectionObject(reward, name, icon, sourceTooltip, isCollected, bronzeCost, collectionCheckFunction,
+function collectionUtils:CreateCollectionObject(reward, name, icon, sourceTooltip, isCollected, bronzeCost,
+                                                collectionCheckFunction,
                                                 itemID, illusionID)
     local obj = setmetatable({}, { __index = collectionRewardMixin })
 
@@ -311,10 +312,16 @@ end
 function collectionUtils:GetSetCollectionFunction(setID)
     return function()
         local setInfo = C_TransmogSets.GetSetInfo(setID)
-        if setInfo then
-            return setInfo.collected and true or false
+        if setInfo and not setInfo.collected then
+            local setItems = C_Transmog.GetAllSetAppearancesByID(setID)
+            for _, item in ipairs(setItems) do
+                if not C_TransmogCollection.PlayerHasTransmogByItemInfo(item.itemID) then
+                    return false
+                end
+            end
+            return true
         end
-        return false
+        return setInfo and setInfo.collected or false
     end
 end
 
@@ -424,7 +431,8 @@ function collectionUtils:GetSourceTooltip(reward)
         if source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.ACHIEVEMENT then
             local name = select(2, GetAchievementInfo(source.SOURCE_ID))
             name = name or self.L["CollectionUtils.UnknownAchievement"]
-            tooltip = ("%s\n%s%s\n"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Achievement"]), name)
+            tooltip = ("%s\n%s%s\n"):format(tooltip,
+                const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Achievement"]), name)
         elseif source.SOURCE_TYPE == const.COLLECTIONS.ENUM.SOURCE_TYPE.VENDOR then
             local vendorInfo = self:GetVendorByID(source.SOURCE_ID)
             local name = vendorInfo and vendorInfo.NAME or self.L["CollectionUtils.UnknownVendor"]
@@ -435,7 +443,8 @@ function collectionUtils:GetSourceTooltip(reward)
                 icon = icon or 134400
                 prices = ("%s|T%s:12|t %d\n"):format(prices, icon, priceInfo.AMOUNT)
             end
-            tooltip = ("%s\n%s%s:\n%s"):format(tooltip, const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Vendor"]), name, prices)
+            tooltip = ("%s\n%s%s:\n%s"):format(tooltip,
+                const.COLORS.YELLOW:WrapTextInColorCode(self.L["CollectionUtils.Vendor"]), name, prices)
         end
     end
 
@@ -473,7 +482,8 @@ function collectionUtils:LoadReward(reward)
             tooltip = name
             local collectionFunc = self:GetTitleCollectionFunction(titleID)
 
-            local titleObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc)
+            local titleObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
+                collectionFunc)
             self:AddToCache(titleObj, rewardType)
         end
     elseif rewardType == rtEnum.SET then
@@ -485,7 +495,8 @@ function collectionUtils:LoadReward(reward)
             local setID = C_Item.GetItemLearnTransmogSet(itemID)
             local collectionFunc = self:GetSetCollectionFunction(setID)
 
-            local setObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
+            local setObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
+                collectionFunc,
                 itemID)
             self:AddToCache(setObj, rewardType)
         end)
@@ -498,7 +509,8 @@ function collectionUtils:LoadReward(reward)
             local speciesID = select(13, C_PetJournal.GetPetInfoByItemID(itemID))
             local collectionFunc = self:GetPetCollectionFunction(speciesID)
 
-            local petObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
+            local petObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
+                collectionFunc,
                 itemID)
             self:AddToCache(petObj, rewardType)
         end)
@@ -511,7 +523,8 @@ function collectionUtils:LoadReward(reward)
             local name = item:GetItemName()
             local collectionFunc = self:GetIllusionCollectionFunction(illusionID)
 
-            local illusionObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
+            local illusionObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
+                collectionFunc,
                 itemID, illusionID)
             self:AddToCache(illusionObj, rewardType)
         end)
@@ -536,7 +549,8 @@ function collectionUtils:LoadReward(reward)
             local mountID = C_MountJournal.GetMountFromItem(itemID)
             local collectionFunc = self:GetMountCollectionFunction(mountID, itemID)
 
-            local mountObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
+            local mountObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
+                collectionFunc,
                 itemID)
             self:AddToCache(mountObj, rewardType)
         end)
@@ -548,7 +562,8 @@ function collectionUtils:LoadReward(reward)
             local name = item:GetItemName()
             local collectionFunc = self:GetToyCollectionFunction(itemID)
 
-            local toyObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice, collectionFunc,
+            local toyObj = self:CreateCollectionObject(reward, name, icon, tooltip, collectionFunc(), bronzePrice,
+                collectionFunc,
                 itemID)
             self:AddToCache(toyObj, rewardType)
         end)
