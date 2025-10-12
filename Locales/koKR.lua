@@ -4,6 +4,9 @@ local Private = select(2, ...)
 local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
+    -- UI/Components/Dropdown.lua
+    ["Components.Dropdown.SelectOption"] = "Select an option",
+
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "전문화별 자동 활성화",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "장착된 유물 없음",
@@ -64,6 +67,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "장착된 아이템이 없습니다.",
     ["ArtifactTraitUtils.UnknownTrait"] = "알 수 없는 특성",
+    ["ArtifactTraitUtils.ColumnNature"] = "Nature",
+    ["ArtifactTraitUtils.ColumnFel"] = "Fel",
+    ["ArtifactTraitUtils.ColumnArcane"] = "Arcane",
+    ["ArtifactTraitUtils.ColumnStorm"] = "Storm",
+    ["ArtifactTraitUtils.ColumnHoly"] = "Holy",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "구매 시도 가능 횟수가 최대치에 도달했습니다.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "유물 특성",

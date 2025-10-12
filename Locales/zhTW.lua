@@ -4,8 +4,6 @@ local Private = select(2, ...)
 local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
-    -- UI/Tabs/ArtifactTraitsTabUI.lua
-    local L = {
     -- UI/Components/Dropdown.lua
     ["Components.Dropdown.SelectOption"] = "選擇一個選項",
 
