@@ -1,6 +1,13 @@
 ---@class AddonPrivate
 local Private = select(2, ...)
 
+---@class EditModeAnchorInfos
+---@field point string
+---@field relativeTo string
+---@field relativePoint string
+---@field xOfs number
+---@field yOfs number
+
 ---@class EditModeUtils
 local editModeUtils = {
     ---@type LegionRH
@@ -66,6 +73,11 @@ function editModeUtils:OnExitEditMode()
     end
 end
 
+---@param systemName string
+---@param parentFrame Frame
+---@param width number|nil
+---@param height number|nil
+---@param onPositionChanged nil|fun(newPointData: EditModeAnchorInfos)
 function editModeUtils:CreateSystem(systemName, parentFrame, width, height, onPositionChanged)
     if self.systems[systemName] then
         error("System with name '" .. systemName .. "' already exists!")
@@ -109,7 +121,7 @@ function editModeUtils:CreateSystem(systemName, parentFrame, width, height, onPo
 
     selection.system = {
         GetSystemName = function ()
-            return editModeUtils.L["EditModeUtils.SystemLabel." .. systemName]
+            return editModeUtils.L["EditModeUtils.SystemTooltip." .. systemName]
         end
     }
 
@@ -117,6 +129,8 @@ function editModeUtils:CreateSystem(systemName, parentFrame, width, height, onPo
     self.systems[systemName] = system
 end
 
+---@param systemName string
+---@return table|Frame system
 function editModeUtils:GetSystem(systemName)
     return self.systems[systemName]
 end

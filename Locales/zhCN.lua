@@ -101,6 +101,8 @@ local L = {
 
     -- Utils/EditModeUtils.lua
     ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "Toasts",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "Move the position of the toasts.",
 
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自动开启物品",

@@ -101,6 +101,8 @@ Beispiel: /LRH s]],
 
     -- Utils/EditModeUtils.lua
     ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systeme",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "Benachrichtigungen",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "Verschiebe die Position der Benachrichtigungen.",
 
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Gegenstand-Öffner",

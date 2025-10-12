@@ -39,6 +39,8 @@ function addon:OnEnable(...)
     Private.QuickActionBarUtils:CreateSettings()
     Private.ItemOpenerUtils:InitAndCreateSettings()
 
+    Private.ToastUI:CreateEditModeElements()
+
     Private.UpdateUtils:OnEnable()
 end
 
