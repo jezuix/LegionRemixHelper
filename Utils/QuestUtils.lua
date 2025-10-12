@@ -67,7 +67,9 @@ end
 
 ---@return boolean isEternusNPC
 function questUtils:IsEternusNPC()
-    local npcID = select(6, strsplit("-", UnitGUID("npc")))
+    local guid = UnitGUID("npc")
+    if not guid then return false end
+    local npcID = select(6, strsplit("-", guid))
     return npcID and tonumber(npcID) == const.QUESTS.ETERNUS_NPC_ID
 end
 

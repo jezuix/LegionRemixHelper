@@ -19,6 +19,8 @@ local L = {
     ["Tabs.CollectionTabUI.FilterSources"] = "Quellen",
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "Alle auswählen",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "Alle abwählen",
+    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Raid-Varianten anzeigen",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "Nur Remix-Spezifische Gegenstände",
     ["Tabs.CollectionTabUI.Type"] = "Typ",
     ["Tabs.CollectionTabUI.Source"] = "Quelle",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Suchen",
@@ -95,6 +97,12 @@ Beispiel: /LRH s]],
     ["ItemOpenerUtils.AutoItemOpen"] = "Automatisch Gegenstände öffnen",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Öffnet automatisch bestimmte Gegenstände in deinem Inventar, wenn sie gefunden werden. (Dieses Feature wird noch entwickelt)",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Öffnet %s automatisch, wenn es im Inventar gefunden wird.",
+
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Händler Einstellungen",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Einstellungen für die Händler-Funktion",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Gesammelte Händlergegenstände ausblenden",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Blendet Gegenstände aus dem Händlerfenster aus, die du bereits in deiner Sammlung hast.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",

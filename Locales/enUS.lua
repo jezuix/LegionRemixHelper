@@ -19,6 +19,8 @@ local L = {
     ["Tabs.CollectionTabUI.FilterSources"] = "Sources",
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "Check All",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "Uncheck All",
+    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Show Raid Variants",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "Only Remix-Specific Items",
     ["Tabs.CollectionTabUI.Type"] = "Type",
     ["Tabs.CollectionTabUI.Source"] = "Source",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Search",
@@ -95,6 +97,12 @@ Example: /LRH s]],
     ["ItemOpenerUtils.AutoItemOpen"] = "Automatically Open Items",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "Automatically opens certain items in your inventory when found. (This feature is still in development)",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Automatically opens %s when found in your inventory.",
+
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Auto-Quest",
