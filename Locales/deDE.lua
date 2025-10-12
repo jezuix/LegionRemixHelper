@@ -76,6 +76,19 @@ local L = {
     ["CollectionUtils.UnknownVendor"] = "Unbekannter Händler",
     ["CollectionUtils.Vendor"] = "Händler, ",
 
+    -- Utils/CommandUtils.lua
+    ["CommandUtils.UnknownCommand"] =
+[[Unbekannter Befehl!
+Verwendung: /LRH oder /LegionRH <unterbefehl>
+Unterbefehle:
+    sammlung (s) - Öffne den Sammlungs-Tab.
+    einstellungen (e) - Öffne das Einstellungsmenü.
+Beispiel: /LRH s]],
+    ["CommandUtils.CollectionsCommand"] = "sammlung",
+    ["CommandUtils.CollectionsCommandShort"] = "s",
+    ["CommandUtils.SettingsCommand"] = "einstellungen",
+    ["CommandUtils.SettingsCommandShort"] = "e",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Gegenstand-Öffner",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Gegenstand-Öffner-Funktion",
@@ -90,6 +103,10 @@ local L = {
     ["QuestUtils.AutoTurnInTooltip"] = "Quests automatisch abgeben, wenn du mit NPCs interagierst.",
     ["QuestUtils.AutoAccept"] = "Automatisch annehmen",
     ["QuestUtils.AutoAcceptTooltip"] = "Quests automatisch annehmen, wenn du mit NPCs interagierst.",
+    ["QuestUtils.IgnoreEternus"] = "Eternus ignorieren",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Quests ignorieren, die von Eternus kommen.",
+    ["QuestUtils.SuppressShift"] = "Mit Shift unterdrücken",
+    ["QuestUtils.SuppressShiftTooltip"] = "Shift gedrückt halten, um das automatische Annehmen/Abgeben von Quests zu unterdrücken.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Schnellleiste",

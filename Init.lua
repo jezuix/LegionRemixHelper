@@ -21,6 +21,8 @@ local defaultDatabase = {
     quest = {
         autoAccept = false,
         autoTurnIn = false,
+        suppressShift = false,
+        ignoreEternus = true,
     },
     toast = {
         activate = false,

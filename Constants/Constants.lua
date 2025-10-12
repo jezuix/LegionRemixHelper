@@ -4788,52 +4788,36 @@ do
         ITEMS = {
             {
                 ITEM_ID = 237812, -- Cache of Infinite Treasure
-                NEEDS_CONVERT = true
             },
             {
                 ITEM_ID = 251821, -- Cache of Infinite Power
-                NEEDS_CONVERT = true
             },
             {
                 ITEM_ID = 245553, -- Heroic Cache of Infinite Treasure
-                NEEDS_CONVERT = true
             },
             {
                 ITEM_ID = 246814, -- Bronze Cache
-                NEEDS_CONVERT = true
             },
             {
                 ITEM_ID = 254847, -- Minor Bronze Cache
-                NEEDS_CONVERT = true
             },
             {
                 ITEM_ID = 246815, -- Lesser Bronze Cache
-                NEEDS_CONVERT = true
             },
             {
                 ITEM_ID = 246813, -- Greater Bronze Cache
-                NEEDS_CONVERT = true
-            },
-            {
-                ITEM_ID = 245925, -- Artifactium Sand
-            },
-            {
-                ITEM_ID = 249891, -- Mound of Artifactium Sand
             },
         },
     }
 
     for _, itemEntry in ipairs(constants.ITEM_OPENER.ITEMS) do
-        if itemEntry.NEEDS_CONVERT then
-            local item = Item:CreateFromItemID(itemEntry.ITEM_ID)
-            item:ContinueOnItemLoad(function()
-                local name = item:GetItemName()
-                if name and name ~= "" then
-                    itemEntry.ITEM_NAME = name
-                    itemEntry.NEEDS_CONVERT = nil
-                end
-            end)
-        end
+        local item = Item:CreateFromItemID(itemEntry.ITEM_ID)
+        item:ContinueOnItemLoad(function()
+            local name = item:GetItemName()
+            if name and name ~= "" then
+                itemEntry.ITEM_NAME = name
+            end
+        end)
     end
 end
 
@@ -4942,6 +4926,10 @@ constants.TOOLTIP = {
         { COLOR = CreateColorFromHexString("FF1abc9c"), MILESTONE = 1000000 }, -- Unlimited Power VII
         { COLOR = CreateColorFromHexString("FF2ecc71"), MILESTONE = 5000000 }, -- Unlimited Power XII
     },
+}
+
+constants.QUESTS = {
+    ETERNUS_NPC_ID = 241748,
 }
 
 constants.INV_SLOT = {

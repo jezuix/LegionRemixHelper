@@ -144,7 +144,11 @@
         "HeirloomsJournal",
         "WardrobeCollectionFrame",
         "WarbandSceneJournal",
-        "CollectionsJournal_SetTab"
+        "CollectionsJournal_SetTab",
+        "EquipmentManager_UnequipItemInSlot",
+        "EquipmentManager_RunAction",
+        "CalculateTotalNumberOfFreeBagSlots",
+        "SetCollectionsJournalShown"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [

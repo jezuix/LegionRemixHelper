@@ -76,6 +76,19 @@ local L = {
     ["CollectionUtils.UnknownVendor"] = "Unknown Vendor",
     ["CollectionUtils.Vendor"] = "Vendor, ",
 
+    -- Utils/CommandUtils.lua
+    ["CommandUtils.UnknownCommand"] =
+[[Unknown Command!
+Usage: /LRH or /LegionRH <subCommand>
+Subcommands:
+    collections (c) - Open the Collections tab.
+    settings (s) - Open the settings menu.
+Example: /LRH s]],
+    ["CommandUtils.CollectionsCommand"] = "collections",
+    ["CommandUtils.CollectionsCommandShort"] = "c",
+    ["CommandUtils.SettingsCommand"] = "settings",
+    ["CommandUtils.SettingsCommandShort"] = "s",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Item-Opener",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Settings for the Auto-Item-Opener feature",
@@ -90,6 +103,10 @@ local L = {
     ["QuestUtils.AutoTurnInTooltip"] = "Automatically turn in quests when interacting with NPCs.",
     ["QuestUtils.AutoAccept"] = "Auto Accept",
     ["QuestUtils.AutoAcceptTooltip"] = "Automatically accept quests when interacting with NPCs.",
+    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
+    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Quick Action Bar",

@@ -17,4 +17,5 @@
     <script file="CollectionUtils.lua" />
     <script file="UpdateUtils.lua" />
     <script file="UXUtils.lua" />
+    <script file="CommandUtils.lua" />
 </Ui>

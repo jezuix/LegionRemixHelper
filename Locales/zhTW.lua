@@ -76,6 +76,19 @@ local L = {
     ["CollectionUtils.UnknownVendor"] = "未知商人",
     ["CollectionUtils.Vendor"] = "商人，",
 
+    -- Utils/CommandUtils.lua
+    ["CommandUtils.UnknownCommand"] =
+[[Unknown Command!
+Usage: /LRH or /LegionRH <subCommand>
+Subcommands:
+    collections (c) - Open the Collections tab.
+    settings (s) - Open the settings menu.
+Example: /LRH s]],
+    ["CommandUtils.CollectionsCommand"] = "collections",
+    ["CommandUtils.CollectionsCommandShort"] = "c",
+    ["CommandUtils.SettingsCommand"] = "settings",
+    ["CommandUtils.SettingsCommandShort"] = "s",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自動開啟物品",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自動開啟物品功能設定",
@@ -90,6 +103,10 @@ local L = {
     ["QuestUtils.AutoTurnInTooltip"] = "與 NPC 互動時自動交任務。",
     ["QuestUtils.AutoAccept"] = "自動接任務",
     ["QuestUtils.AutoAcceptTooltip"] = "與 NPC 互動時自動接任務。",
+    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
+    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "快捷欄",
