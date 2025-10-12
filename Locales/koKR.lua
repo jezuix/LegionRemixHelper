@@ -145,15 +145,15 @@ local L = {
     ["ToastUtils.TypeTraitFallback"] = "알 수 없는 특성",
 
     -- Utils/TooltipUtils.lua
-    ["TooltipUtils.Threads"] = "실",
+    ["TooltipUtils.Threads"] = "파워",
     ["TooltipUtils.InfinitePower"] = "무한한 마력",
     ["TooltipUtils.Estimate"] = " (추정치)",
     ["TooltipUtils.SettingsCategoryPrefix"] = "마력 툴팁",
     ["TooltipUtils.SettingsCategoryTooltip"] = "마력 툴팁 기능 설정",
     ["TooltipUtils.Activate"] = "활성화",
-    ["TooltipUtils.ActivateTooltip"] = "마력 툴팁 정보 표시",
-    ["TooltipUtils.ThreadsInfo"] = "실 정보",
-    ["TooltipUtils.ThreadsInfoTooltip"] = "마력 툴팁 실 정보 표시",
+    ["TooltipUtils.ActivateTooltip"] = "마력 정보 툴팁 표시",
+    ["TooltipUtils.ThreadsInfo"] = "파워 정보",
+    ["TooltipUtils.ThreadsInfoTooltip"] = "파워 정보 툴팁 표시",
     ["TooltipUtils.PowerInfo"] = "마력 정보",
     ["TooltipUtils.PowerInfoTooltip"] = "무한한 마력 정보 툴팁 표시",
 
