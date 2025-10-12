@@ -103,6 +103,10 @@ Example: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "與 NPC 互動時自動交任務。",
     ["QuestUtils.AutoAccept"] = "自動接任務",
     ["QuestUtils.AutoAcceptTooltip"] = "與 NPC 互動時自動接任務。",
+    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
+    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "快捷欄",

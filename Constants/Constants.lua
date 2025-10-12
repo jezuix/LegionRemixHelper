@@ -4928,6 +4928,10 @@ constants.TOOLTIP = {
     },
 }
 
+constants.QUESTS = {
+    ETERNUS_NPC_ID = 241748,
+}
+
 constants.INV_SLOT = {
     WEAPON = 16,
     OFF_HAND = 17,

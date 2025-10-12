@@ -104,6 +104,10 @@ Example: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "Автоматически сдавать задания при взаимодействии с НИП.",
     ["QuestUtils.AutoAccept"] = "Автоприем",
     ["QuestUtils.AutoAcceptTooltip"] = "Автоматически принимать задания при взаимодействии с НИП.",
+    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
+    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Быстрая панель действий",

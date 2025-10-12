@@ -103,6 +103,10 @@ Beispiel: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "Quests automatisch abgeben, wenn du mit NPCs interagierst.",
     ["QuestUtils.AutoAccept"] = "Automatisch annehmen",
     ["QuestUtils.AutoAcceptTooltip"] = "Quests automatisch annehmen, wenn du mit NPCs interagierst.",
+    ["QuestUtils.IgnoreEternus"] = "Eternus ignorieren",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Quests ignorieren, die von Eternus kommen.",
+    ["QuestUtils.SuppressShift"] = "Mit Shift unterdrücken",
+    ["QuestUtils.SuppressShiftTooltip"] = "Shift gedrückt halten, um das automatische Annehmen/Abgeben von Quests zu unterdrücken.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Schnellleiste",

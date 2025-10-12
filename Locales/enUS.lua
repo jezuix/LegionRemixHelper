@@ -103,6 +103,10 @@ Example: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "Automatically turn in quests when interacting with NPCs.",
     ["QuestUtils.AutoAccept"] = "Auto Accept",
     ["QuestUtils.AutoAcceptTooltip"] = "Automatically accept quests when interacting with NPCs.",
+    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
+    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Quick Action Bar",
