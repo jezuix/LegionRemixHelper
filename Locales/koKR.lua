@@ -19,6 +19,8 @@ local L = {
     ["Tabs.CollectionTabUI.FilterSources"] = "출처",
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "모두 선택",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "모두 해제",
+    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Show Raid Variants",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "Only Remix-Specific Items",
     ["Tabs.CollectionTabUI.Type"] = "종류",
     ["Tabs.CollectionTabUI.Source"] = "출처",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "검색",
@@ -95,6 +97,12 @@ local L = {
     ["ItemOpenerUtils.AutoItemOpen"] = "아이템 자동 열기",
     ["ItemOpenerUtils.AutoItemOpenTooltip"] = "인벤토리에서 특정 아이템을 발견했을 때 자동으로 엽니다. (이 기능은 아직 개발 중입니다)",
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "인벤토리에서 %s를 발견했을 때 자동으로 엽니다.",
+
+    -- Utils/MerchantUtils.lua
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "자동 퀘스트",
