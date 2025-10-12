@@ -5057,3 +5057,8 @@ constants.SOCIALS = {
     {NAME = "Discord", ICON = constants.MEDIA.TEXTURES.DISCORD, URL = "https://discord.gg/NmBab5wvPS"},
     {NAME = "Ko-fi", ICON = constants.MEDIA.TEXTURES.KOFI, URL = "https://ko-fi.com/larsj02"},
 }
+
+constants.EDIT_MODE = {
+    DEFAULT_SYSTEM_WIDTH = 200,
+    DEFAULT_SYSTEM_HEIGHT = 200,
+}

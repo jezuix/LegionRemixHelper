@@ -43,6 +43,15 @@ local defaultDatabase = {
     merchant = {
         hideCollectedItems = false,
     },
+    editMode = {
+        ToastUI = {
+            point = "TOP",
+            relativePoint = "TOP",
+            relativeTo = "UIParent",
+            xOfs = 0,
+            yOfs = -50,
+        }
+    },
     version = nil
 }
 

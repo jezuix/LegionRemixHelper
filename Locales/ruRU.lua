@@ -100,6 +100,11 @@ local L = {
     ["CommandUtils.SettingsCommand"] = "настройки",
     ["CommandUtils.SettingsCommandShort"] = "s",
 
+    -- Utils/EditModeUtils.lua
+    ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "Toasts",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "Move the position of the toasts.",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Авто открывание предметов",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Настройки функции автоматического открытия предметов",

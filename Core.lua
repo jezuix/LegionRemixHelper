@@ -28,6 +28,7 @@ end
 
 function addon:OnEnable(...)
     Private.DatabaseUtils:LoadDefaultsForMissing()
+    Private.EditModeUtils:Init()
 
     Private.UXUtils:CreateSettings()
     Private.MerchantUtils:CreateSettings()
@@ -37,6 +38,8 @@ function addon:OnEnable(...)
     Private.TooltipUtils:CreateSettings()
     Private.QuickActionBarUtils:CreateSettings()
     Private.ItemOpenerUtils:InitAndCreateSettings()
+
+    Private.ToastUI:CreateEditModeElements()
 
     Private.UpdateUtils:OnEnable()
 end

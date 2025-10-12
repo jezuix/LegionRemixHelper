@@ -99,6 +99,11 @@ Beispiel: /LRH s]],
     ["CommandUtils.SettingsCommand"] = "einstellungen",
     ["CommandUtils.SettingsCommandShort"] = "e",
 
+    -- Utils/EditModeUtils.lua
+    ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systeme",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "Benachrichtigungen",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "Verschiebe die Position der Benachrichtigungen.",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Auto-Gegenstand-Öffner",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "Einstellungen für die Auto-Gegenstand-Öffner-Funktion",
