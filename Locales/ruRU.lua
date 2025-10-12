@@ -79,15 +79,15 @@ local L = {
 
     -- Utils/CommandUtils.lua
     ["CommandUtils.UnknownCommand"] =
-[[Unknown Command!
-Usage: /LRH or /LegionRH <subCommand>
-Subcommands:
-    collections (c) - Open the Collections tab.
-    settings (s) - Open the settings menu.
-Example: /LRH s]],
-    ["CommandUtils.CollectionsCommand"] = "collections",
+[[Неизвестная команда!
+Использование: /LRH или /LegionRH <подкоманда>
+Подкоманды:
+     коллекция (c) — открыть вкладку Коллекции.
+     настройки (s) — Открыть меню настроек.
+Пример: /LRH s]],
+    ["CommandUtils.CollectionsCommand"] = "коллекции",
     ["CommandUtils.CollectionsCommandShort"] = "c",
-    ["CommandUtils.SettingsCommand"] = "settings",
+    ["CommandUtils.SettingsCommand"] = "настройки",
     ["CommandUtils.SettingsCommandShort"] = "s",
 
     -- Utils/ItemOpenerUtils.lua
@@ -104,10 +104,10 @@ Example: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "Автоматически сдавать задания при взаимодействии с НИП.",
     ["QuestUtils.AutoAccept"] = "Автоприем",
     ["QuestUtils.AutoAcceptTooltip"] = "Автоматически принимать задания при взаимодействии с НИП.",
-    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
-    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
-    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
-    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
+    ["QuestUtils.IgnoreEternus"] = "Игнорировать Вечноса",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Игнорируйте задания, от Вечноса.",
+    ["QuestUtils.SuppressShift"] = "С помощью Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Удерживайте клавишу Shift, чтобы отменить автоматическое принятие/сдачу заданий.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Быстрая панель действий",
