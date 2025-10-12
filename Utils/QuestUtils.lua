@@ -72,7 +72,7 @@ function questUtils:IsEternusNPC()
 end
 
 ---@return boolean shouldSurpress
-function questUtils:ShouldSurpressAutoQuest()
+function questUtils:ShouldSuppressAutoQuest()
     local suppressShift = self:IsActive("suppressShift")
     if suppressShift and IsShiftKeyDown() then
         return true
@@ -84,7 +84,7 @@ function questUtils:ShouldSurpressAutoQuest()
 end
 
 function questUtils:OnGossipShow()
-    if self:ShouldSurpressAutoQuest() then
+    if self:ShouldSuppressAutoQuest() then
         return
     end
     if self:IsActive("autoTurnIn") then
@@ -110,7 +110,7 @@ function questUtils:OnGossipShow()
 end
 
 function questUtils:OnQuestGreeting()
-    if self:ShouldSurpressAutoQuest() then
+    if self:ShouldSuppressAutoQuest() then
         return
     end
     if self:IsActive("autoTurnIn") then
@@ -133,7 +133,7 @@ function questUtils:OnQuestGreeting()
 end
 
 function questUtils:OnQuestComplete()
-    if self:ShouldSurpressAutoQuest() then
+    if self:ShouldSuppressAutoQuest() then
         return
     end
     if self:IsActive("autoTurnIn") then
@@ -145,7 +145,7 @@ function questUtils:OnQuestComplete()
 end
 
 function questUtils:OnQuestDetail()
-    if self:ShouldSurpressAutoQuest() then
+    if self:ShouldSuppressAutoQuest() then
         return
     end
     if self:IsActive("autoAccept") then
@@ -154,7 +154,7 @@ function questUtils:OnQuestDetail()
 end
 
 function questUtils:OnQuestProgress()
-    if self:ShouldSurpressAutoQuest() then
+    if self:ShouldSuppressAutoQuest() then
         return
     end
     if self:IsActive("autoTurnIn") and IsQuestCompletable() then
