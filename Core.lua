@@ -22,6 +22,7 @@ function addon:OnInitialize(...)
     Private.ToastUI:Init()
 
     Private.UXUtils:Init()
+    Private.CommandUtils:Init()
 end
 
 function addon:OnEnable(...)

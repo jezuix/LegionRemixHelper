@@ -76,6 +76,19 @@ local L = {
     ["CollectionUtils.UnknownVendor"] = "未知商人",
     ["CollectionUtils.Vendor"] = "商人，",
 
+    -- Utils/CommandUtils.lua
+    ["CommandUtils.UnknownCommand"] =
+[[Unknown Command!
+Usage: /LRH or /LegionRH <subCommand>
+Subcommands:
+    collections (c) - Open the Collections tab.
+    settings (s) - Open the settings menu.
+Example: /LRH s]],
+    ["CommandUtils.CollectionsCommand"] = "collections",
+    ["CommandUtils.CollectionsCommandShort"] = "c",
+    ["CommandUtils.SettingsCommand"] = "settings",
+    ["CommandUtils.SettingsCommandShort"] = "s",
+
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自動開啟物品",
     ["ItemOpenerUtils.SettingsCategoryTooltip"] = "自動開啟物品功能設定",
