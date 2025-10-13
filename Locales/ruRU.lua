@@ -23,8 +23,8 @@ local L = {
     ["Tabs.CollectionTabUI.FilterSources"] = "Источники",
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "Выбрать все",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "Снять все",
-    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Show Raid Variants",
-    ["Tabs.CollectionTabUI.FilterUnique"] = "Only Remix-Specific Items",
+    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Показать варианты рейда",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "Только специфичные предметы Remix",
     ["Tabs.CollectionTabUI.Type"] = "Тип",
     ["Tabs.CollectionTabUI.Source"] = "Источник",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Поиск",
@@ -102,8 +102,8 @@ local L = {
 
     -- Utils/EditModeUtils.lua
     ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
-    ["EditModeUtils.SystemLabel.ToastUI"] = "Toasts",
-    ["EditModeUtils.SystemTooltip.ToastUI"] = "Move the position of the toasts.",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "Уведомления",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "Переместить позицию уведомлений.",
 
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Авто открывание предметов",
@@ -113,10 +113,10 @@ local L = {
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Автоматически открывает %s при нахождении в вашем инвентаре.",
 
     -- Utils/MerchantUtils.lua
-    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
-    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
-    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
-    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Настройки торговца",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Настройки функции Торговец",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Скрыть собранные предметы торговца",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Скрывает предметы в окне торговца, которые уже есть в вашей коллекции.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Автозадание",
