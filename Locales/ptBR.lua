@@ -113,9 +113,9 @@ Exemplos: /LRH s]],
 
     -- Utils/MerchantUtils.lua
     ["MerchantUtils.SettingsCategoryPrefix"] = "Configurações de Vendedor",
-    ["MerchantUtils.SettingsCategoryTooltip"] = "Configurações para o recurso Comerciante",
-    ["MerchantUtils.HideCollectedMerchantItems"] = "Ocultar itens coletados do comerciante",
-    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Oculta itens na janela do comerciante que você já tem em sua coleção.",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Configurações para o recurso Vendedor",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Ocultar itens coletados do vendedor",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Oculta itens na janela do vendedor que você já tem em sua coleção.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Missões-Automáticas",
