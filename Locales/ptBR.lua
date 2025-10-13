@@ -23,7 +23,7 @@ local L = {
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "Marcar Todos",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "Desmarcar Todos",
     ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Mostrar variantes de Raid",
-    ["Tabs.CollectionTabUI.FilterUnique"] = "Apenas Items Específico-do-Remix",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "Apenas Itens Específico do Remix",
     ["Tabs.CollectionTabUI.Type"] = "Tipo",
     ["Tabs.CollectionTabUI.Source"] = "Fonte",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Busca",
@@ -91,7 +91,7 @@ local L = {
 [[Comando Desconhecido!
 Uso: /LRH ou /LegionRH <subComando>
 SubComandos:
-    collections (c) - Aber aba de Coleções.
+    collections (c) - Abre aba de Coleções.
     settings (s) - Abre o menu de configuração.
 Exemplos: /LRH s]],
     ["CommandUtils.CollectionsCommand"] = "collections",
