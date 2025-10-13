@@ -5,7 +5,7 @@ local locales = Private.Locales or {}
 Private.Locales = locales
 local L = {
     -- UI/Components/Dropdown.lua
-    ["Components.Dropdown.SelectOption"] = "Select an option",
+    ["Components.Dropdown.SelectOption"] = "옵션 선택",
 
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "전문화별 자동 활성화",
@@ -22,8 +22,8 @@ local L = {
     ["Tabs.CollectionTabUI.FilterSources"] = "출처",
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "모두 선택",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "모두 해제",
-    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Show Raid Variants",
-    ["Tabs.CollectionTabUI.FilterUnique"] = "Only Remix-Specific Items",
+    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "레이드 옵션 표시",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "리믹스 전용 아이템만 표시",
     ["Tabs.CollectionTabUI.Type"] = "종류",
     ["Tabs.CollectionTabUI.Source"] = "출처",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "검색",
@@ -67,11 +67,11 @@ local L = {
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "장착된 아이템이 없습니다.",
     ["ArtifactTraitUtils.UnknownTrait"] = "알 수 없는 특성",
-    ["ArtifactTraitUtils.ColumnNature"] = "Nature",
-    ["ArtifactTraitUtils.ColumnFel"] = "Fel",
-    ["ArtifactTraitUtils.ColumnArcane"] = "Arcane",
-    ["ArtifactTraitUtils.ColumnStorm"] = "Storm",
-    ["ArtifactTraitUtils.ColumnHoly"] = "Holy",
+    ["ArtifactTraitUtils.ColumnNature"] = "자연",
+    ["ArtifactTraitUtils.ColumnFel"] = "혼돈",
+    ["ArtifactTraitUtils.ColumnArcane"] = "비전",
+    ["ArtifactTraitUtils.ColumnStorm"] = "폭풍",
+    ["ArtifactTraitUtils.ColumnHoly"] = "신성",
     ["ArtifactTraitUtils.JewelryFormat"] = "|T%s:16|t %s (+%d)",
     ["ArtifactTraitUtils.MaxTriesReached"] = "구매 시도 가능 횟수가 최대치에 도달했습니다.",
     ["ArtifactTraitUtils.SettingsCategoryPrefix"] = "유물 특성",
@@ -94,15 +94,15 @@ local L = {
     collections (c) - 수집품 탭을 엽니다.
     settings (s) - 설정 메뉴를 엽니다.
 예시: /LRH s]],
-    ["CommandUtils.CollectionsCommand"] = "collections",
+    ["CommandUtils.CollectionsCommand"] = "수집품",
     ["CommandUtils.CollectionsCommandShort"] = "c",
-    ["CommandUtils.SettingsCommand"] = "settings",
+    ["CommandUtils.SettingsCommand"] = "설정",
     ["CommandUtils.SettingsCommandShort"] = "s",
 
     -- Utils/EditModeUtils.lua
     ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
-    ["EditModeUtils.SystemLabel.ToastUI"] = "Toasts",
-    ["EditModeUtils.SystemTooltip.ToastUI"] = "Move the position of the toasts.",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "알림창",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "알림창의 위치를 이동합니다.",
 
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "자동 아이템 열기",
@@ -112,10 +112,10 @@ local L = {
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "인벤토리에서 %s를 발견했을 때 자동으로 엽니다.",
 
     -- Utils/MerchantUtils.lua
-    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
-    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
-    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
-    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+    ["MerchantUtils.SettingsCategoryPrefix"] = "상점 설정",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "상점 기능 설정",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "수집된 상점 아이템 숨기기",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "상점 창에서 이미 보유한 수집품 아이템을 숨깁니다.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "자동 퀘스트",
