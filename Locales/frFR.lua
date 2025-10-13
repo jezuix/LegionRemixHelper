@@ -60,10 +60,10 @@ local L = {
     ["QuickActionBarUI.CombatToggleError"] = "La barre d’Action rapide ne peut pas être ouverte ou fermée en combat.",
 
     -- UI/ScrappingUI.lua
-    ["ScrappingUI.MaxScrappingQuality"] = "Max Scrapping Quality",
+    ["ScrappingUI.MaxScrappingQuality"] = "Qualité maximale de recyclage",
     ["ScrappingUI.MinItemLevelDifference"] = "Différence minimale de niveau d’objet",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "x niveaux inférieurs à ceux équipés",
-    ["ScrappingUI.AutoScrap"] = "Auto Scrap",
+    ["ScrappingUI.AutoScrap"] = "Recyclage automatique",
 
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "Aucun objet équipé.",
