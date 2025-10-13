@@ -13,10 +13,10 @@ local L = {
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Ctrl-Click para pré visualização",
-    ["Tabs.CollectionTabUI.ShiftClickToLink"] = "Shift-Click para link",
+    ["Tabs.CollectionTabUI.ShiftClickToLink"] = "Shift-Click para linkar",
     ["Tabs.CollectionTabUI.NoName"] = "Sem Nome",
-    ["Tabs.CollectionTabUI.AltClickVendor"] = "Alt-Click para marcar um Ponto de Referência até o vendedor",
-    ["Tabs.CollectionTabUI.AltClickAchievement"] = "Alt-Click para visualizar uma Conquista",
+    ["Tabs.CollectionTabUI.AltClickVendor"] = "Alt-Click para marcar um Ponto de Referência no vendedor",
+    ["Tabs.CollectionTabUI.AltClickAchievement"] = "Alt-Click para visualizar a Conquista",
     ["Tabs.CollectionTabUI.FilterCollected"] = "Coletado",
     ["Tabs.CollectionTabUI.FilterNotCollected"] = "Não Coletado",
     ["Tabs.CollectionTabUI.FilterSources"] = "Fontes",
