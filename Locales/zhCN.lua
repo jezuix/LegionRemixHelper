@@ -22,8 +22,8 @@ local L = {
     ["Tabs.CollectionTabUI.FilterSources"] = "来源",
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "全选",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "全不选",
-    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Show Raid Variants",
-    ["Tabs.CollectionTabUI.FilterUnique"] = "Only Remix-Specific Items",
+    ["Tabs.CollectionTabUI.FilterRaidVariants"] = "显示团队副本的配色",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "仅限幻境新生的专属物品",
     ["Tabs.CollectionTabUI.Type"] = "类型",
     ["Tabs.CollectionTabUI.Source"] = "来源",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "搜索",
@@ -100,9 +100,9 @@ local L = {
     ["CommandUtils.SettingsCommandShort"] = "s",
 
     -- Utils/EditModeUtils.lua
-    ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
-    ["EditModeUtils.SystemLabel.ToastUI"] = "Toasts",
-    ["EditModeUtils.SystemTooltip.ToastUI"] = "Move the position of the toasts.",
+    ["EditModeUtils.ShowAddonSystems"] = "军团幻境-助手系统",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "提示信息",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "移动提示信息位置。",
 
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "自动开启物品",
@@ -112,10 +112,10 @@ local L = {
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "在背包中发现%s时自动开启。",
 
     -- Utils/MerchantUtils.lua
-    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
-    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
-    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
-    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+    ["MerchantUtils.SettingsCategoryPrefix"] = "商人设置",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "商人功能的设置",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "隐藏已收藏的物品",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "在商人窗口中隐藏你已收藏的物品。",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "自动任务",
