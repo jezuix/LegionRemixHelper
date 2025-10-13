@@ -23,7 +23,7 @@ local L = {
     ["Tabs.CollectionTabUI.FilterCheckAll"] = "Marcar Todos",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "Desmarcar Todos",
     ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Show Raid Variants",
-    ["Tabs.CollectionTabUI.FilterUnique"] = "Only Remix-Specific Items",
+    ["Tabs.CollectionTabUI.FilterUnique"] = "Apenas Items Específico-do-Remix",
     ["Tabs.CollectionTabUI.Type"] = "Tipo",
     ["Tabs.CollectionTabUI.Source"] = "Fonte",
     ["Tabs.CollectionTabUI.SearchInstructions"] = "Busca",
@@ -56,7 +56,7 @@ local L = {
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "Nenhuma ação para salvar.",
     ["QuickActionBarUI.SettingsEditorAction"] = "Ação %s",
     ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Houve um erro durante o salvamento da ação: %s",
-    ["QuickActionBarUI.CombatToggleError"] = "The Quick Action Bar cannot be opened or closed in combat.",
+    ["QuickActionBarUI.CombatToggleError"] = "A Barra de Ação Rápida não pode ser aberta ou fechada em combate.",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "Qualidade Máxima do Sucateamento",
@@ -88,21 +88,21 @@ local L = {
 
     -- Utils/CommandUtils.lua
     ["CommandUtils.UnknownCommand"] =
-[[Unknown Command!
-Usage: /LRH or /LegionRH <subCommand>
-Subcommands:
-    collections (c) - Open the Collections tab.
-    settings (s) - Open the settings menu.
-Example: /LRH s]],
+[[Comando Desconhecido!
+Uso: /LRH ou /LegionRH <subComando>
+SubComandos:
+    collections (c) - Aber aba de Coleções.
+    settings (s) - Abre o menu de configuração.
+Exemplos: /LRH s]],
     ["CommandUtils.CollectionsCommand"] = "collections",
     ["CommandUtils.CollectionsCommandShort"] = "c",
     ["CommandUtils.SettingsCommand"] = "settings",
     ["CommandUtils.SettingsCommandShort"] = "s",
 
     -- Utils/EditModeUtils.lua
-    ["EditModeUtils.ShowAddonSystems"] = "Legion-Remix-Helper-Systems",
-    ["EditModeUtils.SystemLabel.ToastUI"] = "Toasts",
-    ["EditModeUtils.SystemTooltip.ToastUI"] = "Move the position of the toasts.",
+    ["EditModeUtils.ShowAddonSystems"] = "Sistemas-Legion-Remix-Helper",
+    ["EditModeUtils.SystemLabel.ToastUI"] = "Pop-Ups",
+    ["EditModeUtils.SystemTooltip.ToastUI"] = "Mover posições de pop-ups.",
 
     -- Utils/ItemOpenerUtils.lua
     ["ItemOpenerUtils.SettingsCategoryPrefix"] = "Abridor Automático de itens",
@@ -112,10 +112,10 @@ Example: /LRH s]],
     ["ItemOpenerUtils.AutoOpenItemEntryTooltip"] = "Abre automaticamente %s quando encontrado no seu inventário.",
 
     -- Utils/MerchantUtils.lua
-    ["MerchantUtils.SettingsCategoryPrefix"] = "Merchant Settings",
-    ["MerchantUtils.SettingsCategoryTooltip"] = "Settings for the Merchant feature",
-    ["MerchantUtils.HideCollectedMerchantItems"] = "Hide Collected Merchant Items",
-    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Hides items in the merchant window that you already have in your collection.",
+    ["MerchantUtils.SettingsCategoryPrefix"] = "Configurações de Vendedor",
+    ["MerchantUtils.SettingsCategoryTooltip"] = "Configurações para o recurso Comerciante",
+    ["MerchantUtils.HideCollectedMerchantItems"] = "Ocultar itens coletados do comerciante",
+    ["MerchantUtils.HideCollectedMerchantItemsTooltip"] = "Oculta itens na janela do comerciante que você já tem em sua coleção.",
 
     -- Utils/QuestUtils.lua
     ["QuestUtils.SettingsCategoryPrefix"] = "Missões-Automáticas",
@@ -124,10 +124,10 @@ Example: /LRH s]],
     ["QuestUtils.AutoTurnInTooltip"] = "Automaticamente entrega as missões ao interagir com os PNJs.",
     ["QuestUtils.AutoAccept"] = "Aceitação automática",
     ["QuestUtils.AutoAcceptTooltip"] = "Automaticamente aceita as missões ao interagir com os PNJs.",
-    ["QuestUtils.IgnoreEternus"] = "Ignore Eternus",
-    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore quests that come from Eternus.",
-    ["QuestUtils.SuppressShift"] = "Suppress with Shift",
-    ["QuestUtils.SuppressShiftTooltip"] = "Hold Shift to suppress automatic quest acceptance/turn-in.",
+    ["QuestUtils.IgnoreEternus"] = "Ignorar Eternus",
+    ["QuestUtils.IgnoreEternusTooltip"] = "Ignore missões que vêm de Eternus.",
+    ["QuestUtils.SuppressShift"] = "Suprimir com Shift",
+    ["QuestUtils.SuppressShiftTooltip"] = "Segure Shift para suprimir a aceitação/entrega automática de missões.",
 
     -- Utils/QuickActionBarUtils.lua
     ["QuickActionBarUtils.SettingsCategoryPrefix"] = "Barra de Ações Rápidas",
