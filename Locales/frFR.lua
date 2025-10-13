@@ -10,7 +10,7 @@ local L = {
 
     -- UI/Tabs/ArtifactTraitsTabUI.lua
     ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Activation automatique pour Spec",
-    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Aucun artefact équipé",--
+    ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Aucun artefact équipé",
 
     -- UI/Tabs/CollectionTabUI.lua
     ["Tabs.CollectionTabUI.CtrlClickPreview"] = "Ctrl + Clic pour prévisualiser",
@@ -34,7 +34,7 @@ local L = {
     -- UI/CollectionsTabUI.lua
     ["CollectionsTabUI.TabTitle"] = "Legion Remix",
     ["CollectionsTabUI.ResearchProgress"] = "Recherche : %s/%s",
-    ["CollectionsTabUI.TraitsTabTitle"] = "Traits d’artefact",--
+    ["CollectionsTabUI.TraitsTabTitle"] = "Traits d’artefact",
     ["CollectionsTabUI.CollectionTabTitle"] = "Collection",
 
     -- UI/QuickActionBarUI.lua
@@ -174,8 +174,8 @@ Exemple: /LRH s]],
     ["TooltipUtils.SettingsCategoryTooltip"] = "Paramètres de la fonctionnalité Infobulle de Puissance",
     ["TooltipUtils.Activate"] = "Activer",
     ["TooltipUtils.ActivateTooltip"] = "Afficher l’information pour Infobulle de Puissance",
-    ["TooltipUtils.ThreadsInfo"] = "Threads Information",
-    ["TooltipUtils.ThreadsInfoTooltip"] = "Show Tooltip-Power Threads information",
+    ["TooltipUtils.ThreadsInfo"] = "Information Sujet",
+    ["TooltipUtils.ThreadsInfoTooltip"] = "Afficher les informations des Sujets dans l’infobulle de Puissance",
     ["TooltipUtils.PowerInfo"] = "Informaiton sur le pouvoir",
     ["TooltipUtils.PowerInfoTooltip"] = "Afficher les informations sur la Pouvoir infini de l'infobulle",
 
