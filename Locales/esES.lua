@@ -88,12 +88,12 @@ local L = {
 
 	-- Utils/CommandUtils.lua
     ["CommandUtils.UnknownCommand"] =
-[[Unknown Command!
-Usage: /LRH or /LegionRH <subCommand>
-Subcommands:
-    collections (c) - Open the Collections tab.
-    settings (s) - Open the settings menu.
-Example: /LRH s]],
+[[ Comando desconocido!
+Uso: /LRH o /LegionRH <subCommand>
+Subcomandos:
+    colecciones (c) - Abrir la pestaña de colecciones.
+    ajustes (s) - Abrir el menú de ajustes.
+Ejemplo: /LRH s]],
     ["CommandUtils.CollectionsCommand"] = "colecciones",
     ["CommandUtils.CollectionsCommandShort"] = "c",
     ["CommandUtils.SettingsCommand"] = "ajustes",
