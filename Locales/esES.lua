@@ -63,6 +63,15 @@ local L = {
     ["ScrappingUI.MinItemLevelDifference"] = "Diferencia mínima de nivel de objeto",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "x niveles inferiores a los equipados",
     ["ScrappingUI.AutoScrap"] = "Auto desguace",
+    ["ScrappingUI.ScraperListTabTitle"] = "Scrapper List",
+    ["ScrappingUI.AdvancedSettingsTabTitle"] = "More Settings",
+    ["ScrappingUI.JeweleryTraitsToKeep"] = "Jewelery Traits to Keep",
+    ["ScrappingUI.AdvancedJeweleryFilter"] = "Advanced Jewelery Filter",
+    ["ScrappingUI.FilterCheckAll"] = "Check All",
+    ["ScrappingUI.FilterUncheckAll"] = "Uncheck All",
+    ["ScrappingUI.Neck"] = "Neck traits",
+    ["ScrappingUI.Trinket"] = "Trinket traits",
+    ["ScrappingUI.Finger"] = "Ring traits",
 
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "No hay ningún objeto equipado.",

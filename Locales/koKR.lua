@@ -63,6 +63,15 @@ local L = {
     ["ScrappingUI.MinItemLevelDifference"] = "최소 아이템 레벨 차이",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "착용 중인 것보다 x레벨 낮은",
     ["ScrappingUI.AutoScrap"] = "자동 분해",
+    ["ScrappingUI.ScraperListTabTitle"] = "Scrapper List",
+    ["ScrappingUI.AdvancedSettingsTabTitle"] = "More Settings",
+    ["ScrappingUI.JeweleryTraitsToKeep"] = "Jewelery Traits to Keep",
+    ["ScrappingUI.AdvancedJeweleryFilter"] = "Advanced Jewelery Filter",
+    ["ScrappingUI.FilterCheckAll"] = "Check All",
+    ["ScrappingUI.FilterUncheckAll"] = "Uncheck All",
+    ["ScrappingUI.Neck"] = "Neck traits",
+    ["ScrappingUI.Trinket"] = "Trinket traits",
+    ["ScrappingUI.Finger"] = "Ring traits",
 
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "장착된 아이템이 없습니다.",
