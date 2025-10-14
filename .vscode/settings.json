@@ -167,7 +167,13 @@
         "DressUpBattlePet",
         "TEXTURE_ITEM_QUEST_BANG",
         "SetItemButtonNameFrameVertexColor",
-        "EditModeManagerFrame"
+        "EditModeManagerFrame",
+        "INVSLOT_HEAD",
+        "INVSLOT_NECK",
+        "INVSLOT_FINGER1",
+        "INVSLOT_FINGER2",
+        "INVSLOT_TRINKET1",
+        "INVSLOT_TRINKET2"
     ],
     "Lua.type.weakUnionCheck": true,
     "Lua.diagnostics.disable": [
