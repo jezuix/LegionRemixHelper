@@ -189,7 +189,7 @@ function scrappingUI:Init()
         },
         width = 20,
         height = 20,
-        text = self.L["ScrappingUI.AdvancedJeweleryFilter"],
+        text = self.L["ScrappingUI.AdvancedJewelryFilter"],
         font = "GameFontNormalSmall",
         checked = self.utils:GetAdvancedJeweleryFilter(),
         onClick = function(checked)
@@ -253,7 +253,7 @@ function scrappingUI:Init()
             end
         end
     })
-    onlyJeweleryTraitsToKeep:GetDropdown():SetText(self.L["ScrappingUI.JeweleryTraitsToKeep"])
+    onlyJeweleryTraitsToKeep:GetDropdown():SetText(self.L["ScrappingUI.JewelryTraitsToKeep"])
 
     self.scrappingMachine:HookScript("OnShow", function()
         self:Refresh()
