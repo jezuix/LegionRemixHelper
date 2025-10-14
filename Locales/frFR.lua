@@ -9,7 +9,7 @@ local L = {
     ["Components.Dropdown.SelectOption"] = "Sélectionnez une option",
 
     -- UI/Tabs/ArtifactTraitsTabUI.lua
-    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Activation automatique pour Spec",
+    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Activation automatique pour la spécialisation",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Aucun artefact équipé",
 
     -- UI/Tabs/CollectionTabUI.lua
@@ -21,7 +21,7 @@ local L = {
     ["Tabs.CollectionTabUI.FilterCollected"] = "Collecté",
     ["Tabs.CollectionTabUI.FilterNotCollected"] = "Pas Collecté",
     ["Tabs.CollectionTabUI.FilterSources"] = "Sources",
-    ["Tabs.CollectionTabUI.FilterCheckAll"] = "Cocher tout",
+    ["Tabs.CollectionTabUI.FilterCheckAll"] = "Tout Cocher",
     ["Tabs.CollectionTabUI.FilterUncheckAll"] = "Décocher tout",
     ["Tabs.CollectionTabUI.FilterRaidVariants"] = "Afficher les variantes de raid",
     ["Tabs.CollectionTabUI.FilterUnique"] = "Uniquement les objets spécifiques à Legion Remix",
@@ -38,11 +38,11 @@ local L = {
     ["CollectionsTabUI.CollectionTabTitle"] = "Collection",
 
     -- UI/QuickActionBarUI.lua
-    ["QuickActionBarUI.QuickBarTitle"] = "Quick-Bar",
-    ["QuickActionBarUI.SettingTitlePreview"] = "Titre de l’Action ici",
+    ["QuickActionBarUI.QuickBarTitle"] = "Barre-Rapide",
+    ["QuickActionBarUI.SettingTitlePreview"] = "Titre de l’action ici",
     ["QuickActionBarUI.SettingsEditorTitle"] = "Action d’édition",
-    ["QuickActionBarUI.SettingsTitleLabel"] = "Titre de l’Action :",
-    ["QuickActionBarUI.SettingsTitleInput"] = "Nom de l’Action",
+    ["QuickActionBarUI.SettingsTitleLabel"] = "Titre de l’action :",
+    ["QuickActionBarUI.SettingsTitleInput"] = "Nom de l’action",
     ["QuickActionBarUI.SettingsIconLabel"] = "Icône :",
     ["QuickActionBarUI.SettingsIconInput"] = "Texture ID ou Chemin",
     ["QuickActionBarUI.SettingsIDLabel"] = "Action ID :",
@@ -51,13 +51,13 @@ local L = {
     ["QuickActionBarUI.SettingsTypeInputSpell"] = "Sort",
     ["QuickActionBarUI.SettingsTypeInputItem"] = "Objet",
     ["QuickActionBarUI.SettingsCheckUsableLabel"] = "Uniquement lorsque utilisable :",
-    ["QuickActionBarUI.SettingsEditorSave"] = "Enregistrer l’Action",
+    ["QuickActionBarUI.SettingsEditorSave"] = "Enregistrer l’action",
     ["QuickActionBarUI.SettingsEditorNew"] = "Nouvelle Action",
-    ["QuickActionBarUI.SettingsEditorDelete"] = "Supprimer l’Action",
+    ["QuickActionBarUI.SettingsEditorDelete"] = "Supprimer l’action",
     ["QuickActionBarUI.SettingsNoActionSaveError"] = "Aucune Action à sauvegarder.",
     ["QuickActionBarUI.SettingsEditorAction"] = "Action %s",
-    ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Une erreur s’est produite lors de l’enregistrement de l’Action : %s",
-    ["QuickActionBarUI.CombatToggleError"] = "La barre d’Action rapide ne peut pas être ouverte ou fermée en combat.",
+    ["QuickActionBarUI.SettingsGeneralActionSaveError"] = "Une erreur s’est produite lors de l’enregistrement de l’action : %s",
+    ["QuickActionBarUI.CombatToggleError"] = "La barre d’action rapide ne peut pas être ouverte ou fermée en combat.",
 
     -- UI/ScrappingUI.lua
     ["ScrappingUI.MaxScrappingQuality"] = "Qualité maximale de recyclage",
