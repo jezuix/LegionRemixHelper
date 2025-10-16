@@ -114,9 +114,14 @@ end
 ---@param itemList ScrappableItem[]
 ---@param itemID number
 ---@return ScrappableItem|nil highestItem
+---@return ScrappableItem|nil highestGeneral
 function scrappingUtils:GetHighestItemFromListByID(itemList, itemID)
     local highestItem = nil
+    local highestGeneral = nil
     for _, item in ipairs(itemList) do
+        if not highestGeneral or item.level > highestGeneral.level then
+            highestGeneral = item
+        end
         if C_Item.GetItemID(item.location) == itemID then
             if not highestItem or item.level > highestItem.level then
                 highestItem = item
@@ -125,17 +130,26 @@ function scrappingUtils:GetHighestItemFromListByID(itemList, itemID)
     end
     for _, slot in ipairs(const.SCRAPPING_MACHINE.JEWELRY.INV_SLOTS) do
         local itemLoc = ItemLocation:CreateFromEquipmentSlot(slot)
-        if itemLoc:IsValid() and C_Item.GetItemID(itemLoc) == itemID then
+        if itemLoc:IsValid() then
             local itemLevel = C_Item.GetCurrentItemLevel(itemLoc)
-            if not highestItem or itemLevel > highestItem.level then
-                highestItem = {
-                    level = itemLevel,
-                    location = itemLoc,
-                }
+            if C_Item.GetItemID(itemLoc) == itemID then
+                if not highestItem or itemLevel > highestItem.level then
+                    highestItem = {
+                        level = itemLevel,
+                        location = itemLoc,
+                    }
+                end
+            else
+                if not highestGeneral or itemLevel > highestGeneral.level then
+                    highestGeneral = {
+                        level = itemLevel,
+                        location = itemLoc,
+                    }
+                end
             end
         end
     end
-    return highestItem
+    return highestItem, highestGeneral
 end
 
 ---@param capReturn number|nil
@@ -148,11 +162,11 @@ function scrappingUtils:GetFilteredScrappableItems(capReturn)
     local filteredItems = {}
     for _, item in ipairs(scrappableItems) do
         local jewelryType = const.SCRAPPING_MACHINE.JEWELRY.INV_TYPES[item.invType]
+        local itemID = C_Item.GetItemID(item.location)
+        local highestItem, highestGeneral = self:GetHighestItemFromListByID(scrappableItems, itemID)
         if self:GetAdvancedJeweleryFilter() and jewelryType then
-            local itemID = C_Item.GetItemID(item.location)
             local shouldKeep = self:GetTraitToKeepForSlot(jewelryType, itemID)
-            local highestItem = self:GetHighestItemFromListByID(scrappableItems, itemID)
-            if not shouldKeep and item.quality <= maxQuality then
+            if not shouldKeep and item.quality <= maxQuality and highestGeneral ~= item then
                 tinsert(filteredItems, item)
             elseif shouldKeep and item.quality <= maxQuality and highestItem ~= item then
                 tinsert(filteredItems, item)
@@ -277,15 +291,17 @@ end
 ---@param itemID number|string
 ---@return boolean keepTraits
 function scrappingUtils:GetTraitToKeepForSlot(slot, itemID)
-    return Private.Addon:GetDatabaseValue("char.scrapping.jeweleryTraitsToKeep." .. slot .. "." .. tostring(itemID), true, true) or
-    false
+    return Private.Addon:GetDatabaseValue("char.scrapping.jeweleryTraitsToKeep." .. slot .. "." .. tostring(itemID), true,
+            true) or
+        false
 end
 
 ---@param slot "Finger"|"Neck"|"Trinket"
 ---@param itemID number|string
 ---@param shouldKeepTrait boolean
 function scrappingUtils:SetTraitToKeepForSlot(slot, itemID, shouldKeepTrait)
-    Private.Addon:SetDatabaseValue("char.scrapping.jeweleryTraitsToKeep." .. slot .. "." .. tostring(itemID), shouldKeepTrait, true)
+    Private.Addon:SetDatabaseValue("char.scrapping.jeweleryTraitsToKeep." .. slot .. "." .. tostring(itemID),
+        shouldKeepTrait, true)
 end
 
 ---@param shouldKeepTrait boolean
@@ -301,5 +317,6 @@ end
 ---@param slot "Finger"|"Neck"|"Trinket"
 ---@param itemID number|string
 function scrappingUtils:ToggleTraitToKeepForSlot(slot, itemID)
-    Private.Addon:ToggleDatabaseValue("char.scrapping.jeweleryTraitsToKeep." .. slot .. "." .. tostring(itemID), nil, true)
+    Private.Addon:ToggleDatabaseValue("char.scrapping.jeweleryTraitsToKeep." .. slot .. "." .. tostring(itemID), nil,
+        true)
 end
