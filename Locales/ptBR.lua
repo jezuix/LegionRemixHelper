@@ -8,7 +8,7 @@ local L = {
     ["Components.Dropdown.SelectOption"] = "Selecione uma opção",
 
     -- UI/Tabs/ArtifactTraitsTabUI.lua
-    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Auto-Activate for Spec",
+    ["Tabs.ArtifactTraitsTabUI.AutoActivateForSpec"] = "Ativação automática para especialização",
     ["Tabs.ArtifactTraitsTabUI.NoArtifactEquipped"] = "Nenhum Artefato Equipado",
 
     -- UI/Tabs/CollectionTabUI.lua
@@ -63,15 +63,15 @@ local L = {
     ["ScrappingUI.MinItemLevelDifference"] = "Nível de Item Mínimo de Diferença",
     ["ScrappingUI.MinItemLevelDifferenceInstructions"] = "x níveis abaixo do equipado",
     ["ScrappingUI.AutoScrap"] = "Auto Sucateamento",
-    ["ScrappingUI.ScraperListTabTitle"] = "Scrapper List",
-    ["ScrappingUI.AdvancedSettingsTabTitle"] = "More Settings",
-    ["ScrappingUI.JewelryTraitsToKeep"] = "Jewelry Traits to Keep",
-    ["ScrappingUI.AdvancedJewelryFilter"] = "Advanced Jewelry Filter",
-    ["ScrappingUI.FilterCheckAll"] = "Check All",
-    ["ScrappingUI.FilterUncheckAll"] = "Uncheck All",
-    ["ScrappingUI.Neck"] = "Neck traits",
-    ["ScrappingUI.Trinket"] = "Trinket traits",
-    ["ScrappingUI.Finger"] = "Ring traits",
+    ["ScrappingUI.ScraperListTabTitle"] = "Lista de Sucateamento",
+    ["ScrappingUI.AdvancedSettingsTabTitle"] = "Mais Configurações",
+    ["ScrappingUI.JewelryTraitsToKeep"] = "Traços de Jóias para Manter",
+    ["ScrappingUI.AdvancedJewelryFilter"] = "Filtro Avançado de Jóias",
+    ["ScrappingUI.FilterCheckAll"] = "Selecionar Todos",
+    ["ScrappingUI.FilterUncheckAll"] = "Deselecionar Todos",
+    ["ScrappingUI.Neck"] = "Traços de Colar",
+    ["ScrappingUI.Trinket"] = "Traços de Berloque",
+    ["ScrappingUI.Finger"] = "Traços de Anel",
 
     -- Utils/ArtifactTraitUtils.lua
     ["ArtifactTraitUtils.NoItemEquipped"] = "Nenhum Item Equipado.",
